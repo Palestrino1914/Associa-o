@@ -17,7 +17,7 @@ O site é estático, leve, responsivo e de fácil manutenção, construído apen
 ## 🌐 Visualizar o site
 
 O site está publicado em:  
-👉 https://seu-usuario.github.io/nome-do-repositorio
+👉 https://github.com/Palestrino1914/Associa-o
 
 ## 📁 Estrutura do projeto
 
@@ -33,7 +33,7 @@ O site está publicado em:
 ## 🛠️ Como rodar localmente
 
 1. Baixe ou clone este repositório:
-   git clone https://github.com/seu-usuario/nome-do-repositorio.git
+   git clone https://github.com/Palestrino1914/Associa-o.git
 
 2. Abra o arquivo index.html diretamente no seu navegador.
 
