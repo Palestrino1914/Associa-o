@@ -2,350 +2,248 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Associação Esportiva Educação e Saúde de Pompéia</title>
-  <meta name="description" content="Entidade sem fins lucrativos que promove esporte, educação e saúde para crianças, jovens e famílias em Pompéia (SP).">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    /* Reset e base */
+    :root {
+      --green-primary: #00563F;
+      --green-dark: #003d2c;
+      --green-light: #006400;
+      --white: #FFFFFF;
+      --light-gray: #F8F9FA;
+      --text: #333333;
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Open Sans', sans-serif;
+      color: var(--text);
       line-height: 1.6;
-      color: #333;
-      background-color: #fff;
+      background-color: var(--white);
     }
-    h1, h2, h3 {
+
+    h1, h2, h3, h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
       margin-bottom: 1rem;
-      color: #1B5E20;
+      color: var(--green-primary);
     }
-    p {
-      margin-bottom: 1rem;
-    }
-    a {
-      color: #FB8C00;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-    }
+
     .container {
       width: 90%;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 1rem;
-    }
-    section {
-      padding: 3rem 0;
-    }
-    .btn {
-      display: inline-block;
-      background-color: #FB8C00;
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border-radius: 4px;
-      font-weight: bold;
-      text-decoration: none;
-      margin-top: 1rem;
-    }
-    .btn:hover {
-      background-color: #F57C00;
-      text-decoration: none;
+      padding: 2rem 0;
     }
 
     /* Header */
     header {
-      background-color: white;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      background-color: var(--green-primary);
+      color: var(--white);
+      padding: 1.5rem 0;
+      text-align: center;
     }
-    .header-content {
+
+    header h1 {
+      font-size: 1.8rem;
+      color: var(--white);
+    }
+
+    header p {
+      font-style: italic;
+      margin-top: 0.5rem;
+    }
+
+    /* Sections */
+    section {
+      padding: 3rem 0;
+    }
+
+    section:nth-child(even) {
+      background-color: var(--light-gray);
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      font-size: 2rem;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--green-light);
+      margin: 0.5rem auto;
+    }
+
+    /* Projects */
+    .projects {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 0;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
     }
-    .logo {
-      font-size: 1.4rem;
-      font-weight: bold;
-      color: #1B5E20;
+
+    .project-card {
+      background: var(--white);
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1.5rem;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
-    nav ul {
-      display: flex;
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      background-color: var(--green-primary);
+      color: var(--white);
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: background 0.3s;
+      margin-top: 1rem;
+    }
+
+    .btn:hover {
+      background-color: var(--green-dark);
+    }
+
+    /* Contact */
+    .contact-list {
       list-style: none;
-      gap: 1.5rem;
     }
-    nav a {
-      color: #333;
-      font-weight: 500;
+
+    .contact-list li {
+      margin-bottom: 0.75rem;
     }
-    nav a:hover {
-      color: #FB8C00;
+
+    .contact-list a {
+      color: var(--green-primary);
       text-decoration: none;
     }
 
-    /* Hero */
-    .hero {
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1200x600/1B5E20/FFFFFF?text=Esporte+e+Inclusão') no-repeat center center/cover;
-      color: white;
-      text-align: center;
-      padding: 6rem 1rem;
-    }
-    .hero h1 {
-      color: white;
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    .hero-buttons {
-      margin-top: 1.5rem;
-    }
-    .hero .btn {
-      background-color: white;
-      color: #1B5E20;
-      margin: 0 0.5rem;
-    }
-    .hero .btn:hover {
-      background-color: #f0f0f0;
-    }
-
-    /* Two-column layout */
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      align-items: start;
-    }
-    .two-col img {
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-
-    /* Activities grid */
-    .activities {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
-    .activity-card {
-      padding: 1.5rem;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      background-color: #f9f9f9;
+    .contact-list a:hover {
+      text-decoration: underline;
     }
 
     /* Footer */
     footer {
-      background-color: #1B5E20;
-      color: white;
+      background-color: var(--green-primary);
+      color: var(--white);
+      text-align: center;
       padding: 2rem 0;
       margin-top: 3rem;
     }
-    .footer-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-    .footer-content a {
-      color: #A5D6A7;
-    }
-    .footer-content a:hover {
-      color: white;
-    }
-    .social-links {
-      margin-top: 1rem;
-    }
-    .social-links a {
-      display: inline-block;
-      margin-right: 1rem;
-      font-weight: bold;
+
+    footer p {
+      margin: 0.5rem 0;
     }
 
-    /* Mobile menu (simplified) */
+    /* Responsive */
     @media (max-width: 768px) {
-      .header-content {
-        flex-wrap: wrap;
-      }
-      nav ul {
-        width: 100%;
-        justify-content: center;
-        margin-top: 1rem;
-        gap: 1rem;
-      }
-      .two-col {
-        grid-template-columns: 1fr;
-      }
-      .hero h1 {
-        font-size: 2rem;
-      }
+      h1 { font-size: 1.5rem; }
+      .section-title { font-size: 1.6rem; }
+      .container { width: 95%; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <header>
-    <div class="container header-content">
-      <div class="logo">Associação Pompéia</div>
-      <nav>
-        <ul>
-          <li><a href="#quem-somos">Quem Somos</a></li>
-          <li><a href="#atividades">Atividades</a></li>
-          <li><a href="#transparencia">Transparência</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
-      </nav>
+    <div class="container">
+      <h1>Associação Esportiva Educação e Saúde de Pompéia</h1>
+      <p>Transformando vidas por meio do esporte, da educação e da cidadania</p>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container">
-      <h1>Educação, Esporte e Saúde para Todos</h1>
-      <p>Associação Esportiva Educação e Saúde de Pompéia – desde 2025</p>
-      <div class="hero-buttons">
-        <a href="#quem-somos" class="btn">Saiba Mais</a>
-        <a href="#contato" class="btn">Participe</a>
-      </div>
-    </div>
-  </section>
+  <main class="container">
+    <section id="quem-somos">
+      <h2 class="section-title">Quem somos</h2>
+      <p>A <strong>Associação Esportiva Educação e Saúde de Pompéia</strong> é uma entidade civil sem fins lucrativos, fundada em <strong>30 de outubro de 2025</strong>, com sede em Pompéia (SP). Atuamos no desenvolvimento integral de crianças, adolescentes e jovens por meio de <strong>projetos esportivos educacionais</strong>, promovendo saúde, inclusão social, disciplina e valores éticos.</p>
+      <p>Nosso trabalho é pautado pela <strong>Lei Pelé (Lei nº 9.615/1998)</strong> e pela <strong>Lei de Incentivo ao Esporte (Lei nº 11.438/2006)</strong>, com total transparência na gestão de recursos e prestação de contas.</p>
+      
+      <blockquote style="margin: 1.5rem 0; padding-left: 1rem; border-left: 4px solid var(--green-light); font-style: italic;">
+        <p><strong>Missão</strong>: Oferecer um ambiente seguro e acolhedor onde o esporte seja ferramenta de transformação social.<br>
+        <strong>Visão</strong>: Ser referência regional em projetos esportivos com impacto comunitário.<br>
+        <strong>Valores</strong>: Ética, inclusão, respeito, cooperação e responsabilidade social.</p>
+      </blockquote>
+    </section>
 
-  <!-- Quem Somos -->
-  <section id="quem-somos">
-    <div class="container two-col">
-      <div>
-        <h2>Quem Somos</h2>
-        <p>Somos uma associação civil sem fins lucrativos, formada por voluntários de Pompéia, dedicada ao esporte como ferramenta de inclusão social, educação e promoção da saúde.</p>
-        <p>Nossa missão é oferecer oportunidades reais de desenvolvimento para crianças, adolescentes, jovens e famílias em situação de vulnerabilidade, por meio de atividades esportivas, educacionais e de bem-estar.</p>
-        <a href="#" class="btn">Leia nosso Estatuto</a>
-      </div>
-      <div>
-        <img src="https://via.placeholder.com/500x400/E8F5E9/1B5E20?text=Equipe+em+ação" alt="Equipe da Associação em atividade">
-      </div>
-    </div>
-  </section>
+    <section id="projetos">
+      <h2 class="section-title">Projetos</h2>
+      <div class="projects">
+        <div class="project-card">
+          <h3>⚽ Futebol Educativo</h3>
+          <p><strong>Público-alvo:</strong> Crianças e adolescentes de 7 a 17 anos</p>
+          <p><strong>Objetivo:</strong> Desenvolver habilidades técnicas, táticas e sociais por meio do futebol, com foco em fair play, trabalho em equipe e liderança.</p>
+          <p><strong>Atividades:</strong> Treinos semanais, campeonatos locais, oficinas de cidadania e acompanhamento pedagógico.</p>
+          <p><strong>Local:</strong> Quadras e campos de Pompéia (SP)</p>
+        </div>
 
-  <!-- Atividades -->
-  <section id="atividades" style="background-color: #f5f5f5;">
-    <div class="container">
-      <h2>Nossas Atividades</h2>
-      <div class="activities">
-        <div class="activity-card">
-          <h3>Esporte Educacional</h3>
-          <p>Futebol, vôlei e atletismo para crianças de 6 a 14 anos.</p>
-        </div>
-        <div class="activity-card">
-          <h3>Oficinas de Saúde</h3>
-          <p>Nutrição, prevenção e autocuidado para toda a comunidade.</p>
-        </div>
-        <div class="activity-card">
-          <h3>Eventos Comunitários</h3>
-          <p>Torneios, caminhadas e dias de lazer abertos a todos.</p>
-        </div>
-        <div class="activity-card">
-          <h3>Formação Cidadã</h3>
-          <p>Palestras e orientação profissional para jovens.</p>
+        <div class="project-card">
+          <h3>🏃‍♂️ Corrida de Rua – Caminhos da Saúde</h3>
+          <p><strong>Público-alvo:</strong> Jovens de 12 a 25 anos + comunidade local</p>
+          <p><strong>Objetivo:</strong> Promover hábitos saudáveis, prevenção de doenças e integração comunitária por meio da corrida e caminhada.</p>
+          <p><strong>Atividades:</strong> Treinos coletivos, eventos mensais, palestras sobre nutrição e saúde mental.</p>
+          <p><strong>Evento anual:</strong> “Corrida da Inclusão” – aberta a todos os moradores de Pompéia</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Instagram -->
-  <section>
-    <div class="container">
-      <h2>Acompanhe no Instagram</h2>
-      <p>Veja nossas atividades em tempo real!</p>
-      <div style="margin-top: 2rem; display: flex; justify-content: center;">
-        <!-- Substitua "seuprojetosocial" pelo nome real do perfil -->
-        <iframe src="https://www.instagram.com/seuprojetosocial/embed" 
-                width="400" 
-                height="500" 
-                frameborder="0" 
-                scrolling="no"
-                style="max-width: 100%;">
-        </iframe>
-      </div>
-      <p style="text-align: center; margin-top: 1rem;">
-        <a href="https://instagram.com/seuprojetosocial" target="_blank" class="btn">Siga no Instagram</a>
-      </p>
-    </div>
-  </section>
-
-  <!-- Transparência -->
-  <section id="transparencia">
-    <div class="container">
-      <h2>Transparência</h2>
-      <p>Aqui, cada real tem um propósito.</p>
-      <ul style="margin-top: 1.5rem; list-style: none;">
-        <li><a href="docs/estatuto.pdf" target="_blank">Estatuto Social</a></li>
-        <li><a href="docs/demonstrativo-dez2025.pdf" target="_blank">Demonstrativo Financeiro – Dez/2025</a></li>
-        <li><a href="#">Relatório de Atividades 2025</a></li>
-        <li><a href="#">Certificado de Registro</a></li>
+    <section id="como-ajudar">
+      <h2 class="section-title">Como ajudar</h2>
+      <p>Você pode fazer parte dessa transformação!</p>
+      <ul style="margin: 1.5rem 0 1rem 2rem;">
+        <li><strong>Doações únicas ou mensais</strong> (pessoa física ou jurídica)</li>
+        <li><strong>Patrocínio de projetos</strong> via Lei de Incentivo ao Esporte</li>
+        <li><strong>Voluntariado</strong> (treinadores, educadores, apoio administrativo)</li>
+        <li><strong>Divulgação</strong> nas redes sociais e entre parceiros</li>
       </ul>
-    </div>
-  </section>
+      <p><em>Todas as doações são dedutíveis conforme a legislação vigente. Após a obtenção do CNPJ, todas as contribuições terão recibo fiscal válido.</em></p>
+      <a href="#contato" class="btn">Quero fazer uma doação</a>
+    </section>
 
-  <!-- Contato -->
-  <section id="contato" style="background-color: #f5f5f5;">
-    <div class="container two-col">
-      <div>
-        <h2>Contato</h2>
-        <p><strong>Endereço:</strong> Rua Orlando Benedini, 96 – Conj. Hab. Octávio Cavalcanti Lacombe<br>Pompéia – SP, CEP 17.584-456</p>
-        <p><strong>E-mail:</strong> contato@associacaopompeia.org.br</p>
-        <p><strong>WhatsApp:</strong> (14) 9XXXX-XXXX</p>
-        <p><strong>Atendimento:</strong> Segundas e quartas, das 14h às 17h</p>
-      </div>
-      <div>
-        <h3>Envie uma mensagem</h3>
-        <form action="#" method="POST" style="display: flex; flex-direction: column; gap: 1rem;">
-          <input type="text" placeholder="Seu nome" required style="padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
-          <input type="email" placeholder="Seu e-mail" required style="padding: 0.5.5rem; border: 1px solid #ccc; border-radius: 4px;">
-          <select required style="padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
-            <option value="">— Assunto —</option>
-            <option value="voluntariado">Voluntariado</option>
-            <option value="parceria">Parceria</option>
-            <option value="doacao">Doação</option>
-            <option value="outro">Outro</option>
-          </select>
-          <textarea placeholder="Sua mensagem" rows="4" required style="padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;"></textarea>
-          <button type="submit" class="btn">Enviar Mensagem</button>
-        </form>
-      </div>
-    </div>
-  </section>
+    <section id="eventos">
+      <h2 class="section-title">Eventos</h2>
+      <p>Mantenha-se informado sobre nossas atividades:</p>
+      <ul style="margin: 1.5rem 0 1rem 2rem;">
+        <li><strong>Treinos regulares:</strong> Segundas, quartas e sextas-feiras</li>
+        <li><strong>Campeonatos locais:</strong> A cada bimestre</li>
+        <li><strong>Corrida da Inclusão:</strong> Novembro (evento anual)</li>
+        <li><strong>Oficinas temáticas:</strong> Saúde, direitos humanos, carreira no esporte</li>
+      </ul>
+      <p>Siga-nos nas redes sociais para não perder nenhum evento!</p>
+    </section>
 
-  <!-- Footer -->
+    <section id="contato">
+      <h2 class="section-title">Contato</h2>
+      <ul class="contact-list">
+        <li>📧 <a href="mailto:contato@associacaoesportivapompeia.org.br">contato@associacaoesportivapompeia.org.br</a></li>
+        <li>📱 <a href="tel:+5514981869683">(14) 98186-9683</a></li>
+        <li>📍 Rua Orlando Benedini, nº 96 – Bairro Conjunto Habitacional Octávio Cavalcanti Lacombe<br>
+            CEP 17.584-456 – Pompéia / SP</li>
+      </ul>
+      <p><a href="https://maps.google.com" target="_blank" class="btn">Ver no Google Maps</a></p>
+    </section>
+  </main>
+
   <footer>
-    <div class="container footer-content">
-      <div>
-        <div class="logo" style="color: white; margin-bottom: 1rem;">Associação Pompéia</div>
-        <p>Educação, esporte e saúde para transformar vidas em Pompéia e região.</p>
-      </div>
-      <div>
-        <h3>Links Rápidos</h3>
-        <p><a href="#quem-somos">Quem Somos</a></p>
-        <p><a href="#atividades">Atividades</a></p>
-        <p><a href="#transparencia">Transparência</a></p>
-        <p><a href="#contato">Contato</a></p>
-      </div>
-      <div>
-        <h3>Redes Sociais</h3>
-        <div class="social-links">
-          <a href="https://instagram.com/seuprojetosocial" target="_blank">Instagram</a>
-        </div>
-      </div>
-    </div>
-    <div style="text-align: center; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #2E7D32;">
-      <p>&copy; 2025 Associação Esportiva Educação e Saúde de Pompéia – CNPJ: XX.XXX.XXX/0001-XX</p>
+    <div class="container">
+      <p>Associação Esportiva Educação e Saúde de Pompéia</p>
+      <p>Entidade sem fins lucrativos • Fundada em 30/10/2025</p>
+      <p>✨ Juntos, construímos um futuro mais justo, saudável e cheio de oportunidades.</p>
     </div>
   </footer>
 
