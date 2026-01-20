@@ -1,102 +1,91 @@
-# Associa-o 
-README.md
+# Associação Esportiva Educação e Saúde de Pompéia
 
-# Site Institucional – Associação Esportiva Educação e Saúde de Pompéia
+![Logo da Associação](https://via.placeholder.com/400x100/00563F/FFFFFF?text=Associação+Esportiva+Educação+e+Saúde+de+Pompéia)  
+*Transformando vidas por meio do esporte, da educação e da cidadania*
 
-[![Licença](https://img.shields.io/badge/Licença-MIT-blue)](LICENSE)
+---
 
-Este repositório contém o código-fonte do site institucional da Associação Esportiva Educação e Saúde de Pompéia, uma entidade civil sem fins lucrativos fundada em 2025 com o objetivo de promover esporte, educação, saúde e inclusão social em Pompéia (SP) e região.
+## 🌿 Quem somos
 
-O site é estático, leve, responsivo e de fácil manutenção, construído apenas com HTML, CSS e um toque mínimo de JavaScript — sem frameworks pesados, CMS ou banco de dados.
+A **Associação Esportiva Educação e Saúde de Pompéia** é uma entidade civil sem fins lucrativos, fundada em **30 de outubro de 2025**, com sede em Pompéia (SP). Atuamos no desenvolvimento integral de crianças, adolescentes e jovens por meio de **projetos esportivos educacionais**, promovendo saúde, inclusão social, disciplina e valores éticos.
 
-✅ Totalmente gratuito  
-✅ Hospedado no GitHub Pages  
-✅ Acessível e compatível com celulares  
-✅ Atualizável por voluntários
+Nosso trabalho é pautado pela **Lei Pelé (Lei nº 9.615/1998)** e pela **Lei de Incentivo ao Esporte (Lei nº 11.438/2006)**, com total transparência na gestão de recursos e prestação de contas.
 
-## 🌐 Visualizar o site
+> **Missão**: Oferecer um ambiente seguro e acolhedor onde o esporte seja ferramenta de transformação social.  
+> **Visão**: Ser referência regional em projetos esportivos com impacto comunitário.  
+> **Valores**: Ética, inclusão, respeito, cooperação e responsabilidade social.
 
-O site está publicado em:  
-👉 https://github.com/Palestrino1914/Associa-o
+---
 
-## 📁 Estrutura do projeto
+## ⚽🏃‍♂️ Projetos
 
-.
-├── index.html                 # Página principal do site
-├── docs/                      # Documentos institucionais (transparência)
-│   ├── estatuto.pdf
-│   └── demonstrativo-dez2025.pdf
-├── img/                       # Imagens (opcional)
-├── README.md                  # Este arquivo
-└── LICENSE                    # Licença de uso
+### 1. **Futebol Educativo**
+- **Público-alvo**: Crianças e adolescentes de 7 a 17 anos  
+- **Objetivo**: Desenvolver habilidades técnicas, táticas e sociais por meio do futebol, com foco em fair play, trabalho em equipe e liderança.  
+- **Atividades**: Treinos semanais, campeonatos locais, oficinas de cidadania e acompanhamento pedagógico.  
+- **Local**: Quadras e campos de Pompéia (SP)
 
-## 🛠️ Como rodar localmente
+### 2. **Corrida de Rua – Caminhos da Saúde**
+- **Público-alvo**: Jovens de 12 a 25 anos + comunidade local  
+- **Objetivo**: Promover hábitos saudáveis, prevenção de doenças e integração comunitária por meio da corrida e caminhada.  
+- **Atividades**: Treinos coletivos, eventos mensais, palestras sobre nutrição e saúde mental.  
+- **Evento anual**: *“Corrida da Inclusão”* – aberta a todos os moradores de Pompéia
 
-1. Baixe ou clone este repositório:
-   git clone https://github.com/Palestrino1914/Associa-o.git
+---
 
-2. Abra o arquivo index.html diretamente no seu navegador.
+## 💚 Como ajudar
 
-3. Edite os textos, links e imagens conforme necessário.
+Você pode fazer parte dessa transformação!
 
-## ✏️ Como atualizar o conteúdo
+- **Doações únicas ou mensais** (pessoa física ou jurídica)  
+- **Patrocínio de projetos** via Lei de Incentivo ao Esporte  
+- **Voluntariado** (treinadores, educadores, apoio administrativo)  
+- **Divulgação** nas redes sociais e entre parceiros
 
-- Textos: edite diretamente no index.html  
-- Imagens: substitua os links dos placeholders por URLs reais ou arquivos locais na pasta img/  
-- Instagram: atualize o nome do perfil no iframe e no link “Siga no Instagram”  
-- Documentos de transparência: adicione novos PDFs na pasta docs/ e atualize os links no HTML
+> Todas as doações são dedutíveis conforme a legislação vigente.  
+> Após a obtenção do CNPJ, todas as contribuições terão recibo fiscal válido.
 
-## 🌍 Domínio e hospedagem
+[**Quero fazer uma doação**](#contato)
 
-- O site é hospedado gratuitamente no GitHub Pages
-- Associações sem fins lucrativos podem solicitar domínio .org.br gratuito no Registro.br
-- Após obter o CNPJ da associação, configure o domínio seguindo as instruções do GitHub
+---
 
-## 🤝 Como contribuir
+## 📅 Eventos
 
-Este projeto é mantido por voluntários. Você pode ajudar:
+Mantenha-se informado sobre nossas atividades:
 
-- Corrigindo textos ou melhorando o design  
-- Adicionando funcionalidades simples  
-- Compartilhando o site com possíveis parceiros
+- **Treinos regulares**: Segundas, quartas e sextas-feiras  
+- **Campeonatos locais**: A cada bimestre  
+- **Corrida da Inclusão**: Novembro (evento anual)  
+- **Oficinas temáticas**: Saúde, direitos humanos, carreira no esporte
 
-Basta abrir uma Issue ou enviar um Pull Request!
+Siga-nos nas redes sociais para não perder nenhum evento!
 
-## ⚖️ Licença
+---
 
-Este projeto está licenciado sob a MIT License – veja o arquivo LICENSE para detalhes.
+## 📞 Contato
 
-Observação: O conteúdo institucional (textos, logotipo, documentos) é de propriedade exclusiva da Associação Esportiva Educação e Saúde de Pompéia e não pode ser reutilizado sem autorização.
+Estamos à disposição para parcerias, dúvidas ou informações:
 
-## 📧 Contato
+- **E-mail**: [contato@associacaoesportivapompeia.org.br](mailto:contato@associacaoesportivapompeia.org.br)  
+- **Telefone**: (14) 98186-9683  
+- **Endereço**: Rua Orlando Benedini, nº 96 – Bairro Conjunto Habitacional Octávio Cavalcanti Lacombe  
+  CEP 17.584-456 – Pompéia / SP
 
-Para dúvidas sobre o projeto ou a associação:  
-📧 contato@associacaopompeia.org.br  
-📱 (14) 9XXXX-XXXX (WhatsApp)
+📍 [Ver no Google Maps](https://maps.google.com)
 
-"Educação, Esporte e Saúde para Todos"  
-Associação Esportiva Educação e Saúde de Pompéia – Pompéia/SP, Brasil 🇧🇷
+---
 
-LICENSE
+## 🎨 Identidade Visual
 
-MIT License
+- **Cores principais**:  
+  - Verde institucional: `#00563F`  
+  - Verde claro (destaque): `#006400`  
+  - Fundo: `#FFFFFF` (branco)  
+- **Fontes recomendadas**:  
+  - Títulos: **Montserrat** (negrito, tamanho 24–32px)  
+  - Corpo do texto: **Open Sans** (regular, tamanho 16–18px)  
+- **Acessibilidade**: Contraste adequado (razão > 4.5:1), linguagem clara e inclusiva
 
-Copyright (c) 2025 Associação Esportiva Educação e Saúde de Pompéia
+---
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.# Associa-o
+> ✨ **Juntos, construímos um futuro mais justo, saudável e cheio de oportunidades.**
