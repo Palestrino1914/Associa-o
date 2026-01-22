@@ -20,16 +20,16 @@ Nosso trabalho é pautado pela **Lei Pelé (Lei nº 9.615/1998)** e pela **Lei d
 ## ⚽🏃‍♂️ Projetos
 
 ### 1. **Futebol Educativo**
-- **Público-alvo**: Crianças e adolescentes de 7 a 17 anos  
+- **Público-alvo**: Crianças e adolescentes de 4 a 16 anos  
 - **Objetivo**: Desenvolver habilidades técnicas, táticas e sociais por meio do futebol, com foco em fair play, trabalho em equipe e liderança.  
 - **Atividades**: Treinos semanais, campeonatos locais, oficinas de cidadania e acompanhamento pedagógico.  
 - **Local**: Quadras e campos de Pompéia (SP)
 
 ### 2. **Corrida de Rua – Caminhos da Saúde**
-- **Público-alvo**: Jovens de 12 a 25 anos + comunidade local  
-- **Objetivo**: Promover hábitos saudáveis, prevenção de doenças e integração comunitária por meio da corrida e caminhada.  
-- **Atividades**: Treinos coletivos, eventos mensais, palestras sobre nutrição e saúde mental.  
-- **Evento anual**: *“Corrida da Inclusão”* – aberta a todos os moradores de Pompéia
+- **Público-alvo**: Pessoas de todas as idades  
+- **Objetivo**: Promover hábitos saudáveis, prevenção de doenças e integração comunitária por meio de corridas e caminhadas.  
+- **Atividades**: Treinos coletivos semanais, eventos de promoção de hábitos saudáveis e bem-estar, palestras sobre nutrição e saúde mental.  
+- **Eventos mensaisl**: *“Corrida da Inclusão”* – aberta a todos os moradores de Pompéia e região
 
 ---
 
@@ -53,8 +53,8 @@ Você pode fazer parte dessa transformação!
 
 Mantenha-se informado sobre nossas atividades:
 
-- **Treinos regulares**: Segundas, quartas e sextas-feiras  
-- **Campeonatos locais**: A cada bimestre  
+- **Treinos semanaiais**:  Domingos /Feriados
+- **Caompetições locais próprias eparticipações de eventos orgazidos por terceiros  
 - **Corrida da Inclusão**: Novembro (evento anual)  
 - **Oficinas temáticas**: Saúde, direitos humanos, carreira no esporte
 
@@ -71,7 +71,6 @@ Estamos à disposição para parcerias, dúvidas ou informações:
 - **Endereço**: Rua Orlando Benedini, nº 96 – Bairro Conjunto Habitacional Octávio Cavalcanti Lacombe  
   CEP 17.584-456 – Pompéia / SP
 
-📍 [Ver no Google Maps](https://maps.google.com)
 
 ---
 
@@ -88,4 +87,4 @@ Estamos à disposição para parcerias, dúvidas ou informações:
 
 ---
 
-> ✨ **Juntos, construímos um futuro mais justo, saudável e cheio de oportunidades.**
+> ✨ **Juntos, construímos um futuro mais justo, saudável e cheio de oportunidades**
