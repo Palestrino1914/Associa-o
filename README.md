@@ -9,7 +9,7 @@
 
 A **Associação Esportiva Educação e Saúde de Pompéia** é uma entidade civil sem fins lucrativos, fundada em **30 de outubro de 2025**, com sede em Pompéia (SP). Atuamos no desenvolvimento integral de crianças, adolescentes e jovens por meio de **projetos esportivos educacionais**, promovendo saúde, inclusão social, disciplina e valores éticos.
 
-Nosso trabalho é pautado pela **Lei Pelé (Lei nº 9.615/1998)** e pela **Lei de Incentivo ao Esporte (Lei nº 11.438/2006)**, com total transparência na gestão de recursos e prestação de contas.
+Nosso trabalho é pautado pela total transparência na gestão de recursos e prestação de contas.
 
 > **Missão**: Oferecer um ambiente seguro e acolhedor onde o esporte seja ferramenta de transformação social.  
 > **Visão**: Ser referência regional em projetos esportivos com impacto comunitário.  
