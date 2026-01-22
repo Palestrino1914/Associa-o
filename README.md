@@ -1,6 +1,6 @@
 # Associação Esportiva Educação e Saúde de Pompéia
 
-![Logo da Associação](https://via.placeholder.com/400x100/00563F/FFFFFF?text=Associação+Esportiva+Educação+e+Saúde+de+Pompéia)  
+![Logo da Associação](https://via.placeholder.com/600x150/004d26/FFFFFF?text=Associação+Esportiva+Educação+e+Saúde+de+Pompéia)  
 *Transformando vidas por meio do esporte, da educação e da cidadania*
 
 ---
@@ -9,7 +9,7 @@
 
 A **Associação Esportiva Educação e Saúde de Pompéia** é uma entidade civil sem fins lucrativos, fundada em **30 de outubro de 2025**, com sede em Pompéia (SP). Atuamos no desenvolvimento integral de crianças, adolescentes e jovens por meio de **projetos esportivos educacionais**, promovendo saúde, inclusão social, disciplina e valores éticos.
 
-Nosso trabalho é pautado pela total transparência na gestão de recursos e prestação de contas.
+Nosso trabalho é pautado pela **Lei Pelé (Lei nº 9.615/1998)**, pela **Lei de Incentivo ao Esporte (Lei nº 11.438/2006)** e pela **total transparência na gestão de recursos e prestação de contas**.
 
 > **Missão**: Oferecer um ambiente seguro e acolhedor onde o esporte seja ferramenta de transformação social.  
 > **Visão**: Ser referência regional em projetos esportivos com impacto comunitário.  
@@ -21,7 +21,7 @@ Nosso trabalho é pautado pela total transparência na gestão de recursos e pre
 
 ### 1. **Futebol Educativo**
 - **Público-alvo**: Crianças e adolescentes de 4 a 16 anos  
-- **Objetivo**: Desenvolver habilidades técnicas, táticas e sociais por meio do futebol, com foco em fair play, trabalho em equipe e liderança.  
+- **Objetivo**: Desenvolver habilidades técnicas, táticas e sociais por meio do futebol, com foco em *fair play*, trabalho em equipe e liderança.  
 - **Atividades**: Treinos semanais, campeonatos locais, oficinas de cidadania e acompanhamento pedagógico.  
 - **Local**: Quadras e campos de Pompéia (SP)
 
@@ -29,7 +29,7 @@ Nosso trabalho é pautado pela total transparência na gestão de recursos e pre
 - **Público-alvo**: Pessoas de todas as idades  
 - **Objetivo**: Promover hábitos saudáveis, prevenção de doenças e integração comunitária por meio de corridas e caminhadas.  
 - **Atividades**: Treinos coletivos semanais, eventos de promoção de hábitos saudáveis e bem-estar, palestras sobre nutrição e saúde mental.  
-- **Eventos mensaisl**: *“Corrida da Inclusão”* – aberta a todos os moradores de Pompéia e região
+- **Evento anual**: *“Corrida da Inclusão”* – aberta a todos os moradores de Pompéia e região
 
 ---
 
@@ -53,8 +53,8 @@ Você pode fazer parte dessa transformação!
 
 Mantenha-se informado sobre nossas atividades:
 
-- **Treinos semanaiais**:  Domingos /Feriados
-- **Caompetições locais próprias eparticipações de eventos orgazidos por terceiros  
+- **Treinos semanais**: Domingos e feriados  
+- **Competições locais**: Próprias e participações em eventos organizados por terceiros  
 - **Corrida da Inclusão**: Novembro (evento anual)  
 - **Oficinas temáticas**: Saúde, direitos humanos, carreira no esporte
 
@@ -67,18 +67,18 @@ Siga-nos nas redes sociais para não perder nenhum evento!
 Estamos à disposição para parcerias, dúvidas ou informações:
 
 - **E-mail**: [contato@associacaoesportivapompeia.org.br](mailto:contato@associacaoesportivapompeia.org.br)  
-- **Telefone**: (14) 98186-9683  
-- **Endereço**: Rua Orlando Benedini, nº 96 – Bairro Conjunto Habitacional Octávio Cavalcanti Lacombe  
+- **Telefone**: [(14) 98186-9683](tel:+5514981869683)  
+- **Endereço**:  
+  Rua Orlando Benedini, nº 96 – Bairro Conjunto Habitacional Octávio Cavalcanti Lacombe  
   CEP 17.584-456 – Pompéia / SP
-
 
 ---
 
 ## 🎨 Identidade Visual
 
 - **Cores principais**:  
-  - Verde institucional: `#00563F`  
-  - Verde claro (destaque): `#006400`  
+  - Verde institucional (escuro): `#004d26`  
+  - Verde destaque (médio-escuro): `#00563F`  
   - Fundo: `#FFFFFF` (branco)  
 - **Fontes recomendadas**:  
   - Títulos: **Montserrat** (negrito, tamanho 24–32px)  
@@ -87,4 +87,4 @@ Estamos à disposição para parcerias, dúvidas ou informações:
 
 ---
 
-> ✨ **Juntos, construímos um futuro mais justo, saudável e cheio de oportunidades**
+> ✨ **Juntos, construímos um futuro mais justo, saudável e cheio de oportunidades.**
