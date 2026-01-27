@@ -3,249 +3,89 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Associação Esportiva Educação e Saúde de Pompéia</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --green-primary: #00563F;
-      --green-dark: #003d2c;
-      --green-light: #006400;
-      --white: #FFFFFF;
-      --light-gray: #F8F9FA;
-      --text: #333333;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Open Sans', sans-serif;
-      color: var(--text);
-      line-height: 1.6;
-      background-color: var(--white);
-    }
-
-    h1, h2, h3, h4 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      color: var(--green-primary);
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem 0;
-    }
-
-    /* Header */
-    header {
-      background-color: var(--green-primary);
-      color: var(--white);
-      padding: 1.5rem 0;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 1.8rem;
-      color: var(--white);
-    }
-
-    header p {
-      font-style: italic;
-      margin-top: 0.5rem;
-    }
-
-    /* Sections */
-    section {
-      padding: 3rem 0;
-    }
-
-    section:nth-child(even) {
-      background-color: var(--light-gray);
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 2.5rem;
-      font-size: 2rem;
-      position: relative;
-    }
-
-    .section-title::after {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 4px;
-      background: var(--green-light);
-      margin: 0.5rem auto;
-    }
-
-    /* Projects */
-    .projects {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
-    }
-
-    .project-card {
-      background: var(--white);
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 1.5rem;
-      width: 100%;
-      max-width: 500px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    /* Buttons */
-    .btn {
-      display: inline-block;
-      background-color: var(--green-primary);
-      color: var(--white);
-      padding: 0.75rem 1.5rem;
-      text-decoration: none;
-      border-radius: 4px;
-      font-weight: 600;
-      transition: background 0.3s;
-      margin-top: 1rem;
-    }
-
-    .btn:hover {
-      background-color: var(--green-dark);
-    }
-
-    /* Contact */
-    .contact-list {
-      list-style: none;
-    }
-
-    .contact-list li {
-      margin-bottom: 0.75rem;
-    }
-
-    .contact-list a {
-      color: var(--green-primary);
-      text-decoration: none;
-    }
-
-    .contact-list a:hover {
-      text-decoration: underline;
-    }
-
-    /* Footer */
-    footer {
-      background-color: var(--green-primary);
-      color: var(--white);
-      text-align: center;
-      padding: 2rem 0;
-      margin-top: 3rem;
-    }
-
-    footer p {
-      margin: 0.5rem 0;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      h1 { font-size: 1.5rem; }
-      .section-title { font-size: 1.6rem; }
-      .container { width: 95%; }
-    }
-  </style>
+  <title>Associação Esportiva Educação e Saúde de Pompeia</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
   <header>
-    <div class="container">
-      <h1>Associação Esportiva Educação e Saúde de Pompéia</h1>
-      <p>Transformando vidas por meio do esporte, da educação e da cidadania</p>
-    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="quem-somos.html">QUEM SOMOS</a></li>
+        <li><a href="historia.html">NOSSA HISTÓRIA</a></li>
+        <li><a href="projetos.html">PROJETOS</a></li>
+        <li><a href="eventos.html">EVENTOS</a></li>
+        <li><a href="envolva-se.html">ENVOLVA-SE</a></li>
+        <li><a href="contato.html">CONTATO</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main class="container">
-    <section id="quem-somos">
-      <h2 class="section-title">Quem somos</h2>
-      <p>A <strong>Associação Esportiva Educação e Saúde de Pompéia</strong> é uma entidade civil sem fins lucrativos, fundada em <strong>30 de outubro de 2025</strong>, com sede em Pompéia (SP). Atuamos no desenvolvimento integral de crianças, adolescentes e jovens por meio de <strong>projetos esportivos educacionais</strong>, promovendo saúde, inclusão social, disciplina e valores éticos.</p>
-      <p>Nosso trabalho é pautado pela <strong>Lei Pelé (Lei nº 9.615/1998)</strong> e pela <strong>Lei de Incentivo ao Esporte (Lei nº 11.438/2006)</strong>, com total transparência na gestão de recursos e prestação de contas.</p>
-      
-      <blockquote style="margin: 1.5rem 0; padding-left: 1rem; border-left: 4px solid var(--green-light); font-style: italic;">
-        <p><strong>Missão</strong>: Oferecer um ambiente seguro e acolhedor onde o esporte seja ferramenta de transformação social.<br>
-        <strong>Visão</strong>: Ser referência regional em projetos esportivos com impacto comunitário.<br>
-        <strong>Valores</strong>: Ética, inclusão, respeito, cooperação e responsabilidade social.</p>
-      </blockquote>
-    </section>
+  <main>
+    <div class="page-header">
+      <h1>Associação Esportiva Educação e Saúde de Pompeia</h1>
+      <p>Transformando vidas por meio do esporte, da educação e da cidadania</p>
+    </div>
 
-    <section id="projetos">
-      <h2 class="section-title">Projetos</h2>
-      <div class="projects">
-        <div class="project-card">
-          <h3>⚽ Futebol Educativo</h3>
-          <p><strong>Público-alvo:</strong> Crianças e adolescentes de 7 a 17 anos</p>
-          <p><strong>Objetivo:</strong> Desenvolver habilidades técnicas, táticas e sociais por meio do futebol, com foco em fair play, trabalho em equipe e liderança.</p>
-          <p><strong>Atividades:</strong> Treinos semanais, campeonatos locais, oficinas de cidadania e acompanhamento pedagógico.</p>
-          <p><strong>Local:</strong> Quadras e campos de Pompéia (SP)</p>
-        </div>
-
-        <div class="project-card">
-          <h3>🏃‍♂️ Corrida de Rua – Caminhos da Saúde</h3>
-          <p><strong>Público-alvo:</strong> Jovens de 12 a 25 anos + comunidade local</p>
-          <p><strong>Objetivo:</strong> Promover hábitos saudáveis, prevenção de doenças e integração comunitária por meio da corrida e caminhada.</p>
-          <p><strong>Atividades:</strong> Treinos coletivos, eventos mensais, palestras sobre nutrição e saúde mental.</p>
-          <p><strong>Evento anual:</strong> “Corrida da Inclusão” – aberta a todos os moradores de Pompéia</p>
-        </div>
+    <div class="home-cards">
+      <!-- Quem Somos -->
+      <div class="card">
+        <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+        <h3>Quem Somos</h3>
+        <p>Conheça nossa missão, visão e valores como entidade sem fins lucrativos.</p>
+        <a href="quem-somos.html">Saiba mais</a>
       </div>
-    </section>
 
-    <section id="como-ajudar">
-      <h2 class="section-title">Como ajudar</h2>
-      <p>Você pode fazer parte dessa transformação!</p>
-      <ul style="margin: 1.5rem 0 1rem 2rem;">
-        <li><strong>Doações únicas ou mensais</strong> (pessoa física ou jurídica)</li>
-        <li><strong>Patrocínio de projetos</strong> via Lei de Incentivo ao Esporte</li>
-        <li><strong>Voluntariado</strong> (treinadores, educadores, apoio administrativo)</li>
-        <li><strong>Divulgação</strong> nas redes sociais e entre parceiros</li>
-      </ul>
-      <p><em>Todas as doações são dedutíveis conforme a legislação vigente. Após a obtenção do CNPJ, todas as contribuições terão recibo fiscal válido.</em></p>
-      <a href="#contato" class="btn">Quero fazer uma doação</a>
-    </section>
+      <!-- História -->
+      <div class="card">
+        <svg viewBox="0 0 24 24"><path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9z"/></svg>
+        <h3>Nossa História</h3>
+        <p>Mais de 15 anos transformando vidas em Pompeia por meio do esporte.</p>
+        <a href="historia.html">Conheça</a>
+      </div>
 
-    <section id="eventos">
-      <h2 class="section-title">Eventos</h2>
-      <p>Mantenha-se informado sobre nossas atividades:</p>
-      <ul style="margin: 1.5rem 0 1rem 2rem;">
-        <li><strong>Treinos regulares:</strong> Segundas, quartas e sextas-feiras</li>
-        <li><strong>Campeonatos locais:</strong> A cada bimestre</li>
-        <li><strong>Corrida da Inclusão:</strong> Novembro (evento anual)</li>
-        <li><strong>Oficinas temáticas:</strong> Saúde, direitos humanos, carreira no esporte</li>
-      </ul>
-      <p>Siga-nos nas redes sociais para não perder nenhum evento!</p>
-    </section>
+      <!-- Projetos -->
+      <div class="card">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        <h3>Projetos</h3>
+        <p>Futebol Educativo, Corrida de Rua e muito mais para toda a comunidade.</p>
+        <a href="projetos.html">Veja todos</a>
+      </div>
 
-    <section id="contato">
-      <h2 class="section-title">Contato</h2>
-      <ul class="contact-list">
-        <li>📧 <a href="mailto:contato@associacaoesportivapompeia.org.br">contato@associacaoesportivapompeia.org.br</a></li>
-        <li>📱 <a href="tel:+5514981869683">(14) 98186-9683</a></li>
-        <li>📍 Rua Orlando Benedini, nº 96 – Bairro Conjunto Habitacional Octávio Cavalcanti Lacombe<br>
-            CEP 17.584-456 – Pompéia / SP</li>
-      </ul>
-      <p><a href="https://maps.google.com" target="_blank" class="btn">Ver no Google Maps</a></p>
-    </section>
+      <!-- Eventos -->
+      <div class="card">
+        <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+        <h3>Eventos</h3>
+        <p>Treinos semanais, corridas aos domingos e campeonatos locais.</p>
+        <a href="eventos.html">Confira</a>
+      </div>
+
+      <!-- Envolva-se -->
+      <div class="card">
+        <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        <h3>Envolve-se</h3>
+        <p>Apoie com doações, patrocínios ou voluntariado. Todo apoio conta!</p>
+        <a href="envolva-se.html">Participe</a>
+      </div>
+
+      <!-- Contato -->
+      <div class="card">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        <h3>Contato</h3>
+        <p>Fale conosco, tire dúvidas ou proponha parcerias.</p>
+        <a href="contato.html">Entre em contato</a>
+      </div>
+    </div>
   </main>
 
   <footer>
-    <div class="container">
-      <p>Associação Esportiva Educação e Saúde de Pompéia</p>
-      <p>Entidade sem fins lucrativos • Fundada em 30/10/2025</p>
-      <p>✨ Juntos, construímos um futuro mais justo, saudável e cheio de oportunidades.</p>
-    </div>
+    <p>Associação Esportiva Educação e Saúde de Pompeia<br>
+    CNPJ: 64.661.923/0001-77 | Entidade sem fins lucrativos</p>
+    <p>© 2026 – Todos os direitos reservados</p>
   </footer>
 
+  <!-- Adicione esta linha -->
+  <script src="js/main.js"></script>
 </body>
 </html>
