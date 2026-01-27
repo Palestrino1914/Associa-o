@@ -1,90 +1,90 @@
-# Associação Esportiva Educação e Saúde de Pompéia
+# 🌿 Associação Esportiva Educação e Saúde de Pompeia
 
 ![Logo da Associação](https://via.placeholder.com/600x150/004d26/FFFFFF?text=Associação+Esportiva+Educação+e+Saúde+de+Pompéia)  
 *Transformando vidas por meio do esporte, da educação e da cidadania*
 
 ---
 
-## 🌿 Quem somos
+## 📌 Sobre este repositório
 
-A **Associação Esportiva Educação e Saúde de Pompéia** é uma entidade civil sem fins lucrativos, fundada em **30 de outubro de 2025**, com sede em Pompéia (SP). Atuamos no desenvolvimento integral de crianças, adolescentes e jovens por meio de **projetos esportivos educacionais**, promovendo saúde, inclusão social, disciplina e valores éticos.
+Este repositório contém o **site oficial** da **Associação Esportiva Educação e Saúde de Pompeia**, uma entidade civil sem fins lucrativos fundada em 30 de outubro de 2025, com sede em Pompéia (SP).
 
-Nosso trabalho é pautado pela **Lei Pelé (Lei nº 9.615/1998)**, pela **Lei de Incentivo ao Esporte (Lei nº 11.438/2006)** e pela **total transparência na gestão de recursos e prestação de contas**.
-
-> **Missão**: Oferecer um ambiente seguro e acolhedor onde o esporte seja ferramenta de transformação social.  
-> **Visão**: Ser referência regional em projetos esportivos com impacto comunitário.  
-> **Valores**: Ética, inclusão, respeito, cooperação e responsabilidade social.
+O site é **estático, responsivo e acessível**, desenvolvido com HTML5, CSS3 e JavaScript puro — sem frameworks pesados, bancos de dados ou backend. É ideal para hospedagem gratuita no **GitHub Pages**.
 
 ---
 
-## ⚽🏃‍♂️ Projetos
+## 🧩 Estrutura do projeto
 
-### 1. **Futebol Educativo**
-- **Público-alvo**: Crianças e adolescentes de 4 a 16 anos  
-- **Objetivo**: Desenvolver habilidades técnicas, táticas e sociais por meio do futebol, com foco em *fair play*, trabalho em equipe e liderança.  
-- **Atividades**: Treinos semanais, campeonatos locais, oficinas de cidadania e acompanhamento pedagógico.  
-- **Local**: Quadras e campos de Pompéia (SP)
+├── index.html # Página inicial (Home)
+├── quem-somos.html # Missão, visão, valores e equipe
+├── historia.html # Trajetória do projeto TB Pompeia
+├── projetos.html # Futebol Educativo e Corrida de Rua
+├── eventos.html # Atividades regulares (treinos, corridas)
+├── envolva-se.html # Formas de apoio: doações, patrocínio, voluntariado
+├── contato.html # E-mail, WhatsApp, redes sociais e endereço
+├── css/
+│ └── style.css # Estilização completa com variáveis CSS
+└── js/
+└── main.js # Comportamento: destaque do menu ativo
 
-### 2. **Corrida de Rua – Caminhos da Saúde**
-- **Público-alvo**: Pessoas de todas as idades  
-- **Objetivo**: Promover hábitos saudáveis, prevenção de doenças e integração comunitária por meio de corridas e caminhadas.  
-- **Atividades**: Treinos coletivos semanais, eventos de promoção de hábitos saudáveis e bem-estar, palestras sobre nutrição e saúde mental.  
-- **Evento anual**: *“Corrida da Inclusão”* – aberta a todos os moradores de Pompéia e região
 
----
-
-## 💚 Como ajudar
-
-Você pode fazer parte dessa transformação!
-
-- **Doações únicas ou mensais** (pessoa física ou jurídica)  
-- **Patrocínio de projetos** via Lei de Incentivo ao Esporte  
-- **Voluntariado** (treinadores, educadores, apoio administrativo)  
-- **Divulgação** nas redes sociais e entre parceiros
-
-> Todas as doações são dedutíveis conforme a legislação vigente.  
-> Após a obtenção do CNPJ, todas as contribuições terão recibo fiscal válido.
-
-[**Quero fazer uma doação**](#contato)
 
 ---
 
-## 📅 Eventos
+## 🎨 Design e identidade
 
-Mantenha-se informado sobre nossas atividades:
+- **Cores institucionais**:  
+  - Verde escuro: `#004d26`  
+  - Verde médio: `#00563F`
+- **Tipografia**:  
+  - Títulos: **Montserrat** (via Google Fonts)  
+  - Corpo: **Segoe UI / Open Sans** (fallback seguro)
+- **Ícones**: SVG inline (sem dependências externas)
+- **Acessibilidade**: contraste adequado, semântica clara, navegação intuitiva
 
-- **Treinos semanais**: Domingos e feriados  
-- **Competições locais**: Próprias e participações em eventos organizados por terceiros  
-- **Corrida da Inclusão**: Novembro (evento anual)  
-- **Oficinas temáticas**: Saúde, direitos humanos, carreira no esporte
+---
 
-Siga-nos nas redes sociais para não perder nenhum evento!
+## ✨ Funcionalidades
+
+- ✅ **Navegação modular**: cada seção é uma página independente
+- ✅ **Menu com destaque automático** da página atual
+- ✅ **Design responsivo**: funciona perfeitamente em mobile, tablet e desktop
+- ✅ **Carregamento rápido**: zero dependências externas (além do Google Fonts)
+- ✅ **Pronto para GitHub Pages**: basta enviar os arquivos para um repositório `usuario.github.io`
+
+---
+
+## 🚀 Como publicar
+
+1. Crie um repositório no GitHub com o nome: **`seu-usuario.github.io`**
+2. Envie todos os arquivos deste projeto para a branch `main`
+3. Acesse: **https://seu-usuario.github.io**
+
+> 💡 Dica: não crie subpastas — os arquivos `.html` devem estar na **raiz** do repositório.
+
+---
+
+## 🤝 Apoie nosso projeto
+
+Você pode contribuir de várias formas:
+- **Doações** (pessoa física ou jurídica)
+- **Patrocínio** via Lei de Incentivo ao Esporte
+- **Voluntariado** (treinadores, educadores, apoio administrativo)
+- **Divulgação** nas redes sociais
+
+Todas as contribuições terão **recibo fiscal válido**.  
+**CNPJ**: 64.661.923/0001-77
 
 ---
 
 ## 📞 Contato
 
-Estamos à disposição para parcerias, dúvidas ou informações:
-
 - **E-mail**: [contato@associacaoesportivapompeia.org.br](mailto:contato@associacaoesportivapompeia.org.br)  
-- **Telefone**: [(14) 98186-9683](tel:+5514981869683)  
-- **Endereço**:  
-  Rua Orlando Benedini, nº 96 – Bairro Conjunto Habitacional Octávio Cavalcanti Lacombe  
-  CEP 17.584-456 – Pompéia / SP
+- **WhatsApp**: [(14) 98186-9683](https://wa.me/5514981869683)  
+- **Endereço**: Rua Orlando Benedini, nº 96 – CEP 17.584-456 – Pompéia / SP  
+- **Redes sociais**: [@tb_pompeia](https://instagram.com/tb_pompeia)
 
 ---
 
-## 🎨 Identidade Visual
-
-- **Cores principais**:  
-  - Verde institucional (escuro): `#004d26`  
-  - Verde destaque (médio-escuro): `#00563F`  
-  - Fundo: `#FFFFFF` (branco)  
-- **Fontes recomendadas**:  
-  - Títulos: **Montserrat** (negrito, tamanho 24–32px)  
-  - Corpo do texto: **Open Sans** (regular, tamanho 16–18px)  
-- **Acessibilidade**: Contraste adequado (razão > 4.5:1), linguagem clara e inclusiva
-
----
-
-> ✨ **Juntos, construímos um futuro mais justo, saudável e cheio de oportunidades.**
+> ✨ **Juntos, construímos um futuro mais justo, saudável e cheio de oportunidades.**  
+> © 2026 – Associação Esportiva Educação e Saúde de Pompeia
