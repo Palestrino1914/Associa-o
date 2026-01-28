@@ -1,100 +1,393 @@
-Perfeito! Vamos organizar por partes:
+/* ========================================
+   RESET E CONFIGURAÇÕES BÁSICAS
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
----
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
 
-## 📁 Arquivos que Precisam Ser Modificados
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
-### **Parte 1: CSS (Layout e Estilo)**
+/* ========================================
+   HEADER E NAVEGAÇÃO
+   ======================================== */
+header {
+    background: linear-gradient(135deg, #004d26 0%, #00563F 100%);
+    color: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
 
-| Arquivo | O que modificar |
-|---------|-----------------|
-| **`css/style.css`** | ✅ Mudar grid de 3 para 2 colunas<br>✅ Adicionar estilos do banner slider<br>✅ Ajustar responsividade |
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+}
 
----
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s;
+    display: block;
+}
 
-### **Parte 2: HTML (Estrutura)**
+header nav ul li a:hover,
+header nav ul li a.active {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
 
-| Arquivo | O que modificar |
-|---------|-----------------|
-| **`index.html`** | ✅ Inserir o banner dinâmico após a seção "Associação"<br>✅ Manter as 6 seções em 2 colunas |
-| **`historia.html`** | ⚠️ Se usar o mesmo layout de cards, ajustar para 2 colunas |
-| **`projetos.html`** | ⚠️ Se usar o mesmo layout de cards, ajustar para 2 colunas |
-| **`eventos.html`** | ⚠️ Se usar o mesmo layout de cards, ajustar para 2 colunas |
+/* ========================================
+   PAGE HEADER (Título principal)
+   ======================================== */
+.page-header {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #004d26 0%, #00563F 100%);
+    color: white;
+    margin-bottom: 30px;
+}
 
----
+.page-header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
 
-### **Parte 3: JavaScript (Funcionalidade)**
+.page-header p {
+    font-size: 1.4rem;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.95;
+}
 
-| Arquivo | O que modificar |
-|---------|-----------------|
-| **`js/main.js`** | ✅ Inicializar o Swiper.js<br>✅ Configurar autoplay e navegação |
-| **`index.html`** | ✅ Adicionar links do Swiper.js (CSS + JS) |
+/* ========================================
+   BANNER SLIDER - SWIPER.JS (TODOS TONS DE VERDE)
+   ======================================== */
+.banner-slider {
+    width: 100%;
+    height: 450px;
+    position: relative;
+    overflow: hidden;
+    margin: 30px 0;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
 
----
+.swiper {
+    width: 100%;
+    height: 100%;
+}
 
-## 🖼️ Imagens Necessárias para o Banner Dinâmico
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+}
 
-### **Quantidade: 3 imagens (uma para cada slide)**
+/* Slide 1: Verde Escuro para Verde Claro */
+.slide-1 {
+    background: linear-gradient(135deg, #004d26 0%, #007849 100%);
+}
 
-### **Slide 1: Eventos**
-- **Tema:** Crianças/jovens praticando esporte (futebol, atletismo, etc.)
-- **Tamanho recomendado:** 1920x600px (ou proporção 16:5)
-- **Estilo:** Imagem vibrante, com ação, cores vivas
-- **Texto sobreposta:** "Eventos e Atividades"
+/* Slide 2: Verde Médio para Verde Água */
+.slide-2 {
+    background: linear-gradient(135deg, #00563F 0%, #00a86b 100%);
+}
 
-### **Slide 2: Envolva-se**
-- **Tema:** Pessoas se ajudando, voluntariado, comunidade unida
-- **Tamanho recomendado:** 1920x600px
-- **Estilo:** Imagem calorosa, mostrando apoio e colaboração
-- **Texto sobreposta:** "Apoie nossa causa"
+/* Slide 3: Verde Oliva para Verde Floresta */
+.slide-3 {
+    background: linear-gradient(135deg, #006400 0%, #228B22 100%);
+}
 
-### **Slide 3: Contato**
-- **Tema:** Equipe da associação ou local/facilidades da entidade
-- **Tamanho recomendado:** 1920x600px
-- **Estilo:** Imagem acolhedora, mostrando o ambiente
-- **Texto sobreposta:** "Entre em contato"
+.slide-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    max-width: 900px;
+    padding: 0 20px;
+}
 
----
+.slide-content h2 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 700;
+}
 
-## 📂 Estrutura de Pastas Sugerida
+.slide-content p {
+    font-size: 1.4rem;
+    max-width: 700px;
+    margin: 0 auto;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    opacity: 0.95;
+    line-height: 1.6;
+}
 
-```
-Associa-o/
-├── css/
-│   └── style.css (modificar)
-├── js/
-│   └── main.js (modificar)
-├── img/
-│   └── banner/
-│       ├── slide1-eventos.jpg
-│       ├── slide2-envolva-se.jpg
-│       └── slide3-contato.jpg
-├── index.html (modificar)
-├── historia.html (opcional)
-├── projetos.html (opcional)
-└── eventos.html (opcional)
-```
+/* Navigation buttons */
+.swiper-button-next,
+.swiper-button-prev {
+    color: white;
+    font-size: 28px;
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    transition: all 0.3s;
+}
 
----
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background: rgba(0, 0, 0, 0.5);
+    transform: scale(1.1);
+}
 
-## 📋 Checklist de Imagens
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 24px;
+    font-weight: bold;
+}
 
-### **Obrigatórias:**
-- [ ] `slide1-eventos.jpg` - Imagem de esportes/atividades
-- [ ] `slide2-envolva-se.jpg` - Imagem de voluntariado/comunidade
-- [ ] `slide3-contato.jpg` - Imagem da equipe/local
+/* Pagination */
+.swiper-pagination {
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+}
 
-### **Opcionais (para melhorar as seções):**
-- [ ] Ícones esportivos (futebol, corrida, etc.)
-- [ ] Imagens para cada uma das 6 seções (para substituir placeholders)
+.swiper-pagination-bullet {
+    width: 14px;
+    height: 14px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    margin: 0 6px;
+    transition: all 0.3s;
+}
 
----
+.swiper-pagination-bullet-active {
+    background: white;
+    width: 24px;
+    border-radius: 12px;
+}
 
-## 🎯 Próximos Passos
+/* ========================================
+   GRID DE 2 COLUNAS PARA SEÇÕES
+   ======================================== */
+.sections-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto 60px;
+    padding: 0 20px;
+}
 
-1. **Primeiro:** Criar/modificar o CSS para 2 colunas
-2. **Depois:** Baixar/criar as 3 imagens do banner
-3. **Em seguida:** Modificar o `index.html` para incluir o banner
-4. **Finalmente:** Configurar o Swiper.js no `main.js`
+.section-card {
+    background: white;
+    border-radius: 12px;
+    padding: 35px 30px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-Quer começar pela modificação do CSS ou prefere definir as imagens primeiro? 🚀
+.section-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    border-top: 4px solid #007bff;
+}
+
+.section-card svg {
+    width: 60px;
+    height: 60px;
+    fill: #007bff;
+    margin-bottom: 25px;
+    transition: transform 0.4s;
+}
+
+.section-card:hover svg {
+    transform: scale(1.15) rotate(5deg);
+}
+
+.section-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.section-card p {
+    color: #555;
+    margin-bottom: 25px;
+    line-height: 1.7;
+    flex-grow: 1;
+}
+
+.section-card a {
+    display: inline-block;
+    background: #004d26;
+    color: white;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s;
+    letter-spacing: 0.5px;
+}
+
+.section-card a:hover {
+    background: #003a1e;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 77, 38, 0.3);
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+    margin-top: 20px;
+    font-size: 0.95rem;
+}
+
+footer p {
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+/* ========================================
+   RESPONSIVIDADE
+   ======================================== */
+@media (max-width: 768px) {
+    .page-header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .page-header p {
+        font-size: 1.2rem;
+    }
+    
+    .banner-slider {
+        height: 350px;
+    }
+    
+    .slide-content h2 {
+        font-size: 2.2rem;
+    }
+    
+    .slide-content p {
+        font-size: 1.2rem;
+    }
+    
+    .sections-grid {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+    }
+    
+    .section-card {
+        padding: 30px 25px;
+    }
+    
+    .section-card h3 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header nav ul {
+        gap: 5px;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    header nav ul li a {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+    
+    .page-header {
+        padding: 30px 15px;
+    }
+    
+    .page-header h1 {
+        font-size: 1.9rem;
+    }
+    
+    .page-header p {
+        font-size: 1.1rem;
+    }
+    
+    .banner-slider {
+        height: 300px;
+    }
+    
+    .slide-content h2 {
+        font-size: 1.9rem;
+    }
+    
+    .slide-content p {
+        font-size: 1.1rem;
+    }
+    
+    .swiper-button-next,
+    .swiper-button-prev {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+        font-size: 20px;
+    }
+    
+    .section-card svg {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .section-card h3 {
+        font-size: 1.5rem;
+    }
+    
+    .section-card p {
+        font-size: 0.95rem;
+    }
+    
+    .section-card a {
+        padding: 10px 25px;
+        font-size: 0.95rem;
+    }
+}
