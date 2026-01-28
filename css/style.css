@@ -1,180 +1,100 @@
-/* style.css */
-:root {
-  --verde-escuro: #004d26;
-  --verde-medio: #00563F;
-  --branco: #ffffff;
-  --cinza-claro: #f8f9fa;
-  --cinza-texto: #495057;
-  --sombra: 0 4px 12px rgba(0,0,0,0.08);
-}
+Perfeito! Vamos organizar por partes:
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+---
 
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  color: var(--cinza-texto);
-  background-color: var(--branco);
-}
+## 📁 Arquivos que Precisam Ser Modificados
 
-header {
-  background-color: var(--verde-escuro);
-  color: var(--branco);
-  padding: 1rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
+### **Parte 1: CSS (Layout e Estilo)**
 
-nav ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.2rem;
-}
+| Arquivo | O que modificar |
+|---------|-----------------|
+| **`css/style.css`** | ✅ Mudar grid de 3 para 2 colunas<br>✅ Adicionar estilos do banner slider<br>✅ Ajustar responsividade |
 
-nav a {
-  color: var(--branco);
-  text-decoration: none;
-  font-weight: 600;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  transition: background 0.2s;
-}
+---
 
-nav a:hover,
-nav a.active {
-  background-color: rgba(255,255,255,0.2);
-}
+### **Parte 2: HTML (Estrutura)**
 
-main {
-  min-height: calc(100vh - 180px);
-  padding: 2rem 1.5rem;
-}
+| Arquivo | O que modificar |
+|---------|-----------------|
+| **`index.html`** | ✅ Inserir o banner dinâmico após a seção "Associação"<br>✅ Manter as 6 seções em 2 colunas |
+| **`historia.html`** | ⚠️ Se usar o mesmo layout de cards, ajustar para 2 colunas |
+| **`projetos.html`** | ⚠️ Se usar o mesmo layout de cards, ajustar para 2 colunas |
+| **`eventos.html`** | ⚠️ Se usar o mesmo layout de cards, ajustar para 2 colunas |
 
-.home-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.8rem;
-  max-width: 1200px;
-  margin: 2rem auto;
-}
+---
 
-.card {
-  background: var(--cinza-claro);
-  border-radius: 12px;
-  padding: 1.8rem;
-  text-align: center;
-  box-shadow: var(--sombra);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
+### **Parte 3: JavaScript (Funcionalidade)**
 
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-}
+| Arquivo | O que modificar |
+|---------|-----------------|
+| **`js/main.js`** | ✅ Inicializar o Swiper.js<br>✅ Configurar autoplay e navegação |
+| **`index.html`** | ✅ Adicionar links do Swiper.js (CSS + JS) |
 
-.card svg {
-  width: 60px;
-  height: 60px;
-  fill: var(--verde-medio);
-  margin-bottom: 1rem;
-}
+---
 
-.card h3 {
-  color: var(--verde-escuro);
-  margin-bottom: 0.8rem;
-  font-size: 1.3rem;
-}
+## 🖼️ Imagens Necessárias para o Banner Dinâmico
 
-.card a {
-  display: inline-block;
-  background-color: var(--verde-medio);
-  color: white;
-  padding: 0.5rem 1.2rem;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-  margin-top: 1rem;
-  transition: background 0.2s;
-}
+### **Quantidade: 3 imagens (uma para cada slide)**
 
-.card a:hover {
-  background-color: var(--verde-escuro);
-}
+### **Slide 1: Eventos**
+- **Tema:** Crianças/jovens praticando esporte (futebol, atletismo, etc.)
+- **Tamanho recomendado:** 1920x600px (ou proporção 16:5)
+- **Estilo:** Imagem vibrante, com ação, cores vivas
+- **Texto sobreposta:** "Eventos e Atividades"
 
-.page-header {
-  text-align: center;
-  margin-bottom: 2rem;
-}
+### **Slide 2: Envolva-se**
+- **Tema:** Pessoas se ajudando, voluntariado, comunidade unida
+- **Tamanho recomendado:** 1920x600px
+- **Estilo:** Imagem calorosa, mostrando apoio e colaboração
+- **Texto sobreposta:** "Apoie nossa causa"
 
-.page-header h1 {
-  color: var(--verde-escuro);
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
+### **Slide 3: Contato**
+- **Tema:** Equipe da associação ou local/facilidades da entidade
+- **Tamanho recomendado:** 1920x600px
+- **Estilo:** Imagem acolhedora, mostrando o ambiente
+- **Texto sobreposta:** "Entre em contato"
 
-.content {
-  max-width: 800px;
-  margin: 0 auto;
-  font-size: 1.05rem;
-}
+---
 
-.content h2 {
-  color: var(--verde-escuro);
-  margin: 1.5rem 0 1rem;
-  font-size: 1.5rem;
-}
+## 📂 Estrutura de Pastas Sugerida
 
-.content h3 {
-  margin: 1.2rem 0 0.7rem;
-  color: var(--verde-medio);
-  font-size: 1.25rem;
-}
+```
+Associa-o/
+├── css/
+│   └── style.css (modificar)
+├── js/
+│   └── main.js (modificar)
+├── img/
+│   └── banner/
+│       ├── slide1-eventos.jpg
+│       ├── slide2-envolva-se.jpg
+│       └── slide3-contato.jpg
+├── index.html (modificar)
+├── historia.html (opcional)
+├── projetos.html (opcional)
+└── eventos.html (opcional)
+```
 
-.content ul, .content p {
-  margin-bottom: 1rem;
-}
+---
 
-.content a {
-  color: var(--verde-medio);
-  font-weight: 600;
-  text-decoration: underline;
-}
+## 📋 Checklist de Imagens
 
-.content a:hover {
-  color: var(--verde-escuro);
-}
+### **Obrigatórias:**
+- [ ] `slide1-eventos.jpg` - Imagem de esportes/atividades
+- [ ] `slide2-envolva-se.jpg` - Imagem de voluntariado/comunidade
+- [ ] `slide3-contato.jpg` - Imagem da equipe/local
 
-footer {
-  background-color: var(--verde-escuro);
-  color: var(--branco);
-  text-align: center;
-  padding: 1.5rem;
-  margin-top: 3rem;
-}
+### **Opcionais (para melhorar as seções):**
+- [ ] Ícones esportivos (futebol, corrida, etc.)
+- [ ] Imagens para cada uma das 6 seções (para substituir placeholders)
 
-@media (max-width: 768px) {
-  header {
-    padding: 1rem;
-  }
+---
 
-  nav ul {
-    gap: 0.8rem;
-    flex-direction: column;
-    align-items: center;
-  }
+## 🎯 Próximos Passos
 
-  .home-cards {
-    grid-template-columns: 1fr;
-  }
+1. **Primeiro:** Criar/modificar o CSS para 2 colunas
+2. **Depois:** Baixar/criar as 3 imagens do banner
+3. **Em seguida:** Modificar o `index.html` para incluir o banner
+4. **Finalmente:** Configurar o Swiper.js no `main.js`
 
-  main {
-    padding: 1.5rem 1rem;
-  }
-}
+Quer começar pela modificação do CSS ou prefere definir as imagens primeiro? 🚀
