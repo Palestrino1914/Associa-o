@@ -16,7 +16,7 @@ O site é **estático, responsivo e acessível**, desenvolvido com HTML5, CSS3 e
 ## 🧩 Estrutura do projeto
 
 .
-├── index.html # Página inicial (Home)
+├── index.html # Página inicial (Home) com banner slider
 ├── quem-somos.html # Missão, visão, valores e equipe
 ├── historia.html # Trajetória do projeto TB Pompeia
 ├── projetos.html # Futebol Educativo e Corrida de Rua
@@ -25,32 +25,80 @@ O site é **estático, responsivo e acessível**, desenvolvido com HTML5, CSS3 e
 ├── contato.html # E-mail, WhatsApp, redes sociais e endereço
 ├── css/
 │ └── style.css # Estilização completa com variáveis CSS
-└── js/
-└── main.js # Comportamento: destaque do menu ativo
+├── js/
+│ └── main.js # Comportamento: menu ativo, banner slider e animações
+└── img/
+└── banner/
+├── slide1-eventos.jpg
+├── slide2-envolva-se.jpg
+└── slide3-contato.jpg
 
 
 ---
 
 ## 🎨 Design e identidade
 
-- **Cores institucionais**:  
-  - Verde escuro: `#004d26`  
-  - Verde médio: `#00563F`
-- **Tipografia**:  
-  - Títulos: **Montserrat** (via Google Fonts)  
-  - Corpo: **Segoe UI / Open Sans** (fallback seguro)
-- **Ícones**: SVG inline (sem dependências externas)
-- **Acessibilidade**: contraste adequado, semântica clara, navegação intuitiva
+### **Cores institucionais**
+- Verde escuro: `#004d26`  
+- Verde médio: `#00563F`
+- Azul destaque: `#007bff`
+- Roxo gradiente: `#667eea` → `#764ba2`
+
+### **Tipografia**
+- Títulos: **Montserrat** (via Google Fonts)  
+- Corpo: **Segoe UI / Open Sans** (fallback seguro)
+
+### **Layout**
+- **Grid de 2 colunas**: Design moderno e responsivo
+- **Banner slider**: Destaque visual com Swiper.js
+- **Cards interativos**: Hover effects e animações suaves
+
+### **Ícones**
+- SVG inline (sem dependências externas)
+
+### **Acessibilidade**
+- Contraste adequado
+- Semântica clara
+- Navegação por teclado
+- Suporte a leitores de tela
 
 ---
 
 ## ✨ Funcionalidades
 
-- ✅ **Navegação modular**: cada seção é uma página independente
+### **Navegação**
 - ✅ **Menu com destaque automático** da página atual
-- ✅ **Design responsivo**: funciona perfeitamente em mobile, tablet e desktop
-- ✅ **Carregamento rápido**: zero dependências externas (além do Google Fonts)
+- ✅ **Navegação modular**: cada seção é uma página independente
+
+### **Banner Slider (Swiper.js)**
+- ✅ **Loop infinito** com transição suave
+- ✅ **Autoplay** automático (5 segundos por slide)
+- ✅ **Pausa ao passar o mouse**
+- ✅ **Navegação com botões** (próximo/anterior)
+- ✅ **Paginação com bolinhas** clicáveis
+- ✅ **Efeito de fade** entre slides
+- ✅ **Navegação por teclado** (setas)
+- ✅ **Acessibilidade** completa (ARIA labels)
+
+### **Design Responsivo**
+- ✅ **Desktop**: Grid de 2 colunas + banner 600px
+- ✅ **Tablet**: Grid de 1 coluna + banner 400px
+- ✅ **Mobile**: Layout otimizado + banner 300px
+
+### **Animações**
+- ✅ **Scroll suave** para âncoras
+- ✅ **Fade-in ao rolar** (cards aparecem gradualmente)
+- ✅ **Hover effects** nos cards (elevação e sombra)
+
+### **Performance**
+- ✅ **Carregamento rápido**: zero dependências externas (além do Google Fonts e Swiper.js CDN)
+- ✅ **Lazy loading** de imagens
+- ✅ **Pré-carregamento** de slides
+- ✅ **Otimização** para mobile-first
+
+### **Hospedagem**
 - ✅ **Pronto para GitHub Pages**: basta enviar os arquivos para um repositório `usuario.github.io`
+- ✅ **Zero configuração**: funciona imediatamente após upload
 
 ---
 
@@ -61,31 +109,35 @@ O site é **estático, responsivo e acessível**, desenvolvido com HTML5, CSS3 e
 3. Acesse inicialmente: **https://seu-usuario.github.io**  
    Após configurar o domínio personalizado: **https://aeesp.org.br**
 
-> 💡 Dica: não crie subpastas — os arquivos `.html` devem estar na **raiz** do repositório.
+> 💡 **Dica**: não crie subpastas — os arquivos `.html` devem estar na **raiz** do repositório.
 
 ---
 
-## 🤝 Apoie nosso projeto
+## 🖼️ Imagens do Banner
 
-Você pode contribuir de várias formas:
-- **Doações** (pessoa física ou jurídica)
-- **Patrocínio** via Lei de Incentivo ao Esporte
-- **Voluntariado** (treinadores, educadores, apoio administrativo)
-- **Divulgação** nas redes sociais
+O banner slider utiliza 3 imagens principais:
 
-Todas as contribuições terão **recibo fiscal válido**.  
-**CNPJ**: 64.661.923/0001-77
+| Slide | Tema | Tamanho recomendado |
+|-------|------|---------------------|
+| **Slide 1** | Eventos e Atividades | 1920x600px (16:5) |
+| **Slide 2** | Apoie nossa causa | 1920x600px (16:5) |
+| **Slide 3** | Entre em contato | 1920x600px (16:5) |
 
----
-
-## 📞 Contato
-
-- **E-mail**: [contato@aeesp.org.br](mailto:contato@aeesp.org.br)  
-- **WhatsApp**: [(14) 98186-9683](https://wa.me/5514981869683)  
-- **Endereço**: Rua Orlando Benedini, nº 96 – CEP 17.584-456 – Pompéia / SP  
-- **Redes sociais**: [@tb_pompeia](https://instagram.com/tb_pompeia)
+### **Recomendações para as imagens:**
+- **Formato**: JPG ou WebP
+- **Compressão**: Use ferramentas como TinyPNG ou Squoosh
+- **Qualidade**: Manter alta resolução para desktop
+- **Textos**: Evitar textos pequenos (serão sobrepostos pelo texto do slide)
 
 ---
 
-> ✨ **Juntos, construímos um futuro mais justo, saudável e cheio de oportunidades.**  
-> © 2026 – Associação Esportiva Educação e Saúde de Pompeia
+## 📦 Dependências Externas
+
+O site utiliza apenas 2 bibliotecas externas via CDN:
+
+```html
+<!-- Swiper.js CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+<!-- Swiper.js JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
