@@ -27,11 +27,6 @@ O site é **estático, responsivo e acessível**, desenvolvido com HTML5, CSS3 e
 │ └── style.css # Estilização completa com variáveis CSS
 ├── js/
 │ └── main.js # Comportamento: menu ativo, banner slider e animações
-└── img/
-└── banner/
-├── slide1-eventos.jpg
-├── slide2-envolva-se.jpg
-└── slide3-contato.jpg
 
 
 ---
@@ -41,8 +36,10 @@ O site é **estático, responsivo e acessível**, desenvolvido com HTML5, CSS3 e
 ### **Cores institucionais**
 - Verde escuro: `#004d26`  
 - Verde médio: `#00563F`
-- Azul destaque: `#007bff`
-- Roxo gradiente: `#667eea` → `#764ba2`
+- Verde esmeralda: `#007849`
+- Verde água: `#00a86b`
+- Verde floresta: `#006400`
+- Verde oliva: `#228B22`
 
 ### **Tipografia**
 - Títulos: **Montserrat** (via Google Fonts)  
@@ -50,7 +47,7 @@ O site é **estático, responsivo e acessível**, desenvolvido com HTML5, CSS3 e
 
 ### **Layout**
 - **Grid de 2 colunas**: Design moderno e responsivo
-- **Banner slider**: Destaque visual com Swiper.js
+- **Banner slider**: Destaque visual com Swiper.js e gradientes verdes
 - **Cards interativos**: Hover effects e animações suaves
 
 ### **Ícones**
@@ -79,61 +76,61 @@ O site é **estático, responsivo e acessível**, desenvolvido com HTML5, CSS3 e
 - ✅ **Efeito de fade** entre slides
 - ✅ **Navegação por teclado** (setas)
 - ✅ **Acessibilidade** completa (ARIA labels)
+- ✅ **3 slides com gradientes em tons de verde** (sem dependência de imagens)
 
 ### **Design Responsivo**
-- ✅ **Desktop**: Grid de 2 colunas + banner 600px
-- ✅ **Tablet**: Grid de 1 coluna + banner 400px
+- ✅ **Desktop**: Grid de 2 colunas + banner 450px
+- ✅ **Tablet**: Grid de 1 coluna + banner 350px
 - ✅ **Mobile**: Layout otimizado + banner 300px
 
 ### **Animações**
-- ✅ **Scroll suave** para âncoras
 - ✅ **Fade-in ao rolar** (cards aparecem gradualmente)
 - ✅ **Hover effects** nos cards (elevação e sombra)
+- ✅ **Animações suaves** nos ícones SVG
 
 ### **Performance**
-- ✅ **Carregamento rápido**: zero dependências externas (além do Google Fonts e Swiper.js CDN)
-- ✅ **Lazy loading** de imagens
-- ✅ **Pré-carregamento** de slides
+- ✅ **Carregamento rápido**: zero dependências externas (além do Swiper.js CDN)
+- ✅ **Zero imagens no banner** (usa apenas gradientes CSS)
 - ✅ **Otimização** para mobile-first
 
 ### **Hospedagem**
-- ✅ **Pronto para GitHub Pages**: basta enviar os arquivos para um repositório `usuario.github.io`
+- ✅ **Pronto para GitHub Pages**: basta enviar os arquivos para um repositório
 - ✅ **Zero configuração**: funciona imediatamente após upload
 
 ---
 
 ## 🚀 Como publicar
 
-1. Crie um repositório no GitHub com o nome: **`seu-usuario.github.io`**
+### **Opção 1: GitHub Pages (Recomendado)**
+
+1. Crie um repositório no GitHub
 2. Envie todos os arquivos deste projeto para a branch `main`
-3. Acesse inicialmente: **https://seu-usuario.github.io**  
-   Após configurar o domínio personalizado: **https://aeesp.org.br**
+3. Acesse: **https://seu-usuario.github.io/nome-do-repositorio/**
+
+### **Opção 2: Domínio Personalizado**
+
+1. Configure um domínio personalizado no GitHub Pages
+2. Acesse: **https://aeesp.org.br**
 
 > 💡 **Dica**: não crie subpastas — os arquivos `.html` devem estar na **raiz** do repositório.
 
 ---
 
-## 🖼️ Imagens do Banner
+## 🎨 Paleta de Cores dos Slides
 
-O banner slider utiliza 3 imagens principais:
+O banner slider utiliza **3 gradientes em tons de verde**:
 
-| Slide | Tema | Tamanho recomendado |
-|-------|------|---------------------|
-| **Slide 1** | Eventos e Atividades | 1920x600px (16:5) |
-| **Slide 2** | Apoie nossa causa | 1920x600px (16:5) |
-| **Slide 3** | Entre em contato | 1920x600px (16:5) |
-
-### **Recomendações para as imagens:**
-- **Formato**: JPG ou WebP
-- **Compressão**: Use ferramentas como TinyPNG ou Squoosh
-- **Qualidade**: Manter alta resolução para desktop
-- **Textos**: Evitar textos pequenos (serão sobrepostos pelo texto do slide)
+| Slide | Gradiente | Descrição |
+|-------|-----------|-----------|
+| **Slide 1** | `#004d26` → `#007849` | Verde escuro → Verde esmeralda |
+| **Slide 2** | `#00563F` → `#00a86b` | Verde institucional → Verde água |
+| **Slide 3** | `#006400` → `#228B22` | Verde floresta → Verde oliva |
 
 ---
 
 ## 📦 Dependências Externas
 
-O site utiliza apenas 2 bibliotecas externas via CDN:
+O site utiliza apenas **1 biblioteca externa** via CDN:
 
 ```html
 <!-- Swiper.js CSS -->
