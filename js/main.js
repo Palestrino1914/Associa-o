@@ -20,82 +20,60 @@ document.addEventListener('DOMContentLoaded', () => {
   // ========================================
   // INICIALIZAR SWIPER.JS - BANNER SLIDER
   // ========================================
-  if (document.querySelector('.swiper')) {
-    const swiper = new Swiper('.swiper', {
-      // Configurações básicas
-      loop: true,                    // Loop infinito
-      speed: 800,                    // Velocidade da transição (ms)
-      
-      // Autoplay
-      autoplay: {
-        delay: 5000,                 // Tempo entre slides (5 segundos)
-        disableOnInteraction: false, // Continua após interação do usuário
-        pauseOnMouseEnter: true,     // Pausa ao passar o mouse
-      },
-      
-      // Navegação
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      
-      // Paginação
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,             // Permitir clique nas bolinhas
-        dynamicBullets: true,        // Bolinhas dinâmicas
-      },
-      
-      // Efeitos de transição
-      effect: 'fade',                // Efeito de fade entre slides
-      fadeEffect: {
-        crossFade: true,             // Cross-fade suave
-      },
-      
-      // Teclado e mousewheel
-      keyboard: {
-        enabled: true,               // Navegar com setas do teclado
-      },
-      
-      // Pré-carregamento de slides
-      preloadImages: true,
-      lazy: true,
-      
-      // Acessibilidade
-      a11y: {
-        enabled: true,
-        prevSlideMessage: 'Slide anterior',
-        nextSlideMessage: 'Próximo slide',
-        firstSlideMessage: 'Este é o primeiro slide',
-        lastSlideMessage: 'Este é o último slide',
-      },
-    });
+  if (typeof Swiper !== 'undefined' && document.querySelector('.swiper')) {
+    try {
+      const swiper = new Swiper('.swiper', {
+        // Configurações básicas
+        loop: true,                    // Loop infinito
+        speed: 800,                    // Velocidade da transição (ms)
+        
+        // Autoplay
+        autoplay: {
+          delay: 5000,                 // Tempo entre slides (5 segundos)
+          disableOnInteraction: false, // Continua após interação do usuário
+          pauseOnMouseEnter: true,     // Pausa ao passar o mouse
+        },
+        
+        // Navegação
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        
+        // Paginação
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,             // Permitir clique nas bolinhas
+          dynamicBullets: true,        // Bolinhas dinâmicas
+        },
+        
+        // Efeitos de transição
+        effect: 'fade',                // Efeito de fade entre slides
+        fadeEffect: {
+          crossFade: true,             // Cross-fade suave
+        },
+        
+        // Teclado
+        keyboard: {
+          enabled: true,               // Navegar com setas do teclado
+        },
+        
+        // Acessibilidade
+        a11y: {
+          enabled: true,
+          prevSlideMessage: 'Slide anterior',
+          nextSlideMessage: 'Próximo slide',
+        },
+      });
+    } catch (error) {
+      console.error('Erro ao inicializar Swiper:', error);
+    }
   }
 
   // ========================================
-  // ANIMAÇÃO SUAVE AO ROLAR PARA SEÇÕES
+  // ANIMAÇÃO DOS CARDS AO ENTRAR NA VIEWPORT
   // ========================================
-  const smoothLinks = document.querySelectorAll('a[href^="#"]');
-  smoothLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href');
-      if (targetId !== '#') {
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: 'smooth'
-          });
-        }
-      }
-    });
-  });
-
-  // ========================================
-  // ANIMAÇÃO AO ENTRAR NA VIEWPORT
-  // ========================================
-  const animateOnScroll = () => {
+  const animateCards = () => {
     const cards = document.querySelectorAll('.section-card');
     
     cards.forEach(card => {
@@ -110,15 +88,16 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // Aplicar animação inicial
-  document.querySelectorAll('.section-card').forEach(card => {
+  const cards = document.querySelectorAll('.section-card');
+  cards.forEach(card => {
     card.style.opacity = '0';
     card.style.transform = 'translateY(30px)';
     card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
   });
 
   // Verificar ao rolar a página
-  window.addEventListener('scroll', animateOnScroll);
+  window.addEventListener('scroll', animateCards);
   
   // Verificar ao carregar a página
-  setTimeout(animateOnScroll, 300);
+  setTimeout(animateCards, 300);
 });
