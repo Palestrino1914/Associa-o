@@ -41,7 +41,7 @@ header nav ul {
 }
 
 header nav ul li a {
-    color: white;
+    color: white !important; /* BRANCO - Garantir legibilidade */
     text-decoration: none;
     font-weight: 500;
     padding: 10px 20px;
@@ -71,6 +71,7 @@ header nav ul li a.active {
     font-size: 2.8rem;
     margin-bottom: 15px;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: white !important; /* BRANCO - Garantir legibilidade */
 }
 
 .page-header p {
@@ -78,10 +79,11 @@ header nav ul li a.active {
     max-width: 800px;
     margin: 0 auto;
     opacity: 0.95;
+    color: white !important; /* BRANCO - Garantir legibilidade */
 }
 
 /* ========================================
-   BANNER SLIDER - SWIPER.JS (TODOS TONS DE VERDE)
+   BANNER SLIDER - SWIPER.JS (PADRONIZADO COM HEADER)
    ======================================== */
 .banner-slider {
     width: 100%;
@@ -106,19 +108,11 @@ header nav ul li a.active {
     padding: 20px;
 }
 
-/* Slide 1: Verde Escuro para Verde Claro */
-.slide-1 {
-    background: linear-gradient(135deg, #004d26 0%, #007849 100%);
-}
-
-/* Slide 2: Verde Médio para Verde Água */
-.slide-2 {
-    background: linear-gradient(135deg, #00563F 0%, #00a86b 100%);
-}
-
-/* Slide 3: Verde Oliva para Verde Floresta */
+/* TODOS OS SLIDES COM MESMO TOM DE VERDE DO HEADER */
+.slide-1,
+.slide-2,
 .slide-3 {
-    background: linear-gradient(135deg, #006400 0%, #228B22 100%);
+    background: linear-gradient(135deg, #004d26 0%, #00563F 100%);
 }
 
 .slide-content {
@@ -130,11 +124,15 @@ header nav ul li a.active {
     padding: 0 20px;
 }
 
+/* TÍTULOS DO BANNER SLIDER - BRANCO PARA LEGIBILIDADE */
 .slide-content h2 {
     font-size: 2.8rem;
     margin-bottom: 15px;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     font-weight: 700;
+    color: white !important; /* BRANCO - Corrigido para legibilidade */
+    text-transform: uppercase;
+    font-family: 'Montserrat', 'Arial', sans-serif;
 }
 
 .slide-content p {
@@ -144,6 +142,8 @@ header nav ul li a.active {
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
     opacity: 0.95;
     line-height: 1.6;
+    color: white !important; /* BRANCO - Corrigido para legibilidade */
+    font-family: 'Open Sans', 'Segoe UI', sans-serif;
 }
 
 /* Navigation buttons */
@@ -300,6 +300,8 @@ footer p {
 :root {
     --cor-verde-escuro: #1a5d1a;
     --cor-verde-escuro-2: #004d26;
+    --cor-verde-header: #004d26;
+    --cor-verde-header-2: #00563F;
     --fonte-titulo: 'Montserrat', 'Arial', sans-serif;
     --fonte-texto: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --tamanho-h1: 2.8rem;
@@ -428,7 +430,7 @@ h3,
 
 /* Alterar cor do botão */
 .section-card a {
-    background: var(--cor-verde-escuro-2) !important;
+    background: var(--cor-verde-header) !important;
 }
 
 .section-card a:hover {
@@ -436,16 +438,21 @@ h3,
 }
 
 /* ========================================
-   ESTILOS PARA PARÁGRAFOS
+   ESTILOS PARA PARÁGRAFOS - CORPO DE TEXTO CENTRALIZADO
    ======================================== */
 
-/* Parágrafos gerais */
+/* Parágrafos gerais - com margens laterais para centralizar */
 p {
     font-family: var(--fonte-texto) !important;
     font-size: var(--tamanho-p) !important;
     line-height: var(--line-height-p) !important;
     margin-bottom: var(--margem-p-bottom) !important;
     color: #333 !important;
+    max-width: 800px; /* Largura máxima para melhor legibilidade */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
 }
 
 /* Parágrafos dentro dos cards */
@@ -455,6 +462,11 @@ p {
     line-height: var(--line-height-p) !important;
     margin-bottom: 25px !important;
     color: #555 !important;
+    max-width: 100% !important; /* Cards mantêm largura total */
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 
 /* ========================================
@@ -508,6 +520,13 @@ p {
         line-height: 1.5 !important;
         margin-bottom: 15px !important;
         letter-spacing: -0.2px !important;
+    }
+    
+    /* Parágrafos mobile */
+    p {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        font-size: 15px !important;
     }
 }
 
@@ -592,6 +611,8 @@ p {
     }
     
     p {
-        font-size: 15px !important;
+        font-size: 14px !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
     }
 }
