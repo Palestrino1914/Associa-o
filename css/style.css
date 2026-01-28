@@ -21,7 +21,7 @@ body {
 }
 
 /* ========================================
-   HEADER E NAVEGAÇÃO
+   HEADER E NAVEGAÇÃO - VERDE ESCURO COM FONTE BRANCA
    ======================================== */
 header {
     background: linear-gradient(135deg, #004d26 0%, #00563F 100%);
@@ -57,7 +57,7 @@ header nav ul li a.active {
 }
 
 /* ========================================
-   PAGE HEADER (Título principal)
+   PAGE HEADER (Título principal) - VERDE ESCURO COM FONTE BRANCA
    ======================================== */
 .page-header {
     text-align: center;
@@ -71,7 +71,7 @@ header nav ul li a.active {
     font-size: 2.8rem;
     margin-bottom: 15px;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    color: white !important; /* BRANCO - Garantir legibilidade */
+    color: white !important; /* BRANCO */
 }
 
 .page-header p {
@@ -79,11 +79,11 @@ header nav ul li a.active {
     max-width: 800px;
     margin: 0 auto;
     opacity: 0.95;
-    color: white !important; /* BRANCO - Garantir legibilidade */
+    color: white !important; /* BRANCO */
 }
 
 /* ========================================
-   BANNER SLIDER - SWIPER.JS (PADRONIZADO COM HEADER)
+   BANNER SLIDER - SWIPER.JS (TODOS SLIDES COM MESMO VERDE DO HEADER)
    ======================================== */
 .banner-slider {
     width: 100%;
@@ -108,11 +108,11 @@ header nav ul li a.active {
     padding: 20px;
 }
 
-/* TODOS OS SLIDES COM MESMO TOM DE VERDE DO HEADER */
+/* TODOS OS SLIDES COM EXATAMENTE O MESMO VERDE DO HEADER */
 .slide-1,
 .slide-2,
 .slide-3 {
-    background: linear-gradient(135deg, #004d26 0%, #00563F 100%);
+    background: linear-gradient(135deg, #004d26 0%, #00563F 100%) !important;
 }
 
 .slide-content {
@@ -124,13 +124,13 @@ header nav ul li a.active {
     padding: 0 20px;
 }
 
-/* TÍTULOS DO BANNER SLIDER - BRANCO PARA LEGIBILIDADE */
+/* TÍTULOS DO BANNER SLIDER - BRANCO COM SOMBRA PARA LEGIBILIDADE */
 .slide-content h2 {
     font-size: 2.8rem;
     margin-bottom: 15px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     font-weight: 700;
-    color: white !important; /* BRANCO - Corrigido para legibilidade */
+    color: white !important; /* BRANCO */
     text-transform: uppercase;
     font-family: 'Montserrat', 'Arial', sans-serif;
 }
@@ -139,10 +139,10 @@ header nav ul li a.active {
     font-size: 1.4rem;
     max-width: 700px;
     margin: 0 auto;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
     opacity: 0.95;
     line-height: 1.6;
-    color: white !important; /* BRANCO - Corrigido para legibilidade */
+    color: white !important; /* BRANCO */
     font-family: 'Open Sans', 'Segoe UI', sans-serif;
 }
 
@@ -271,11 +271,11 @@ header nav ul li a.active {
 }
 
 /* ========================================
-   FOOTER
+   FOOTER - MESMO VERDE DO HEADER COM FONTE BRANCA
    ======================================== */
 footer {
-    background: #2c3e50;
-    color: white;
+    background: linear-gradient(135deg, #004d26 0%, #00563F 100%) !important;
+    color: white !important;
     text-align: center;
     padding: 35px 20px;
     margin-top: 20px;
@@ -285,6 +285,7 @@ footer {
 footer p {
     margin: 8px 0;
     line-height: 1.6;
+    color: white !important; /* BRANCO */
 }
 
 /* ========================================
