@@ -471,6 +471,61 @@ p {
 }
 
 /* ========================================
+   LAYOUT DE 3 COLUNAS PARA SEÇÕES INTERNAS
+   ======================================== */
+
+/* Container de 3 colunas - APENAS PARA PÁGINAS INTERNAS */
+.container-secoes {
+    display: grid;
+    grid-template-columns: 18% 64% 18%; /* Esquerda | Central | Direita */
+    gap: 0;
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: calc(100vh - 100px); /* Considera header e footer */
+}
+
+/* Coluna esquerda - Background verde */
+.coluna-esquerda {
+    background: linear-gradient(135deg, #004d26 0%, #00563F 100%);
+    grid-column: 1;
+}
+
+/* Coluna central - Conteúdo da seção */
+.coluna-central {
+    background: white;
+    grid-column: 2;
+    padding: 60px 40px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Coluna direita - Background verde */
+.coluna-direita {
+    background: linear-gradient(135deg, #004d26 0%, #00563F 100%);
+    grid-column: 3;
+}
+
+/* ========================================
+   ESTILOS PARA TEXTO DAS SEÇÕES INTERNAS
+   ======================================== */
+
+/* Cor do texto das seções internas - Verde escuro quase preto */
+.conteudo-secao p,
+.conteudo-secao,
+.secao-interna p,
+.secao-interna {
+    color: #0E2407 !important; /* Verde escuro quase preto */
+    font-family: var(--fonte-texto) !important;
+}
+
+/* Títulos das seções internas mantêm o verde escuro atual */
+.conteudo-secao h2,
+.conteudo-secao h3,
+.secao-interna h2,
+.secao-interna h3 {
+    color: var(--cor-verde-escuro) !important;
+}
+
+/* ========================================
    RESPONSIVIDADE
    ======================================== */
 @media (max-width: 768px) {
@@ -528,6 +583,22 @@ p {
         padding-left: 15px !important;
         padding-right: 15px !important;
         font-size: 15px !important;
+    }
+    
+    /* Layout de 3 colunas em mobile */
+    .container-secoes {
+        grid-template-columns: 1fr; /* Uma coluna apenas */
+        grid-template-rows: auto 1fr auto; /* Topo | Conteúdo | Rodapé */
+    }
+    
+    .coluna-esquerda,
+    .coluna-direita {
+        display: none; /* Esconde colunas laterais em mobile */
+    }
+    
+    .coluna-central {
+        grid-column: 1;
+        padding: 40px 20px;
     }
 }
 
@@ -615,5 +686,10 @@ p {
         font-size: 14px !important;
         padding-left: 10px !important;
         padding-right: 10px !important;
+    }
+    
+    /* Layout de 3 colunas em mobile pequeno */
+    .coluna-central {
+        padding: 30px 15px;
     }
 }
