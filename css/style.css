@@ -474,13 +474,12 @@ p {
    LAYOUT DE 3 COLUNAS PARA SEÇÕES INTERNAS
    ======================================== */
 
-/* Container de 3 colunas - APENAS PARA PÁGINAS INTERNAS */
+/* Container de 3 colunas - CORRIGIDO - OCUPA 100% DA LARGURA */
 .container-secoes {
     display: grid;
     grid-template-columns: 18% 64% 18%; /* Esquerda | Central | Direita */
     gap: 0;
-    max-width: 1400px;
-    margin: 0 auto;
+    width: 100%; /* ✅ CORRIGIDO: OCUPA 100% SEM BORDAS BRANCAS */
     min-height: calc(100vh - 100px); /* Considera header e footer */
 }
 
@@ -490,12 +489,14 @@ p {
     grid-column: 1;
 }
 
-/* Coluna central - Conteúdo da seção */
+/* Coluna central - Conteúdo da seção - CORRIGIDO */
 .coluna-central {
     background: white;
     grid-column: 2;
     padding: 60px 40px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    max-width: 1400px; /* ✅ CORRIGIDO: LIMITA CONTEÚDO */
+    margin: 0 auto; /* ✅ CORRIGIDO: CENTRALIZA CONTEÚDO */
 }
 
 /* Coluna direita - Background verde */
