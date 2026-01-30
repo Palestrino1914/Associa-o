@@ -100,22 +100,6 @@ O site é **estático, responsivo e acessível**, desenvolvido com HTML5, CSS3 e
 - ✅ **CSS minificado**: Variáveis CSS para manutenção fácil
 - ✅ **Mobile-first**: Código limpo e sem redundâncias
 
----
-
-## 🚀 Como Publicar
-
-### **GitHub Pages (Recomendado)**
-1. Crie um repositório no GitHub
-2. Envie todos os arquivos para a branch `main`
-3. Acesse: `https://seu-usuario.github.io/nome-do-repositorio/`
-
-### **Domínio Personalizado**
-1. Configure um domínio personalizado nas configurações do GitHub Pages
-2. Acesse: `https://aeesp.org.br` (exemplo)
-
-> 💡 **Importante**: Mantenha os arquivos `.html` na **raiz** do repositório (não use subpastas)
-
----
 
 ## 📦 Dependências Externas
 
