@@ -177,7 +177,28 @@ header {
 }
 
 /* ========================================
-   SLIDE DO LOGO NO BANNER SLIDER - LOGO MAIOR
+   SLIDE DO VÍDEO NO BANNER SLIDER
+   ======================================== */
+
+/* Slide do vídeo - fundo preto para fallback */
+.slide-video {
+    background: #000000 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Vídeo no slide */
+.video-slide {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ========================================
+   SLIDE DO LOGO NO BANNER SLIDER - LOGO 18% MAIOR
    ======================================== */
 
 /* Slide do logo - mesmo verde do header */
@@ -197,10 +218,10 @@ header {
     padding: 0;
 }
 
-/* Imagem do logo no slide - TAMANHO AUMENTADO */
+/* Imagem do logo no slide - TAMANHO AUMENTADO EM 18% */
 .slide-logo-img {
-    max-height: 280px; /* Aumentado de 250px para 280px */
-    max-width: 85%; /* Aumentado de 80% para 85% */
+    max-height: 330px; /* 280px + 18% = 330px */
+    max-width: 85%;
     width: auto;
     height: auto;
     object-fit: contain;
@@ -765,10 +786,10 @@ p {
         margin-right: 15px;
     }
     
-    /* Responsividade do logo no slide - TAMANHO AUMENTADO */
+    /* Responsividade do logo no slide - TAMANHO AUMENTADO EM 18% */
     .slide-logo-img {
-        max-height: 210px; /* Aumentado de 180px para 210px */
-        max-width: 75%; /* Aumentado de 70% para 75% */
+        max-height: 248px; /* 210px + 18% = 248px */
+        max-width: 75%;
     }
 }
 
@@ -880,9 +901,9 @@ p {
         text-align: center;
     }
     
-    /* Responsividade do logo no slide - TAMANHO AUMENTADO */
+    /* Responsividade do logo no slide - TAMANHO AUMENTADO EM 18% */
     .slide-logo-img {
-        max-height: 140px; /* Aumentado de 120px para 140px */
-        max-width: 65%; /* Aumentado de 60% para 65% */
+        max-height: 165px; /* 140px + 18% = 165px */
+        max-width: 65%;
     }
 }
