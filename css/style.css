@@ -581,6 +581,46 @@ p {
 }
 
 /* ========================================
+   CORREÇÃO DE ALINHAMENTO DE LISTAS
+   ======================================== */
+
+/* Padroniza o alinhamento de todas as listas */
+.conteudo-secao ul,
+.conteudo-secao ol {
+    padding-left: 25px !important;
+    margin: 0 !important;
+}
+
+.conteudo-secao li {
+    margin-bottom: 12px !important;
+    line-height: 1.6 !important;
+    padding-left: 0 !important; /* Remove indentação interna */
+    text-indent: 0 !important; /* Garante alinhamento correto */
+}
+
+/* Corrige parágrafos dentro de listas */
+.conteudo-secao li p {
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.6 !important;
+}
+
+/* Padroniza o alinhamento de todos os elementos de texto */
+.conteudo-secao * {
+    text-indent: 0 !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
+
+/* Garante que todos os elementos tenham o mesmo alinhamento */
+.conteudo-secao ul,
+.conteudo-secao ol,
+.conteudo-secao li,
+.conteudo-secao p {
+    text-align: justify !important;
+}
+
+/* ========================================
    RESPONSIVIDADE
    ======================================== */
 @media (max-width: 768px) {
