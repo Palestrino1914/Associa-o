@@ -527,6 +527,60 @@ p {
 }
 
 /* ========================================
+   FORMATAÇÃO CONSISTENTE PARA CONTEÚDO DAS SEÇÕES
+   ======================================== */
+
+/* Espaçamento uniforme para todos os elementos */
+.conteudo-secao * {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* Títulos H2 (Nossas Finalidades, Missão, etc.) */
+.conteudo-secao h2 {
+    margin-top: 30px !important;
+    margin-bottom: 15px !important;
+    padding-bottom: 5px !important;
+    border-bottom: 2px solid var(--cor-verde-escuro) !important;
+    font-size: 28px !important;
+    line-height: 1.4 !important;
+}
+
+/* Parágrafos */
+.conteudo-secao p {
+    margin-bottom: 20px !important;
+    line-height: 1.7 !important;
+    font-size: 16px !important;
+    text-align: justify !important;
+}
+
+/* Listas */
+.conteudo-secao ul {
+    margin-bottom: 25px !important;
+    padding-left: 25px !important;
+}
+
+.conteudo-secao li {
+    margin-bottom: 12px !important;
+    line-height: 1.6 !important;
+}
+
+/* Espaçamento entre seções */
+.conteudo-secao h2 + p,
+.conteudo-secao h2 + ul {
+    margin-top: 10px !important;
+}
+
+.conteudo-secao p + h2 {
+    margin-top: 25px !important;
+}
+
+/* Ajuste para elementos de destaque (como <strong>) */
+.conteudo-secao strong {
+    font-weight: 700 !important;
+}
+
+/* ========================================
    RESPONSIVIDADE
    ======================================== */
 @media (max-width: 768px) {
