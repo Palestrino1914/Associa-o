@@ -176,6 +176,36 @@ header {
     font-family: 'Open Sans', 'Segoe UI', sans-serif;
 }
 
+/* ========================================
+   SLIDE DO LOGO NO BANNER SLIDER
+   ======================================== */
+
+/* Slide do logo - mesmo verde do header */
+.slide-logo {
+    background: linear-gradient(135deg, #004d26 0%, #00563F 100%) !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container do logo no slide */
+.logo-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 0;
+}
+
+/* Imagem do logo no slide */
+.slide-logo-img {
+    max-height: 250px;
+    max-width: 80%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
 /* Navigation buttons */
 .swiper-button-next,
 .swiper-button-prev {
@@ -734,6 +764,12 @@ p {
     .logo-wrapper {
         margin-right: 15px;
     }
+    
+    /* Responsividade do logo no slide */
+    .slide-logo-img {
+        max-height: 180px;
+        max-width: 70%;
+    }
 }
 
 @media (max-width: 480px) {
@@ -842,5 +878,11 @@ p {
         width: 100%;
         max-width: 300px;
         text-align: center;
+    }
+    
+    /* Responsividade do logo no slide */
+    .slide-logo-img {
+        max-height: 120px;
+        max-width: 60%;
     }
 }
