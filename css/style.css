@@ -177,7 +177,7 @@ header {
 }
 
 /* ========================================
-   SLIDE DO LOGO NO BANNER SLIDER
+   SLIDE DO LOGO NO BANNER SLIDER - LOGO MAIOR
    ======================================== */
 
 /* Slide do logo - mesmo verde do header */
@@ -197,10 +197,10 @@ header {
     padding: 0;
 }
 
-/* Imagem do logo no slide */
+/* Imagem do logo no slide - TAMANHO AUMENTADO */
 .slide-logo-img {
-    max-height: 250px;
-    max-width: 80%;
+    max-height: 280px; /* Aumentado de 250px para 280px */
+    max-width: 85%; /* Aumentado de 80% para 85% */
     width: auto;
     height: auto;
     object-fit: contain;
@@ -765,10 +765,10 @@ p {
         margin-right: 15px;
     }
     
-    /* Responsividade do logo no slide */
+    /* Responsividade do logo no slide - TAMANHO AUMENTADO */
     .slide-logo-img {
-        max-height: 180px;
-        max-width: 70%;
+        max-height: 210px; /* Aumentado de 180px para 210px */
+        max-width: 75%; /* Aumentado de 70% para 75% */
     }
 }
 
@@ -880,9 +880,9 @@ p {
         text-align: center;
     }
     
-    /* Responsividade do logo no slide */
+    /* Responsividade do logo no slide - TAMANHO AUMENTADO */
     .slide-logo-img {
-        max-height: 120px;
-        max-width: 60%;
+        max-height: 140px; /* Aumentado de 120px para 140px */
+        max-width: 65%; /* Aumentado de 60% para 65% */
     }
 }
