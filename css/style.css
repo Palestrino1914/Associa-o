@@ -120,7 +120,7 @@ header {
     height: 450px;
     position: relative;
     overflow: hidden;
-    margin: 30px 0;
+    margin: 60px 0; /* AUMENTADO DE 30px PARA 60px */
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
@@ -256,21 +256,22 @@ header {
 }
 
 /* ========================================
-   SEÇÃO DE VÍDEO - ABAIXO DO BANNER
+   SEÇÃO DE VÍDEO - ABAIXO DO BANNER (CENTRALIZADA + ESPAÇAMENTO AUMENTADO)
    ======================================== */
 
 .video-section {
     background: white;
-    padding: 60px 20px;
+    padding: 70px 20px; /* AUMENTADO DE 60px PARA 70px */
     text-align: center;
-    margin: 40px 0;
+    margin: 60px 0; /* AUMENTADO DE 40px PARA 60px */
     border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
 }
 
 .video-container {
+    width: 100%; /* GARANTE LARGURA TOTAL */
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto; /* CENTRALIZAÇÃO PERFEITA */
 }
 
 .video-title {
@@ -281,6 +282,8 @@ header {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: -0.5px;
+    text-align: center !important; /* CENTRALIZAÇÃO FORÇADA */
+    width: 100%; /* OCUPA 100% DA LARGURA */
 }
 
 .video-description {
@@ -292,6 +295,7 @@ header {
     margin-right: auto;
     line-height: 1.7;
     font-family: var(--fonte-texto);
+    text-align: center; /* CENTRALIZAÇÃO DO TEXTO */
 }
 
 .featured-video {
@@ -301,7 +305,7 @@ header {
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     display: block;
-    margin: 0 auto;
+    margin: 0 auto; /* CENTRALIZAÇÃO DO VÍDEO */
     background: #000;
     transition: transform 0.3s ease;
 }
@@ -318,7 +322,7 @@ header {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     max-width: 1200px;
-    margin: 40px auto 60px;
+    margin: 60px auto 60px; /* AUMENTADO DE 40px PARA 60px */
     padding: 0 20px;
 }
 
@@ -407,7 +411,7 @@ footer p {
    IDENTIDADE VISUAL - TÍTULOS E TEXTO
    ======================================== */
 
-/* Importação das fontes Google Fonts */
+/* Importação das fontes Google Fonts - CORRIGIDO ESPAÇO */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap');
 
 /* ========================================
@@ -749,6 +753,7 @@ p {
     
     .banner-slider {
         height: 350px;
+        margin: 50px 0; /* AJUSTADO PARA TABLET */
     }
     
     .slide-content h2 {
@@ -762,6 +767,7 @@ p {
     .sections-grid {
         grid-template-columns: 1fr;
         padding: 0 15px;
+        margin: 50px auto 50px; /* AJUSTADO PARA TABLET */
     }
     
     .section-card {
@@ -828,7 +834,8 @@ p {
     
     /* Responsividade da seção de vídeo */
     .video-section {
-        padding: 40px 15px;
+        padding: 50px 15px; /* AUMENTADO DE 40px PARA 50px */
+        margin: 50px 0; /* AJUSTADO PARA TABLET */
     }
     
     .video-title {
@@ -873,6 +880,7 @@ p {
     
     .banner-slider {
         height: 300px;
+        margin: 40px 0; /* AJUSTADO PARA MOBILE */
     }
     
     .slide-content h2 {
@@ -962,7 +970,8 @@ p {
     
     /* Responsividade da seção de vídeo */
     .video-section {
-        padding: 30px 10px;
+        padding: 40px 10px; /* AUMENTADO DE 30px PARA 40px */
+        margin: 40px 0; /* AJUSTADO PARA MOBILE */
     }
     
     .video-title {
@@ -976,5 +985,10 @@ p {
     
     .featured-video {
         border-radius: 6px;
+    }
+    
+    /* Espaçamento do grid em mobile */
+    .sections-grid {
+        margin: 40px auto 40px; /* AJUSTADO PARA MOBILE */
     }
 }
