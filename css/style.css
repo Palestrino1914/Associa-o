@@ -322,7 +322,7 @@ header {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     max-width: 1200px;
-    margin: 60px auto 60px; /* AUMENTADO DE 40px PARA 60px */
+    margin: 60px auto 80px; /* AUMENTADO DE 60px PARA 80px NO BOTTOM */
     padding: 0 20px;
 }
 
@@ -390,6 +390,50 @@ header {
 }
 
 /* ========================================
+   SEÇÃO DO PIX (QR CODE) - NOVA SEÇÃO
+   ======================================== */
+.qr-section {
+    background: white;
+    padding: 70px 20px;
+    margin: 80px 0; /* 80px de espaço acima e abaixo */
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.qr-title {
+    font-size: 2.2rem;
+    color: #004d26;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: var(--fonte-titulo);
+    font-weight: 700;
+}
+
+.qr-container {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.qr-code {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 20px auto;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.qr-description {
+    font-size: 1.2rem;
+    color: #555;
+    text-align: center;
+    line-height: 1.6;
+    font-family: var(--fonte-texto);
+}
+
+/* ========================================
    FOOTER - MESMO VERDE DO HEADER COM FONTE BRANCA
    ======================================== */
 footer {
@@ -397,7 +441,7 @@ footer {
     color: white !important;
     text-align: center;
     padding: 35px 20px;
-    margin-top: 20px;
+    margin-top: 80px; /* AUMENTADO DE 20px PARA 80px */
     font-size: 0.95rem;
 }
 
@@ -767,7 +811,7 @@ p {
     .sections-grid {
         grid-template-columns: 1fr;
         padding: 0 15px;
-        margin: 50px auto 50px; /* AJUSTADO PARA TABLET */
+        margin: 50px auto 70px; /* AJUSTADO PARA TABLET (bottom 70px) */
     }
     
     .section-card {
@@ -850,6 +894,24 @@ p {
     .featured-video {
         max-width: 100%;
         border-radius: 8px;
+    }
+    
+    /* Responsividade da seção do QR Code */
+    .qr-section {
+        padding: 60px 15px;
+        margin: 70px 0;
+    }
+    
+    .qr-title {
+        font-size: 2rem;
+    }
+    
+    .qr-description {
+        font-size: 1.1rem;
+    }
+    
+    footer {
+        margin-top: 70px; /* AJUSTADO PARA TABLET */
     }
 }
 
@@ -989,6 +1051,24 @@ p {
     
     /* Espaçamento do grid em mobile */
     .sections-grid {
-        margin: 40px auto 40px; /* AJUSTADO PARA MOBILE */
+        margin: 40px auto 60px; /* AJUSTADO PARA MOBILE (bottom 60px) */
+    }
+    
+    /* Responsividade da seção do QR Code */
+    .qr-section {
+        padding: 50px 10px;
+        margin: 60px 0;
+    }
+    
+    .qr-title {
+        font-size: 1.8rem;
+    }
+    
+    .qr-description {
+        font-size: 1rem;
+    }
+    
+    footer {
+        margin-top: 60px; /* AJUSTADO PARA MOBILE */
     }
 }
