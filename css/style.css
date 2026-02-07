@@ -445,6 +445,168 @@ header {
 }
 
 /* ========================================
+   FORMULÁRIO DE DOAÇÃO PIX
+   ======================================== */
+
+.pix-form {
+    margin-top: 30px;
+    padding: 25px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #e9ecef;
+}
+
+.pix-form label {
+    display: block;
+    font-size: 1.1rem;
+    color: #004d26;
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.valor-input {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.valor-input input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #004d26;
+    border-radius: 8px;
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: 700;
+    background: white;
+}
+
+.valor-input input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+.sugestoes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.sugestoes button {
+    padding: 12px 8px;
+    background: #004d26;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.95rem;
+}
+
+.sugestoes button:hover {
+    background: #003a1e;
+    transform: translateY(-2px);
+}
+
+.pix-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn-copy-pix {
+    padding: 15px 30px;
+    background: #004d26;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    min-width: 200px;
+}
+
+.btn-copy-pix:hover {
+    background: #003a1e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 77, 38, 0.3);
+}
+
+.pix-message {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    display: none;
+    animation: fadeIn 0.3s;
+}
+
+.pix-message.success {
+    background: #d4edda;
+    color: #155724;
+    display: block;
+}
+
+.pix-message.error {
+    background: #f8d7da;
+    color: #721c24;
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .pix-form {
+        padding: 20px;
+        margin: 20px 10px;
+    }
+    
+    .sugestoes {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+    
+    .sugestoes button {
+        padding: 10px 5px;
+        font-size: 0.9rem;
+    }
+    
+    .btn-copy-pix {
+        min-width: 100%;
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+    
+    .valor-input input {
+        font-size: 1.2rem;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sugestoes {
+        grid-template-columns: 1fr;
+    }
+    
+    .pix-form {
+        margin: 15px 5px;
+        padding: 15px;
+    }
+}
+
+/* ========================================
    FOOTER - MESMO VERDE DO HEADER COM FONTE BRANCA
    ======================================== */
 footer {
