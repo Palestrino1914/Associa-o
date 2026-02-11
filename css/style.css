@@ -957,6 +957,143 @@ p {
 }
 
 /* ========================================
+   DIÁRIO INSTITUCIONAL - ESTILOS ADICIONADOS
+   ======================================== */
+.diario-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.diario-entrada {
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.diario-mes {
+    color: #004d26;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #004d26;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.diario-item {
+    margin-bottom: 30px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.diario-data {
+    display: inline-block;
+    background: #004d26;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 25px;
+    font-weight: 700;
+    margin-right: 15px;
+    font-size: 0.9rem;
+}
+
+.diario-titulo {
+    display: inline;
+    font-size: 1.3rem;
+    color: #1a5d1a;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.diario-descricao {
+    margin-top: 12px;
+    line-height: 1.7;
+    color: #555;
+    font-size: 1.05rem;
+}
+
+.diario-foto {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.diario-foto img {
+    width: 100%;
+    max-width: 700px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 0 auto;
+}
+
+.legenda-foto {
+    font-size: 0.95rem;
+    color: #666;
+    margin-top: 10px;
+    font-style: italic;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.galeria-fotos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.foto-miniatura {
+    text-align: center;
+}
+
+.foto-miniatura img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    height: 150px;
+    object-fit: cover;
+}
+
+.foto-miniatura p {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 8px;
+    line-height: 1.5;
+}
+
+.subtitulo-secao {
+    font-size: 1.3rem;
+    color: #004d26;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 400;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .diario-mes {
+        font-size: 1.6rem;
+    }
+    
+    .diario-foto img {
+        max-width: 100%;
+    }
+    
+    .galeria-fotos {
+        grid-template-columns: 1fr;
+    }
+    
+    .foto-miniatura img {
+        height: 120px;
+    }
+}
+
+/* ========================================
    RESPONSIVIDADE
    ======================================== */
 @media (max-width: 768px) {
