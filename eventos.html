@@ -64,7 +64,7 @@
               
               <div class="diario-foto">
                 <img src="img/evento-prefeito-01.png" alt="Entrega do título de Sócio Benemérito ao Prefeito de Pompéia">
-                <p class="legenda-foto">Entrega do título de Sócio Benemérito ao Prefeito Municipal durante o lançamento oficial do primeiro Treinão como AEESP.</p>
+                <p class="legenda-foto">Entrega do título de Sócio Benemérito ao Prefeito Municipal durante o lançamento oficial do primeiro Treinão.</p>
               </div>
               
               <p class="diario-descricao">Realizamos nosso primeiro Treinão oficial sob a nova identidade da Associação Esportiva Educação e Saúde de Pompeia. Tivemos a honra de contar com a presença do Prefeito Municipal, que demonstrou apoio à nossa missão de transformar vidas pelo esporte.</p>
@@ -77,24 +77,30 @@
               
               <div class="diario-foto">
                 <img src="img/evento-corrida3.png" alt="Foto coletiva da equipe AEESP na Corrida de Rua de Marília">
-                <p class="legenda-foto">Equipe AEESP reunida para participação na Corrida de Rua de Marília, representando nossa cidade.</p>
+                <p class="legenda-foto">Equipe AEESP reunida após a participação na Corrida de Rua de Marília, representando nossa cidade com orgulho.</p>
               </div>
               
-              <p class="diario-descricao">Membros da AEESP representaram nossa cidade na corrida de rua de Marília, fortalecendo laços com outras comunidades esportivas da região e promovendo o nome de Pompeia em eventos externos.</p>
+              <p class="diario-descricao">Membros da AEESP representaram nossa cidade na tradicional corrida de rua de Marília, fortalecendo laços com outras comunidades esportivas da região e promovendo o nome de Pompeia em eventos externos.</p>
               
               <!-- Galeria complementar -->
               <div class="galeria-fotos">
                 <div class="foto-miniatura">
-                  <img src="img/evento-corrida1.png" alt="Crianças correndo na Corrida de Rua">
-                  <p>Crianças da AEESP em ação na prova</p>
+                  <div class="lightbox-trigger" data-src="img/evento-corrida1.png">
+                    <img src="img/evento-corrida1.png" alt="Crianças correndo na Corrida de Rua">
+                    <p>Crianças da AEESP em ação na prova</p>
+                  </div>
                 </div>
                 <div class="foto-miniatura">
-                  <img src="img/evento-corrida2.png" alt="Criança correndo na Corrida de Rua">
-                  <p>Atleta da AEESP mostrando determinação</p>
+                  <div class="lightbox-trigger" data-src="img/evento-corrida2.png">
+                    <img src="img/evento-corrida2.png" alt="Criança correndo na Corrida de Rua">
+                    <p>Atleta da AEESP mostrando determinação</p>
+                  </div>
                 </div>
                 <div class="foto-miniatura">
-                  <img src="img/evento-corrida4.png" alt="Equipe AEESP no palco com banner">
-                  <p>Premiação com o banner da AEESP no palco</p>
+                  <div class="lightbox-trigger" data-src="img/evento-corrida4.png">
+                    <img src="img/evento-corrida4.png" alt="Equipe AEESP no palco com banner">
+                    <p>Premiação com o banner da AEESP no palco</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -138,6 +144,15 @@
     
   </div>
 
+  <!-- MODAL PARA AMPLIAR FOTOS -->
+  <div class="lightbox-modal" id="lightbox">
+    <div class="lightbox-content">
+      <span class="lightbox-close">&times;</span>
+      <img class="lightbox-img" src="" alt="Imagem ampliada">
+      <div class="lightbox-caption"></div>
+    </div>
+  </div>
+
   <footer>
     <p>Associação Esportiva Educação e Saúde de Pompeia<br>
     CNPJ: 64.661.923/0001-77 | Entidade sem fins lucrativos</p>
@@ -145,5 +160,39 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    // Lightbox para galeria de fotos
+    document.addEventListener('DOMContentLoaded', function() {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.querySelector('.lightbox-img');
+      const lightboxCaption = document.querySelector('.lightbox-caption');
+      const closeBtn = document.querySelector('.lightbox-close');
+      const triggers = document.querySelectorAll('.lightbox-trigger');
+      
+      // Abrir lightbox
+      triggers.forEach(trigger => {
+        trigger.addEventListener('click', function() {
+          const imgSrc = this.getAttribute('data-src');
+          const caption = this.querySelector('p').textContent;
+          
+          lightboxImg.src = imgSrc;
+          lightboxCaption.textContent = caption;
+          lightbox.style.display = 'block';
+        });
+      });
+      
+      // Fechar lightbox
+      closeBtn.addEventListener('click', function() {
+        lightbox.style.display = 'none';
+      });
+      
+      // Fechar ao clicar no fundo
+      lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+          lightbox.style.display = 'none';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
