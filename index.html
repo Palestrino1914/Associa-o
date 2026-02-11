@@ -16,196 +16,219 @@
 </head>
 <body>
 
-  <header>
-    <div class="header-container">
-      <!-- Logo -->
-      <div class="logo-wrapper">
-        <img src="img/aeesp-logo.png" 
-             alt="AEESP - Associação Esportiva Educação e Saúde de Pompeia" 
-             class="site-logo">
+  <!-- ========================================
+       HEADER
+       ======================================== -->
+  <header class="header">
+    <div class="header__container">
+
+      <div class="header__logo">
+        <img src="img/aeesp-logo.png"
+             alt="AEESP - Associação Esportiva Educação e Saúde de Pompeia"
+             class="header__logo-img">
       </div>
-      
-      <!-- Navegação -->
-      <nav class="header-nav">
-        <ul>
-          <li><a href="index.html">HOME</a></li>
-          <li><a href="quem-somos.html">QUEM SOMOS</a></li>
-          <li><a href="historia.html">NOSSA HISTÓRIA</a></li>
-          <li><a href="projetos.html">PROJETOS</a></li>
-          <li><a href="eventos.html">EVENTOS</a></li>
-          <li><a href="envolva-se.html">ENVOLVA-SE</a></li>
-          <li><a href="contato.html">CONTATO</a></li>
+
+      <nav class="header__nav">
+        <ul class="header__menu">
+          <li class="header__item"><a href="index.html" class="header__link">HOME</a></li>
+          <li class="header__item"><a href="quem-somos.html" class="header__link">QUEM SOMOS</a></li>
+          <li class="header__item"><a href="historia.html" class="header__link">NOSSA HISTÓRIA</a></li>
+          <li class="header__item"><a href="projetos.html" class="header__link">PROJETOS</a></li>
+          <li class="header__item"><a href="eventos.html" class="header__link">EVENTOS</a></li>
+          <li class="header__item"><a href="envolva-se.html" class="header__link">ENVOLVA-SE</a></li>
+          <li class="header__item"><a href="contato.html" class="header__link">CONTATO</a></li>
         </ul>
       </nav>
+
     </div>
   </header>
 
-  <main>
-    <div class="page-header">
-      <h1>Associação Esportiva Educação e Saúde de Pompeia</h1>
-      <p>AEESP – Conectando Pessoas, Movimentando Vidas, Transformando Histórias</p>
-    </div>
+  <main class="main">
 
     <!-- ========================================
-         BANNER SLIDER - SWIPER.JS (4 SLIDES)
+         PAGE HEADER
          ======================================== -->
-    <div class="banner-slider">
-      <div class="swiper">
+    <section class="page-hero">
+      <div class="page-hero__content">
+        <h1 class="page-hero__title">Associação Esportiva Educação e Saúde de Pompeia</h1>
+        <p class="page-hero__subtitle">
+          AEESP – Conectando Pessoas, Movimentando Vidas, Transformando Histórias
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================
+         HERO SLIDER (SWIPER)
+         ======================================== -->
+    <section class="hero">
+      <div class="hero__slider swiper">
         <div class="swiper-wrapper">
-          
-          <!-- Slide 1: Eventos -->
-          <div class="swiper-slide slide-1">
-            <div class="slide-content">
-              <h2>Eventos e Atividades</h2>
-              <p>Treinos semanais, corridas aos domingos e campeonatos locais</p>
+
+          <div class="swiper-slide hero__slide hero__slide--eventos">
+            <div class="hero__content">
+              <h2 class="hero__title">Eventos e Atividades</h2>
+              <p class="hero__text">Treinos semanais, corridas aos domingos e campeonatos locais</p>
             </div>
           </div>
-          
-          <!-- Slide 2: Envolva-se -->
-          <div class="swiper-slide slide-2">
-            <div class="slide-content">
-              <h2>Apoie nossa causa</h2>
-              <p>Doações, patrocínios e voluntariado transformam vidas</p>
+
+          <div class="swiper-slide hero__slide hero__slide--envolva">
+            <div class="hero__content">
+              <h2 class="hero__title">Apoie nossa causa</h2>
+              <p class="hero__text">Doações, patrocínios e voluntariado transformam vidas</p>
             </div>
           </div>
-          
-          <!-- Slide 3: Contato -->
-          <div class="swiper-slide slide-3">
-            <div class="slide-content">
-              <h2>Entre em contato</h2>
-              <p>Fale conosco, tire dúvidas ou proponha parcerias</p>
+
+          <div class="swiper-slide hero__slide hero__slide--contato">
+            <div class="hero__content">
+              <h2 class="hero__title">Entre em contato</h2>
+              <p class="hero__text">Fale conosco, tire dúvidas ou proponha parcerias</p>
             </div>
           </div>
-          
-          <!-- Slide 4: LOGO -->
-          <div class="swiper-slide slide-logo">
-            <div class="slide-content logo-slide">
-              <img src="img/aeesp-logo.png" alt="AEESP - Logo" class="slide-logo-img">
+
+          <div class="swiper-slide hero__slide hero__slide--logo">
+            <div class="hero__content hero__content--logo">
+              <img src="img/aeesp-logo.png" alt="AEESP Logo" class="hero__logo-img">
             </div>
           </div>
-          
+
         </div>
-        
-        <!-- Navegação -->
+
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
-        
-        <!-- Paginação -->
         <div class="swiper-pagination"></div>
       </div>
-    </div>
+    </section>
 
     <!-- ========================================
-         SEÇÃO DE VÍDEO - ABAIXO DO BANNER
+         VIDEO SECTION
          ======================================== -->
-    <div class="video-section">
-      <div class="video-container">
-        <h2 class="video-title">Conheça Nossa Jornada em Movimento</h2>
-        <p class="video-description">Assista ao vídeo que conta a trajetória da AEESP e conheça nosso impacto na comunidade de Pompéia</p>
-        <video controls preload="metadata" poster="img/favicon1.jpg" class="featured-video">
+    <section class="video">
+      <div class="video__container">
+        <h2 class="video__title">Conheça Nossa Jornada em Movimento</h2>
+        <p class="video__description">
+          Assista ao vídeo que conta a trajetória da AEESP e conheça nosso impacto na comunidade de Pompéia
+        </p>
+        <video controls preload="metadata" poster="img/favicon1.jpg" class="video__player">
           <source src="videos/video-aeesp.mp4" type="video/mp4">
           Seu navegador não suporta o elemento de vídeo.
         </video>
       </div>
-    </div>
+    </section>
 
     <!-- ========================================
-         SEÇÕES EM GRID DE 2 COLUNAS
+         CARDS SECTION
          ======================================== -->
-    <div class="sections-grid">
-      <!-- Quem Somos -->
-      <div class="section-card">
-        <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-        <h3>Quem Somos</h3>
-        <p>Conheça nossa missão, visão e valores como entidade sem fins lucrativos.</p>
-        <a href="quem-somos.html">Saiba mais</a>
-      </div>
+    <section class="cards">
+      <div class="cards__grid">
 
-      <!-- História -->
-      <div class="section-card">
-        <svg viewBox="0 0 24 24"><path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9z"/></svg>
-        <h3>Nossa História</h3>
-        <p>Mais de 15 anos transformando vidas em Pompeia por meio do esporte.</p>
-        <a href="historia.html">Conheça</a>
-      </div>
+        <article class="card">
+          <svg class="card__icon" viewBox="0 0 24 24">
+            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z"/>
+          </svg>
+          <h3 class="card__title">Quem Somos</h3>
+          <p class="card__text">Conheça nossa missão, visão e valores como entidade sem fins lucrativos.</p>
+          <a href="quem-somos.html" class="card__button">Saiba mais</a>
+        </article>
 
-      <!-- Projetos -->
-      <div class="section-card">
-        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-        <h3>Projetos</h3>
-        <p>Futebol Educativo, Corrida de Rua e muito mais para toda a comunidade.</p>
-        <a href="projetos.html">Veja todos</a>
-      </div>
+        <article class="card">
+          <svg class="card__icon" viewBox="0 0 24 24">
+            <path d="M13 3c-4.97 0-9 4.03-9 9h3l4-4H6c0-3.87 3.13-7 7-7z"/>
+          </svg>
+          <h3 class="card__title">Nossa História</h3>
+          <p class="card__text">Mais de 15 anos transformando vidas em Pompeia por meio do esporte.</p>
+          <a href="historia.html" class="card__button">Conheça</a>
+        </article>
 
-      <!-- Eventos -->
-      <div class="section-card">
-        <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
-        <h3>Eventos</h3>
-        <p>Treinos semanais, corridas aos domingos e campeonatos locais.</p>
-        <a href="eventos.html">Confira</a>
-      </div>
+        <article class="card">
+          <h3 class="card__title">Projetos</h3>
+          <p class="card__text">Futebol Educativo, Corrida de Rua e muito mais para toda a comunidade.</p>
+          <a href="projetos.html" class="card__button">Veja todos</a>
+        </article>
 
-      <!-- Envolva-se -->
-      <div class="section-card">
-        <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-        <h3>Envolva-se</h3>
-        <p>Apoie com doações, patrocínios ou voluntariado. Todo apoio conta!</p>
-        <a href="envolva-se.html">Participe</a>
-      </div>
+        <article class="card">
+          <h3 class="card__title">Eventos</h3>
+          <p class="card__text">Treinos semanais, corridas aos domingos e campeonatos locais.</p>
+          <a href="eventos.html" class="card__button">Confira</a>
+        </article>
 
-      <!-- Contato -->
-      <div class="section-card">
-        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-        <h3>Contato</h3>
-        <p>Fale conosco, tire dúvidas ou proponha parcerias.</p>
-        <a href="contato.html">Entre em contato</a>
+        <article class="card">
+          <h3 class="card__title">Envolva-se</h3>
+          <p class="card__text">Apoie com doações, patrocínios ou voluntariado. Todo apoio conta!</p>
+          <a href="envolva-se.html" class="card__button">Participe</a>
+        </article>
+
+        <article class="card">
+          <h3 class="card__title">Contato</h3>
+          <p class="card__text">Fale conosco, tire dúvidas ou proponha parcerias.</p>
+          <a href="contato.html" class="card__button">Entre em contato</a>
+        </article>
+
       </div>
-    </div>
+    </section>
 
     <!-- ========================================
-         SEÇÃO DO PIX (QR CODE + FORMULÁRIO)
+         DONATION / PIX SECTION
          ======================================== -->
-    <div class="qr-section">
-      <h2 class="qr-title">💚 Sua contribuição transforma vidas. Seja parte desta história!</h2>
-      <div class="qr-divider"></div>
-      <div class="qr-container">
-        <img src="img/pix_aeesp_.png" alt="QR Code para Pix da AEESP" class="qr-code">
-        <p class="qr-description">Escaneie para contribuir com o Pix</p>
+    <section class="donation">
+      <h2 class="donation__title">
+        💚 Sua contribuição transforma vidas. Seja parte desta história!
+      </h2>
+
+      <div class="donation__divider"></div>
+
+      <div class="donation__qr">
+        <img src="img/pix_aeesp_.png" alt="QR Code para Pix da AEESP" class="donation__qr-img">
+        <p class="donation__qr-text">Escaneie para contribuir com o Pix</p>
       </div>
-      
-      <!-- Formulário de Doação PIX -->
-      <div class="pix-form">
-        <label for="pix-valor">Valor da doação:</label>
-        <div class="valor-input">
-          <input type="text" id="pix-valor" placeholder="Ex: 10, 25.50" autocomplete="off">
-          <div class="sugestoes">
-            <button type="button" onclick="preencherValor('10')">R$ 10</button>
-            <button type="button" onclick="preencherValor('25')">R$ 25</button>
-            <button type="button" onclick="preencherValor('50')">R$ 50</button>
-            <button type="button" onclick="preencherValor('100')">R$ 100</button>
+
+      <form class="donation__form">
+        <label for="pix-valor" class="donation__label">Valor da doação:</label>
+
+        <div class="donation__input-group">
+          <input type="text" id="pix-valor" class="donation__input"
+                 placeholder="Ex: 10, 25.50" autocomplete="off">
+
+          <div class="donation__suggestions">
+            <button type="button" class="donation__suggestion" onclick="preencherValor('10')">R$ 10</button>
+            <button type="button" class="donation__suggestion" onclick="preencherValor('25')">R$ 25</button>
+            <button type="button" class="donation__suggestion" onclick="preencherValor('50')">R$ 50</button>
+            <button type="button" class="donation__suggestion" onclick="preencherValor('100')">R$ 100</button>
           </div>
         </div>
-        <div class="pix-actions">
-          <button class="btn-copy-pix" onclick="copiarPix()">📋 Copiar PIX</button>
+
+        <div class="donation__actions">
+          <button type="button" class="button button--primary" onclick="copiarPix()">
+            📋 Copiar PIX
+          </button>
         </div>
-        <div id="pix-message" class="pix-message"></div>
-      </div>
-    </div>
+
+        <div id="pix-message" class="donation__message"></div>
+      </form>
+    </section>
 
   </main>
 
-  <footer>
-    <p>Associação Esportiva Educação e Saúde de Pompeia<br>
-    CNPJ: 64.661.923/0001-77 | Entidade sem fins lucrativos</p>
-    <p>© 2026 – Todos os direitos reservados</p>
+  <!-- ========================================
+       FOOTER
+       ======================================== -->
+  <footer class="footer">
+    <div class="footer__content">
+      <p class="footer__text">
+        Associação Esportiva Educação e Saúde de Pompeia<br>
+        CNPJ: 64.661.923/0001-77 | Entidade sem fins lucrativos
+      </p>
+      <p class="footer__copyright">
+        © 2026 – Todos os direitos reservados
+      </p>
+    </div>
   </footer>
 
-  <!-- Swiper.js JS -->
+  <!-- Swiper.js -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  
-  <!-- Script do site -->
+
+  <!-- Scripts -->
   <script src="js/main.js"></script>
-  <!-- Script PIX -->
   <script src="js/pix.js"></script>
+
 </body>
 </html>
