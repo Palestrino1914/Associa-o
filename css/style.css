@@ -141,7 +141,8 @@ header {
 /* TODOS OS SLIDES COM EXATAMENTE O MESMO VERDE DO HEADER */
 .slide-1,
 .slide-2,
-.slide-3 {
+.slide-3,
+.slide-evento {
     background: linear-gradient(135deg, #004d26 0%, #00563F 100%) !important;
 }
 
@@ -174,6 +175,28 @@ header {
     line-height: 1.6;
     color: white !important; /* BRANCO */
     font-family: 'Open Sans', 'Segoe UI', sans-serif;
+}
+
+/* Botão do evento no banner */
+.btn-evento {
+    display: inline-block;
+    background: #ffcc00;
+    color: #004d26;
+    text-decoration: none;
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-weight: 700;
+    transition: all 0.3s;
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-evento:hover {
+    background: #e6b800;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(255, 204, 0, 0.4);
 }
 
 /* ========================================
@@ -312,6 +335,215 @@ header {
 
 .featured-video:hover {
     transform: scale(1.01);
+}
+
+/* ========================================
+   SEÇÃO DO EVENTO TREINÃO 2026
+   ======================================== */
+.evento-section {
+    background: white;
+    padding: 70px 20px;
+    margin: 60px 0;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.evento-title {
+    font-size: 2.5rem;
+    color: #004d26;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+}
+
+.evento-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.evento-card {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.evento-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+.evento-card h3 {
+    color: #004d26;
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+    text-align: center;
+    border-bottom: 2px solid #004d26;
+    padding-bottom: 10px;
+}
+
+.evento-card ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 15px;
+}
+
+.evento-card li {
+    margin-bottom: 12px;
+    padding-left: 25px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.evento-card li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #004d26;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.inscricao-container {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    align-self: center;
+}
+
+.inscricao-title {
+    color: #004d26;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.inscricao-descricao {
+    text-align: center;
+    color: #555;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.inscricao-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #004d26;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #004d26;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s;
+    background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+.form-group input::placeholder {
+    color: #999;
+}
+
+.form-group label[for="termos"] {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 5px;
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+
+.form-group input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+    height: 18px;
+    width: 18px;
+}
+
+.form-group a {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.btn-inscricao {
+    display: block;
+    width: 100%;
+    background: #004d26;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 10px rgba(0, 77, 38, 0.3);
+}
+
+.btn-inscricao:hover {
+    background: #003a1e;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 77, 38, 0.4);
+}
+
+.inscricao-message {
+    margin-top: 15px;
+    padding: 12px 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    display: none;
+    animation: fadeIn 0.3s;
+}
+
+.inscricao-message.success {
+    background: #d4edda;
+    color: #155724;
+    display: block;
+    border-left: 4px solid #28a745;
+}
+
+.inscricao-message.error {
+    background: #f8d7da;
+    color: #721c24;
+    display: block;
+    border-left: 4px solid #dc3545;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* ========================================
@@ -559,11 +791,6 @@ header {
     background: #f8d7da;
     color: #721c24;
     display: block;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Responsividade */
@@ -1184,6 +1411,19 @@ p {
     .lightbox-content {
         padding: 15px;
     }
+    
+    /* Evento section responsive */
+    .evento-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .evento-card {
+        padding: 20px;
+    }
+    
+    .inscricao-container {
+        padding: 25px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1197,6 +1437,26 @@ p {
     
     .lightbox-img {
         max-height: 80vh;
+    }
+    
+    /* Evento section mobile */
+    .evento-title {
+        font-size: 2rem;
+    }
+    
+    .inscricao-title {
+        font-size: 1.6rem;
+    }
+    
+    .form-group input,
+    .form-group select {
+        padding: 10px 12px;
+        font-size: 0.95rem;
+    }
+    
+    .btn-inscricao {
+        padding: 12px;
+        font-size: 1rem;
     }
 }
 
