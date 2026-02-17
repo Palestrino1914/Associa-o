@@ -47,7 +47,7 @@
     </div>
 
     <!-- ========================================
-         BANNER SLIDER - SWIPER.JS (4 SLIDES)
+         BANNER SLIDER - SWIPER.JS (5 SLIDES)
          ======================================== -->
     <div class="banner-slider">
       <div class="swiper">
@@ -77,7 +77,16 @@
             </div>
           </div>
           
-          <!-- Slide 4: LOGO -->
+          <!-- Slide 4: Evento Treinão 2026 -->
+          <div class="swiper-slide slide-evento">
+            <div class="slide-content">
+              <h2>3º Ano Treinão AEESP</h2>
+              <p>22 de Março • Fundo do Recinto • 7h00</p>
+              <a href="#inscricao" class="btn-evento">Inscreva-se Agora</a>
+            </div>
+          </div>
+          
+          <!-- Slide 5: LOGO -->
           <div class="swiper-slide slide-logo">
             <div class="slide-content logo-slide">
               <img src="img/aeesp-logo.png" alt="AEESP - Logo" class="slide-logo-img">
@@ -106,6 +115,99 @@
           <source src="videos/video-aeesp.mp4" type="video/mp4">
           Seu navegador não suporta o elemento de vídeo.
         </video>
+      </div>
+    </div>
+
+    <!-- ========================================
+         SEÇÃO DO EVENTO TREINÃO 2026
+         ======================================== -->
+    <div class="evento-section" id="inscricao">
+      <h2 class="evento-title">3º Ano Treinão AEESP</h2>
+      <div class="evento-container">
+        <div class="evento-info">
+          <div class="evento-card">
+            <h3>Informações Gerais</h3>
+            <ul>
+              <li><strong>Data:</strong> 22 de Março de 2026</li>
+              <li><strong>Local:</strong> Fundo do Recinto Mário Zaparolli – Pompeia/SP</li>
+              <li><strong>Horário:</strong> 7h00 (Corrida 5km e 10km) | 7h05 (Caminhada) | Após (Corrida Kids)</li>
+              <li><strong>Modalidades:</strong> Corrida 5km, Corrida 10km, Caminhada e Corrida Kids</li>
+            </ul>
+          </div>
+          
+          <div class="evento-card">
+            <h3>Participação</h3>
+            <ul>
+              <li><strong>5km:</strong> A partir de 14 anos com autorização dos responsáveis</li>
+              <li><strong>10km:</strong> Somente maiores de 18 anos</li>
+              <li><strong>Caminhada:</strong> Aberta ao público</li>
+              <li><strong>Corrida Kids:</strong> Crianças até 13 anos</li>
+            </ul>
+          </div>
+          
+          <div class="evento-card">
+            <h3>Estrutura</h3>
+            <ul>
+              <li>Ambulância e staff no percurso</li>
+              <li>Pontos de água e frutas</li>
+              <li>Medalha de participação para todos</li>
+              <li>Mesa comunitária ao final do evento</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Formulário de inscrição -->
+        <div class="inscricao-container">
+          <h3 class="inscricao-title">Faça sua inscrição agora!</h3>
+          <p class="inscricao-descricao">Preencha o formulário abaixo e receba a confirmação por WhatsApp</p>
+          
+          <form id="inscricao-form" class="inscricao-form">
+            <div class="form-group">
+              <label for="nome">Nome Completo *</label>
+              <input type="text" id="nome" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="idade">Idade *</label>
+              <input type="number" id="idade" min="4" max="120" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="modalidade">Modalidade *</label>
+              <select id="modalidade" required>
+                <option value="">Selecione uma modalidade</option>
+                <option value="5km">Corrida 5km</option>
+                <option value="10km">Corrida 10km</option>
+                <option value="caminhada">Caminhada</option>
+                <option value="kids">Corrida Kids</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="telefone">Telefone (whatsapp) *</label>
+              <input type="tel" id="telefone" placeholder="(14) 99999-9999" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input type="email" id="email">
+            </div>
+            
+            <div class="form-group">
+              <label for="responsavel">Nome do responsável (para menores de idade)</label>
+              <input type="text" id="responsavel">
+            </div>
+            
+            <div class="form-group">
+              <input type="checkbox" id="termos" required>
+              <label for="termos">Li e aceito os <a href="#" target="_blank">termos de responsabilidade</a></label>
+            </div>
+            
+            <button type="submit" class="btn-inscricao">Confirmar Inscrição</button>
+            
+            <div id="inscricao-message" class="inscricao-message"></div>
+          </form>
+        </div>
       </div>
     </div>
 
@@ -207,5 +309,63 @@
   <script src="js/main.js"></script>
   <!-- Script PIX -->
   <script src="js/pix.js"></script>
+  
+  <!-- Script de Inscrição Treinão -->
+  <script>
+    document.getElementById('inscricao-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Validação dos campos
+      const nome = document.getElementById('nome').value;
+      const idade = document.getElementById('idade').value;
+      const modalidade = document.getElementById('modalidade').value;
+      const telefone = document.getElementById('telefone').value;
+      const termos = document.getElementById('termos').checked;
+      
+      // Verificar se todos os campos obrigatórios estão preenchidos
+      if (!nome || !idade || !modalidade || !telefone || !termos) {
+        document.getElementById('inscricao-message').className = 'inscricao-message error';
+        document.getElementById('inscricao-message').textContent = 'Por favor, preencha todos os campos obrigatórios.';
+        return;
+      }
+      
+      // Verificar se a idade é compatível com a modalidade
+      if ((modalidade === '5km' && idade < 14) || (modalidade === '10km' && idade < 18)) {
+        document.getElementById('inscricao-message').className = 'inscricao-message error';
+        document.getElementById('inscricao-message').textContent = 'Idade não compatível com a modalidade selecionada.';
+        return;
+      }
+      
+      // Montar a mensagem para o WhatsApp
+      const mensagem = `*INSCRIÇÃO CONFIRMADA - 3º ANO TREINÃO AEESP*\n\n` +
+                       `Nome: ${nome}\n` +
+                       `Idade: ${idade}\n` +
+                       `Modalidade: ${modalidade}\n` +
+                       `Telefone: ${telefone}\n` +
+                       `E-mail: ${document.getElementById('email').value || 'Não informado'}\n` +
+                       `${idade < 18 ? `Responsável: ${document.getElementById('responsavel').value || 'Não informado'}` : ''}\n\n` +
+                       `*Termos de responsabilidade aceitos*\n\n` +
+                       `*Conectando pessoas, movimentando vidas e transformando histórias.*`;
+      
+      // Codificar para URL
+      const mensagemCodificada = encodeURIComponent(mensagem);
+      
+      // Número do WhatsApp corretamente formatado (14) 98186-9683
+      const numeroWhatsApp = '5514981869683';
+      
+      // URL do WhatsApp
+      const url = `https://wa.me/${numeroWhatsApp}?text=${mensagemCodificada}`;
+      
+      // Redirecionar para WhatsApp
+      window.open(url, '_blank');
+      
+      // Exibir mensagem de sucesso
+      document.getElementById('inscricao-message').className = 'inscricao-message success';
+      document.getElementById('inscricao-message').textContent = 'Inscrição enviada! Aguarde contato no WhatsApp para confirmação.';
+      
+      // Limpar formulário (opcional)
+      // this.reset();
+    });
+  </script>
 </body>
 </html>
