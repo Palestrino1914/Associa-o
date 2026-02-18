@@ -93,7 +93,7 @@ header {
     text-align: center;
     padding: 50px 20px;
     background: linear-gradient(135deg, #004d26 0%, #00563F 100%);
-    color: white;
+    color: white !important; /* BRANCO PARA TODOS OS ELEMENTOS */
     margin-bottom: 30px;
 }
 
@@ -109,7 +109,9 @@ header {
     max-width: 800px;
     margin: 0 auto;
     opacity: 0.95;
-    color: white !important; /* BRANCO */
+    color: white !important; /* BRANCO - REDUNDÂNCIA PARA GARANTIR */
+    font-weight: 400;
+    letter-spacing: 0.5px;
 }
 
 /* ========================================
