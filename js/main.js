@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Autoplay
         autoplay: {
-          delay: 5000,                 // Tempo entre slides (5 segundos)
+          delay: 8000,                 // Tempo entre slides (8 segundos)
           disableOnInteraction: false, // Continua após interação do usuário
           pauseOnMouseEnter: true,     // Pausa ao passar o mouse
         },
