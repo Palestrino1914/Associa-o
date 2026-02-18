@@ -1760,3 +1760,141 @@ p {
         margin-top: 60px; /* AJUSTADO PARA MOBILE */
     }
 }
+/* ========================================
+   ESTILOS PARA PÁGINA DE CONTATO
+   ======================================== */
+.subtitulo-secao {
+    font-size: 1.3rem;
+    color: #004d26;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 400;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.contato-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contato-secao {
+    margin-bottom: 40px;
+}
+
+.contato-secao h2 {
+    color: #004d26;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #004d26;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contato-item {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.contato-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+.contato-item h3 {
+    color: #004d26;
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contato-detalhe {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.contato-detalhe a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.contato-detalhe a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.contato-descricao {
+    color: #666;
+    font-size: 0.95rem;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+.contato-mensagem {
+    background: #e8f5e9;
+    border-left: 4px solid #004d26;
+    padding: 20px;
+    border-radius: 0 8px 8px 0;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.contato-mensagem p {
+    margin: 8px 0;
+    font-weight: 600;
+}
+
+.contato-mensagem p:last-child {
+    color: #004d26;
+    font-size: 0.95rem;
+    margin-top: 15px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .contato-item {
+        padding: 20px;
+    }
+    
+    .contato-item h3 {
+        font-size: 1.4rem;
+    }
+    
+    .contato-detalhe {
+        font-size: 1rem;
+    }
+    
+    .contato-mensagem {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contato-secao h2 {
+        font-size: 1.6rem;
+    }
+    
+    .contato-item h3 {
+        font-size: 1.3rem;
+    }
+    
+    .contato-detalhe br {
+        display: none;
+    }
+    
+    .contato-detalhe {
+        font-size: 0.95rem;
+    }
+}
