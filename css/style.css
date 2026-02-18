@@ -104,7 +104,7 @@ header {
     color: white !important; /* BRANCO */
 }
 
-.page-header p {
+.page-header h3 {
     font-size: 1.4rem;
     max-width: 800px;
     margin: 0 auto;
