@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Autoplay
         autoplay: {
-          delay: 10000,                 // Tempo entre slides (10 segundos)
+          delay: 10000,                // Tempo entre slides (10 segundos)
           disableOnInteraction: false, // Continua após interação do usuário
           pauseOnMouseEnter: true,     // Pausa ao passar o mouse
         },
@@ -102,108 +102,8 @@ document.addEventListener('DOMContentLoaded', () => {
   setTimeout(animateCards, 300);
   
   // ========================================
-  // FORMULÁRIO DE INSCRIÇÃO DO EVENTO TREINÃO
-  // ========================================
-  const inscricaoForm = document.getElementById('inscricao-form');
-  if (inscricaoForm) {
-    inscricaoForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // Validação dos campos
-      const nome = document.getElementById('nome').value.trim();
-      const idade = document.getElementById('idade').value.trim();
-      const modalidade = document.getElementById('modalidade').value;
-      const telefone = document.getElementById('telefone').value.trim();
-      const termos = document.getElementById('termos').checked;
-      
-      // Verificar se todos os campos obrigatórios estão preenchidos
-      if (!nome || !idade || !modalidade || !telefone || !termos) {
-        mostrarMensagem('Por favor, preencha todos os campos obrigatórios.', 'error');
-        return;
-      }
-      
-      // Verificar se a idade é um número válido
-      if (isNaN(idade) || idade < 4 || idade > 120) {
-        mostrarMensagem('Por favor, informe uma idade válida entre 4 e 120 anos.', 'error');
-        return;
-      }
-      
-      // Verificar se o telefone tem pelo menos 10 dígitos
-      const telefoneLimpo = telefone.replace(/\D/g, '');
-      if (telefoneLimpo.length < 10) {
-        mostrarMensagem('Por favor, informe um telefone válido com DDD.', 'error');
-        return;
-      }
-      
-      // Verificar se a idade é compatível com a modalidade
-      if ((modalidade === '5km' && idade < 14) || (modalidade === '10km' && idade < 18)) {
-        mostrarMensagem('Idade não compatível com a modalidade selecionada.', 'error');
-        return;
-      }
-      
-      // Montar a mensagem para o WhatsApp
-      const email = document.getElementById('email').value.trim() || 'Não informado';
-      const responsavel = document.getElementById('responsavel').value.trim() || 'Não informado';
-      
-      let mensagem = `*INSCRIÇÃO CONFIRMADA - 3º ANO TREINÃO AEESP*\n\n`;
-      mensagem += `*DATA:* 22 de Março de 2026\n`;
-      mensagem += `*LOCAL:* Fundo do Recinto Mário Zaparolli – Pompeia/SP\n\n`;
-      mensagem += `*DADOS DO PARTICIPANTE:*\n`;
-      mensagem += `Nome: ${nome}\n`;
-      mensagem += `Idade: ${idade} anos\n`;
-      mensagem += `Modalidade: ${getNomeModalidade(modalidade)}\n`;
-      mensagem += `Telefone: ${telefone}\n`;
-      mensagem += `E-mail: ${email}\n`;
-      
-      if (idade < 18 && modalidade !== 'caminhada' && modalidade !== 'kids') {
-        mensagem += `Responsável: ${responsavel}\n`;
-      }
-      
-      mensagem += `\n*Termos de responsabilidade aceitos*\n`;
-      mensagem += `*Conectando pessoas, movimentando vidas e transformando histórias.*`;
-      
-      // Codificar para URL
-      const mensagemCodificada = encodeURIComponent(mensagem);
-      
-      // Número do WhatsApp da organização: (14) 99846-6018
-      const numeroWhatsApp = '5514998466018';
-      
-      // URL do WhatsApp - CORRIGIDA (SEM ESPAÇOS!)
-      const url = `https://wa.me/${numeroWhatsApp}?text=${mensagemCodificada}`;
-      
-      // Redirecionar para WhatsApp
-      window.open(url, '_blank');
-      
-      // Exibir mensagem de sucesso
-      mostrarMensagem('Inscrição enviada! Aguarde contato no WhatsApp para confirmação.', 'success');
-      
-      // Opcional: Limpar o formulário após o envio
-      // this.reset();
-    });
-  }
-  
-  // ========================================
   // FUNÇÕES AUXILIARES
   // ========================================
-  
-  // Função para exibir mensagens de feedback
-  function mostrarMensagem(texto, tipo) {
-    const messageDiv = document.getElementById('inscricao-message');
-    if (messageDiv) {
-      messageDiv.className = `inscricao-message ${tipo}`;
-      messageDiv.textContent = texto;
-      
-      // Rolar até a mensagem
-      messageDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      
-      // Fechar automaticamente após 10 segundos para mensagens de sucesso
-      if (tipo === 'success') {
-        setTimeout(() => {
-          messageDiv.style.display = 'none';
-        }, 10000);
-      }
-    }
-  }
   
   // Função para obter nome completo da modalidade
   function getNomeModalidade(codigo) {
