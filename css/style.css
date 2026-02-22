@@ -119,10 +119,10 @@ header {
    ======================================== */
 .banner-slider {
     width: 100%;
-    height: 450px;
+    height: 550px; /* AUMENTADO DE 450px PARA 550px */
     position: relative;
     overflow: hidden;
-    margin: 60px 0; /* AUMENTADO DE 30px PARA 60px */
+    margin: 60px 0;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
@@ -163,7 +163,7 @@ header {
     margin-bottom: 15px;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     font-weight: 700;
-    color: white !important; /* BRANCO */
+    color: white !important;
     text-transform: uppercase;
     font-family: 'Montserrat', 'Arial', sans-serif;
 }
@@ -175,7 +175,7 @@ header {
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
     opacity: 0.95;
     line-height: 1.6;
-    color: white !important; /* BRANCO */
+    color: white !important;
     font-family: 'Open Sans', 'Segoe UI', sans-serif;
 }
 
@@ -220,15 +220,26 @@ header {
     padding: 0;
 }
 
+/* Wrapper do vídeo para posicionamento do botão de som */
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 900px; /* VÍDEO MAIOR */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .slide-logo-video video {
-    max-height: 300px;
-    max-width: 85%;
+    max-height: 500px; /* AUMENTADO DE 300px PARA 500px */
+    max-width: 100%;
     width: auto;
     height: auto;
     object-fit: contain;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 60px rgba(0, 102, 51, 0.5); /* SOMBRA VERDE */
     border: 3px solid rgba(255, 255, 255, 0.3);
+    background: #fff;
 }
 
 /* Estilos dos controles do vídeo */
@@ -237,10 +248,67 @@ header {
 }
 
 /* ========================================
-   SLIDE DO LOGO ESTÁTICO NO BANNER SLIDER - LOGO 18% MAIOR
+   BOTÃO DE ATIVAR SOM - NOVO
    ======================================== */
+.sound-toggle-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    background: rgba(0, 102, 51, 0.95);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    font-family: 'Open Sans', 'Segoe UI', sans-serif;
+}
 
-/* Slide do logo - mesmo verde do header */
+.sound-toggle-btn:hover {
+    background: rgba(0, 102, 51, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 102, 51, 0.6);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.sound-toggle-btn:active {
+    transform: translateY(0);
+}
+
+.sound-icon {
+    font-size: 20px;
+    line-height: 1;
+}
+
+.sound-text {
+    white-space: nowrap;
+}
+
+/* Animação de pulso para chamar atenção */
+.sound-toggle-btn.pulse {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 4px 15px rgba(0, 102, 51, 0.4);
+    }
+    50% {
+        box-shadow: 0 4px 25px rgba(0, 102, 51, 0.8);
+    }
+}
+
+/* ========================================
+   SLIDE DO LOGO ESTÁTICO NO BANNER SLIDER
+   ======================================== */
 .slide-logo {
     background: linear-gradient(135deg, #004d26 0%, #00563F 100%) !important;
     display: flex;
@@ -248,7 +316,6 @@ header {
     align-items: center;
 }
 
-/* Container do logo no slide */
 .logo-slide {
     display: flex;
     justify-content: center;
@@ -257,16 +324,17 @@ header {
     padding: 0;
 }
 
-/* Imagem do logo no slide - TAMANHO AUMENTADO EM 18% */
 .slide-logo-img {
-    max-height: 330px; /* 280px + 18% = 330px */
+    max-height: 330px;
     max-width: 85%;
     width: auto;
     height: auto;
     object-fit: contain;
 }
 
-/* Navigation buttons */
+/* ========================================
+   NAVEGAÇÃO E PAGINAÇÃO
+   ======================================== */
 .swiper-button-next,
 .swiper-button-prev {
     color: white;
@@ -290,7 +358,6 @@ header {
     font-weight: bold;
 }
 
-/* Pagination */
 .swiper-pagination {
     position: absolute;
     bottom: 25px;
@@ -313,6 +380,62 @@ header {
     background: white;
     width: 24px;
     border-radius: 12px;
+}
+
+/* ========================================
+   RESPONSIVIDADE
+   ======================================== */
+@media (max-width: 768px) {
+    .banner-slider {
+        height: 400px; /* Reduz altura em mobile */
+    }
+    
+    .slide-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .slide-content p {
+        font-size: 1.1rem;
+    }
+    
+    .video-wrapper {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+    
+    .slide-logo-video video {
+        max-height: 250px;
+    }
+    
+    .sound-toggle-btn {
+        padding: 10px 15px;
+        font-size: 12px;
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .sound-text {
+        display: none; /* Mostra apenas ícone em mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .banner-slider {
+        height: 350px;
+        margin: 30px 0;
+    }
+    
+    .swiper-button-next,
+    .swiper-button-prev {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+        font-size: 18px;
+    }
 }
 
 /* ========================================
