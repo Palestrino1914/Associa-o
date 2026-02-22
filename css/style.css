@@ -202,7 +202,42 @@ header {
 }
 
 /* ========================================
-   SLIDE DO LOGO NO BANNER SLIDER - LOGO 18% MAIOR
+   SLIDE DO LOGO EM VÍDEO NO BANNER SLIDER
+   ======================================== */
+.slide-logo-video {
+    background: linear-gradient(135deg, #004d26 0%, #00563F 100%) !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.logo-video-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 0;
+}
+
+.slide-logo-video video {
+    max-height: 300px;
+    max-width: 85%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Estilos dos controles do vídeo */
+.slide-logo-video video::-webkit-media-controls {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* ========================================
+   SLIDE DO LOGO ESTÁTICO NO BANNER SLIDER - LOGO 18% MAIOR
    ======================================== */
 
 /* Slide do logo - mesmo verde do header */
@@ -278,6 +313,165 @@ header {
     background: white;
     width: 24px;
     border-radius: 12px;
+}
+
+/* ========================================
+   SEÇÃO DA ENTREVISTA TVR - ACIMA DAS INSCRIÇÕES
+   ======================================== */
+.video-evento-section {
+    background: white;
+    padding: 60px 20px;
+    margin: 60px 0;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.video-evento-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #004d26 0%, #ffcc00 100%);
+}
+
+.video-evento-title {
+    font-size: 2.5rem;
+    color: #004d26;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+}
+
+.video-evento-subtitle {
+    font-size: 1.3rem;
+    color: #555;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+.video-evento-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.video-preview {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.video-preview:hover {
+    transform: scale(1.02);
+}
+
+.video-thumbnail {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 77, 38, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.9;
+    transition: opacity 0.3s;
+}
+
+.video-preview:hover .video-overlay {
+    opacity: 1;
+}
+
+.play-icon {
+    font-size: 4rem;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.video-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.video-description {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.video-highlight {
+    background: #e8f5e9;
+    border-left: 4px solid #004d26;
+    padding: 20px;
+    border-radius: 0 8px 8px 0;
+    margin: 25px 0;
+    font-style: italic;
+    font-weight: 600;
+    color: #004d26;
+    line-height: 1.6;
+}
+
+.video-highlight em {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    font-weight: 400;
+    color: #555;
+}
+
+.btn-video {
+    display: inline-block;
+    background: #004d26;
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    text-align: center;
+    margin: 20px 0;
+    box-shadow: 0 4px 12px rgba(0, 77, 38, 0.3);
+}
+
+.btn-video:hover {
+    background: #003a1e;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 77, 38, 0.4);
+}
+
+.video-obs {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-weight: 600;
+    color: #004d26;
+    line-height: 1.6;
 }
 
 /* ========================================
@@ -1426,6 +1620,26 @@ p {
     .inscricao-container {
         padding: 25px;
     }
+    
+    /* Vídeo do logo no banner */
+    .slide-logo-video video {
+        max-height: 220px;
+        max-width: 90%;
+    }
+    
+    /* Seção TVR */
+    .video-evento-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .video-evento-title {
+        font-size: 2.2rem;
+    }
+    
+    .video-evento-subtitle {
+        font-size: 1.15rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1460,6 +1674,42 @@ p {
         padding: 12px;
         font-size: 1rem;
     }
+    
+    /* Vídeo do logo no banner */
+    .slide-logo-video video {
+        max-height: 180px;
+        max-width: 95%;
+    }
+    
+    /* Seção TVR */
+    .video-evento-section {
+        padding: 30px 10px;
+        margin: 40px 0;
+    }
+    
+    .video-evento-title {
+        font-size: 1.8rem;
+    }
+    
+    .video-evento-subtitle {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+    
+    .video-highlight {
+        padding: 15px;
+        font-size: 0.95rem;
+    }
+    
+    .play-icon {
+        font-size: 3rem;
+    }
+    
+    .btn-video {
+        width: 100%;
+        padding: 14px;
+        font-size: 1.05rem;
+    }
 }
 
 /* ========================================
@@ -1470,7 +1720,7 @@ p {
         font-size: 2.2rem;
     }
     
-    .page-header p {
+    .page-header h3 {
         font-size: 1.2rem;
     }
     
@@ -1620,7 +1870,7 @@ p {
         font-size: 1.9rem;
     }
     
-    .page-header p {
+    .page-header h3 {
         font-size: 1.1rem;
     }
     
@@ -1762,6 +2012,7 @@ p {
         margin-top: 60px; /* AJUSTADO PARA MOBILE */
     }
 }
+
 /* ========================================
    ESTILOS PARA PÁGINA DE CONTATO
    ======================================== */
