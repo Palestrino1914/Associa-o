@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Associação Esportiva Educação e Saúde de Pompeia</title>
+  <title>Associação Esportiva Educação e Saúde de Pompéia</title>
   
   <!-- Favicon -->
   <link rel="icon" type="image/jpeg" href="img/favicon1.jpg">
@@ -21,7 +21,7 @@
       <!-- Logo -->
       <div class="logo-wrapper">
         <img src="img/aeesp-logo.png" 
-             alt="AEESP - Associação Esportiva Educação e Saúde de Pompeia" 
+             alt="AEESP - Associação Esportiva Educação e Saúde de Pompéia" 
              class="site-logo">
       </div>
       
@@ -42,77 +42,93 @@
 
   <main>
     <div class="page-header">
-      <h1>Associação Esportiva Educação e Saúde de Pompeia</h1>
+      <h1>Associação Esportiva Educação e Saúde de Pompéia</h1>
       <h3>AEESP – Conectando Pessoas, Movimentando Vidas, Transformando Histórias</h3>
     </div>
 
-    <!-- ========================================
-         BANNER SLIDER - SWIPER.JS (6 SLIDES)
-         ======================================== -->
-    <div class="banner-slider">
-      <div class="swiper">
-        <div class="swiper-wrapper">
-          
-          <!-- Slide 1: Evento Treinão 2026 -->
-          <div class="swiper-slide slide-evento">
-            <div class="slide-content">
-              <h2>CORRIDA COMEMORATIVA 3º ANO DO TREINÃO - AEESP</h2>
-              <p>22 de Março • Fundo do Recinto • 7h00</p>
-              <a href="#inscricao" class="btn-evento">Inscreva-se Agora</a>
-            </div>
-          </div>
-          
-          <!-- Slide 2: Vídeo Logo AEESP -->
-          <div class="swiper-slide slide-logo-video">
-            <div class="slide-content logo-video-slide">
-              <video controls preload="metadata" poster="img/aeesp-logo.png" class="slide-logo-video">
-                <source src="videos/Logo-em-Movimento1.mp4" type="video/mp4">
-                Seu navegador não suporta o elemento de vídeo.
-              </video>
-            </div>
-          </div>
-          
-          <!-- Slide 3: Envolva-se -->
-          <div class="swiper-slide slide-2">
-            <div class="slide-content">
-              <h2>Apoie nossa causa</h2>
-              <p>Doações, patrocínios e voluntariado transformam vidas</p>
-            </div>
-          </div>
-          
-          <!-- Slide 4: Eventos e Atividades -->
-          <div class="swiper-slide slide-1">
-            <div class="slide-content">
-              <h2>Eventos e Atividades</h2>
-              <p>Treinos semanais, corridas aos domingos e campeonatos locais</p>
-            </div>
-          </div>
-          
-          <!-- Slide 5: Contato -->
-          <div class="swiper-slide slide-3">
-            <div class="slide-content">
-              <h2>Entre em contato</h2>
-              <p>Fale conosco, tire dúvidas ou proponha parcerias</p>
-            </div>
-          </div>
-          
-          <!-- Slide 6: LOGO -->
-          <div class="swiper-slide slide-logo">
-            <div class="slide-content logo-slide">
-              <img src="img/aeesp-logo.png" alt="AEESP - Logo" class="slide-logo-img">
-            </div>
-          </div>
-          
+  <!-- ========================================
+     BANNER SLIDER - SWIPER.JS (6 SLIDES)
+     ======================================== -->
+<div class="banner-slider">
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      
+      <!-- Slide 1: Evento Treinão 2026 -->
+      <div class="swiper-slide slide-evento">
+        <div class="slide-content">
+          <h2>CORRIDA COMEMORATIVA 3º ANO DO TREINÃO - AEESP</h2>
+          <p>22 de Março • Fundo do Recinto • 7h00</p>
+          <a href="#inscricao" class="btn-evento">Inscreva-se Agora</a>
         </div>
-        
-        <!-- Navegação -->
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        
-        <!-- Paginação -->
-        <div class="swiper-pagination"></div>
       </div>
+      
+     <!-- Slide 2: Vídeo Logo AEESP (COM BOTÃO DE SOM) -->
+<div class="swiper-slide slide-logo-video">
+  <div class="slide-content logo-video-slide">
+    <div class="video-wrapper">
+      <video 
+        id="bannerVideo"
+        class="slide-logo-video" 
+        autoplay 
+        muted 
+        playsinline 
+        preload="auto"
+        poster="img/aeesp-logo.png">
+        <source src="videos/Logo-em-Movimento1.mp4" type="video/mp4">
+        Seu navegador não suporta o elemento de vídeo.
+      </video>
+      
+      <!-- Botão de Ativar Som -->
+      <button id="toggleSoundBtn" class="sound-toggle-btn" aria-label="Ativar som">
+        <span class="sound-icon muted">🔇</span>
+        <span class="sound-icon unmuted" style="display: none;">🔊</span>
+        <span class="sound-text">Clique para ativar o som</span>
+      </button>
     </div>
+  </div>
+</div>
+      
+      <!-- Slide 3: Envolva-se -->
+      <div class="swiper-slide slide-2">
+        <div class="slide-content">
+          <h2>Apoie nossa causa</h2>
+          <p>Doações, patrocínios e voluntariado transformam vidas</p>
+        </div>
+      </div>
+      
+      <!-- Slide 4: Eventos e Atividades -->
+      <div class="swiper-slide slide-1">
+        <div class="slide-content">
+          <h2>Eventos e Atividades</h2>
+          <p>Treinos semanais, corridas aos domingos e campeonatos locais</p>
+        </div>
+      </div>
+      
+      <!-- Slide 5: Contato -->
+      <div class="swiper-slide slide-3">
+        <div class="slide-content">
+          <h2>Entre em contato</h2>
+          <p>Fale conosco, tire dúvidas via contato@aeesp.org.br</p>
+        </div>
+      </div>
+      
+      <!-- Slide 6: LOGO -->
+      <div class="swiper-slide slide-logo">
+        <div class="slide-content logo-slide">
+          <img src="img/aeesp-logo.png" alt="AEESP - Logo" class="slide-logo-img">
+        </div>
+      </div>
+      
+    </div>
+    
+    <!-- Navegação -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    
+    <!-- Paginação -->
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
 
       <!-- ========================================
          SEÇÃO DE VÍDEO INSTITUCIONAL (EXISTENTE)
@@ -160,7 +176,7 @@
           
           <p class="video-obs">
             <strong>Data do evento:</strong> 22 de Março de 2026<br>
-            <strong>Local:</strong> Fundo do Recinto Mário Zaparolli – Pompeia/SP
+            <strong>Local:</strong> Fundo do Recinto Mário Zaparolli – Pompéia/SP
           </p>
 
           <!-- Agradecimento ao repórter -->
@@ -182,7 +198,7 @@
             <h3>Informações Oficiais</h3>
             <ul>
               <li><strong>Data:</strong> 22 de Março de 2026</li>
-              <li><strong>Local:</strong> Fundo do Recinto Mário Zaparolli – Pompeia/SP</li>
+              <li><strong>Local:</strong> Fundo do Recinto Mário Zaparolli – Pompéia/SP</li>
               <li><strong>Horário:</strong> 7h00 (Corrida 5km e 10km) | 7h05 (Caminhada) | Após (Corrida Kids)</li>
               <li><strong>Modalidades:</strong> Corrida 5km, Corrida 10km, Caminhada e Corrida Kids</li>
               <li><strong>Período de Inscrição:</strong> 23 de Fevereiro a 05 de Março de 2026</li>
@@ -369,7 +385,7 @@
   </main>
 
   <footer>
-    <p>Associação Esportiva Educação e Saúde de Pompeia<br>
+    <p>Associação Esportiva Educação e Saúde de Pompéia<br>
     CNPJ: 64.661.923/0001-77 | Entidade sem fins lucrativos</p>
     <p>© 2026 – Todos os direitos reservados</p>
   </footer>
