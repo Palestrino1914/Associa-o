@@ -71,6 +71,61 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ========================================
+  // CONTROLE DE SOM DO VÍDEO DO BANNER
+  // ========================================
+  const initBannerVideoSound = () => {
+    const video = document.getElementById('bannerVideo');
+    const soundBtn = document.getElementById('toggleSoundBtn');
+    
+    // Só executa se os elementos existirem na página
+    if (!video || !soundBtn) return;
+    
+    const mutedIcon = soundBtn.querySelector('.sound-icon.muted');
+    const unmutedIcon = soundBtn.querySelector('.sound-icon.unmuted');
+    
+    // Adiciona animação de pulso inicial para chamar atenção
+    soundBtn.classList.add('pulse');
+    
+    // Remove a animação após 5 segundos
+    setTimeout(() => {
+      soundBtn.classList.remove('pulse');
+    }, 5000);
+    
+    // Toggle de som ao clicar no botão
+    soundBtn.addEventListener('click', function(e) {
+      e.stopPropagation(); // Evita conflitos com o slider
+      
+      if (video.muted) {
+        // Ativar som
+        video.muted = false;
+        if (mutedIcon) mutedIcon.style.display = 'none';
+        if (unmutedIcon) unmutedIcon.style.display = 'inline';
+        soundBtn.classList.remove('pulse');
+        
+      } else {
+        // Desativar som
+        video.muted = true;
+        if (mutedIcon) mutedIcon.style.display = 'inline';
+        if (unmutedIcon) unmutedIcon.style.display = 'none';
+        soundBtn.classList.add('pulse');
+      }
+    });
+    
+    // Quando o vídeo terminar, resetar para mute e mostrar botão
+    video.addEventListener('ended', function() {
+      video.muted = true;
+      if (mutedIcon) mutedIcon.style.display = 'inline';
+      if (unmutedIcon) unmutedIcon.style.display = 'none';
+      soundBtn.classList.add('pulse');
+      soundBtn.style.display = 'flex';
+      soundBtn.style.opacity = '1';
+    });
+  };
+  
+  // Inicializa o controle de som do vídeo
+  initBannerVideoSound();
+
+  // ========================================
   // ANIMAÇÃO DOS CARDS AO ENTRAR NA VIEWPORT
   // ========================================
   const animateCards = () => {
