@@ -186,118 +186,109 @@
         </div>
       </div>
     </div>
-    
     <!-- ========================================
-         SEÇÃO DO EVENTO TREINÃO 2026 - INTEGRAÇÃO NETLIFY FORMS
-         ======================================== -->
-    <div class="evento-section" id="inscricao">
-      <h2 class="evento-title">CORRIDA COMEMORATIVA 3º ANO DO TREINÃO - AEESP</h2>
-      <div class="evento-container">
-        <div class="evento-info">
-          <div class="evento-card">
-            <h3>Informações Oficiais</h3>
-            <ul>
-              <li><strong>Data:</strong> 22 de Março de 2026</li>
-              <li><strong>Local:</strong> Fundo do Recinto Mário Zaparolli – Pompéia/SP</li>
-              <li><strong>Horário:</strong> 7h00 (Corrida 5km e 10km) | 7h05 (Caminhada) | Após (Corrida Kids)</li>
-              <li><strong>Modalidades:</strong> Corrida 5km, Corrida 10km, Caminhada e Corrida Kids</li>
-              <li><strong>Período de Inscrição:</strong> 23 de Fevereiro a 05 de Março de 2026</li>
-              <li><strong>Inscrições:</strong> Totalmente gratuitas e exclusivas pelo site</li>
-            </ul>
-          </div>
-          
-          <div class="evento-card">
-            <h3>Participação e Regras</h3>
-            <ul>
-              <li><strong>5km:</strong> A partir de 14 anos com autorização dos responsáveis</li>
-              <li><strong>10km:</strong> Somente maiores de 18 anos</li>
-              <li><strong>Caminhada:</strong> Aberta ao público de todas as idades</li>
-              <li><strong>Corrida Kids:</strong> Crianças até 13 anos</li>
-              <li><strong>Premiação:</strong> Não haverá premiação geral ou por categorias (evento comemorativo)</li>
-              <li><strong>Responsabilidade:</strong> Cada participante assume total responsabilidade por sua condição física e saúde</li>
-            </ul>
-          </div>
-          
-          <div class="evento-card">
-            <h3>Estrutura e Benefícios</h3>
-            <ul>
-              <li>Ambulância e staff médico no percurso</li>
-              <li>Pontos de água e frutas hidratantes</li>
-              <li>Medalha de participação para todos os inscritos</li>
-              <li>Mesa comunitária de confraternização ao final</li>
-              <li>Autorização de uso de imagem para divulgação institucional</li>
-            </ul>
-          </div>
-        </div>
-        
-        <!-- Formulário de inscrição NETLIFY FORMS -->
-        <div class="inscricao-container">
-          <h3 class="inscricao-title">INSCRIÇÕES GRATUITAS! Faça a sua agora!</h3>
-          <p class="inscricao-descricao">Preencha o formulário abaixo para se inscrever. Após confirmação, você receberá contato por WhatsApp com orientações finais.</p>
-          <p class="inscricao-aviso"><strong>Atenção:</strong> Inscrições válidas somente dentro do período: 23/02 a 05/03/2026</p>
-          
-          <!-- FORMULÁRIO NETLIFY - SEM JAVASCRIPT NECESSÁRIO -->
-          <form name="inscricao-treinao" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="inscricao-form">
-            <!-- Campo oculto anti-spam -->
-            <input type="hidden" name="bot-field">
-            
-            <!-- Campo oculto para identificar fonte -->
-            <input type="hidden" name="fonte" value="site-aeesp">
-            
-            <div class="form-group">
-              <label for="nome">Nome Completo *</label>
-              <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
-            </div>
-            
-            <div class="form-group">
-              <label for="idade">Idade *</label>
-              <input type="number" id="idade" name="idade" min="4" max="120" placeholder="Sua idade" required>
-            </div>
-            
-            <div class="form-group">
-              <label for="modalidade">Modalidade *</label>
-              <select id="modalidade" name="modalidade" required>
-                <option value="">Selecione uma modalidade</option>
-                <option value="5km">Corrida 5km</option>
-                <option value="10km">Corrida 10km</option>
-                <option value="caminhada">Caminhada</option>
-                <option value="kids">Corrida Kids</option>
-              </select>
-            </div>
-            
-            <div class="form-group">
-              <label for="telefone">Telefone (WhatsApp) *</label>
-              <input type="tel" id="telefone" name="telefone" placeholder="(14) 99999-9999" required>
-            </div>
-            
-            <div class="form-group">
-              <label for="email">E-mail</label>
-              <input type="email" id="email" name="email" placeholder="seu@email.com">
-            </div>
-            
-            <div class="form-group">
-              <label for="responsavel">Nome do responsável (para menores de 18 anos)</label>
-              <input type="text" id="responsavel" name="responsavel" placeholder="Nome completo do responsável">
-            </div>
-            
-            <!-- CHECKBOX ATUALIZADO COM DECLARAÇÃO EM PRIMEIRA PESSOA -->
-            <div class="form-group termos-group">
-              <input type="checkbox" id="termos" name="termos" required>
-              <label for="termos">Declaro que participo por livre e espontânea vontade, sendo responsável por minha condição física e saúde, e autorizo o uso de minha imagem para divulgação institucional da AEESP *</label>
-            </div>
-            
-            <button type="submit" class="btn-inscricao">✅ ENVIAR INSCRIÇÃO</button>
-            
-            <!-- Mensagem de sucesso/erro gerada automaticamente pelo Netlify -->
-            <div class="inscricao-message success" style="display: none;">
-              ✅ Inscrição realizada com sucesso! Em breve você receberá contato por WhatsApp com orientações finais.
-            </div>
-            
-            <p class="slogan-final">Conectando pessoas, movimentando vidas e transformando histórias.</p>
-          </form>
-        </div>
+     SEÇÃO DO EVENTO TREINÃO 2026 - REDIRECIONAMENTO WHATSAPP
+     ======================================== -->
+<div class="evento-section" id="inscricao">
+  <h2 class="evento-title">CORRIDA COMEMORATIVA 3º ANO DO TREINÃO - AEESP</h2>
+  <div class="evento-container">
+    <div class="evento-info">
+      <div class="evento-card">
+        <h3>Informações Oficiais</h3>
+        <ul>
+          <li><strong>Data:</strong> 22 de Março de 2026</li>
+          <li><strong>Local:</strong> Fundo do Recinto Mário Zaparolli – Pompéia/SP</li>
+          <li><strong>Horário:</strong> 7h00 (Corrida 5km e 10km) | 7h05 (Caminhada) | Após (Corrida Kids)</li>
+          <li><strong>Modalidades:</strong> Corrida 5km, Corrida 10km, Caminhada e Corrida Kids</li>
+          <li><strong>Período de Inscrição:</strong> 23 de Fevereiro a 05 de Março de 2026</li>
+          <li><strong>Inscrições:</strong> Totalmente gratuitas e exclusivas pelo site</li>
+        </ul>
+      </div>
+      
+      <div class="evento-card">
+        <h3>Participação e Regras</h3>
+        <ul>
+          <li><strong>5km:</strong> A partir de 14 anos com autorização dos responsáveis</li>
+          <li><strong>10km:</strong> Somente maiores de 18 anos</li>
+          <li><strong>Caminhada:</strong> Aberta ao público de todas as idades</li>
+          <li><strong>Corrida Kids:</strong> Crianças até 13 anos</li>
+          <li><strong>Premiação:</strong> Não haverá premiação geral ou por categorias (evento comemorativo)</li>
+          <li><strong>Responsabilidade:</strong> Cada participante assume total responsabilidade por sua condição física e saúde</li>
+        </ul>
+      </div>
+      
+      <div class="evento-card">
+        <h3>Estrutura e Benefícios</h3>
+        <ul>
+          <li>Ambulância e staff médico no percurso</li>
+          <li>Pontos de água e frutas hidratantes</li>
+          <li>Medalha de participação para todos os inscritos</li>
+          <li>Mesa comunitária de confraternização ao final</li>
+          <li>Autorização de uso de imagem para divulgação institucional</li>
+        </ul>
       </div>
     </div>
+    
+    <!-- Formulário de inscrição com redirecionamento WhatsApp -->
+    <div class="inscricao-container">
+      <h3 class="inscricao-title">INSCRIÇÕES GRATUITAS! Faça a sua agora!</h3>
+      <p class="inscricao-descricao">Preencha o formulário abaixo. Após clicar em "Confirmar Inscrição", você será redirecionado para o WhatsApp com uma mensagem pré-formatada contendo seus dados. Basta enviar a mensagem para finalizar sua inscrição!</p>
+      <p class="inscricao-aviso"><strong>Atenção:</strong> Inscrições válidas somente dentro do período: 23/02 a 05/03/2026</p>
+      
+      <!-- FORMULÁRIO SEM NETLIFY - FUNCIONA NO GITHUB PAGES -->
+      <form id="inscricao-form" class="inscricao-form">
+        <div class="form-group">
+          <label for="nome">Nome Completo *</label>
+          <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="idade">Idade *</label>
+          <input type="number" id="idade" name="idade" min="4" max="120" placeholder="Sua idade" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="modalidade">Modalidade *</label>
+          <select id="modalidade" name="modalidade" required>
+            <option value="">Selecione uma modalidade</option>
+            <option value="5km">Corrida 5km</option>
+            <option value="10km">Corrida 10km</option>
+            <option value="caminhada">Caminhada</option>
+            <option value="kids">Corrida Kids</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="telefone">Telefone (WhatsApp) *</label>
+          <input type="tel" id="telefone" name="telefone" placeholder="(14) 99999-9999" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="seu@email.com">
+        </div>
+        
+        <div class="form-group">
+          <label for="responsavel">Nome do responsável (para menores de 18 anos)</label>
+          <input type="text" id="responsavel" name="responsavel" placeholder="Nome completo do responsável">
+        </div>
+        
+        <!-- CHECKBOX COM DECLARAÇÃO EM PRIMEIRA PESSOA -->
+        <div class="form-group termos-group">
+          <input type="checkbox" id="termos" name="termos" required>
+          <label for="termos">Declaro que participo por livre e espontânea vontade, sendo responsável por minha condição física e saúde, e autorizo o uso de minha imagem para divulgação institucional da AEESP *</label>
+        </div>
+        
+        <button type="submit" class="btn-inscricao">✅ CONFIRMAR INSCRIÇÃO</button>
+        
+        <!-- Mensagem de feedback -->
+        <div id="inscricao-message" class="inscricao-message"></div>
+        
+        <p class="slogan-final">Conectando pessoas, movimentando vidas e transformando histórias.</p>
+      </form>
+    </div>
+  </div>
+</div>
     
     <!-- ========================================
          SEÇÕES EM GRID DE 2 COLUNAS
