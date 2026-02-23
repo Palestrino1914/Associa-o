@@ -46,91 +46,97 @@
       <h3>AEESP – Conectando Pessoas, Movimentando Vidas, Transformando Histórias</h3>
     </div>
 
-  <!-- ========================================
-     BANNER SLIDER - SWIPER.JS (6 SLIDES)
-     ======================================== -->
-<div class="banner-slider">
-  <div class="swiper">
-    <div class="swiper-wrapper">
-      
-      <!-- Slide 1: Evento Treinão 2026 -->
-      <div class="swiper-slide slide-evento">
-        <div class="slide-content">
-          <h2>CORRIDA COMEMORATIVA 3º ANO DO TREINÃO - AEESP</h2>
-          <p>22 de Março • Fundo do Recinto • 7h00</p>
-          <a href="#inscricao" class="btn-evento">Inscreva-se Agora</a>
+    <!-- ========================================
+         BANNER SLIDER - SWIPER.JS (6 SLIDES)
+         ======================================== -->
+    <div class="banner-slider">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          
+          <!-- Slide 1: Evento Treinão 2026 -->
+          <div class="swiper-slide slide-evento">
+            <div class="slide-content">
+              <h2>CORRIDA COMEMORATIVA 3º ANO DO TREINÃO - AEESP</h2>
+              <p>22 de Março • Fundo do Recinto • 7h00</p>
+              <a href="#inscricao" class="btn-evento">Inscreva-se Agora</a>
+            </div>
+          </div>
+          
+          <!-- Slide 2: Vídeo Logo AEESP (COM BOTÃO DE SOM) -->
+          <div class="swiper-slide slide-logo-video">
+            <div class="slide-content logo-video-slide">
+              <div class="video-wrapper">
+                <video 
+                  id="bannerVideo"
+                  class="slide-logo-video" 
+                  autoplay 
+                  muted 
+                  playsinline 
+                  preload="auto"
+                  poster="img/aeesp-logo.png">
+                  <source src="videos/Logo-em-Movimento1.mp4" type="video/mp4">
+                  Seu navegador não suporta o elemento de vídeo.
+                </video>
+                
+                <!-- Botão de Ativar Som -->
+                <button id="toggleSoundBtn" class="sound-toggle-btn" aria-label="Ativar som">
+                  <span class="sound-icon muted">🔇</span>
+                  <span class="sound-icon unmuted" style="display: none;">🔊</span>
+                  <span class="sound-text">Clique para ativar o som</span>
+                </button>
+                
+                <!-- Botão de Replay (aparece ao final do vídeo) -->
+                <button id="replayBtn" class="replay-btn" aria-label="Reproduzir novamente">
+                  <span class="replay-icon">▶</span>
+                  <span class="replay-text">Reproduzir</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Slide 3: Envolva-se -->
+          <div class="swiper-slide slide-2">
+            <div class="slide-content">
+              <h2>Apoie nossa causa</h2>
+              <p>Doações, patrocínios e voluntariado transformam vidas</p>
+            </div>
+          </div>
+          
+          <!-- Slide 4: Eventos e Atividades -->
+          <div class="swiper-slide slide-1">
+            <div class="slide-content">
+              <h2>Eventos e Atividades</h2>
+              <p>Treinos semanais, corridas aos domingos e campeonatos locais</p>
+            </div>
+          </div>
+          
+          <!-- Slide 5: Contato -->
+          <div class="swiper-slide slide-3">
+            <div class="slide-content">
+              <h2>Entre em contato</h2>
+              <p>Fale conosco, tire dúvidas via contato@aeesp.org.br</p>
+            </div>
+          </div>
+          
+          <!-- Slide 6: LOGO -->
+          <div class="swiper-slide slide-logo">
+            <div class="slide-content logo-slide">
+              <img src="img/aeesp-logo.png" alt="AEESP - Logo" class="slide-logo-img">
+            </div>
+          </div>
+          
         </div>
+        
+        <!-- Navegação -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        
+        <!-- Paginação -->
+        <div class="swiper-pagination"></div>
       </div>
-      
-     <!-- Slide 2: Vídeo Logo AEESP (COM BOTÃO DE SOM) -->
-<div class="swiper-slide slide-logo-video">
-  <div class="slide-content logo-video-slide">
-    <div class="video-wrapper">
-      <video 
-        id="bannerVideo"
-        class="slide-logo-video" 
-        autoplay 
-        muted 
-        playsinline 
-        preload="auto"
-        poster="img/aeesp-logo.png">
-        <source src="videos/Logo-em-Movimento1.mp4" type="video/mp4">
-        Seu navegador não suporta o elemento de vídeo.
-      </video>
-      
-      <!-- Botão de Ativar Som -->
-      <button id="toggleSoundBtn" class="sound-toggle-btn" aria-label="Ativar som">
-        <span class="sound-icon muted">🔇</span>
-        <span class="sound-icon unmuted" style="display: none;">🔊</span>
-        <span class="sound-text">Clique para ativar o som</span>
-      </button>
     </div>
-  </div>
-</div>
-      
-      <!-- Slide 3: Envolva-se -->
-      <div class="swiper-slide slide-2">
-        <div class="slide-content">
-          <h2>Apoie nossa causa</h2>
-          <p>Doações, patrocínios e voluntariado transformam vidas</p>
-        </div>
-      </div>
-      
-      <!-- Slide 4: Eventos e Atividades -->
-      <div class="swiper-slide slide-1">
-        <div class="slide-content">
-          <h2>Eventos e Atividades</h2>
-          <p>Treinos semanais, corridas aos domingos e campeonatos locais</p>
-        </div>
-      </div>
-      
-      <!-- Slide 5: Contato -->
-      <div class="swiper-slide slide-3">
-        <div class="slide-content">
-          <h2>Entre em contato</h2>
-          <p>Fale conosco, tire dúvidas via contato@aeesp.org.br</p>
-        </div>
-      </div>
-      
-      <!-- Slide 6: LOGO -->
-      <div class="swiper-slide slide-logo">
-        <div class="slide-content logo-slide">
-          <img src="img/aeesp-logo.png" alt="AEESP - Logo" class="slide-logo-img">
-        </div>
-      </div>
-      
-    </div>
-    
-    <!-- Navegação -->
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-    
-    <!-- Paginação -->
-    <div class="swiper-pagination"></div>
-  </div>
-</div>
 
-      <!-- ========================================
+    <!-- ========================================
          SEÇÃO DE VÍDEO INSTITUCIONAL (EXISTENTE)
          ======================================== -->
     <div class="video-section">
@@ -144,7 +150,7 @@
       </div>
     </div>
 
-         <!-- ========================================
+    <!-- ========================================
          SEÇÃO DA ENTREVISTA TVR - NOVA SEÇÃO
          ======================================== -->
     <div class="video-evento-section">
@@ -156,7 +162,10 @@
           <!-- Thumbnail do vídeo com overlay de play -->
           <img src="img/aeesp-logo.png" alt="Presidente Tiago Bezerra concedendo entrevista à TVR sobre o 3º Ano Treinão AEESP" class="video-thumbnail">
           <div class="video-overlay">
-            <span class="play-icon">▶</span>
+            <div class="play-button">
+              <span class="play-icon">▶</span>
+            </div>
+            <span class="play-text">Assista à entrevista completa</span>
           </div>
         </div>
         
@@ -180,115 +189,116 @@
           </p>
 
           <!-- Agradecimento ao repórter -->
-          <p class="video-credit" style="margin-top: 15px; font-size: 0.95em; color: #555; border-top: 1px solid #eee; padding-top: 10px;">
+          <p class="video-credit">
             <strong>Agradecimento especial:</strong> a <em>Alan Rodrigues</em>, repórter da TVR, pela excelente entrevista e pelo cuidado em retratar com sensibilidade a essência do nosso trabalho.
           </p>
         </div>
       </div>
     </div>
+
     <!-- ========================================
-     SEÇÃO DO EVENTO TREINÃO 2026 - REDIRECIONAMENTO WHATSAPP
-     ======================================== -->
-<div class="evento-section" id="inscricao">
-  <h2 class="evento-title">CORRIDA COMEMORATIVA 3º ANO DO TREINÃO - AEESP</h2>
-  <div class="evento-container">
-    <div class="evento-info">
-      <div class="evento-card">
-        <h3>Informações Oficiais</h3>
-        <ul>
-          <li><strong>Data:</strong> 22 de Março de 2026</li>
-          <li><strong>Local:</strong> Fundo do Recinto Mário Zaparolli – Pompéia/SP</li>
-          <li><strong>Horário:</strong> 7h00 (Corrida 5km e 10km) | 7h05 (Caminhada) | Após (Corrida Kids)</li>
-          <li><strong>Modalidades:</strong> Corrida 5km, Corrida 10km, Caminhada e Corrida Kids</li>
-          <li><strong>Período de Inscrição:</strong> 23 de Fevereiro a 05 de Março de 2026</li>
-          <li><strong>Inscrições:</strong> Totalmente gratuitas e exclusivas pelo site</li>
-        </ul>
-      </div>
-      
-      <div class="evento-card">
-        <h3>Participação e Regras</h3>
-        <ul>
-          <li><strong>5km:</strong> A partir de 14 anos com autorização dos responsáveis</li>
-          <li><strong>10km:</strong> Somente maiores de 18 anos</li>
-          <li><strong>Caminhada:</strong> Aberta ao público de todas as idades</li>
-          <li><strong>Corrida Kids:</strong> Crianças até 13 anos</li>
-          <li><strong>Premiação:</strong> Não haverá premiação geral ou por categorias (evento comemorativo)</li>
-          <li><strong>Responsabilidade:</strong> Cada participante assume total responsabilidade por sua condição física e saúde</li>
-        </ul>
-      </div>
-      
-      <div class="evento-card">
-        <h3>Estrutura e Benefícios</h3>
-        <ul>
-          <li>Ambulância e staff médico no percurso</li>
-          <li>Pontos de água e frutas hidratantes</li>
-          <li>Medalha de participação para todos os inscritos</li>
-          <li>Mesa comunitária de confraternização ao final</li>
-          <li>Autorização de uso de imagem para divulgação institucional</li>
-        </ul>
+         SEÇÃO DO EVENTO TREINÃO 2026 - REDIRECIONAMENTO WHATSAPP
+         ======================================== -->
+    <div class="evento-section" id="inscricao">
+      <h2 class="evento-title">CORRIDA COMEMORATIVA 3º ANO DO TREINÃO - AEESP</h2>
+      <div class="evento-container">
+        <div class="evento-info">
+          <div class="evento-card">
+            <h3>Informações Oficiais</h3>
+            <ul>
+              <li><strong>Data:</strong> 22 de Março de 2026</li>
+              <li><strong>Local:</strong> Fundo do Recinto Mário Zaparolli – Pompéia/SP</li>
+              <li><strong>Horário:</strong> 7h00 (Corrida 5km e 10km) | 7h05 (Caminhada) | Após (Corrida Kids)</li>
+              <li><strong>Modalidades:</strong> Corrida 5km, Corrida 10km, Caminhada e Corrida Kids</li>
+              <li><strong>Período de Inscrição:</strong> 23 de Fevereiro a 05 de Março de 2026</li>
+              <li><strong>Inscrições:</strong> Totalmente gratuitas e exclusivas pelo site</li>
+            </ul>
+          </div>
+          
+          <div class="evento-card">
+            <h3>Participação e Regras</h3>
+            <ul>
+              <li><strong>5km:</strong> A partir de 14 anos com autorização dos responsáveis</li>
+              <li><strong>10km:</strong> Somente maiores de 18 anos</li>
+              <li><strong>Caminhada:</strong> Aberta ao público de todas as idades</li>
+              <li><strong>Corrida Kids:</strong> Crianças até 13 anos</li>
+              <li><strong>Premiação:</strong> Não haverá premiação geral ou por categorias (evento comemorativo)</li>
+              <li><strong>Responsabilidade:</strong> Cada participante assume total responsabilidade por sua condição física e saúde</li>
+            </ul>
+          </div>
+          
+          <div class="evento-card">
+            <h3>Estrutura e Benefícios</h3>
+            <ul>
+              <li>Ambulância e staff médico no percurso</li>
+              <li>Pontos de água e frutas hidratantes</li>
+              <li>Medalha de participação para todos os inscritos</li>
+              <li>Mesa comunitária de confraternização ao final</li>
+              <li>Autorização de uso de imagem para divulgação institucional</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Formulário de inscrição com redirecionamento WhatsApp -->
+        <div class="inscricao-container">
+          <h3 class="inscricao-title">INSCRIÇÕES GRATUITAS! Faça a sua agora!</h3>
+          <p class="inscricao-descricao">Preencha o formulário abaixo. Após clicar em "Confirmar Inscrição", você será redirecionado para o WhatsApp com uma mensagem pré-formatada contendo seus dados. Basta enviar a mensagem para finalizar sua inscrição!</p>
+          <p class="inscricao-aviso"><strong>Atenção:</strong> Inscrições válidas somente dentro do período: 23/02 a 05/03/2026</p>
+          
+          <!-- FORMULÁRIO SEM NETLIFY - FUNCIONA NO GITHUB PAGES -->
+          <form id="inscricao-form" class="inscricao-form">
+            <div class="form-group">
+              <label for="nome">Nome Completo *</label>
+              <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="idade">Idade *</label>
+              <input type="number" id="idade" name="idade" min="4" max="120" placeholder="Sua idade" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="modalidade">Modalidade *</label>
+              <select id="modalidade" name="modalidade" required>
+                <option value="">Selecione uma modalidade</option>
+                <option value="5km">Corrida 5km</option>
+                <option value="10km">Corrida 10km</option>
+                <option value="caminhada">Caminhada</option>
+                <option value="kids">Corrida Kids</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="telefone">Telefone (WhatsApp) *</label>
+              <input type="tel" id="telefone" name="telefone" placeholder="(14) 99999-9999" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" placeholder="seu@email.com">
+            </div>
+            
+            <div class="form-group">
+              <label for="responsavel">Nome do responsável (para menores de 18 anos)</label>
+              <input type="text" id="responsavel" name="responsavel" placeholder="Nome completo do responsável">
+            </div>
+            
+            <!-- CHECKBOX COM DECLARAÇÃO EM PRIMEIRA PESSOA -->
+            <div class="form-group termos-group">
+              <input type="checkbox" id="termos" name="termos" required>
+              <label for="termos">Declaro que participo por livre e espontânea vontade, sendo responsável por minha condição física e saúde, e autorizo o uso de minha imagem para divulgação institucional da AEESP *</label>
+            </div>
+            
+            <button type="submit" class="btn-inscricao">✅ CONFIRMAR INSCRIÇÃO</button>
+            
+            <!-- Mensagem de feedback -->
+            <div id="inscricao-message" class="inscricao-message"></div>
+            
+            <p class="slogan-final">Conectando pessoas, movimentando vidas e transformando histórias.</p>
+          </form>
+        </div>
       </div>
     </div>
-    
-    <!-- Formulário de inscrição com redirecionamento WhatsApp -->
-    <div class="inscricao-container">
-      <h3 class="inscricao-title">INSCRIÇÕES GRATUITAS! Faça a sua agora!</h3>
-      <p class="inscricao-descricao">Preencha o formulário abaixo. Após clicar em "Confirmar Inscrição", você será redirecionado para o WhatsApp com uma mensagem pré-formatada contendo seus dados. Basta enviar a mensagem para finalizar sua inscrição!</p>
-      <p class="inscricao-aviso"><strong>Atenção:</strong> Inscrições válidas somente dentro do período: 23/02 a 05/03/2026</p>
-      
-      <!-- FORMULÁRIO SEM NETLIFY - FUNCIONA NO GITHUB PAGES -->
-      <form id="inscricao-form" class="inscricao-form">
-        <div class="form-group">
-          <label for="nome">Nome Completo *</label>
-          <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="idade">Idade *</label>
-          <input type="number" id="idade" name="idade" min="4" max="120" placeholder="Sua idade" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="modalidade">Modalidade *</label>
-          <select id="modalidade" name="modalidade" required>
-            <option value="">Selecione uma modalidade</option>
-            <option value="5km">Corrida 5km</option>
-            <option value="10km">Corrida 10km</option>
-            <option value="caminhada">Caminhada</option>
-            <option value="kids">Corrida Kids</option>
-          </select>
-        </div>
-        
-        <div class="form-group">
-          <label for="telefone">Telefone (WhatsApp) *</label>
-          <input type="tel" id="telefone" name="telefone" placeholder="(14) 99999-9999" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="email">E-mail</label>
-          <input type="email" id="email" name="email" placeholder="seu@email.com">
-        </div>
-        
-        <div class="form-group">
-          <label for="responsavel">Nome do responsável (para menores de 18 anos)</label>
-          <input type="text" id="responsavel" name="responsavel" placeholder="Nome completo do responsável">
-        </div>
-        
-        <!-- CHECKBOX COM DECLARAÇÃO EM PRIMEIRA PESSOA -->
-        <div class="form-group termos-group">
-          <input type="checkbox" id="termos" name="termos" required>
-          <label for="termos">Declaro que participo por livre e espontânea vontade, sendo responsável por minha condição física e saúde, e autorizo o uso de minha imagem para divulgação institucional da AEESP *</label>
-        </div>
-        
-        <button type="submit" class="btn-inscricao">✅ CONFIRMAR INSCRIÇÃO</button>
-        
-        <!-- Mensagem de feedback -->
-        <div id="inscricao-message" class="inscricao-message"></div>
-        
-        <p class="slogan-final">Conectando pessoas, movimentando vidas e transformando histórias.</p>
-      </form>
-    </div>
-  </div>
-</div>
     
     <!-- ========================================
          SEÇÕES EM GRID DE 2 COLUNAS
@@ -306,7 +316,7 @@
       <div class="section-card">
         <svg viewBox="0 0 24 24"><path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9z"/></svg>
         <h3>Nossa História</h3>
-        <p>Mais de 15 anos transformando vidas em Pompeia por meio do esporte.</p>
+        <p>Mais de 15 anos transformando vidas em Pompéia por meio do esporte.</p>
         <a href="historia.html">Conheça</a>
       </div>
 
@@ -381,13 +391,13 @@
     <p>© 2026 – Todos os direitos reservados</p>
   </footer>
 
- <!-- Swiper.js JS - CARREGAR ANTES do main.js (SEM ESPAÇOS!) -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- Swiper.js JS - CARREGAR ANTES do main.js (SEM ESPAÇOS!) -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-<!-- Script do site - DEPOIS do Swiper.js -->
-<script src="js/main.js"></script>
+  <!-- Script do site - DEPOIS do Swiper.js -->
+  <script src="js/main.js"></script>
 
-<!-- Script PIX -->
-<script src="js/pix.js"></script>
+  <!-- Script PIX -->
+  <script src="js/pix.js"></script>
 </body>
 </html>
