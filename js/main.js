@@ -17,41 +17,87 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // ========================================
-  // INICIALIZAR SWIPER.JS - BANNER SLIDER
-  // ========================================
-  if (typeof Swiper !== 'undefined' && document.querySelector('.swiper')) {
-    try {
-      const swiper = new Swiper('.swiper', {
-        loop: true,
-        speed: 800,
-        autoplay: {
-          delay: 10000,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-          dynamicBullets: true,
-        },
-        effect: 'fade',
-        fadeEffect: { crossFade: true },
-        keyboard: { enabled: true },
-        a11y: {
-          enabled: true,
-          prevSlideMessage: 'Slide anterior',
-          nextSlideMessage: 'Próximo slide',
-        },
-      });
-    } catch (error) {
-      console.error('Erro ao inicializar Swiper:', error);
-    }
+// ========================================
+// INICIALIZAR SWIPER.JS - BANNER SLIDER
+// ========================================
+const initSwiper = () => {
+  // Verificar se Swiper foi carregado
+  if (typeof window.Swiper === 'undefined') {
+    console.error('❌ Swiper.js não carregado! Verifique as URLs no HTML.');
+    return;
   }
+  
+  // Verificar se o elemento existe
+  if (!document.querySelector('.swiper')) {
+    console.warn('⚠️ Elemento .swiper não encontrado no DOM.');
+    return;
+  }
+  
+  try {
+    const swiper = new Swiper('.swiper', {
+      // Configurações básicas
+      loop: true,
+      speed: 800,
+      
+      // Autoplay - 8 SEGUNDOS conforme solicitado
+      autoplay: {
+        delay: 8000, // ✅ 8 segundos (8000ms)
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      
+      // Navegação
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      
+      // Paginação
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        dynamicBullets: true,
+      },
+      
+      // Efeitos de transição
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true,
+      },
+      
+      // Teclado
+      keyboard: {
+        enabled: true,
+      },
+      
+      // Acessibilidade
+      a11y: {
+        enabled: true,
+        prevSlideMessage: 'Slide anterior',
+        nextSlideMessage: 'Próximo slide',
+      },
+    });
+    
+    console.log('✅ Swiper inicializado com sucesso!');
+    return swiper;
+    
+  } catch (error) {
+    console.error('❌ Erro ao inicializar Swiper:', error);
+    // Fallback: mostrar todos os slides estáticos
+    document.querySelectorAll('.swiper-slide').forEach(slide => {
+      slide.style.display = 'block';
+      slide.style.opacity = '0.8';
+    });
+  }
+};
+
+// Inicializar Swiper após o DOM estar pronto
+document.addEventListener('DOMContentLoaded', () => {
+  // ... outras inicializações ...
+  
+  // Inicializar Swiper com pequeno delay para garantir carregamento
+  setTimeout(initSwiper, 100);
+});
 
   // ========================================
   // CONTROLE DE SOM E REPLAY DO VÍDEO DO BANNER
