@@ -306,109 +306,103 @@ document.addEventListener('DOMContentLoaded', () => {
   
   initPixForm();
 
-  // ========================================
-  // FORMULÁRIO DE INSCRIÇÃO - TREINÃO 2026
-  // ========================================
-  const initInscricaoForm = () => {
-    const form = document.querySelector('.inscricao-form');
-    if (!form) return;
-    
-    const messageBox = form.querySelector('.inscricao-message');
-    
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const nome = form.querySelector('#nome')?.value.trim();
-      const email = form.querySelector('#email')?.value.trim();
-      const telefone = form.querySelector('#telefone')?.value.trim();
-      const modalidade = form.querySelector('#modalidade')?.value;
-      const termos = form.querySelector('#termos')?.checked;
-      
-      // Validação básica
-      if (!nome || !email || !telefone || !modalidade) {
-        showMessage('Por favor, preencha todos os campos obrigatórios.', 'error');
-        return;
-      }
-      
-      if (!termos) {
-        showMessage('É necessário aceitar os termos para se inscrever.', 'error');
-        return;
-      }
-      
-      // Validação de e-mail simples
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(email)) {
-        showMessage('Por favor, informe um e-mail válido.', 'error');
-        return;
-      }
-      
-      // Simulação de envio (substituir por fetch/API real)
-      showMessage('✅ Inscrição realizada com sucesso! Verifique seu e-mail para confirmação.', 'success');
-      form.reset();
-      
-      // Em produção: enviar para backend
-      /*
-      fetch('/api/inscricao', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ nome, email, telefone, modalidade })
-      })
-      .then(res => res.json())
-      .then(data => { /* sucesso */ })
-      .catch(err => showMessage('Erro ao enviar inscrição. Tente novamente.', 'error'));
-      */
-    });
-    
-    function showMessage(text, type) {
-      if (!messageBox) return;
-      messageBox.textContent = text;
-      messageBox.className = `inscricao-message ${type}`;
-      messageBox.style.display = 'block';
-      
-      setTimeout(() => {
-        messageBox.style.display = 'none';
-      }, 5000);
-    }
-  };
+ // ========================================
+// FORMULÁRIO DE INSCRIÇÃO - REDIRECIONAMENTO PARA WHATSAPP
+// ========================================
+const initInscricaoForm = () => {
+  const form = document.querySelector('#inscricao-form');
+  if (!form) return;
   
-  initInscricaoForm();
+  const messageBox = document.querySelector('#inscricao-message');
 
-  // ========================================
-  // FUNÇÕES AUXILIARES
-  // ========================================
-  
-  // Nome completo da modalidade
-  function getNomeModalidade(codigo) {
-    const modalidades = {
-      '5km': 'Corrida 5km',
-      '10km': 'Corrida 10km',
-      'caminhada': 'Caminhada',
-      'kids': 'Corrida Kids'
-    };
-    return modalidades[codigo] || codigo;
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Coletar dados do formulário
+    const nome = form.querySelector('#nome')?.value.trim();
+    const idade = form.querySelector('#idade')?.value.trim();
+    const modalidade = form.querySelector('#modalidade')?.value;
+    const telefone = form.querySelector('#telefone')?.value.trim();
+    const email = form.querySelector('#email')?.value.trim() || 'Não informado';
+    const responsavel = form.querySelector('#responsavel')?.value.trim() || 'Não informado';
+    const termos = form.querySelector('#termos')?.checked;
+    
+    // Validação básica
+    if (!nome || !idade || !modalidade || !telefone || !termos) {
+      showMessage('Por favor, preencha todos os campos obrigatórios.', 'error');
+      return;
+    }
+    
+    // Validar idade numérica
+    if (isNaN(idade) || idade < 4 || idade > 120) {
+      showMessage('Idade inválida. Informe entre 4 e 120 anos.', 'error');
+      return;
+    }
+    
+    // Validar compatibilidade idade/modalidade
+    if ((modalidade === '5km' && idade < 14) || (modalidade === '10km' && idade < 18)) {
+      showMessage('Idade não compatível com a modalidade selecionada.', 'error');
+      return;
+    }
+    
+    // Montar mensagem formatada para WhatsApp
+    let mensagem = `*INSCRIÇÃO CONFIRMADA - 3º ANO TREINÃO AEESP*\n\n`;
+    mensagem += `*DATA:* 22 de Março de 2026\n`;
+    mensagem += `*LOCAL:* Fundo do Recinto Mário Zaparolli – Pompeia/SP\n\n`;
+    mensagem += `*DADOS DO PARTICIPANTE:*\n`;
+    mensagem += `Nome: ${nome}\n`;
+    mensagem += `Idade: ${idade} anos\n`;
+    mensagem += `Modalidade: ${getNomeModalidade(modalidade)}\n`;
+    mensagem += `Telefone: ${telefone}\n`;
+    mensagem += `E-mail: ${email}\n`;
+    
+    if (idade < 18 && modalidade !== 'caminhada' && modalidade !== 'kids') {
+      mensagem += `Responsável: ${responsavel}\n`;
+    }
+    
+    mensagem += `\n*Termos de responsabilidade aceitos*\n`;
+    mensagem += `*Conectando pessoas, movimentando vidas e transformando histórias.*`;
+    
+    // Codificar para URL (SEM espaços!)
+    const mensagemCodificada = encodeURIComponent(mensagem);
+    
+    // Número do WhatsApp da AEESP: (14) 99846-6018 → 5514998466018
+    const numeroWhatsApp = '5514998466018';
+    
+    // REDIRECIONAR PARA WHATSAPP (URL SEM ESPAÇOS!)
+    window.location.href = `https://wa.me/${numeroWhatsApp}?text=${mensagemCodificada}`;
+    
+    // Mensagem de sucesso
+    showMessage('✅ Inscrição enviada! Aguarde contato no WhatsApp para confirmação.', 'success');
+    
+    // Limpar formulário após 3 segundos
+    setTimeout(() => {
+      form.reset();
+    }, 3000);
+  });
+
+  function showMessage(text, type) {
+    if (!messageBox) return;
+    messageBox.textContent = text;
+    messageBox.className = `inscricao-message ${type}`;
+    messageBox.style.display = 'block';
+    
+    setTimeout(() => {
+      messageBox.style.display = 'none';
+    }, 5000);
   }
-  
-  // Máscara de telefone
-  const telefoneInput = document.getElementById('telefone');
-  if (telefoneInput) {
-    telefoneInput.addEventListener('input', function(e) {
-      let value = e.target.value.replace(/\D/g, '');
-      if (value.length > 11) value = value.slice(0, 11);
-      if (value.length > 2) value = `(${value.slice(0, 2)}) ${value.slice(2)}`;
-      if (value.length > 10) value = `${value.slice(0, 10)}-${value.slice(10)}`;
-      e.target.value = value;
-    });
-  }
-  
-  // Máscara de valor monetário (para o PIX)
-  const valorInput = document.getElementById('valor-doacao');
-  if (valorInput) {
-    valorInput.addEventListener('input', function(e) {
-      let value = e.target.value.replace(/\D/g, '');
-      value = (value / 100).toFixed(2) + '';
-      value = value.replace('.', ',');
-      value = value.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
-      e.target.value = value;
-    });
-  }
-});
+};
+
+// Função auxiliar para nome da modalidade
+function getNomeModalidade(codigo) {
+  const modalidades = {
+    '5km': 'Corrida 5km',
+    '10km': 'Corrida 10km',
+    'caminhada': 'Caminhada',
+    'kids': 'Corrida Kids'
+  };
+  return modalidades[codigo] || codigo;
+}
+
+// Inicializar formulário
+initInscricaoForm();
