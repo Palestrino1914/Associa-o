@@ -229,7 +229,7 @@ SLIDE DO LOGO EM VÍDEO - COM REPLAY E SOM
   height: auto;
   object-fit: contain;
   border-radius: 12px;
-  box-shadow: 0 20px 60px rgba(0, 102, 51, 0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   border: 3px solid rgba(255, 255, 255, 0.3);
   background: #fff;
 }
