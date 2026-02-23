@@ -229,13 +229,29 @@ SLIDE DO LOGO EM VÍDEO - COM REPLAY E SOM
   height: auto;
   object-fit: contain;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  border: 3px solid rgba(255, 255, 255, 0.3);
+  
+  /* Sombra mais suave e clara */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  
+  /* Borda mais clara */
+  border: 3px solid rgba(255, 255, 255, 0.5);
   background: #fff;
+  
+  /* AUMENTAR BRILHO DO VÍDEO */
+  filter: brightness(1.15) contrast(1.05);
+  
+  /* Transição suave */
+  transition: filter 0.3s ease;
+}
+
+/* Aumentar ainda mais no hover (opcional) */
+.slide-logo-video video:hover {
+  filter: brightness(1.2) contrast(1.05);
 }
 
 .slide-logo-video video::-webkit-media-controls {
   background-color: rgba(0, 0, 0, 0.7);
+}0, 0.7);
 }
 
 /* ========================================
@@ -2251,5 +2267,10 @@ ESTILOS PARA PÁGINA DE CONTATO
   
   .sound-toggle-btn:hover .sound-text {
     display: none; /* Não mostra texto em mobile */
+  }
+}
+@media (max-width: 768px) {
+  .slide-logo-video video {
+    filter: brightness(1.1); /* Um pouco menos em mobile */
   }
 }
