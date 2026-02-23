@@ -17,87 +17,79 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-// ========================================
-// INICIALIZAR SWIPER.JS - BANNER SLIDER
-// ========================================
-const initSwiper = () => {
-  // Verificar se Swiper foi carregado
-  if (typeof window.Swiper === 'undefined') {
-    console.error('❌ Swiper.js não carregado! Verifique as URLs no HTML.');
-    return;
-  }
-  
-  // Verificar se o elemento existe
-  if (!document.querySelector('.swiper')) {
-    console.warn('⚠️ Elemento .swiper não encontrado no DOM.');
-    return;
-  }
-  
-  try {
-    const swiper = new Swiper('.swiper', {
-      // Configurações básicas
-      loop: true,
-      speed: 800,
-      
-      // Autoplay - 8 SEGUNDOS conforme solicitado
-      autoplay: {
-        delay: 8000, // ✅ 8 segundos (8000ms)
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true,
-      },
-      
-      // Navegação
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      
-      // Paginação
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-        dynamicBullets: true,
-      },
-      
-      // Efeitos de transição
-      effect: 'fade',
-      fadeEffect: {
-        crossFade: true,
-      },
-      
-      // Teclado
-      keyboard: {
-        enabled: true,
-      },
-      
-      // Acessibilidade
-      a11y: {
-        enabled: true,
-        prevSlideMessage: 'Slide anterior',
-        nextSlideMessage: 'Próximo slide',
-      },
-    });
+  // ========================================
+  // INICIALIZAR SWIPER.JS - BANNER SLIDER
+  // ========================================
+  const initSwiper = () => {
+    // Verificar se Swiper foi carregado
+    if (typeof window.Swiper === 'undefined') {
+      console.error('❌ Swiper.js não carregado! Verifique as URLs no HTML.');
+      return;
+    }
     
-    console.log('✅ Swiper inicializado com sucesso!');
-    return swiper;
+    // Verificar se o elemento existe
+    if (!document.querySelector('.swiper')) {
+      console.warn('⚠️ Elemento .swiper não encontrado no DOM.');
+      return;
+    }
     
-  } catch (error) {
-    console.error('❌ Erro ao inicializar Swiper:', error);
-    // Fallback: mostrar todos os slides estáticos
-    document.querySelectorAll('.swiper-slide').forEach(slide => {
-      slide.style.display = 'block';
-      slide.style.opacity = '0.8';
-    });
-  }
-};
-
-// Inicializar Swiper após o DOM estar pronto
-document.addEventListener('DOMContentLoaded', () => {
-  // ... outras inicializações ...
-  
-  // Inicializar Swiper com pequeno delay para garantir carregamento
-  setTimeout(initSwiper, 100);
-});
+    try {
+      const swiper = new Swiper('.swiper', {
+        // Configurações básicas
+        loop: true,
+        speed: 800,
+        
+        // Autoplay - 8 SEGUNDOS conforme solicitado
+        autoplay: {
+          delay: 8000, // ✅ 8 segundos (8000ms)
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        },
+        
+        // Navegação
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        
+        // Paginação
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+          dynamicBullets: true,
+        },
+        
+        // Efeitos de transição
+        effect: 'fade',
+        fadeEffect: {
+          crossFade: true,
+        },
+        
+        // Teclado
+        keyboard: {
+          enabled: true,
+        },
+        
+        // Acessibilidade
+        a11y: {
+          enabled: true,
+          prevSlideMessage: 'Slide anterior',
+          nextSlideMessage: 'Próximo slide',
+        },
+      });
+      
+      console.log('✅ Swiper inicializado com sucesso!');
+      return swiper;
+      
+    } catch (error) {
+      console.error('❌ Erro ao inicializar Swiper:', error);
+      // Fallback: mostrar todos os slides estáticos
+      document.querySelectorAll('.swiper-slide').forEach(slide => {
+        slide.style.display = 'block';
+        slide.style.opacity = '0.8';
+      });
+    }
+  };
 
   // ========================================
   // CONTROLE DE SOM E REPLAY DO VÍDEO DO BANNER
@@ -176,8 +168,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Inicializa ícones
     updateSoundIcons();
   };
-  
-  initBannerVideoControls();
 
   // ========================================
   // CARREGAR VÍDEO DO YOUTUBE AO CLICAR (SEÇÃO TVR)
@@ -210,8 +200,6 @@ document.addEventListener('DOMContentLoaded', () => {
       this.classList.add('video-loaded');
     });
   };
-  
-  initYoutubeVideoLoader();
 
   // ========================================
   // LIGHTBOX PARA GALERIA DE FOTOS
@@ -263,8 +251,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   };
-  
-  initLightbox();
 
   // ========================================
   // ANIMAÇÃO DOS CARDS AO ENTRAR NA VIEWPORT
@@ -349,106 +335,137 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 4000);
     }
   };
-  
-  initPixForm();
 
- // ========================================
-// FORMULÁRIO DE INSCRIÇÃO - REDIRECIONAMENTO PARA WHATSAPP
-// ========================================
-const initInscricaoForm = () => {
-  const form = document.querySelector('#inscricao-form');
-  if (!form) return;
-  
-  const messageBox = document.querySelector('#inscricao-message');
+  // ========================================
+  // FORMULÁRIO DE INSCRIÇÃO - REDIRECIONAMENTO PARA WHATSAPP
+  // ========================================
+  const initInscricaoForm = () => {
+    const form = document.querySelector('#inscricao-form');
+    if (!form) return;
+    
+    const messageBox = document.querySelector('#inscricao-message');
 
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Coletar dados do formulário
-    const nome = form.querySelector('#nome')?.value.trim();
-    const idade = form.querySelector('#idade')?.value.trim();
-    const modalidade = form.querySelector('#modalidade')?.value;
-    const telefone = form.querySelector('#telefone')?.value.trim();
-    const email = form.querySelector('#email')?.value.trim() || 'Não informado';
-    const responsavel = form.querySelector('#responsavel')?.value.trim() || 'Não informado';
-    const termos = form.querySelector('#termos')?.checked;
-    
-    // Validação básica
-    if (!nome || !idade || !modalidade || !telefone || !termos) {
-      showMessage('Por favor, preencha todos os campos obrigatórios.', 'error');
-      return;
-    }
-    
-    // Validar idade numérica
-    if (isNaN(idade) || idade < 4 || idade > 120) {
-      showMessage('Idade inválida. Informe entre 4 e 120 anos.', 'error');
-      return;
-    }
-    
-    // Validar compatibilidade idade/modalidade
-    if ((modalidade === '5km' && idade < 14) || (modalidade === '10km' && idade < 18)) {
-      showMessage('Idade não compatível com a modalidade selecionada.', 'error');
-      return;
-    }
-    
-    // Montar mensagem formatada para WhatsApp
-    let mensagem = `*INSCRIÇÃO CONFIRMADA - 3º ANO TREINÃO AEESP*\n\n`;
-    mensagem += `*DATA:* 22 de Março de 2026\n`;
-    mensagem += `*LOCAL:* Fundo do Recinto Mário Zaparolli – Pompeia/SP\n\n`;
-    mensagem += `*DADOS DO PARTICIPANTE:*\n`;
-    mensagem += `Nome: ${nome}\n`;
-    mensagem += `Idade: ${idade} anos\n`;
-    mensagem += `Modalidade: ${getNomeModalidade(modalidade)}\n`;
-    mensagem += `Telefone: ${telefone}\n`;
-    mensagem += `E-mail: ${email}\n`;
-    
-    if (idade < 18 && modalidade !== 'caminhada' && modalidade !== 'kids') {
-      mensagem += `Responsável: ${responsavel}\n`;
-    }
-    
-    mensagem += `\n*Termos de responsabilidade aceitos*\n`;
-    mensagem += `*Conectando pessoas, movimentando vidas e transformando histórias.*`;
-    
-    // Codificar para URL (SEM espaços!)
-    const mensagemCodificada = encodeURIComponent(mensagem);
-    
-    // Número do WhatsApp da AEESP: (14) 99846-6018 → 5514998466018
-    const numeroWhatsApp = '5514998466018';
-    
-    // REDIRECIONAR PARA WHATSAPP (URL SEM ESPAÇOS!)
-    window.location.href = `https://wa.me/${numeroWhatsApp}?text=${mensagemCodificada}`;
-    
-    // Mensagem de sucesso
-    showMessage('✅ Inscrição enviada! Aguarde contato no WhatsApp para confirmação.', 'success');
-    
-    // Limpar formulário após 3 segundos
-    setTimeout(() => {
-      form.reset();
-    }, 3000);
-  });
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Coletar dados do formulário
+      const nome = form.querySelector('#nome')?.value.trim();
+      const idade = form.querySelector('#idade')?.value.trim();
+      const modalidade = form.querySelector('#modalidade')?.value;
+      const telefone = form.querySelector('#telefone')?.value.trim();
+      const email = form.querySelector('#email')?.value.trim() || 'Não informado';
+      const responsavel = form.querySelector('#responsavel')?.value.trim() || 'Não informado';
+      const termos = form.querySelector('#termos')?.checked;
+      
+      // Validação básica
+      if (!nome || !idade || !modalidade || !telefone || !termos) {
+        showMessage('Por favor, preencha todos os campos obrigatórios.', 'error');
+        return;
+      }
+      
+      // Validar idade numérica
+      if (isNaN(idade) || idade < 4 || idade > 120) {
+        showMessage('Idade inválida. Informe entre 4 e 120 anos.', 'error');
+        return;
+      }
+      
+      // Validar compatibilidade idade/modalidade
+      if ((modalidade === '5km' && idade < 14) || (modalidade === '10km' && idade < 18)) {
+        showMessage('Idade não compatível com a modalidade selecionada.', 'error');
+        return;
+      }
+      
+      // Montar mensagem formatada para WhatsApp
+      let mensagem = `*INSCRIÇÃO CONFIRMADA - 3º ANO TREINÃO AEESP*\n\n`;
+      mensagem += `*DATA:* 22 de Março de 2026\n`;
+      mensagem += `*LOCAL:* Fundo do Recinto Mário Zaparolli – Pompeia/SP\n\n`;
+      mensagem += `*DADOS DO PARTICIPANTE:*\n`;
+      mensagem += `Nome: ${nome}\n`;
+      mensagem += `Idade: ${idade} anos\n`;
+      mensagem += `Modalidade: ${getNomeModalidade(modalidade)}\n`;
+      mensagem += `Telefone: ${telefone}\n`;
+      mensagem += `E-mail: ${email}\n`;
+      
+      if (idade < 18 && modalidade !== 'caminhada' && modalidade !== 'kids') {
+        mensagem += `Responsável: ${responsavel}\n`;
+      }
+      
+      mensagem += `\n*Termos de responsabilidade aceitos*\n`;
+      mensagem += `*Conectando pessoas, movimentando vidas e transformando histórias.*`;
+      
+      // Codificar para URL (SEM espaços!)
+      const mensagemCodificada = encodeURIComponent(mensagem);
+      
+      // Número do WhatsApp da AEESP: (14) 99846-6018 → 5514998466018
+      const numeroWhatsApp = '5514998466018';
+      
+      // REDIRECIONAR PARA WHATSAPP (URL SEM ESPAÇOS!)
+      window.location.href = `https://wa.me/${numeroWhatsApp}?text=${mensagemCodificada}`;
+      
+      // Mensagem de sucesso
+      showMessage('✅ Inscrição enviada! Aguarde contato no WhatsApp para confirmação.', 'success');
+      
+      // Limpar formulário após 3 segundos
+      setTimeout(() => {
+        form.reset();
+      }, 3000);
+    });
 
-  function showMessage(text, type) {
-    if (!messageBox) return;
-    messageBox.textContent = text;
-    messageBox.className = `inscricao-message ${type}`;
-    messageBox.style.display = 'block';
-    
-    setTimeout(() => {
-      messageBox.style.display = 'none';
-    }, 5000);
-  }
-};
-
-// Função auxiliar para nome da modalidade
-function getNomeModalidade(codigo) {
-  const modalidades = {
-    '5km': 'Corrida 5km',
-    '10km': 'Corrida 10km',
-    'caminhada': 'Caminhada',
-    'kids': 'Corrida Kids'
+    function showMessage(text, type) {
+      if (!messageBox) return;
+      messageBox.textContent = text;
+      messageBox.className = `inscricao-message ${type}`;
+      messageBox.style.display = 'block';
+      
+      setTimeout(() => {
+        messageBox.style.display = 'none';
+      }, 5000);
+    }
   };
-  return modalidades[codigo] || codigo;
-}
 
-// Inicializar formulário
-initInscricaoForm();
+  // Função auxiliar para nome da modalidade
+  function getNomeModalidade(codigo) {
+    const modalidades = {
+      '5km': 'Corrida 5km',
+      '10km': 'Corrida 10km',
+      'caminhada': 'Caminhada',
+      'kids': 'Corrida Kids'
+    };
+    return modalidades[codigo] || codigo;
+  }
+
+  // ========================================
+  // MÁSCARA DE TELEFONE (OPCIONAL)
+  // ========================================
+  const telefoneInput = document.getElementById('telefone');
+  if (telefoneInput) {
+    telefoneInput.addEventListener('input', function(e) {
+      let value = e.target.value.replace(/\D/g, '');
+      
+      // Limitar a 11 dígitos (DDD + 9 dígitos)
+      if (value.length > 11) {
+        value = value.slice(0, 11);
+      }
+      
+      // Aplicar máscara (XX) XXXXX-XXXX
+      if (value.length > 2) {
+        value = `(${value.slice(0, 2)}) ${value.slice(2)}`;
+      }
+      if (value.length > 10) {
+        value = `${value.slice(0, 10)}-${value.slice(10)}`;
+      }
+      
+      e.target.value = value;
+    });
+  }
+
+  // ========================================
+  // INICIALIZAR TODOS OS COMPONENTES
+  // ========================================
+  initSwiper(); // Inicializa imediatamente (não duplica evento)
+  initBannerVideoControls();
+  initYoutubeVideoLoader();
+  initLightbox();
+  initPixForm();
+  initInscricaoForm();
+});
