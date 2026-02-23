@@ -381,12 +381,13 @@
     <p>© 2026 – Todos os direitos reservados</p>
   </footer>
 
-  <!-- Swiper.js JS - CORRIGIDO (sem espaços) -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  
-  <!-- Script do site -->
-  <script src="js/main.js"></script>
-  <!-- Script PIX -->
-  <script src="js/pix.js"></script>
+ <!-- Swiper.js JS - CARREGAR ANTES do main.js (SEM ESPAÇOS!) -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Script do site - DEPOIS do Swiper.js -->
+<script src="js/main.js"></script>
+
+<!-- Script PIX -->
+<script src="js/pix.js"></script>
 </body>
 </html>
