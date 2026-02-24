@@ -2274,3 +2274,182 @@ ESTILOS PARA PÁGINA DE CONTATO
     filter: brightness(1.1); /* Um pouco menos em mobile */
   }
 }
+/* ========================================
+   SEÇÃO DE PARCERIAS
+   ======================================== */
+.parceiros-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  padding: 80px 20px;
+  margin: 60px 0;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.parceiros-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #004d26 0%, #ED1C24 100%);
+}
+
+.parceiros-title {
+  font-size: 2.5rem;
+  color: #004d26;
+  text-align: center;
+  margin-bottom: 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+
+.parceiro-destaque {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 40px;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  border: 2px solid rgba(0, 77, 38, 0.1);
+}
+
+.parceiro-logo {
+  text-align: center;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 3px solid #ED1C24;
+}
+
+.parceiro-logo img {
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.parceiro-conteudo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.parceiro-conteudo h3 {
+  font-size: 2rem;
+  color: #004d26;
+  margin: 0;
+  font-weight: 700;
+}
+
+.parceiro-subtitulo {
+  font-size: 1.1rem;
+  color: #666;
+  margin: 0;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.parceiro-texto p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #333;
+  margin: 0;
+  text-align: justify;
+}
+
+.parceiro-texto p + p {
+  margin-top: 15px;
+}
+
+.parceiro-cta {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.btn-parceiros {
+  display: inline-block;
+  background: linear-gradient(135deg, #004d26 0%, #00563F 100%);
+  color: white;
+  text-decoration: none;
+  padding: 15px 35px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 77, 38, 0.3);
+  border: 2px solid transparent;
+}
+
+.btn-parceiros:hover {
+  background: linear-gradient(135deg, #ED1C24 0%, #c41220 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(237, 28, 36, 0.4);
+  border-color: #004d26;
+}
+
+.parceiro-frase {
+  margin-top: 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #004d26;
+  font-style: italic;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .parceiro-destaque {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 30px;
+  }
+  
+  .parceiro-logo {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+  
+  .parceiros-title {
+    font-size: 2.2rem;
+  }
+  
+  .parceiro-conteudo h3 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .parceiros-section {
+    padding: 60px 15px;
+    margin: 50px 0;
+  }
+  
+  .parceiro-destaque {
+    padding: 25px;
+  }
+  
+  .parceiros-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  
+  .parceiro-conteudo h3 {
+    font-size: 1.6rem;
+  }
+  
+  .parceiro-texto p {
+    font-size: 1rem;
+  }
+  
+  .btn-parceiros {
+    width: 100%;
+    padding: 14px 25px;
+    font-size: 1.05rem;
+  }
+}
