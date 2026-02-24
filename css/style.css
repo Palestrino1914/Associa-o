@@ -2453,3 +2453,72 @@ ESTILOS PARA PÁGINA DE CONTATO
     font-size: 1.05rem;
   }
 }
+
+/* ========================================
+   FOTO DOS PROJETOS - POLIESPORTIVO
+   ======================================== */
+.projeto-foto-container {
+  text-align: center;
+  margin: 40px 0;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 2px solid rgba(0, 77, 38, 0.1);
+}
+
+.projeto-foto {
+  max-width: 100%;
+  width: 800px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  display: block;
+  margin: 0 auto 15px;
+  transition: transform 0.3s ease;
+}
+
+.projeto-foto:hover {
+  transform: scale(1.02);
+}
+
+.projeto-foto-legenda {
+  font-size: 1rem;
+  color: #666;
+  font-style: italic;
+  margin: 0;
+  padding: 10px 20px;
+  background: white;
+  border-radius: 8px;
+  display: inline-block;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .projeto-foto-container {
+    margin: 30px 0;
+    padding: 15px;
+  }
+  
+  .projeto-foto {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .projeto-foto-legenda {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .projeto-foto-container {
+    margin: 25px 0;
+    padding: 10px;
+  }
+  
+  .projeto-foto-legenda {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+  }
+}
