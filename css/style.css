@@ -2522,3 +2522,20 @@ ESTILOS PARA PÁGINA DE CONTATO
     padding: 6px 12px;
   }
 }
+
+/* ========================================
+   FOTO CENTRALIZADA - PARCERIAS
+   ======================================== */
+.foto-centralizada {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Ajuste específico para a foto da Vittapro */
+.diario-foto img[src*="logo-vitta-pro"] {
+  max-width: 400px;
+  margin: 0 auto;
+}
