@@ -1,6 +1,6 @@
 /* ========================================
-RESET E CONFIGURAÇÕES BÁSICAS
-======================================== */
+   RESET E CONFIGURAÇÕES BÁSICAS
+   ======================================== */
 * {
   margin: 0;
   padding: 0;
@@ -21,8 +21,8 @@ body {
 }
 
 /* ========================================
-HEADER E NAVEGAÇÃO - VERDE ESCURO COM FONTE BRANCA
-======================================== */
+   HEADER E NAVEGAÇÃO - VERDE ESCURO COM FONTE BRANCA
+   ======================================== */
 header {
   background: linear-gradient(135deg, #004d26 0%, #00563F 100%);
   color: white;
@@ -83,8 +83,8 @@ header {
 }
 
 /* ========================================
-PAGE HEADER (Título principal)
-======================================== */
+   PAGE HEADER (Título principal)
+   ======================================== */
 .page-header {
   text-align: center;
   padding: 50px 20px;
@@ -111,8 +111,8 @@ PAGE HEADER (Título principal)
 }
 
 /* ========================================
-BANNER SLIDER - SWIPER.JS
-======================================== */
+   BANNER SLIDER - SWIPER.JS
+   ======================================== */
 .banner-slider {
   width: 100%;
   height: 550px;
@@ -195,8 +195,8 @@ BANNER SLIDER - SWIPER.JS
 }
 
 /* ========================================
-SLIDE DO LOGO EM VÍDEO - COM REPLAY E SOM
-======================================== */
+   SLIDE DO LOGO EM VÍDEO - COM REPLAY E SOM
+   ======================================== */
 .slide-logo-video {
   background: linear-gradient(135deg, #004d26 0%, #00563F 100%) !important;
   display: flex;
@@ -229,29 +229,19 @@ SLIDE DO LOGO EM VÍDEO - COM REPLAY E SOM
   height: auto;
   object-fit: contain;
   border-radius: 12px;
-  
-  /* Sombra mais suave e clara */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  
-  /* Borda mais clara */
   border: 3px solid rgba(255, 255, 255, 0.5);
   background: #fff;
-  
-  /* AUMENTAR BRILHO DO VÍDEO */
   filter: brightness(1.15) contrast(1.05);
-  
-  /* Transição suave */
   transition: filter 0.3s ease;
 }
 
-/* Aumentar ainda mais no hover (opcional) */
 .slide-logo-video video:hover {
   filter: brightness(1.2) contrast(1.05);
 }
 
 .slide-logo-video video::-webkit-media-controls {
   background-color: rgba(0, 0, 0, 0.7);
-}0, 0.7);
 }
 
 /* ========================================
@@ -334,8 +324,8 @@ SLIDE DO LOGO EM VÍDEO - COM REPLAY E SOM
 }
 
 /* ========================================
-BOTÃO DE REPLAY - NOVO
-======================================== */
+   BOTÃO DE REPLAY
+   ======================================== */
 .replay-btn {
   position: absolute;
   top: 50%;
@@ -409,8 +399,8 @@ BOTÃO DE REPLAY - NOVO
 }
 
 /* ========================================
-SLIDE DO LOGO ESTÁTICO
-======================================== */
+   SLIDE DO LOGO ESTÁTICO
+   ======================================== */
 .slide-logo {
   background: linear-gradient(135deg, #004d26 0%, #00563F 100%) !important;
   display: flex;
@@ -435,8 +425,8 @@ SLIDE DO LOGO ESTÁTICO
 }
 
 /* ========================================
-NAVEGAÇÃO E PAGINAÇÃO DO SWIPER
-======================================== */
+   NAVEGAÇÃO E PAGINAÇÃO DO SWIPER
+   ======================================== */
 .swiper-button-next,
 .swiper-button-prev {
   color: white;
@@ -485,8 +475,8 @@ NAVEGAÇÃO E PAGINAÇÃO DO SWIPER
 }
 
 /* ========================================
-SEÇÃO DA ENTREVISTA TVR
-======================================== */
+   SEÇÃO DA ENTREVISTA TVR
+   ======================================== */
 .video-evento-section {
   background: white;
   padding: 60px 20px;
@@ -694,8 +684,8 @@ SEÇÃO DA ENTREVISTA TVR
 }
 
 /* ========================================
-SEÇÃO DE VÍDEO CENTRALIZADA
-======================================== */
+   SEÇÃO DE VÍDEO CENTRALIZADA
+   ======================================== */
 .video-section {
   background: white;
   padding: 70px 20px;
@@ -752,8 +742,8 @@ SEÇÃO DE VÍDEO CENTRALIZADA
 }
 
 /* ========================================
-SEÇÃO DO EVENTO TREINÃO 2026
-======================================== */
+   SEÇÃO DO EVENTO TREINÃO 2026
+   ======================================== */
 .evento-section {
   background: white;
   padding: 70px 20px;
@@ -961,8 +951,8 @@ SEÇÃO DO EVENTO TREINÃO 2026
 }
 
 /* ========================================
-GRID DE SEÇÕES
-======================================== */
+   GRID DE SEÇÕES
+   ======================================== */
 .sections-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1036,8 +1026,8 @@ GRID DE SEÇÕES
 }
 
 /* ========================================
-SEÇÃO DO PIX
-======================================== */
+   SEÇÃO DO PIX
+   ======================================== */
 .qr-section {
   background: white;
   padding: 70px 20px;
@@ -1203,23 +1193,24 @@ SEÇÃO DO PIX
 }
 
 /* ========================================
-DIÁRIO INSTITUCIONAL - EVENTOS
-======================================== */
+   DIÁRIO INSTITUCIONAL - EVENTOS (CORRIGIDO)
+   ======================================== */
 .diario-container {
-  max-width: 800px;
+  max-width: 900px; /* Aumentado de 800px para mais largura */
   margin: 0 auto;
+  padding: 0 20px; /* Adicionado padding lateral */
 }
 
 .diario-entrada {
-  margin-bottom: 50px;
-  padding-bottom: 30px;
+  margin-bottom: 60px; /* Aumentado de 50px para mais respiro */
+  padding-bottom: 40px; /* Aumentado de 30px */
   border-bottom: 2px solid #e0e0e0;
 }
 
 .diario-mes {
   color: #004d26;
   font-size: 1.8rem;
-  margin-bottom: 20px;
+  margin-bottom: 30px; /* Aumentado de 20px */
   padding-bottom: 10px;
   border-bottom: 3px solid #004d26;
   text-transform: uppercase;
@@ -1227,7 +1218,7 @@ DIÁRIO INSTITUCIONAL - EVENTOS
 }
 
 .diario-item {
-  margin-bottom: 30px;
+  margin-bottom: 40px; /* Aumentado de 30px */
   padding-left: 20px;
   position: relative;
 }
@@ -1240,6 +1231,7 @@ DIÁRIO INSTITUCIONAL - EVENTOS
   border-radius: 25px;
   font-weight: 700;
   margin-right: 15px;
+  margin-bottom: 10px;
   font-size: 0.9rem;
 }
 
@@ -1252,7 +1244,7 @@ DIÁRIO INSTITUCIONAL - EVENTOS
 }
 
 .diario-descricao {
-  margin-top: 12px;
+  margin-top: 15px; /* Aumentado de 12px */
   line-height: 1.7;
   color: #555;
   font-size: 1.05rem;
@@ -1286,35 +1278,47 @@ DIÁRIO INSTITUCIONAL - EVENTOS
   transform: translateX(3px);
 }
 
+/* ========================================
+   FOTOS DO DIÁRIO - CENTRALIZAÇÃO CORRIGIDA
+   ======================================== */
 .diario-foto {
-  margin: 20px 0;
+  margin: 35px auto 20px auto; /* ↑35px ↓20px ←→ auto (PERFEITAMENTE CENTRALIZADO) */
   text-align: center;
+  width: 100%;
+  position: relative;
 }
 
 .diario-foto img {
   width: 100%;
-  max-width: 700px;
+  max-width: 750px; /* Aumentado de 700px para mais destaque */
   border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12); /* Sombra mais suave */
   display: block;
-  margin: 0 auto;
+  margin: 0 auto; /* Centralização horizontal garantida */
 }
 
 .legenda-foto {
   font-size: 0.95rem;
   color: #666;
-  margin-top: 10px;
+  margin-top: 15px; /* Aumentado de 10px */
   font-style: italic;
-  max-width: 700px;
+  max-width: 750px; /* Aumentado para combinar com foto */
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
+  padding: 0 20px;
 }
 
+/* ========================================
+   GALERIA DE FOTOS - MELHOR ALINHAMENTO
+   ======================================== */
 .galeria-fotos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  margin-top: 25px;
+  gap: 25px; /* Aumentado de 20px */
+  margin-top: 30px; /* Aumentado de 25px */
+  margin-bottom: 30px;
+  padding: 0 10px; /* Adicionado respiro lateral */
 }
 
 .foto-miniatura {
@@ -1323,12 +1327,15 @@ DIÁRIO INSTITUCIONAL - EVENTOS
   transition: transform 0.3s ease;
   background: #f8f9fa;
   border-radius: 8px;
-  padding: 10px;
+  padding: 15px; /* Aumentado de 10px */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .foto-miniatura:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .foto-miniatura img {
@@ -1336,19 +1343,66 @@ DIÁRIO INSTITUCIONAL - EVENTOS
   border-radius: 6px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   height: 180px;
-  object-fit: contain;
+  object-fit: cover; /* Mudei de contain para cover para preencher melhor */
   background: white;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  display: block;
 }
 
 .foto-miniatura p {
   font-size: 0.85rem;
   color: #555;
-  margin-top: 8px;
+  margin-top: 10px;
   line-height: 1.5;
   min-height: 40px;
+  text-align: center;
 }
 
+/* ========================================
+   GALERIA DE REUNIÃO - 2 FOTOS LADO A LADO
+   ======================================== */
+.galeria-reuniao {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.galeria-reuniao .foto-miniatura {
+  width: 100%;
+  height: auto;
+}
+
+.galeria-reuniao .foto-miniatura img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galeria-reuniao .foto-miniatura:hover img {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.galeria-reuniao .foto-miniatura p {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 10px;
+  line-height: 1.4;
+  text-align: center;
+  min-height: 35px;
+}
+
+/* ========================================
+   SUBTÍTULO DE SEÇÃO
+   ======================================== */
 .subtitulo-secao {
   font-size: 1.3rem;
   color: #004d26;
@@ -1361,7 +1415,9 @@ DIÁRIO INSTITUCIONAL - EVENTOS
   line-height: 1.6;
 }
 
-/* Lightbox para ampliar fotos */
+/* ========================================
+   LIGHTBOX PARA AMPLIAR FOTOS
+   ======================================== */
 .lightbox-modal {
   display: none;
   position: fixed;
@@ -1433,8 +1489,8 @@ DIÁRIO INSTITUCIONAL - EVENTOS
 }
 
 /* ========================================
-LAYOUT DE 3 COLUNAS PARA SEÇÕES INTERNAS
-======================================== */
+   LAYOUT DE 3 COLUNAS PARA SEÇÕES INTERNAS
+   ======================================== */
 .container-secoes {
   display: grid;
   grid-template-columns: 18% 64% 18%;
@@ -1463,8 +1519,191 @@ LAYOUT DE 3 COLUNAS PARA SEÇÕES INTERNAS
 }
 
 /* ========================================
-FOOTER
-======================================== */
+   SEÇÃO DE PARCERIAS
+   ======================================== */
+.parceiros-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  padding: 80px 20px;
+  margin: 60px 0;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.parceiros-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #004d26 0%, #ED1C24 100%);
+}
+
+.parceiros-title {
+  font-size: 2.5rem;
+  color: #004d26;
+  text-align: center;
+  margin-bottom: 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+
+.parceiro-destaque {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 40px;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  border: 2px solid rgba(0, 77, 38, 0.1);
+}
+
+.parceiro-logo {
+  text-align: center;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 3px solid #ED1C24;
+}
+
+.parceiro-logo img {
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.parceiro-conteudo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.parceiro-conteudo h3 {
+  font-size: 2rem;
+  color: #004d26;
+  margin: 0;
+  font-weight: 700;
+}
+
+.parceiro-subtitulo {
+  font-size: 1.1rem;
+  color: #666;
+  margin: 0;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.parceiro-texto p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #333;
+  margin: 0;
+  text-align: justify;
+}
+
+.parceiro-texto p + p {
+  margin-top: 15px;
+}
+
+.parceiro-cta {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.btn-parceiros {
+  display: inline-block;
+  background: linear-gradient(135deg, #004d26 0%, #00563F 100%);
+  color: white;
+  text-decoration: none;
+  padding: 15px 35px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 77, 38, 0.3);
+  border: 2px solid transparent;
+}
+
+.btn-parceiros:hover {
+  background: linear-gradient(135deg, #ED1C24 0%, #c41220 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(237, 28, 36, 0.4);
+  border-color: #004d26;
+}
+
+.parceiro-frase {
+  margin-top: 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #004d26;
+  font-style: italic;
+}
+
+/* ========================================
+   FOTO DOS PROJETOS - POLIESPORTIVO
+   ======================================== */
+.projeto-foto-container {
+  text-align: center;
+  margin: 40px 0;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 2px solid rgba(0, 77, 38, 0.1);
+}
+
+.projeto-foto {
+  max-width: 100%;
+  width: 800px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  display: block;
+  margin: 0 auto 15px;
+  transition: transform 0.3s ease;
+}
+
+.projeto-foto:hover {
+  transform: scale(1.02);
+}
+
+.projeto-foto-legenda {
+  font-size: 1rem;
+  color: #666;
+  font-style: italic;
+  margin: 0;
+  padding: 10px 20px;
+  background: white;
+  border-radius: 8px;
+  display: inline-block;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* ========================================
+   FOTO CENTRALIZADA - PARCERIAS
+   ======================================== */
+.foto-centralizada {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.diario-foto img[src*="logo-vitta-pro"] {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
 footer {
   background: linear-gradient(135deg, #004d26 0%, #00563F 100%) !important;
   color: white !important;
@@ -1481,8 +1720,8 @@ footer p {
 }
 
 /* ========================================
-IDENTIDADE VISUAL - VARIÁVEIS E TIPOGRAFIA
-======================================== */
+   IDENTIDADE VISUAL - VARIÁVEIS E TIPOGRAFIA
+   ======================================== */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap');
 
 :root {
@@ -1542,7 +1781,6 @@ h3,
   letter-spacing: -0.3px !important;
 }
 
-/* Cards de seção */
 .section-card h3 {
   color: var(--cor-verde-escuro) !important;
   font-family: var(--fonte-titulo) !important;
@@ -1568,7 +1806,6 @@ h3,
   background: #003a1e !important;
 }
 
-/* Parágrafos */
 p {
   font-family: var(--fonte-texto) !important;
   font-size: var(--tamanho-p) !important;
@@ -1595,7 +1832,6 @@ p {
   padding-right: 0 !important;
 }
 
-/* Conteúdo das seções internas */
 .conteudo-secao p,
 .conteudo-secao,
 .secao-interna p,
@@ -1688,8 +1924,119 @@ p {
 }
 
 /* ========================================
-RESPONSIVIDADE GERAL
-======================================== */
+   ESTILOS PARA PÁGINA DE CONTATO
+   ======================================== */
+.contato-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contato-secao {
+  margin-bottom: 40px;
+}
+
+.contato-secao h2 {
+  color: #004d26;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #004d26;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contato-item {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.contato-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+.contato-item h3 {
+  color: #004d26;
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contato-detalhe {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.contato-detalhe a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.contato-detalhe a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.contato-descricao {
+  color: #666;
+  font-size: 0.95rem;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+.contato-mensagem {
+  background: #e8f5e9;
+  border-left: 4px solid #004d26;
+  padding: 20px;
+  border-radius: 0 8px 8px 0;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.contato-mensagem p {
+  margin: 8px 0;
+  font-weight: 600;
+}
+
+.contato-mensagem p:last-child {
+  color: #004d26;
+  font-size: 0.95rem;
+  margin-top: 15px;
+}
+
+/* ========================================
+   RESPONSIVIDADE GERAL
+   ======================================== */
+@media (max-width: 992px) {
+  .parceiro-destaque {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 30px;
+  }
+  
+  .parceiro-logo {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+  
+  .parceiros-title {
+    font-size: 2.2rem;
+  }
+  
+  .parceiro-conteudo h3 {
+    font-size: 1.8rem;
+  }
+}
+
 @media (max-width: 768px) {
   /* Banner slider */
   .banner-slider {
@@ -1755,22 +2102,42 @@ RESPONSIVIDADE GERAL
     height: 300px;
   }
   
-  /* Diário institucional */
+  /* Diário institucional - CORREÇÕES DE CENTRALIZAÇÃO */
   .diario-mes {
     font-size: 1.6rem;
+  }
+  
+  .diario-foto {
+    margin: 30px auto 15px auto; /* Ajustado para mobile */
   }
   
   .diario-foto img {
     max-width: 100%;
   }
   
+  .legenda-foto {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+  
   .galeria-fotos {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
+    padding: 0;
   }
   
   .foto-miniatura img {
     height: 160px;
+  }
+  
+  .galeria-reuniao {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 600px;
+  }
+  
+  .galeria-reuniao .foto-miniatura img {
+    height: 200px;
   }
   
   .lightbox-img {
@@ -1926,6 +2293,51 @@ RESPONSIVIDADE GERAL
     font-size: 1.2rem;
     padding: 12px;
   }
+  
+  /* Parcerias */
+  .parceiros-section {
+    padding: 60px 15px;
+    margin: 50px 0;
+  }
+  
+  .parceiro-destaque {
+    padding: 25px;
+  }
+  
+  .parceiros-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  
+  .parceiro-conteudo h3 {
+    font-size: 1.6rem;
+  }
+  
+  .parceiro-texto p {
+    font-size: 1rem;
+  }
+  
+  .btn-parceiros {
+    width: 100%;
+    padding: 14px 25px;
+    font-size: 1.05rem;
+  }
+  
+  /* Projetos foto */
+  .projeto-foto-container {
+    margin: 30px 0;
+    padding: 15px;
+  }
+  
+  .projeto-foto {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .projeto-foto-legenda {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1999,13 +2411,32 @@ RESPONSIVIDADE GERAL
     font-size: 1.05rem;
   }
   
-  /* Diário institucional mobile */
+  /* Diário institucional mobile - CORREÇÕES DE CENTRALIZAÇÃO */
   .galeria-fotos {
     grid-template-columns: 1fr;
   }
   
   .foto-miniatura img {
     height: 200px;
+  }
+  
+  .diario-foto {
+    margin: 25px auto 15px auto; /* Ajustado para mobile pequeno */
+  }
+  
+  .legenda-foto {
+    padding: 0 10px;
+    font-size: 0.85rem;
+  }
+  
+  .galeria-reuniao {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 100%;
+  }
+  
+  .galeria-reuniao .foto-miniatura img {
+    height: 220px;
   }
   
   .lightbox-img {
@@ -2158,99 +2589,8 @@ RESPONSIVIDADE GERAL
   .contato-detalhe {
     font-size: 0.95rem;
   }
-}
-
-/* ========================================
-ESTILOS PARA PÁGINA DE CONTATO
-======================================== */
-.contato-container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.contato-secao {
-  margin-bottom: 40px;
-}
-
-.contato-secao h2 {
-  color: #004d26;
-  font-size: 1.8rem;
-  margin-bottom: 25px;
-  padding-bottom: 10px;
-  border-bottom: 3px solid #004d26;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.contato-item {
-  background: #f8f9fa;
-  border-radius: 10px;
-  padding: 25px;
-  margin-bottom: 25px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
-}
-
-.contato-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
-}
-
-.contato-item h3 {
-  color: #004d26;
-  font-size: 1.5rem;
-  margin-bottom: 12px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.contato-detalhe {
-  font-size: 1.1rem;
-  margin-bottom: 8px;
-  line-height: 1.6;
-}
-
-.contato-detalhe a {
-  color: #007bff;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s;
-}
-
-.contato-detalhe a:hover {
-  color: #0056b3;
-  text-decoration: underline;
-}
-
-.contato-descricao {
-  color: #666;
-  font-size: 0.95rem;
-  margin-top: 5px;
-  font-style: italic;
-}
-
-.contato-mensagem {
-  background: #e8f5e9;
-  border-left: 4px solid #004d26;
-  padding: 20px;
-  border-radius: 0 8px 8px 0;
-  margin-top: 30px;
-  text-align: center;
-}
-
-.contato-mensagem p {
-  margin: 8px 0;
-  font-weight: 600;
-}
-
-.contato-mensagem p:last-child {
-  color: #004d26;
-  font-size: 0.95rem;
-  margin-top: 15px;
-}
-/* Botão de som em mobile */
-@media (max-width: 768px) {
+  
+  /* Botão de som em mobile */
   .sound-toggle-btn {
     width: 40px;
     height: 40px;
@@ -2266,344 +2606,11 @@ ESTILOS PARA PÁGINA DE CONTATO
   }
   
   .sound-toggle-btn:hover .sound-text {
-    display: none; /* Não mostra texto em mobile */
+    display: none;
   }
-}
-@media (max-width: 768px) {
+  
+  /* Vídeo mais claro em mobile */
   .slide-logo-video video {
-    filter: brightness(1.1); /* Um pouco menos em mobile */
-  }
-}
-/* ========================================
-   SEÇÃO DE PARCERIAS
-   ======================================== */
-.parceiros-section {
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-  padding: 80px 20px;
-  margin: 60px 0;
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-  position: relative;
-  overflow: hidden;
-}
-
-.parceiros-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 5px;
-  background: linear-gradient(90deg, #004d26 0%, #ED1C24 100%);
-}
-
-.parceiros-title {
-  font-size: 2.5rem;
-  color: #004d26;
-  text-align: center;
-  margin-bottom: 50px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: -0.5px;
-}
-
-.parceiro-destaque {
-  background: white;
-  border-radius: 12px;
-  padding: 40px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-  display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: 40px;
-  align-items: center;
-  max-width: 1000px;
-  margin: 0 auto;
-  border: 2px solid rgba(0, 77, 38, 0.1);
-}
-
-.parceiro-logo {
-  text-align: center;
-  padding: 20px;
-  background: #f8f9fa;
-  border-radius: 12px;
-  border: 3px solid #ED1C24;
-}
-
-.parceiro-logo img {
-  max-width: 100%;
-  height: auto;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
-}
-
-.parceiro-conteudo {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.parceiro-conteudo h3 {
-  font-size: 2rem;
-  color: #004d26;
-  margin: 0;
-  font-weight: 700;
-}
-
-.parceiro-subtitulo {
-  font-size: 1.1rem;
-  color: #666;
-  margin: 0;
-  font-weight: 600;
-  font-style: italic;
-}
-
-.parceiro-texto p {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: #333;
-  margin: 0;
-  text-align: justify;
-}
-
-.parceiro-texto p + p {
-  margin-top: 15px;
-}
-
-.parceiro-cta {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.btn-parceiros {
-  display: inline-block;
-  background: linear-gradient(135deg, #004d26 0%, #00563F 100%);
-  color: white;
-  text-decoration: none;
-  padding: 15px 35px;
-  border-radius: 30px;
-  font-weight: 700;
-  font-size: 1.1rem;
-  transition: all 0.3s;
-  box-shadow: 0 4px 12px rgba(0, 77, 38, 0.3);
-  border: 2px solid transparent;
-}
-
-.btn-parceiros:hover {
-  background: linear-gradient(135deg, #ED1C24 0%, #c41220 100%);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(237, 28, 36, 0.4);
-  border-color: #004d26;
-}
-
-.parceiro-frase {
-  margin-top: 15px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #004d26;
-  font-style: italic;
-}
-
-/* Responsividade */
-@media (max-width: 992px) {
-  .parceiro-destaque {
-    grid-template-columns: 1fr;
-    gap: 30px;
-    padding: 30px;
-  }
-  
-  .parceiro-logo {
-    max-width: 250px;
-    margin: 0 auto;
-  }
-  
-  .parceiros-title {
-    font-size: 2.2rem;
-  }
-  
-  .parceiro-conteudo h3 {
-    font-size: 1.8rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .parceiros-section {
-    padding: 60px 15px;
-    margin: 50px 0;
-  }
-  
-  .parceiro-destaque {
-    padding: 25px;
-  }
-  
-  .parceiros-title {
-    font-size: 2rem;
-    margin-bottom: 40px;
-  }
-  
-  .parceiro-conteudo h3 {
-    font-size: 1.6rem;
-  }
-  
-  .parceiro-texto p {
-    font-size: 1rem;
-  }
-  
-  .btn-parceiros {
-    width: 100%;
-    padding: 14px 25px;
-    font-size: 1.05rem;
-  }
-}
-
-/* ========================================
-   FOTO DOS PROJETOS - POLIESPORTIVO
-   ======================================== */
-.projeto-foto-container {
-  text-align: center;
-  margin: 40px 0;
-  padding: 20px;
-  background: #f8f9fa;
-  border-radius: 12px;
-  border: 2px solid rgba(0, 77, 38, 0.1);
-}
-
-.projeto-foto {
-  max-width: 100%;
-  width: 800px;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  display: block;
-  margin: 0 auto 15px;
-  transition: transform 0.3s ease;
-}
-
-.projeto-foto:hover {
-  transform: scale(1.02);
-}
-
-.projeto-foto-legenda {
-  font-size: 1rem;
-  color: #666;
-  font-style: italic;
-  margin: 0;
-  padding: 10px 20px;
-  background: white;
-  border-radius: 8px;
-  display: inline-block;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  .projeto-foto-container {
-    margin: 30px 0;
-    padding: 15px;
-  }
-  
-  .projeto-foto {
-    max-width: 100%;
-    width: 100%;
-  }
-  
-  .projeto-foto-legenda {
-    font-size: 0.9rem;
-    padding: 8px 15px;
-  }
-}
-
-@media (max-width: 480px) {
-  .projeto-foto-container {
-    margin: 25px 0;
-    padding: 10px;
-  }
-  
-  .projeto-foto-legenda {
-    font-size: 0.85rem;
-    padding: 6px 12px;
-  }
-}
-
-/* ========================================
-   FOTO CENTRALIZADA - PARCERIAS
-   ======================================== */
-.foto-centralizada {
-  max-width: 400px;
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-/* Ajuste específico para a foto da Vittapro */
-.diario-foto img[src*="logo-vitta-pro"] {
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-/* ========================================
-   GALERIA DE REUNIÃO - 2 FOTOS LADO A LADO
-   ======================================== */
-.galeria-reuniao {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.galeria-reuniao .foto-miniatura {
-  width: 100%;
-  height: auto;
-}
-
-.galeria-reuniao .foto-miniatura img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.galeria-reuniao .foto-miniatura:hover img {
-  transform: scale(1.03);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
-
-.galeria-reuniao .foto-miniatura p {
-  font-size: 0.85rem;
-  color: #666;
-  margin-top: 10px;
-  line-height: 1.4;
-  text-align: center;
-  min-height: 35px;
-}
-
-/* Responsividade para tablets */
-@media (max-width: 768px) {
-  .galeria-reuniao {
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    max-width: 600px;
-  }
-  
-  .galeria-reuniao .foto-miniatura img {
-    height: 200px;
-  }
-}
-
-/* Responsividade para mobile */
-@media (max-width: 480px) {
-  .galeria-reuniao {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    max-width: 100%;
-  }
-  
-  .galeria-reuniao .foto-miniatura img {
-    height: 220px;
+    filter: brightness(1.1);
   }
 }
