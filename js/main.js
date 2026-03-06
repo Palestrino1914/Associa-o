@@ -21,13 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // INICIALIZAR SWIPER.JS - BANNER SLIDER
   // ========================================
   const initSwiper = () => {
-    // Verificar se Swiper foi carregado
     if (typeof window.Swiper === 'undefined') {
       console.error('❌ Swiper.js não carregado! Verifique as URLs no HTML.');
       return;
     }
     
-    // Verificar se o elemento existe
     if (!document.querySelector('.swiper')) {
       console.warn('⚠️ Elemento .swiper não encontrado no DOM.');
       return;
@@ -35,42 +33,25 @@ document.addEventListener('DOMContentLoaded', () => {
     
     try {
       const swiper = new Swiper('.swiper', {
-        // Configurações básicas
         loop: true,
         speed: 800,
-        
-        // Autoplay - 8 SEGUNDOS conforme solicitado
         autoplay: {
-          delay: 8000, // ✅ 8 segundos (8000ms)
+          delay: 8000,
           disableOnInteraction: false,
           pauseOnMouseEnter: true,
         },
-        
-        // Navegação
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
         },
-        
-        // Paginação
         pagination: {
           el: '.swiper-pagination',
           clickable: true,
           dynamicBullets: true,
         },
-        
-        // Efeitos de transição
         effect: 'fade',
-        fadeEffect: {
-          crossFade: true,
-        },
-        
-        // Teclado
-        keyboard: {
-          enabled: true,
-        },
-        
-        // Acessibilidade
+        fadeEffect: { crossFade: true },
+        keyboard: { enabled: true },
         a11y: {
           enabled: true,
           prevSlideMessage: 'Slide anterior',
@@ -83,7 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
       
     } catch (error) {
       console.error('❌ Erro ao inicializar Swiper:', error);
-      // Fallback: mostrar todos os slides estáticos
       document.querySelectorAll('.swiper-slide').forEach(slide => {
         slide.style.display = 'block';
         slide.style.opacity = '0.8';
@@ -99,20 +79,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const soundBtn = document.getElementById('toggleSoundBtn');
     const replayBtn = document.getElementById('replayBtn');
     
-    // Só executa se todos os elementos existirem
-    if (!video || !soundBtn || !replayBtn) return;
+    if (!video || !soundBtn || !replayBtn) {
+      console.log('ℹ️ Controles de vídeo não disponíveis');
+      return;
+    }
     
     const mutedIcon = soundBtn.querySelector('.sound-icon.muted');
     const unmutedIcon = soundBtn.querySelector('.sound-icon.unmuted');
     
-    // Estado do som (persiste entre replays)
     let isSoundEnabled = false;
     
-    // Animação de pulso inicial no botão de som
     soundBtn.classList.add('pulse');
     setTimeout(() => soundBtn.classList.remove('pulse'), 5000);
     
-    // Atualiza ícones conforme estado do som
     const updateSoundIcons = () => {
       if (isSoundEnabled) {
         if (mutedIcon) mutedIcon.style.display = 'none';
@@ -125,7 +104,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
     
-    // Mostra/Oculta botão de replay
     const toggleReplayButton = (show) => {
       if (show) {
         replayBtn.classList.add('visible');
@@ -134,7 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
     
-    // Toggle de som
     soundBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       isSoundEnabled = !isSoundEnabled;
@@ -142,7 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
       updateSoundIcons();
     });
     
-    // Clique no replay: reinicia vídeo mantendo estado do som
     replayBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       video.currentTime = 0;
@@ -153,19 +129,16 @@ document.addEventListener('DOMContentLoaded', () => {
       toggleReplayButton(false);
     });
     
-    // Ao terminar o vídeo: mostra replay
     video.addEventListener('ended', () => {
       toggleReplayButton(true);
       video.muted = !isSoundEnabled;
       updateSoundIcons();
     });
     
-    // Ao iniciar (após replay): esconde replay
     video.addEventListener('play', () => {
       toggleReplayButton(false);
     });
     
-    // Inicializa ícones
     updateSoundIcons();
   };
 
@@ -177,7 +150,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!videoPreview) return;
     
     videoPreview.addEventListener('click', function(e) {
-      // Evita recarregar se já foi carregado
       if (this.classList.contains('video-loaded')) return;
       
       const videoUrl = "https://www.youtube.com/embed/BQ5VcODlDIQ?autoplay=1&rel=0";
@@ -194,10 +166,11 @@ document.addEventListener('DOMContentLoaded', () => {
       iframe.style.top = '0';
       iframe.style.left = '0';
       
-      // Substitui conteúdo pelo iframe
       this.innerHTML = '';
       this.appendChild(iframe);
       this.classList.add('video-loaded');
+      
+      console.log('✅ Vídeo do YouTube carregado!');
     });
   };
 
@@ -217,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
       lightboxImg.src = src;
       lightboxCaption.textContent = caption || '';
       lightbox.style.display = 'flex';
-      document.body.style.overflow = 'hidden'; // Evita scroll do fundo
+      document.body.style.overflow = 'hidden';
     };
     
     const closeLightbox = () => {
@@ -226,7 +199,6 @@ document.addEventListener('DOMContentLoaded', () => {
       lightboxImg.src = '';
     };
     
-    // Abrir ao clicar nas miniaturas
     triggers.forEach(trigger => {
       trigger.addEventListener('click', function(e) {
         e.preventDefault();
@@ -236,15 +208,12 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
     
-    // Fechar com botão X
     closeBtn?.addEventListener('click', closeLightbox);
     
-    // Fechar ao clicar no fundo
     lightbox.addEventListener('click', (e) => {
       if (e.target === lightbox) closeLightbox();
     });
     
-    // Fechar com tecla ESC
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && lightbox.style.display === 'flex') {
         closeLightbox();
@@ -267,7 +236,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  // Aplicar estado inicial e observar scroll
   const cards = document.querySelectorAll('.section-card');
   cards.forEach(card => {
     card.style.opacity = '0';
@@ -290,10 +258,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnCopy = pixForm.querySelector('.btn-copy-pix');
     const messageBox = pixForm.querySelector('.pix-message');
     
-    // Chave PIX da AEESP
     const CHAVE_PIX = '64.661.923/0001-77';
     
-    // Preencher valor sugerido
     sugestoes.forEach(btn => {
       btn.addEventListener('click', function() {
         const valor = this.getAttribute('data-valor');
@@ -301,7 +267,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
     
-    // Copiar chave PIX
     if (btnCopy) {
       btnCopy.addEventListener('click', async () => {
         const valor = valorInput?.value || '0,00';
@@ -311,7 +276,6 @@ document.addEventListener('DOMContentLoaded', () => {
           await navigator.clipboard.writeText(textoCopiar);
           showMessage('✅ Chave PIX copiada! Cole no seu app bancário.', 'success');
         } catch (err) {
-          // Fallback para navegadores antigos
           const textarea = document.createElement('textarea');
           textarea.value = textoCopiar;
           document.body.appendChild(textarea);
@@ -323,7 +287,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
     
-    // Exibir mensagem
     function showMessage(text, type) {
       if (!messageBox) return;
       messageBox.textContent = text;
@@ -337,135 +300,16 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // ========================================
-  // FORMULÁRIO DE INSCRIÇÃO - REDIRECIONAMENTO PARA WHATSAPP
-  // ========================================
-  const initInscricaoForm = () => {
-    const form = document.querySelector('#inscricao-form');
-    if (!form) return;
-    
-    const messageBox = document.querySelector('#inscricao-message');
-
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // Coletar dados do formulário
-      const nome = form.querySelector('#nome')?.value.trim();
-      const idade = form.querySelector('#idade')?.value.trim();
-      const modalidade = form.querySelector('#modalidade')?.value;
-      const telefone = form.querySelector('#telefone')?.value.trim();
-      const email = form.querySelector('#email')?.value.trim() || 'Não informado';
-      const responsavel = form.querySelector('#responsavel')?.value.trim() || 'Não informado';
-      const termos = form.querySelector('#termos')?.checked;
-      
-      // Validação básica
-      if (!nome || !idade || !modalidade || !telefone || !termos) {
-        showMessage('Por favor, preencha todos os campos obrigatórios.', 'error');
-        return;
-      }
-      
-      // Validar idade numérica
-      if (isNaN(idade) || idade < 4 || idade > 120) {
-        showMessage('Idade inválida. Informe entre 4 e 120 anos.', 'error');
-        return;
-      }
-      
-      // Validar compatibilidade idade/modalidade
-      if ((modalidade === '5km' && idade < 14) || (modalidade === '10km' && idade < 18)) {
-        showMessage('Idade não compatível com a modalidade selecionada.', 'error');
-        return;
-      }
-      
-      // Montar mensagem formatada para WhatsApp
-      let mensagem = `*INSCRIÇÃO CONFIRMADA - 3º ANO TREINÃO AEESP*\n\n`;
-      mensagem += `*DATA:* 22 de Março de 2026\n`;
-      mensagem += `*LOCAL:* Fundo do Recinto Mário Zaparolli – Pompeia/SP\n\n`;
-      mensagem += `*DADOS DO PARTICIPANTE:*\n`;
-      mensagem += `Nome: ${nome}\n`;
-      mensagem += `Idade: ${idade} anos\n`;
-      mensagem += `Modalidade: ${getNomeModalidade(modalidade)}\n`;
-      mensagem += `Telefone: ${telefone}\n`;
-      mensagem += `E-mail: ${email}\n`;
-      
-      if (idade < 18 && modalidade !== 'caminhada' && modalidade !== 'kids') {
-        mensagem += `Responsável: ${responsavel}\n`;
-      }
-      
-      mensagem += `\n*Termos de responsabilidade aceitos*\n`;
-      mensagem += `*Conectando pessoas, movimentando vidas e transformando histórias.*`;
-      
-      // Codificar para URL (SEM espaços!)
-      const mensagemCodificada = encodeURIComponent(mensagem);
-      
-      // Número do WhatsApp da AEESP: (14) 99846-6018 → 5514998466018
-      const numeroWhatsApp = '5514998466018';
-      
-      // REDIRECIONAR PARA WHATSAPP (URL SEM ESPAÇOS!)
-      window.location.href = `https://wa.me/${numeroWhatsApp}?text=${mensagemCodificada}`;
-      
-      // Mensagem de sucesso
-      showMessage('✅ Inscrição enviada! Aguarde contato no WhatsApp para confirmação.', 'success');
-      
-      // Limpar formulário após 3 segundos
-      setTimeout(() => {
-        form.reset();
-      }, 3000);
-    });
-
-    function showMessage(text, type) {
-      if (!messageBox) return;
-      messageBox.textContent = text;
-      messageBox.className = `inscricao-message ${type}`;
-      messageBox.style.display = 'block';
-      
-      setTimeout(() => {
-        messageBox.style.display = 'none';
-      }, 5000);
-    }
-  };
-
-  // Função auxiliar para nome da modalidade
-  function getNomeModalidade(codigo) {
-    const modalidades = {
-      '5km': 'Corrida 5km',
-      '10km': 'Corrida 10km',
-      'caminhada': 'Caminhada',
-      'kids': 'Corrida Kids'
-    };
-    return modalidades[codigo] || codigo;
-  }
-
-  // ========================================
-  // MÁSCARA DE TELEFONE (OPCIONAL)
-  // ========================================
-  const telefoneInput = document.getElementById('telefone');
-  if (telefoneInput) {
-    telefoneInput.addEventListener('input', function(e) {
-      let value = e.target.value.replace(/\D/g, '');
-      
-      // Limitar a 11 dígitos (DDD + 9 dígitos)
-      if (value.length > 11) {
-        value = value.slice(0, 11);
-      }
-      
-      // Aplicar máscara (XX) XXXXX-XXXX
-      if (value.length > 2) {
-        value = `(${value.slice(0, 2)}) ${value.slice(2)}`;
-      }
-      if (value.length > 10) {
-        value = `${value.slice(0, 10)}-${value.slice(10)}`;
-      }
-      
-      e.target.value = value;
-    });
-  }
-
-  // ========================================
   // INICIALIZAR TODOS OS COMPONENTES
   // ========================================
-  initSwiper(); // Inicializa imediatamente (não duplica evento)
+  console.log('🚀 AEESP - Inicializando componentes do site...');
+  
+  initSwiper();
   initBannerVideoControls();
   initYoutubeVideoLoader();
   initLightbox();
   initPixForm();
-  initInscricaoForm();
+  // ✅ initInscricaoForm() REMOVIDO (inscrições encerradas)
+  
+  console.log('✅ Todos os componentes inicializados!');
 });
