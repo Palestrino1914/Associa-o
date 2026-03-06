@@ -814,140 +814,69 @@ header {
   font-size: 1.2rem;
 }
 
-.inscricao-container {
-  background: #f8f9fa;
-  border-radius: 10px;
-  padding: 30px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-  align-self: center;
-}
-
-.inscricao-title {
-  color: #004d26;
-  text-align: center;
-  margin-bottom: 15px;
-  font-size: 1.8rem;
-  font-weight: 700;
-}
-
-.inscricao-descricao {
-  text-align: center;
-  color: #555;
-  margin-bottom: 25px;
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-.inscricao-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.form-group {
-  margin-bottom: 15px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 600;
-  color: #004d26;
-  font-size: 0.95rem;
-}
-
-.form-group input,
-.form-group select {
-  width: 100%;
-  padding: 12px 15px;
-  border: 2px solid #004d26;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: all 0.3s;
-  background: white;
-}
-
-.form-group input:focus,
-.form-group select:focus {
-  outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
-}
-
-.form-group input::placeholder {
-  color: #999;
-}
-
-.form-group label[for="termos"] {
-  display: inline-flex;
-  align-items: center;
-  margin-top: 5px;
-  font-weight: 400;
-  font-size: 0.9rem;
-}
-
-.form-group input[type="checkbox"] {
-  width: auto;
-  margin-right: 8px;
-  height: 18px;
-  width: 18px;
-}
-
-.form-group a {
-  color: #007bff;
-  text-decoration: underline;
-}
-
-.btn-inscricao {
-  display: block;
-  width: 100%;
-  background: #004d26;
+/* ========================================
+   INSCRIÇÕES ENCERRADAS - BADGE E MENSAGEM
+   ======================================== */
+.inscricao-encerrada-badge {
+  background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
   color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 15px;
-  font-size: 1.1rem;
+  padding: 12px 30px;
+  border-radius: 30px;
   font-weight: 700;
-  cursor: pointer;
-  transition: all 0.3s;
-  margin-top: 10px;
-  letter-spacing: 0.5px;
-  box-shadow: 0 4px 10px rgba(0, 77, 38, 0.3);
+  font-size: 1.1rem;
+  display: inline-block;
+  margin: 20px auto 30px;
+  box-shadow: 0 4px 15px rgba(220, 53, 69, 0.4);
+  animation: pulse-badge 2s ease-in-out infinite;
 }
 
-.btn-inscricao:hover {
-  background: #003a1e;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0, 77, 38, 0.4);
+@keyframes pulse-badge {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(220, 53, 69, 0.6);
+  }
 }
 
-.inscricao-message {
-  margin-top: 15px;
-  padding: 12px 15px;
+.inscricao-encerrada-msg {
+  background: #fff3cd;
+  border-left: 4px solid #ffc107;
+  padding: 20px;
   border-radius: 8px;
-  text-align: center;
+  margin: 30px 0;
+  color: #856404;
   font-weight: 600;
-  display: none;
-  animation: fadeIn 0.3s;
+  text-align: center;
 }
 
-.inscricao-message.success {
-  background: #d4edda;
-  color: #155724;
-  display: block;
-  border-left: 4px solid #28a745;
+/* Botão alternativo - Próximos Eventos */
+.btn-proximos-eventos {
+  display: inline-block;
+  background: linear-gradient(135deg, #004d26 0%, #00563F 100%);
+  color: white;
+  text-decoration: none;
+  padding: 15px 35px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+  margin-top: 30px;
+  box-shadow: 0 4px 12px rgba(0, 77, 38, 0.3);
+  text-align: center;
 }
 
-.inscricao-message.error {
-  background: #f8d7da;
-  color: #721c24;
-  display: block;
-  border-left: 4px solid #dc3545;
+.btn-proximos-eventos:hover {
+  background: linear-gradient(135deg, #00563F 0%, #006b4d 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 77, 38, 0.4);
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+.btn-proximos-eventos::after {
+  content: " →";
+  font-weight: bold;
 }
 
 /* ========================================
@@ -1193,24 +1122,24 @@ header {
 }
 
 /* ========================================
-   DIÁRIO INSTITUCIONAL - EVENTOS (CORRIGIDO)
+   DIÁRIO INSTITUCIONAL - EVENTOS
    ======================================== */
 .diario-container {
-  max-width: 900px; /* Aumentado de 800px para mais largura */
+  max-width: 900px;
   margin: 0 auto;
-  padding: 0 20px; /* Adicionado padding lateral */
+  padding: 0 20px;
 }
 
 .diario-entrada {
-  margin-bottom: 60px; /* Aumentado de 50px para mais respiro */
-  padding-bottom: 40px; /* Aumentado de 30px */
+  margin-bottom: 60px;
+  padding-bottom: 40px;
   border-bottom: 2px solid #e0e0e0;
 }
 
 .diario-mes {
   color: #004d26;
   font-size: 1.8rem;
-  margin-bottom: 30px; /* Aumentado de 20px */
+  margin-bottom: 30px;
   padding-bottom: 10px;
   border-bottom: 3px solid #004d26;
   text-transform: uppercase;
@@ -1218,7 +1147,7 @@ header {
 }
 
 .diario-item {
-  margin-bottom: 40px; /* Aumentado de 30px */
+  margin-bottom: 40px;
   padding-left: 20px;
   position: relative;
 }
@@ -1244,7 +1173,7 @@ header {
 }
 
 .diario-descricao {
-  margin-top: 15px; /* Aumentado de 12px */
+  margin-top: 15px;
   line-height: 1.7;
   color: #555;
   font-size: 1.05rem;
@@ -1279,10 +1208,10 @@ header {
 }
 
 /* ========================================
-   FOTOS DO DIÁRIO - CENTRALIZAÇÃO CORRIGIDA
+   FOTOS DO DIÁRIO - CENTRALIZAÇÃO
    ======================================== */
 .diario-foto {
-  margin: 35px auto 20px auto; /* ↑35px ↓20px ←→ auto (PERFEITAMENTE CENTRALIZADO) */
+  margin: 35px auto 20px auto;
   text-align: center;
   width: 100%;
   position: relative;
@@ -1290,19 +1219,19 @@ header {
 
 .diario-foto img {
   width: 100%;
-  max-width: 750px; /* Aumentado de 700px para mais destaque */
+  max-width: 750px;
   border-radius: 8px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12); /* Sombra mais suave */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
   display: block;
-  margin: 0 auto; /* Centralização horizontal garantida */
+  margin: 0 auto;
 }
 
 .legenda-foto {
   font-size: 0.95rem;
   color: #666;
-  margin-top: 15px; /* Aumentado de 10px */
+  margin-top: 15px;
   font-style: italic;
-  max-width: 750px; /* Aumentado para combinar com foto */
+  max-width: 750px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -1310,15 +1239,15 @@ header {
 }
 
 /* ========================================
-   GALERIA DE FOTOS - MELHOR ALINHAMENTO
+   GALERIA DE FOTOS
    ======================================== */
 .galeria-fotos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px; /* Aumentado de 20px */
-  margin-top: 30px; /* Aumentado de 25px */
+  gap: 25px;
+  margin-top: 30px;
   margin-bottom: 30px;
-  padding: 0 10px; /* Adicionado respiro lateral */
+  padding: 0 10px;
 }
 
 .foto-miniatura {
@@ -1327,7 +1256,7 @@ header {
   transition: transform 0.3s ease;
   background: #f8f9fa;
   border-radius: 8px;
-  padding: 15px; /* Aumentado de 10px */
+  padding: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1343,7 +1272,7 @@ header {
   border-radius: 6px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   height: 180px;
-  object-fit: cover; /* Mudei de contain para cover para preencher melhor */
+  object-fit: cover;
   background: white;
   margin-bottom: 10px;
   display: block;
@@ -2102,13 +2031,13 @@ p {
     height: 300px;
   }
   
-  /* Diário institucional - CORREÇÕES DE CENTRALIZAÇÃO */
+  /* Diário institucional */
   .diario-mes {
     font-size: 1.6rem;
   }
   
   .diario-foto {
-    margin: 30px auto 15px auto; /* Ajustado para mobile */
+    margin: 30px auto 15px auto;
   }
   
   .diario-foto img {
@@ -2155,10 +2084,6 @@ p {
   
   .evento-card {
     padding: 20px;
-  }
-  
-  .inscricao-container {
-    padding: 25px;
   }
   
   /* Layout 3 colunas */
@@ -2338,6 +2263,17 @@ p {
     font-size: 0.9rem;
     padding: 8px 15px;
   }
+  
+  /* Inscrições encerradas mobile */
+  .inscricao-encerrada-badge {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+  
+  .btn-proximos-eventos {
+    width: 100%;
+    padding: 14px 25px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -2411,7 +2347,7 @@ p {
     font-size: 1.05rem;
   }
   
-  /* Diário institucional mobile - CORREÇÕES DE CENTRALIZAÇÃO */
+  /* Diário institucional mobile */
   .galeria-fotos {
     grid-template-columns: 1fr;
   }
@@ -2421,7 +2357,7 @@ p {
   }
   
   .diario-foto {
-    margin: 25px auto 15px auto; /* Ajustado para mobile pequeno */
+    margin: 25px auto 15px auto;
   }
   
   .legenda-foto {
@@ -2446,21 +2382,6 @@ p {
   /* Evento section mobile */
   .evento-title {
     font-size: 2rem;
-  }
-  
-  .inscricao-title {
-    font-size: 1.6rem;
-  }
-  
-  .form-group input,
-  .form-group select {
-    padding: 10px 12px;
-    font-size: 0.95rem;
-  }
-  
-  .btn-inscricao {
-    padding: 12px;
-    font-size: 1rem;
   }
   
   /* Header mobile */
