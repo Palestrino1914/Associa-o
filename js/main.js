@@ -35,6 +35,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const swiper = new Swiper('.swiper', {
         loop: true,
         speed: 800,
+        
+        // 🔧 CORREÇÃO: Permitir cliques em links/botões dentro dos slides
+        preventClicks: false,
+        preventClicksPropagation: false,
+        
         autoplay: {
           delay: 8000,
           disableOnInteraction: false,
@@ -57,9 +62,22 @@ document.addEventListener('DOMContentLoaded', () => {
           prevSlideMessage: 'Slide anterior',
           nextSlideMessage: 'Próximo slide',
         },
+        
+        // 🔧 BÔNUS: Pausar autoplay ao interagir com o botão PIX
+        on: {
+          touchStart: function(swiper, event) {
+            const btnPix = event.target.closest('.btn-slide-pix');
+            if (btnPix) {
+              event.stopPropagation();
+            }
+          }
+        }
       });
       
       console.log('✅ Swiper inicializado com sucesso!');
+      
+      // Expor instância globalmente para controle externo
+      window.swiperInstance = swiper;
       return swiper;
       
     } catch (error) {
@@ -253,7 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const pixForm = document.querySelector('.pix-form');
     if (!pixForm) return;
     
-    const valorInput = pixForm.querySelector('#valor-doacao');
+    const valorInput = pixForm.querySelector('#pix-valor');
     const sugestoes = pixForm.querySelectorAll('.sugestoes button');
     const btnCopy = pixForm.querySelector('.btn-copy-pix');
     const messageBox = pixForm.querySelector('.pix-message');
@@ -262,7 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     sugestoes.forEach(btn => {
       btn.addEventListener('click', function() {
-        const valor = this.getAttribute('data-valor');
+        const valor = this.textContent.replace('R$ ', '').trim();
         if (valorInput) valorInput.value = valor;
       });
     });
@@ -309,7 +327,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initYoutubeVideoLoader();
   initLightbox();
   initPixForm();
-  // ✅ initInscricaoForm() REMOVIDO (inscrições encerradas)
   
   console.log('✅ Todos os componentes inicializados!');
 });
