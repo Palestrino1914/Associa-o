@@ -870,15 +870,15 @@ header {
 }
 
 /* ========================================
-   SEÇÃO SUCESSO DA CORRIDA - CORRIGIDO
+   SEÇÃO SUCESSO DA CORRIDA - TEXTO LIMPO
    ======================================== */
 .corrida-sucesso-section {
   background: white;
-  padding: 80px 40px; /* Aumentado padding lateral */
-  margin: 60px auto; /* Centralizado na página */
+  padding: 80px 40px;
+  margin: 60px auto;
   border-radius: 12px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-  max-width: 1200px; /* Largura máxima definida */
+  max-width: 1200px;
 }
 
 .corrida-sucesso-title {
@@ -888,10 +888,9 @@ header {
   margin-bottom: 50px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: -0.5px;
 }
 
-/* Colagem em Destaque */
+/* Colagem */
 .corrida-colagem-container {
   text-align: center;
   margin: 0 auto 50px;
@@ -920,56 +919,58 @@ header {
   font-style: italic;
 }
 
-/* Texto Sobre o Evento */
+/* TEXTO PRINCIPAL - UNIFORME E LIMPO */
 .corrida-texto {
-  max-width: 900px; /* Limita largura para leitura confortável */
-  margin: 0 auto 60px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.corrida-texto h3 {
-  font-size: 2rem;
-  color: #004d26;
-  margin-bottom: 25px;
-  margin-top: 40px; /* Espaço acima do título */
-  font-weight: 700;
-  text-align: center; /* Centralizado */
-}
-
+.corrida-texto h3,
 .corrida-texto h4 {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: #004d26;
-  margin: 35px 0 20px;
-  font-weight: 600;
   text-align: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  font-weight: 700;
 }
 
+/* PARÁGRAFOS - TAMANHO ÚNICO, ALINHAMENTO IGUAL */
 .corrida-texto p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #333;
-  margin-bottom: 20px;
-  text-align: justify; /* Justificado para melhor leitura */
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  font-size: 1.1rem !important; /* TAMANHO ÚNICO */
+  line-height: 1.8 !important; /* ESPAÇAMENTO ENTRE LINHAS */
+  color: #333 !important;
+  text-align: justify !important; /* ALINHAMENTO IGUAL EM TODOS */
+  margin-bottom: 25px !important; /* ESPAÇO ENTRE PARÁGRAFOS */
+  max-width: 100% !important;
+  margin-left: 0 !important; /* SEM CENTRALIZAÇÃO */
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
+/* ÚLTIMO PARÁGRAFO ANTES DE TÍTULOS */
+.corrida-texto p + h4,
+.corrida-texto p + h3 {
+  margin-top: 45px;
+}
+
+/* DESTAQUES EM NEGRITO */
 .corrida-texto strong {
   color: #004d26;
   font-weight: 700;
 }
 
-/* Destaques em Números - CARD GRID */
+/* GRID DE DESTAQUES */
 .corrida-destaques {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 colunas iguais */
+  grid-template-columns: repeat(4, 1fr);
   gap: 25px;
-  margin: 40px auto;
+  margin: 40px 0;
   padding: 35px;
   background: linear-gradient(135deg, #f8f9fa 0%, #e8f5e9 100%);
   border-radius: 12px;
   border-left: 4px solid #004d26;
-  max-width: 900px;
 }
 
 .destaque-item {
@@ -978,12 +979,6 @@ header {
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
-}
-
-.destaque-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .destaque-numero {
@@ -1001,15 +996,13 @@ header {
   color: #555;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
-/* Lista de Modalidades */
+/* LISTA DE MODALIDADES */
 .corrida-modalidades {
   list-style: none;
   padding: 0;
-  margin: 40px auto;
-  max-width: 800px;
+  margin: 40px 0;
 }
 
 .corrida-modalidades li {
@@ -1018,32 +1011,30 @@ header {
   margin-bottom: 15px;
   border-radius: 8px;
   border-left: 4px solid #004d26;
-  line-height: 1.7;
-  font-size: 1.05rem;
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  text-align: justify;
 }
 
 .corrida-modalidades li strong {
   color: #004d26;
-  font-size: 1.1rem;
-  min-width: 120px; /* Alinha todos os títulos */
+  font-weight: 700;
+  min-width: 130px;
+  display: inline-block;
 }
 
-/* Agradecimento */
+/* AGRADECIMENTO */
 .corrida-agradecimento {
   background: #e8f5e9;
   padding: 25px 30px;
   border-radius: 8px;
   border-left: 4px solid #004d26;
-  margin: 40px auto;
-  max-width: 800px;
+  margin: 40px 0;
   text-align: center;
   font-style: italic;
 }
 
-/* Vídeo do Evento */
+/* VÍDEO */
 .corrida-video-container {
   max-width: 900px;
   margin: 60px auto 0;
@@ -1081,14 +1072,10 @@ header {
   font-style: italic;
 }
 
-/* Responsividade */
+/* RESPONSIVIDADE */
 @media (max-width: 992px) {
   .corrida-destaques {
-    grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablet */
-  }
-  
-  .corrida-sucesso-title {
-    font-size: 2.2rem;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -1098,27 +1085,27 @@ header {
     margin: 40px 20px;
   }
   
+  .corrida-sucesso-title {
+    font-size: 2rem;
+  }
+  
+  .corrida-texto h3,
+  .corrida-texto h4 {
+    font-size: 1.6rem;
+  }
+  
+  .corrida-texto p {
+    font-size: 1.05rem !important;
+  }
+  
   .corrida-destaques {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
     padding: 25px;
-  }
-  
-  .destaque-numero {
-    font-size: 2.5rem;
-  }
-  
-  .corrida-texto h3 {
-    font-size: 1.8rem;
+    gap: 15px;
   }
   
   .corrida-modalidades li {
-    flex-direction: column;
-    gap: 8px;
-  }
-  
-  .corrida-modalidades li strong {
-    min-width: auto;
+    font-size: 1.05rem;
+    padding: 15px 20px;
   }
 }
 
@@ -1128,20 +1115,16 @@ header {
     margin: 30px 15px;
   }
   
-  .corrida-destaques {
-    grid-template-columns: 1fr; /* 1 coluna em mobile */
-  }
-  
   .corrida-sucesso-title {
     font-size: 1.8rem;
   }
   
-  .corrida-texto h3 {
-    font-size: 1.6rem;
+  .corrida-destaques {
+    grid-template-columns: 1fr;
   }
   
-  .destaque-numero {
-    font-size: 2.5rem;
+  .corrida-texto p {
+    font-size: 1rem !important;
   }
 }
 
