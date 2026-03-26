@@ -184,6 +184,9 @@ header {
   font-family: 'Open Sans', 'Segoe UI', sans-serif;
 }
 
+/* ========================================
+   BOTÃO EVENTO - CORRIGIDO PARA SWIPER
+   ======================================== */
 .btn-evento {
   display: inline-block;
   background: #ffcc00;
@@ -197,12 +200,26 @@ header {
   letter-spacing: 0.5px;
   margin-top: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  
+  /* 🔧 Correções para funcionar no Swiper */
+  pointer-events: auto !important;
+  position: relative;
+  z-index: 9999 !important;
+  cursor: pointer !important;
+  touch-action: manipulation !important;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .btn-evento:hover {
   background: #e6b800;
   transform: translateY(-3px);
   box-shadow: 0 6px 15px rgba(255, 204, 0, 0.4);
+}
+
+/* SVGs e elementos filhos do botão não bloqueiam cliques */
+.btn-evento svg,
+.btn-evento * {
+  pointer-events: none !important;
 }
 
 /* ========================================
@@ -540,6 +557,29 @@ header {
     width: 24px;
     height: 24px;
   }
+}
+
+/* ========================================
+   REGRA UNIVERSAL: Elementos interativos no Swiper
+   ======================================== */
+.swiper-slide a[href^="#"],
+.swiper-slide button,
+.swiper-slide [onclick],
+.swiper-slide [data-swiper-ignore] {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  touch-action: manipulation !important;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+  z-index: 9999 !important;
+  user-select: none;
+}
+
+.swiper-slide a *,
+.swiper-slide button *,
+.swiper-slide a svg,
+.swiper-slide button svg {
+  pointer-events: none !important;
 }
 
 /* ========================================
@@ -978,7 +1018,7 @@ header {
 }
 
 /* ========================================
-   SEÇÃO SUCESSO DA CORRIDA
+   SEÇÃO SUCESSO DA CORRIDA - CORRIGIDA
    ======================================== */
 .corrida-sucesso-section {
   background: white;
@@ -987,6 +1027,10 @@ header {
   border-radius: 12px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
   max-width: 1200px;
+  
+  /* 🔧 Compensa header fixo ao rolar para âncora */
+  scroll-margin-top: 120px;
+  scroll-padding-top: 120px;
 }
 
 .corrida-sucesso-title {
@@ -1698,8 +1742,8 @@ p {
    SCROLL SUAVE GLOBAL
    ======================================== */
 html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 120px;
+  scroll-behavior: smooth !important;
+  scroll-padding-top: 120px !important;
 }
 
 /* ========================================
