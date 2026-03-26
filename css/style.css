@@ -21,7 +21,7 @@ body {
 }
 
 /* ========================================
-   HEADER E NAVEGAÇÃO - VERDE ESCURO COM FONTE BRANCA
+   HEADER E NAVEGAÇÃO
    ======================================== */
 header {
   background: linear-gradient(135deg, #004d26 0%, #00563F 100%);
@@ -83,7 +83,7 @@ header {
 }
 
 /* ========================================
-   PAGE HEADER (Título principal)
+   PAGE HEADER
    ======================================== */
 .page-header {
   text-align: center;
@@ -195,7 +195,7 @@ header {
 }
 
 /* ========================================
-   SLIDE DO LOGO EM VÍDEO - COM REPLAY E SOM
+   SLIDE DO LOGO EM VÍDEO
    ======================================== */
 .slide-logo-video {
   background: linear-gradient(135deg, #004d26 0%, #00563F 100%) !important;
@@ -475,6 +475,192 @@ header {
 }
 
 /* ========================================
+   SEÇÃO DE VÍDEO INSTITUCIONAL
+   ======================================== */
+.video-section {
+  background: white;
+  padding: 70px 20px;
+  text-align: center;
+  margin: 60px 0;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.video-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.video-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #004d26;
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  text-align: center !important;
+  width: 100%;
+}
+
+.video-description {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #555;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+  font-family: var(--fonte-texto);
+  text-align: center;
+}
+
+.featured-video {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  display: block;
+  margin: 0 auto;
+  background: #000;
+  transition: transform 0.3s ease;
+}
+
+.featured-video:hover {
+  transform: scale(1.01);
+}
+
+/* ========================================
+   SEÇÃO DE PARCERIAS
+   ======================================== */
+.parceiros-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  padding: 80px 20px;
+  margin: 60px 0;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.parceiros-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #004d26 0%, #ED1C24 100%);
+}
+
+.parceiros-title {
+  font-size: 2.5rem;
+  color: #004d26;
+  text-align: center;
+  margin-bottom: 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+
+.parceiro-destaque {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 40px;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  border: 2px solid rgba(0, 77, 38, 0.1);
+}
+
+.parceiro-logo {
+  text-align: center;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 3px solid #ED1C24;
+}
+
+.parceiro-logo img {
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.parceiro-conteudo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.parceiro-conteudo h3 {
+  font-size: 2rem;
+  color: #004d26;
+  margin: 0;
+  font-weight: 700;
+}
+
+.parceiro-subtitulo {
+  font-size: 1.1rem;
+  color: #666;
+  margin: 0;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.parceiro-texto p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #333;
+  margin: 0;
+  text-align: justify;
+}
+
+.parceiro-texto p + p {
+  margin-top: 15px;
+}
+
+.parceiro-cta {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.btn-parceiros {
+  display: inline-block;
+  background: linear-gradient(135deg, #004d26 0%, #00563F 100%);
+  color: white;
+  text-decoration: none;
+  padding: 15px 35px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 77, 38, 0.3);
+  border: 2px solid transparent;
+}
+
+.btn-parceiros:hover {
+  background: linear-gradient(135deg, #ED1C24 0%, #c41220 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(237, 28, 36, 0.4);
+  border-color: #004d26;
+}
+
+.parceiro-frase {
+  margin-top: 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #004d26;
+  font-style: italic;
+}
+
+/* ========================================
    SEÇÃO DA ENTREVISTA TVR
    ======================================== */
 .video-evento-section {
@@ -684,65 +870,7 @@ header {
 }
 
 /* ========================================
-   SEÇÃO DE VÍDEO CENTRALIZADA
-   ======================================== */
-.video-section {
-  background: white;
-  padding: 70px 20px;
-  text-align: center;
-  margin: 60px 0;
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-}
-
-.video-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.video-title {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #004d26;
-  font-family: var(--fonte-titulo);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: -0.5px;
-  text-align: center !important;
-  width: 100%;
-}
-
-.video-description {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  color: #555;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.7;
-  font-family: var(--fonte-texto);
-  text-align: center;
-}
-
-.featured-video {
-  width: 100%;
-  max-width: 800px;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  display: block;
-  margin: 0 auto;
-  background: #000;
-  transition: transform 0.3s ease;
-}
-
-.featured-video:hover {
-  transform: scale(1.01);
-}
-
-/* ========================================
-   SEÇÃO DO EVENTO TREINÃO 2026
+   SEÇÃO DO EVENTO - INSCRIÇÕES ENCERRADAS
    ======================================== */
 .evento-section {
   background: white;
@@ -814,9 +942,7 @@ header {
   font-size: 1.2rem;
 }
 
-/* ========================================
-   INSCRIÇÕES ENCERRADAS - BADGE E MENSAGEM
-   ======================================== */
+/* Badge de Inscrições Encerradas */
 .inscricao-encerrada-badge {
   background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
   color: white;
@@ -852,7 +978,6 @@ header {
   text-align: center;
 }
 
-/* Botão alternativo - Próximos Eventos */
 .btn-proximos-eventos {
   display: inline-block;
   background: linear-gradient(135deg, #004d26 0%, #00563F 100%);
@@ -1121,6 +1246,11 @@ header {
   display: block;
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 /* ========================================
    DIÁRIO INSTITUCIONAL - EVENTOS
    ======================================== */
@@ -1179,7 +1309,6 @@ header {
   font-size: 1.05rem;
 }
 
-/* Link de destaque nas descrições */
 .diario-descricao .link-destaque {
   color: #006633;
   font-weight: 600;
@@ -1330,21 +1459,6 @@ header {
 }
 
 /* ========================================
-   SUBTÍTULO DE SEÇÃO
-   ======================================== */
-.subtitulo-secao {
-  font-size: 1.3rem;
-  color: #004d26;
-  text-align: center;
-  margin-bottom: 30px;
-  font-weight: 400;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.6;
-}
-
-/* ========================================
    LIGHTBOX PARA AMPLIAR FOTOS
    ======================================== */
 .lightbox-modal {
@@ -1448,186 +1562,18 @@ header {
 }
 
 /* ========================================
-   SEÇÃO DE PARCERIAS
+   SUBTÍTULO DE SEÇÃO
    ======================================== */
-.parceiros-section {
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-  padding: 80px 20px;
-  margin: 60px 0;
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-  position: relative;
-  overflow: hidden;
-}
-
-.parceiros-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 5px;
-  background: linear-gradient(90deg, #004d26 0%, #ED1C24 100%);
-}
-
-.parceiros-title {
-  font-size: 2.5rem;
+.subtitulo-secao {
+  font-size: 1.3rem;
   color: #004d26;
   text-align: center;
-  margin-bottom: 50px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: -0.5px;
-}
-
-.parceiro-destaque {
-  background: white;
-  border-radius: 12px;
-  padding: 40px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-  display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: 40px;
-  align-items: center;
-  max-width: 1000px;
-  margin: 0 auto;
-  border: 2px solid rgba(0, 77, 38, 0.1);
-}
-
-.parceiro-logo {
-  text-align: center;
-  padding: 20px;
-  background: #f8f9fa;
-  border-radius: 12px;
-  border: 3px solid #ED1C24;
-}
-
-.parceiro-logo img {
-  max-width: 100%;
-  height: auto;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
-}
-
-.parceiro-conteudo {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.parceiro-conteudo h3 {
-  font-size: 2rem;
-  color: #004d26;
-  margin: 0;
-  font-weight: 700;
-}
-
-.parceiro-subtitulo {
-  font-size: 1.1rem;
-  color: #666;
-  margin: 0;
-  font-weight: 600;
-  font-style: italic;
-}
-
-.parceiro-texto p {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: #333;
-  margin: 0;
-  text-align: justify;
-}
-
-.parceiro-texto p + p {
-  margin-top: 15px;
-}
-
-.parceiro-cta {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.btn-parceiros {
-  display: inline-block;
-  background: linear-gradient(135deg, #004d26 0%, #00563F 100%);
-  color: white;
-  text-decoration: none;
-  padding: 15px 35px;
-  border-radius: 30px;
-  font-weight: 700;
-  font-size: 1.1rem;
-  transition: all 0.3s;
-  box-shadow: 0 4px 12px rgba(0, 77, 38, 0.3);
-  border: 2px solid transparent;
-}
-
-.btn-parceiros:hover {
-  background: linear-gradient(135deg, #ED1C24 0%, #c41220 100%);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(237, 28, 36, 0.4);
-  border-color: #004d26;
-}
-
-.parceiro-frase {
-  margin-top: 15px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #004d26;
-  font-style: italic;
-}
-
-/* ========================================
-   FOTO DOS PROJETOS - POLIESPORTIVO
-   ======================================== */
-.projeto-foto-container {
-  text-align: center;
-  margin: 40px 0;
-  padding: 20px;
-  background: #f8f9fa;
-  border-radius: 12px;
-  border: 2px solid rgba(0, 77, 38, 0.1);
-}
-
-.projeto-foto {
-  max-width: 100%;
-  width: 800px;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  display: block;
-  margin: 0 auto 15px;
-  transition: transform 0.3s ease;
-}
-
-.projeto-foto:hover {
-  transform: scale(1.02);
-}
-
-.projeto-foto-legenda {
-  font-size: 1rem;
-  color: #666;
-  font-style: italic;
-  margin: 0;
-  padding: 10px 20px;
-  background: white;
-  border-radius: 8px;
-  display: inline-block;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-/* ========================================
-   FOTO CENTRALIZADA - PARCERIAS
-   ======================================== */
-.foto-centralizada {
-  max-width: 400px;
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-.diario-foto img[src*="logo-vitta-pro"] {
-  max-width: 400px;
-  margin: 0 auto;
+  margin-bottom: 30px;
+  font-weight: 400;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
 }
 
 /* ========================================
@@ -1967,7 +1913,6 @@ p {
 }
 
 @media (max-width: 768px) {
-  /* Banner slider */
   .banner-slider {
     height: 400px;
   }
@@ -1990,10 +1935,10 @@ p {
   }
   
   .sound-toggle-btn {
-    padding: 10px 15px;
-    font-size: 12px;
-    bottom: 15px;
-    right: 15px;
+    width: 40px;
+    height: 40px;
+    bottom: 12px;
+    right: 12px;
   }
   
   .sound-text {
@@ -2013,7 +1958,6 @@ p {
     font-size: 12px;
   }
   
-  /* Seção TVR */
   .video-evento-container {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -2031,7 +1975,6 @@ p {
     height: 300px;
   }
   
-  /* Diário institucional */
   .diario-mes {
     font-size: 1.6rem;
   }
@@ -2077,7 +2020,6 @@ p {
     padding: 15px;
   }
   
-  /* Evento section */
   .evento-container {
     grid-template-columns: 1fr;
   }
@@ -2086,7 +2028,6 @@ p {
     padding: 20px;
   }
   
-  /* Layout 3 colunas */
   .container-secoes {
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr auto;
@@ -2102,7 +2043,6 @@ p {
     padding: 40px 20px;
   }
   
-  /* Logo e navegação */
   .site-logo {
     height: 50px;
   }
@@ -2111,7 +2051,6 @@ p {
     margin-right: 15px;
   }
   
-  /* Títulos e parágrafos */
   h2,
   .titulo-secao {
     font-size: 26px !important;
@@ -2133,7 +2072,6 @@ p {
     font-size: 15px !important;
   }
   
-  /* Vídeo centralizado */
   .video-section {
     padding: 50px 15px;
     margin: 50px 0;
@@ -2153,7 +2091,6 @@ p {
     border-radius: 8px;
   }
   
-  /* QR Code */
   .qr-section {
     padding: 60px 15px;
     margin: 70px 0;
@@ -2172,12 +2109,10 @@ p {
     font-size: 1.1rem;
   }
   
-  /* Footer */
   footer {
     margin-top: 70px;
   }
   
-  /* Grid de seções */
   .sections-grid {
     grid-template-columns: 1fr;
     padding: 0 15px;
@@ -2192,7 +2127,6 @@ p {
     font-size: 1.6rem;
   }
   
-  /* Formulário PIX */
   .pix-form {
     padding: 20px;
     margin: 20px 10px;
@@ -2219,7 +2153,6 @@ p {
     padding: 12px;
   }
   
-  /* Parcerias */
   .parceiros-section {
     padding: 60px 15px;
     margin: 50px 0;
@@ -2248,23 +2181,6 @@ p {
     font-size: 1.05rem;
   }
   
-  /* Projetos foto */
-  .projeto-foto-container {
-    margin: 30px 0;
-    padding: 15px;
-  }
-  
-  .projeto-foto {
-    max-width: 100%;
-    width: 100%;
-  }
-  
-  .projeto-foto-legenda {
-    font-size: 0.9rem;
-    padding: 8px 15px;
-  }
-  
-  /* Inscrições encerradas mobile */
   .inscricao-encerrada-badge {
     padding: 10px 20px;
     font-size: 1rem;
@@ -2277,7 +2193,6 @@ p {
 }
 
 @media (max-width: 480px) {
-  /* Banner slider mobile */
   .banner-slider {
     height: 350px;
     margin: 30px 0;
@@ -2299,7 +2214,6 @@ p {
     max-height: 180px;
   }
   
-  /* Replay button mobile */
   .replay-text {
     display: none;
   }
@@ -2317,7 +2231,6 @@ p {
     font-size: 24px;
   }
   
-  /* Seção TVR mobile */
   .video-evento-section {
     padding: 30px 10px;
     margin: 40px 0;
@@ -2347,7 +2260,6 @@ p {
     font-size: 1.05rem;
   }
   
-  /* Diário institucional mobile */
   .galeria-fotos {
     grid-template-columns: 1fr;
   }
@@ -2379,12 +2291,10 @@ p {
     max-height: 80vh;
   }
   
-  /* Evento section mobile */
   .evento-title {
     font-size: 2rem;
   }
   
-  /* Header mobile */
   header nav ul {
     gap: 5px;
     flex-direction: column;
@@ -2409,7 +2319,6 @@ p {
     font-size: 1.1rem;
   }
   
-  /* Títulos e parágrafos mobile */
   h2,
   .titulo-secao {
     font-size: 22px !important;
@@ -2437,7 +2346,6 @@ p {
     height: 40px;
   }
   
-  /* Vídeo centralizado mobile */
   .video-section {
     padding: 40px 10px;
     margin: 40px 0;
@@ -2460,7 +2368,6 @@ p {
     margin: 40px auto 60px;
   }
   
-  /* QR Code mobile */
   .qr-section {
     padding: 50px 10px;
     margin: 60px 0;
@@ -2484,7 +2391,6 @@ p {
     margin-top: 60px;
   }
   
-  /* Formulário PIX mobile */
   .sugestoes {
     grid-template-columns: 1fr;
   }
@@ -2494,7 +2400,6 @@ p {
     padding: 15px;
   }
   
-  /* Contato mobile */
   .contato-secao h2 {
     font-size: 1.6rem;
   }
@@ -2511,15 +2416,6 @@ p {
     font-size: 0.95rem;
   }
   
-  /* Botão de som em mobile */
-  .sound-toggle-btn {
-    width: 40px;
-    height: 40px;
-    bottom: 12px;
-    right: 12px;
-    font-size: 18px;
-  }
-  
   .sound-toggle-btn:hover {
     width: 40px;
     height: 40px;
@@ -2530,7 +2426,6 @@ p {
     display: none;
   }
   
-  /* Vídeo mais claro em mobile */
   .slide-logo-video video {
     filter: brightness(1.1);
   }
