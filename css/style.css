@@ -870,138 +870,279 @@ header {
 }
 
 /* ========================================
-   SEÇÃO DO EVENTO - INSCRIÇÕES ENCERRADAS
+   SEÇÃO SUCESSO DA CORRIDA - CORRIGIDO
    ======================================== */
-.evento-section {
+.corrida-sucesso-section {
   background: white;
-  padding: 70px 20px;
-  margin: 60px 0;
+  padding: 80px 40px; /* Aumentado padding lateral */
+  margin: 60px auto; /* Centralizado na página */
   border-radius: 12px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  max-width: 1200px; /* Largura máxima definida */
 }
 
-.evento-title {
+.corrida-sucesso-title {
   font-size: 2.5rem;
   color: #004d26;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: -0.5px;
 }
 
-.evento-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
+/* Colagem em Destaque */
+.corrida-colagem-container {
+  text-align: center;
+  margin: 0 auto 50px;
+  max-width: 900px;
 }
 
-.evento-card {
-  background: #f8f9fa;
-  border-radius: 10px;
-  padding: 25px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+.corrida-colagem {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
   transition: transform 0.3s ease;
 }
 
-.evento-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+.corrida-colagem:hover {
+  transform: scale(1.02);
 }
 
-.evento-card h3 {
+.zoom-indicator {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
+
+/* Texto Sobre o Evento */
+.corrida-texto {
+  max-width: 900px; /* Limita largura para leitura confortável */
+  margin: 0 auto 60px;
+}
+
+.corrida-texto h3 {
+  font-size: 2rem;
   color: #004d26;
-  margin-bottom: 15px;
-  font-size: 1.6rem;
-  text-align: center;
-  border-bottom: 2px solid #004d26;
-  padding-bottom: 10px;
-}
-
-.evento-card ul {
-  list-style: none;
-  padding-left: 0;
-  margin-top: 15px;
-}
-
-.evento-card li {
-  margin-bottom: 12px;
-  padding-left: 25px;
-  position: relative;
-  line-height: 1.6;
-}
-
-.evento-card li:before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  color: #004d26;
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-/* Badge de Inscrições Encerradas */
-.inscricao-encerrada-badge {
-  background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
-  color: white;
-  padding: 12px 30px;
-  border-radius: 30px;
+  margin-bottom: 25px;
+  margin-top: 40px; /* Espaço acima do título */
   font-weight: 700;
-  font-size: 1.1rem;
-  display: inline-block;
-  margin: 20px auto 30px;
-  box-shadow: 0 4px 15px rgba(220, 53, 69, 0.4);
-  animation: pulse-badge 2s ease-in-out infinite;
+  text-align: center; /* Centralizado */
 }
 
-@keyframes pulse-badge {
-  0%, 100% {
-    transform: scale(1);
-    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.4);
-  }
-  50% {
-    transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(220, 53, 69, 0.6);
-  }
-}
-
-.inscricao-encerrada-msg {
-  background: #fff3cd;
-  border-left: 4px solid #ffc107;
-  padding: 20px;
-  border-radius: 8px;
-  margin: 30px 0;
-  color: #856404;
+.corrida-texto h4 {
+  font-size: 1.5rem;
+  color: #004d26;
+  margin: 35px 0 20px;
   font-weight: 600;
   text-align: center;
 }
 
-.btn-proximos-eventos {
-  display: inline-block;
-  background: linear-gradient(135deg, #004d26 0%, #00563F 100%);
-  color: white;
-  text-decoration: none;
-  padding: 15px 35px;
-  border-radius: 30px;
-  font-weight: 700;
+.corrida-texto p {
   font-size: 1.1rem;
-  transition: all 0.3s;
-  margin-top: 30px;
-  box-shadow: 0 4px 12px rgba(0, 77, 38, 0.3);
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: justify; /* Justificado para melhor leitura */
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.corrida-texto strong {
+  color: #004d26;
+  font-weight: 700;
+}
+
+/* Destaques em Números - CARD GRID */
+.corrida-destaques {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 colunas iguais */
+  gap: 25px;
+  margin: 40px auto;
+  padding: 35px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e8f5e9 100%);
+  border-radius: 12px;
+  border-left: 4px solid #004d26;
+  max-width: 900px;
+}
+
+.destaque-item {
+  text-align: center;
+  padding: 20px 15px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.destaque-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.destaque-numero {
+  display: block;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #004d26;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.destaque-texto {
+  display: block;
+  font-size: 1rem;
+  color: #555;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Lista de Modalidades */
+.corrida-modalidades {
+  list-style: none;
+  padding: 0;
+  margin: 40px auto;
+  max-width: 800px;
+}
+
+.corrida-modalidades li {
+  background: #f8f9fa;
+  padding: 20px 25px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border-left: 4px solid #004d26;
+  line-height: 1.7;
+  font-size: 1.05rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.corrida-modalidades li strong {
+  color: #004d26;
+  font-size: 1.1rem;
+  min-width: 120px; /* Alinha todos os títulos */
+}
+
+/* Agradecimento */
+.corrida-agradecimento {
+  background: #e8f5e9;
+  padding: 25px 30px;
+  border-radius: 8px;
+  border-left: 4px solid #004d26;
+  margin: 40px auto;
+  max-width: 800px;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Vídeo do Evento */
+.corrida-video-container {
+  max-width: 900px;
+  margin: 60px auto 0;
   text-align: center;
 }
 
-.btn-proximos-eventos:hover {
-  background: linear-gradient(135deg, #00563F 0%, #006b4d 100%);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0, 77, 38, 0.4);
+.corrida-video-container h3 {
+  font-size: 2rem;
+  color: #004d26;
+  margin-bottom: 30px;
+  font-weight: 700;
 }
 
-.btn-proximos-eventos::after {
-  content: " →";
-  font-weight: bold;
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.corrida-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #000;
+}
+
+.video-legenda {
+  margin-top: 15px;
+  font-size: 0.95rem;
+  color: #666;
+  font-style: italic;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .corrida-destaques {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablet */
+  }
+  
+  .corrida-sucesso-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .corrida-sucesso-section {
+    padding: 60px 20px;
+    margin: 40px 20px;
+  }
+  
+  .corrida-destaques {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 25px;
+  }
+  
+  .destaque-numero {
+    font-size: 2.5rem;
+  }
+  
+  .corrida-texto h3 {
+    font-size: 1.8rem;
+  }
+  
+  .corrida-modalidades li {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .corrida-modalidades li strong {
+    min-width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .corrida-sucesso-section {
+    padding: 40px 15px;
+    margin: 30px 15px;
+  }
+  
+  .corrida-destaques {
+    grid-template-columns: 1fr; /* 1 coluna em mobile */
+  }
+  
+  .corrida-sucesso-title {
+    font-size: 1.8rem;
+  }
+  
+  .corrida-texto h3 {
+    font-size: 1.6rem;
+  }
+  
+  .destaque-numero {
+    font-size: 2.5rem;
+  }
 }
 
 /* ========================================
