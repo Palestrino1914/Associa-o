@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ========================================
-  // INICIALIZAR SWIPER.JS - BANNER SLIDER
+  // INICIALIZAR SWIPER.JS - BANNER SLIDER (CORRIGIDO)
   // ========================================
   const initSwiper = () => {
     if (typeof window.Swiper === 'undefined') {
@@ -36,9 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
         loop: true,
         speed: 800,
         
-        // 🔧 CORREÇÃO: Permitir cliques em links/botões dentro dos slides
+        // 🔧 ESSENCIAL: Permitir cliques em links/botões dentro dos slides
         preventClicks: false,
         preventClicksPropagation: false,
+        preventInteractionOnTransition: false,
         
         autoplay: {
           delay: 8000,
@@ -63,13 +64,27 @@ document.addEventListener('DOMContentLoaded', () => {
           nextSlideMessage: 'Próximo slide',
         },
         
-        // 🔧 BÔNUS: Pausar autoplay ao interagir com o botão PIX
+        // 🔧 HANDLERS PARA ELEMENTOS INTERATIVOS (UNIVERSAL)
         on: {
+          // Intercepta toque em mobile
           touchStart: function(swiper, event) {
-            const btnPix = event.target.closest('.btn-slide-pix');
-            if (btnPix) {
+            const ignored = event.target.closest('[data-swiper-ignore]');
+            if (ignored) {
               event.stopPropagation();
+              return false;
             }
+          },
+          // Intercepta clique em desktop
+          click: function(swiper, event) {
+            const ignored = event.target.closest('[data-swiper-ignore]');
+            if (ignored) {
+              event.stopPropagation();
+              return false;
+            }
+          },
+          // Garante que o autoplay não interfira
+          autoplayTimeLeft: function(swiper, time, progress) {
+            // Não faz nada, apenas previne conflitos
           }
         }
       });
