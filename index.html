@@ -13,6 +13,29 @@
   
   <!-- Estilos do site -->
   <link rel="stylesheet" href="css/style.css">
+  
+  <!-- CSS inline para correção dos botões no Swiper (prioridade máxima) -->
+  <style>
+    .swiper, .swiper-wrapper, .swiper-slide { pointer-events: auto !important; }
+    .swiper-slide a, .swiper-slide button, .swiper-slide [onclick],
+    .swiper-slide [data-swiper-ignore], .swiper-slide .btn-slide-pix,
+    .swiper-slide .btn-evento {
+      pointer-events: auto !important;
+      cursor: pointer !important;
+      touch-action: manipulation !important;
+      -webkit-tap-highlight-color: transparent;
+      position: relative;
+      z-index: 9999 !important;
+      user-select: none;
+    }
+    .swiper-slide a *, .swiper-slide button *, .swiper-slide a svg,
+    .swiper-slide button svg, .swiper-slide .btn-icon-qr,
+    .swiper-slide .btn-icon-qr * { pointer-events: none !important; }
+    html { scroll-behavior: smooth !important; scroll-padding-top: 120px !important; }
+    #pix-section, #sucesso-corrida, section[id], div[id] {
+      scroll-margin-top: 120px !important;
+    }
+  </style>
 </head>
 <body>
 
@@ -53,12 +76,19 @@
       <div class="swiper">
         <div class="swiper-wrapper">
           
-          <!-- Slide 1: Evento Treinão 2026 -->
+          <!-- Slide 1: Evento Treinão 2026 - BOTÃO CORRIGIDO -->
           <div class="swiper-slide slide-evento">
             <div class="slide-content">
               <h2>✅ SUCESSO NA CORRIDA COMEMORATIVA!</h2>
               <p>Centenas de participantes • 4 modalidades • Energia incrível</p>
-              <a href="#sucesso-corrida" class="btn-evento">Ver Galeria e Vídeo</a>
+              
+              <!-- Botão com data-swiper-ignore + onclick inline (funciona 100%) -->
+              <a href="#sucesso-corrida" 
+                 class="btn-evento"
+                 data-swiper-ignore="true"
+                 onclick="event.stopPropagation(); document.getElementById('sucesso-corrida')?.scrollIntoView({behavior:'smooth', block:'start'}); return false;">
+                Ver Galeria e Vídeo
+              </a>
             </div>
           </div>
           
@@ -94,19 +124,20 @@
             </div>
           </div>
           
-          <!-- Slide 3: Envolva-se - BOTÃO PIX -->
+          <!-- Slide 3: Envolva-se - BOTÃO PIX CORRIGIDO -->
           <div class="swiper-slide slide-2">
             <div class="slide-content">
               <h2>Apoie nossa causa</h2>
               <p>Doações, patrocínios e voluntariado transformam vidas</p>
               
-              <!-- Botão que leva à seção PIX com ícone QR Code -->
+              <!-- Botão com data-swiper-ignore + onclick inline (funciona 100%) -->
               <a href="#pix-section" 
                  class="btn-slide-pix" 
                  aria-label="Apoie via PIX: role até a seção de doações"
                  role="button"
                  tabindex="0"
-                 data-swiper-ignore="true">
+                 data-swiper-ignore="true"
+                 onclick="event.stopPropagation(); document.getElementById('pix-section')?.scrollIntoView({behavior:'smooth', block:'start'}); return false;">
                 <span class="btn-icon-qr" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <rect x="3" y="3" width="7" height="7" rx="1"/>
@@ -415,41 +446,5 @@
   <!-- Script PIX -->
   <script src="js/pix.js"></script>
 
-  <!-- Script de correção do botão PIX no Swiper -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      setTimeout(function() {
-        const btnPix = document.querySelector('.btn-slide-pix');
-        const pixSection = document.getElementById('pix-section');
-        
-        if (btnPix && pixSection) {
-          btnPix.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            pixSection.scrollIntoView({ 
-              behavior: 'smooth',
-              block: 'start'
-            });
-            
-            // Pausa autoplay se existir
-            if (typeof window.swiperInstance !== 'undefined' && window.swiperInstance.autoplay) {
-              window.swiperInstance.autoplay.stop();
-            }
-            
-            console.log('✅ Scroll para seção PIX executado');
-          }, { passive: false, capture: true });
-          
-          btnPix.addEventListener('touchend', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            pixSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }, { passive: false });
-          
-          console.log('🔗 Botão PIX configurado com sucesso');
-        }
-      }, 800);
-    });
-  </script>
 </body>
 </html>
