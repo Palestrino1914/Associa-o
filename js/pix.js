@@ -12,56 +12,62 @@ const pixData = {
 
 // Função para formatar valor em reais (ex: 25.50 → R$ 25,50)
 function formatarValor(valor) {
-  return parseFloat(valor).toFixed(2).replace('.', ',');
+  const num = parseFloat(valor);
+  if (isNaN(num)) return '0,00';
+  return num.toFixed(2).replace('.', ',');
 }
 
-// Função para gerar o código PIX estático com valor
+// Função para gerar o código PIX estático com valor (Padrão EMV BR Code)
 function gerarCodigoPix(valor) {
   const valorFormatado = parseFloat(valor).toFixed(2);
   
-  // Construção do payload PIX conforme padrão BR Code
-  let payload = '000201'; // Payload Format Indicator
+  // Campos obrigatórios do EMV QR Code
+  const payloadFormatIndicator = '000201';
+  const merchantCategoryCode = '52040000';
+  const transactionCurrency = '5303986';
+  const countryCode = '5802BR';
   
-  // Merchant Account Information (MAI) - GUI + Chave PIX
-  const chavePixPadded = pixData.chave.padEnd(36, '\u0000').substring(0, 36);
-  const nomePadded = pixData.nome.padEnd(25, '\u0000').substring(0, 25);
-  const cidadePadded = pixData.cidade.padEnd(15, '\u0000').substring(0, 15);
+  // Merchant Account Information (MAI) - Tag 26
+  // GUI + Chave PIX (CNPJ)
+  const gui = '0014BR.GOV.BCB.PIX';
+  const chavePix = pixData.chave;
+  const chaveField = '01' + String(chavePix.length).padStart(2, '0') + chavePix;
+  const maiContent = gui + chaveField;
+  const maiTag = '26' + String(maiContent.length).padStart(2, '0') + maiContent;
   
-  payload += '26' + (14 + 4 + chavePixPadded.length).toString().padStart(2, '0');
-  payload += '0014BR.GOV.BCB.PIX';
-  payload += '01' + chavePixPadded.length.toString().padStart(2, '0') + chavePixPadded;
+  // Transaction Amount - Tag 54 (apenas se houver valor)
+  let amountTag = '';
+  if (valorFormatado && parseFloat(valorFormatado) > 0) {
+    const amountValue = String(valorFormatado);
+    amountTag = '54' + String(amountValue.length).padStart(2, '0') + amountValue;
+  }
   
-  // Merchant Category Code
-  payload += '52040000';
+  // Merchant Name - Tag 59 (máx 25 caracteres)
+  const merchantName = pixData.nome.substring(0, 25);
+  const nameTag = '59' + String(merchantName.length).padStart(2, '0') + merchantName;
   
-  // Transaction Currency (986 = BRL)
-  payload += '5303986';
+  // Merchant City - Tag 60 (máx 15 caracteres)
+  const merchantCity = pixData.cidade.substring(0, 15);
+  const cityTag = '60' + String(merchantCity.length).padStart(2, '0') + merchantCity;
   
-  // Transaction Amount
-  const valorStr = valorFormatado.toString();
-  payload += '54' + valorStr.length.toString().padStart(2, '0') + valorStr;
+  // Additional Data Field Template - Tag 62
+  const additionalData = '62070503***';
   
-  // Country Code (BR)
-  payload += '5802BR';
+  // Monta payload sem CRC
+  let payload = payloadFormatIndicator + maiTag + merchantCategoryCode + 
+                transactionCurrency + amountTag + countryCode + 
+                nameTag + cityTag + additionalData;
   
-  // Merchant Name
-  payload += '59' + nomePadded.length.toString().padStart(2, '0') + nomePadded;
+  // Adiciona tag do CRC
+  payload += '6304';
   
-  // Merchant City
-  payload += '60' + cidadePadded.length.toString().padStart(2, '0') + cidadePadded;
+  // Calcula e adiciona CRC16-CCITT
+  const crc = calcularCRC16(payload);
   
-  // Additional Data Field Template
-  payload += '62070503***';
-  
-  // CRC16 placeholder
-  payload += '6304****';
-  
-  // Calcular CRC16
-  const crc = calcularCRC16(payload.slice(0, -4));
-  return payload.slice(0, -4) + crc;
+  return payload + crc;
 }
 
-// Função para calcular CRC16-CCITT (implementação completa)
+// Função para calcular CRC16-CCITT (polinômio 0x1021)
 function calcularCRC16(payload) {
   let crc = 0xFFFF;
   const poly = 0x1021;
@@ -96,34 +102,59 @@ function copiarPix() {
   try {
     const codigoPix = gerarCodigoPix(valor);
     
-    // Copiar para clipboard
-    navigator.clipboard.writeText(codigoPix).then(() => {
-      showMessage(`✅ PIX copiado! Cole no seu app de banco<br>Valor: R$ ${formatarValor(valor)}`, 'success', messageDiv);
-    }).catch(err => {
-      console.error('Erro ao copiar:', err);
-      // Fallback para navegadores mais antigos
+    // Copiar para clipboard (API moderna)
+    if (navigator.clipboard?.writeText) {
+      navigator.clipboard.writeText(codigoPix)
+        .then(() => {
+          showMessage(`✅ PIX copiado! Cole no seu app de banco<br><strong>Valor: R$ ${formatarValor(valor)}</strong>`, 'success', messageDiv);
+        })
+        .catch(() => fallbackCopy(codigoPix, valor, messageDiv));
+    } else {
+      // Fallback para navegadores antigos
       fallbackCopy(codigoPix, valor, messageDiv);
-    });
+    }
   } catch (error) {
     console.error('Erro na geração do PIX:', error);
     showMessage('❌ Erro ao gerar PIX. Tente novamente.', 'error', messageDiv);
   }
 }
 
-// Fallback para copy em navegadores antigos
+// Fallback para copy em navegadores antigos (execCommand)
 function fallbackCopy(texto, valor, messageDiv) {
   const textarea = document.createElement('textarea');
   textarea.value = texto;
   textarea.style.position = 'fixed';
-  textarea.style.opacity = '0';
+  textarea.style.left = '-9999px';
+  textarea.style.top = '0';
+  textarea.setAttribute('readonly', '');
+  textarea.setAttribute('aria-hidden', 'true');
+  
   document.body.appendChild(textarea);
   textarea.select();
   
   try {
-    document.execCommand('copy');
-    showMessage(`✅ PIX copiado! Cole no seu app de banco<br>Valor: R$ ${formatarValor(valor)}`, 'success', messageDiv);
+    const sucesso = document.execCommand('copy');
+    if (sucesso) {
+      showMessage(`✅ PIX copiado! Cole no seu app de banco<br><strong>Valor: R$ ${formatarValor(valor)}</strong>`, 'success', messageDiv);
+    } else {
+      throw new Error('execCommand falhou');
+    }
   } catch (err) {
-    showMessage('❌ Não foi possível copiar. Selecione e copie manualmente.', 'error', messageDiv);
+    console.error('Fallback copy falhou:', err);
+    showMessage('❌ Não foi possível copiar automaticamente.<br><strong>Selecione e copie manualmente o código PIX.</strong>', 'error', messageDiv);
+    
+    // Mostra o código para cópia manual (opcional)
+    const manualDiv = document.createElement('div');
+    manualDiv.style.cssText = 'margin-top:10px;padding:10px;background:#fff;border:1px solid #ccc;border-radius:4px;font-family:monospace;font-size:11px;word-break:break-all;';
+    manualDiv.textContent = texto;
+    manualDiv.onclick = () => {
+      textarea.value = texto;
+      textarea.select();
+      document.execCommand('copy');
+      showMessage('✅ Copiado!', 'success', messageDiv);
+    };
+    manualDiv.title = 'Clique para copiar';
+    messageDiv.appendChild(manualDiv);
   }
   
   document.body.removeChild(textarea);
@@ -136,8 +167,14 @@ function showMessage(text, type, element) {
   element.className = `pix-message ${type}`;
   element.style.display = 'block';
   
+  // Remove mensagem após 5 segundos
   setTimeout(() => {
-    element.style.display = 'none';
+    element.style.opacity = '0';
+    element.style.transition = 'opacity 0.3s ease';
+    setTimeout(() => {
+      element.style.display = 'none';
+      element.style.opacity = '1';
+    }, 300);
   }, 5000);
 }
 
@@ -147,13 +184,19 @@ function preencherValor(sugestao) {
   if (valorInput) {
     valorInput.value = sugestao;
     valorInput.focus();
+    
+    // Feedback visual
+    valorInput.style.borderColor = '#22c55e';
+    setTimeout(() => {
+      valorInput.style.borderColor = '#004d26';
+    }, 300);
   }
 }
 
 // Inicialização quando o DOM estiver carregado
 document.addEventListener('DOMContentLoaded', function() {
-  // Adicionar evento de formatação ao input
   const valorInput = document.getElementById('pix-valor');
+  
   if (valorInput) {
     // Permitir apenas números, vírgula e ponto
     valorInput.addEventListener('input', function(e) {
@@ -164,10 +207,28 @@ document.addEventListener('DOMContentLoaded', function() {
     valorInput.addEventListener('blur', function(e) {
       if (this.value) {
         const num = parseFloat(this.value.replace(',', '.'));
-        if (!isNaN(num)) {
+        if (!isNaN(num) && num > 0) {
           this.value = formatarValor(num);
         }
       }
     });
+    
+    // Permitir Enter para copiar
+    valorInput.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        copiarPix();
+      }
+    });
   }
+  
+  // Permitir Enter nos botões de sugestão
+  document.querySelectorAll('.sugestoes button').forEach(btn => {
+    btn.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        this.click();
+      }
+    });
+  });
 });
