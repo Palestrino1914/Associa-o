@@ -2178,3 +2178,47 @@ html {
     filter: brightness(1.1);
   }
 }
+/* ========================================
+   GALERIA DE REUNIÃO - 2 FOTOS LADO A LADO
+   ======================================== */
+.galeria-reuniao {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 30px !important;
+  margin-top: 30px !important;
+  margin-bottom: 30px !important;
+  max-width: 800px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.galeria-reuniao .foto-miniatura {
+  width: 100% !important;
+  height: auto !important;
+}
+
+.galeria-reuniao .foto-miniatura img {
+  width: 100% !important;
+  height: 250px !important;
+  object-fit: cover !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Forçar 2 colunas até 768px */
+@media (max-width: 768px) {
+  .galeria-reuniao {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  
+  .galeria-reuniao .foto-miniatura img {
+    height: 200px !important;
+  }
+}
+
+/* Mobile pequeno - 1 coluna */
+@media (max-width: 480px) {
+  .galeria-reuniao {
+    grid-template-columns: 1fr !important;
+  }
+}
