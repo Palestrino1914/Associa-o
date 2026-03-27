@@ -1315,7 +1315,7 @@ header {
 }
 
 /* ========================================
-   DIÁRIO INSTITUCIONAL - EVENTOS (CORRIGIDO)
+   DIÁRIO INSTITUCIONAL - EVENTOS
    ======================================== */
 .diario-container {
   max-width: 900px;
@@ -1593,6 +1593,125 @@ header {
   transform: rotate(90deg) scale(1.1);
   background: #004d26;
   color: white;
+}
+
+/* ========================================
+   LAYOUT DE 3 COLUNAS - PÁGINAS INTERNAS
+   ======================================== */
+.container-secoes {
+  display: grid;
+  grid-template-columns: 18% 64% 18%;
+  gap: 0;
+  width: 100%;
+  min-height: calc(100vh - 100px);
+}
+
+.coluna-esquerda {
+  background: linear-gradient(135deg, #004d26 0%, #00563F 100%);
+  grid-column: 1;
+}
+
+.coluna-central {
+  background: white;
+  grid-column: 2;
+  padding: 60px 40px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.coluna-direita {
+  background: linear-gradient(135deg, #004d26 0%, #00563F 100%);
+  grid-column: 3;
+}
+
+/* ========================================
+   CONTEÚDO DAS PÁGINAS INTERNAS - CORRIGIDO
+   ======================================== */
+.conteudo-secao {
+  max-width: 100%;
+}
+
+.conteudo-secao h2 {
+  color: #004d26 !important;
+  font-size: 28px !important;
+  margin-top: 30px !important;
+  margin-bottom: 20px !important;
+  border-bottom: 2px solid #004d26 !important;
+  padding-bottom: 10px !important;
+  font-weight: 700 !important;
+}
+
+.conteudo-secao h3 {
+  color: #004d26 !important;
+  font-size: 22px !important;
+  margin-top: 25px !important;
+  margin-bottom: 15px !important;
+  font-weight: 600 !important;
+}
+
+.conteudo-secao p,
+.conteudo-secao .texto-secao {
+  color: #333 !important;
+  font-size: 16px !important;
+  line-height: 1.8 !important;
+  text-align: justify !important;
+  margin-bottom: 25px !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.conteudo-secao strong {
+  color: #004d26 !important;
+  font-weight: 700 !important;
+}
+
+.conteudo-secao ul,
+.conteudo-secao ol {
+  margin-bottom: 25px !important;
+  padding-left: 30px !important;
+}
+
+.conteudo-secao li {
+  margin-bottom: 12px !important;
+  line-height: 1.7 !important;
+  color: #333 !important;
+}
+
+/* Lista de finalidades e equipe */
+.lista-quem-somos {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin: 20px 0 30px !important;
+}
+
+.lista-quem-somos li {
+  background: #f8f9fa !important;
+  padding: 15px 20px 15px 25px !important;
+  margin-bottom: 12px !important;
+  border-radius: 8px !important;
+  border-left: 4px solid #004d26 !important;
+  line-height: 1.7 !important;
+  font-size: 16px !important;
+  color: #333 !important;
+  position: relative !important;
+}
+
+.lista-quem-somos li:before {
+  content: "✓" !important;
+  position: absolute !important;
+  left: 5px !important;
+  color: #004d26 !important;
+  font-weight: bold !important;
+  font-size: 18px !important;
+}
+
+.lista-quem-somos li strong {
+  color: #004d26 !important;
+  font-weight: 700 !important;
 }
 
 /* ========================================
@@ -1955,6 +2074,35 @@ html {
     padding: 14px 25px;
     font-size: 1.05rem;
   }
+  /* Layout 3 colunas - Mobile */
+  .container-secoes {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+  }
+  .coluna-esquerda,
+  .coluna-direita {
+    display: none;
+  }
+  .coluna-central {
+    grid-column: 1;
+    padding: 40px 20px;
+  }
+  /* Conteúdo páginas internas - Mobile */
+  .conteudo-secao h2 {
+    font-size: 24px !important;
+  }
+  .conteudo-secao h3 {
+    font-size: 20px !important;
+  }
+  .conteudo-secao p,
+  .conteudo-secao .texto-secao {
+    font-size: 15px !important;
+    text-align: left !important;
+  }
+  .lista-quem-somos li {
+    padding: 12px 15px 12px 20px !important;
+    font-size: 15px !important;
+  }
 }
 
 @media (max-width: 480px) {
@@ -2127,4 +2275,167 @@ html {
   .slide-logo-video video {
     filter: brightness(1.1);
   }
+  /* Conteúdo páginas internas - Mobile pequeno */
+  .conteudo-secao h2 {
+    font-size: 22px !important;
+  }
+  .conteudo-secao h3 {
+    font-size: 18px !important;
+  }
+  .conteudo-secao p,
+  .conteudo-secao .texto-secao {
+    font-size: 14px !important;
+  }
+  .lista-quem-somos li {
+    padding: 10px 12px 10px 18px !important;
+    font-size: 14px !important;
+  }
+  .coluna-central {
+    padding: 30px 15px;
+  }
+}
+
+/* ========================================
+   ESTILOS PARA PÁGINA DE CONTATO
+   ======================================== */
+.contato-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contato-secao {
+  margin-bottom: 40px;
+}
+
+.contato-secao h2 {
+  color: #004d26;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #004d26;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contato-item {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.contato-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+.contato-item h3 {
+  color: #004d26;
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contato-detalhe {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.contato-detalhe a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.contato-detalhe a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.contato-descricao {
+  color: #666;
+  font-size: 0.95rem;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+.contato-mensagem {
+  background: #e8f5e9;
+  border-left: 4px solid #004d26;
+  padding: 20px;
+  border-radius: 0 8px 8px 0;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.contato-mensagem p {
+  margin: 8px 0;
+  font-weight: 600;
+}
+
+.contato-mensagem p:last-child {
+  color: #004d26;
+  font-size: 0.95rem;
+  margin-top: 15px;
+}
+
+/* ========================================
+   FOTO DOS PROJETOS - POLIESPORTIVO
+   ======================================== */
+.projeto-foto-container {
+  text-align: center;
+  margin: 40px 0;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 2px solid rgba(0, 77, 38, 0.1);
+}
+
+.projeto-foto {
+  max-width: 100%;
+  width: 800px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  display: block;
+  margin: 0 auto 15px;
+  transition: transform 0.3s ease;
+}
+
+.projeto-foto:hover {
+  transform: scale(1.02);
+}
+
+.projeto-foto-legenda {
+  font-size: 1rem;
+  color: #666;
+  font-style: italic;
+  margin: 0;
+  padding: 10px 20px;
+  background: white;
+  border-radius: 8px;
+  display: inline-block;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* ========================================
+   FOTO CENTRALIZADA - PARCERIAS
+   ======================================== */
+.foto-centralizada {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.diario-foto img[src*="logo-vitta-pro"] {
+  max-width: 400px;
+  margin: 0 auto;
 }
