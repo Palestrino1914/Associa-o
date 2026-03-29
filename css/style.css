@@ -2439,3 +2439,108 @@ html {
   max-width: 400px;
   margin: 0 auto;
 }
+
+/* ========================================
+   ESTILOS - PÁGINA EVENTOS
+   ======================================== */
+
+/* Destaque final */
+.destaque-final {
+  background: linear-gradient(135deg, #e8f5e9 0%, #f8f9fa 100%);
+  padding: 25px 30px;
+  border-radius: 12px;
+  border-left: 4px solid #004d26;
+  margin: 40px 0;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.destaque-final strong {
+  color: #004d26;
+  font-size: 1.15rem;
+}
+
+/* Call-to-action Instagram */
+.instagram-cta {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  padding: 20px 25px;
+  border-radius: 12px;
+  border: 2px solid #004d26;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.instagram-cta strong {
+  color: #004d26;
+}
+
+.link-instagram {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 25px;
+  background: linear-gradient(135deg, #004d26 0%, #00563F 100%);
+  color: white !important;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 77, 38, 0.3);
+}
+
+.link-instagram:hover {
+  background: linear-gradient(135deg, #00563F 0%, #006b4d 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 77, 38, 0.4);
+}
+
+/* Esconder legendas nas colagens (opcional) */
+.galeria-reuniao .foto-miniatura p {
+  display: none;
+}
+
+/* Fotos centralizadas - ajuste para colagens */
+.diario-foto img {
+  cursor: pointer;
+}
+
+.diario-foto img:hover {
+  transform: scale(1.02);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .destaque-final {
+    padding: 20px;
+    font-size: 1rem;
+  }
+  
+  .instagram-cta {
+    padding: 15px 20px;
+  }
+  
+  .link-instagram {
+    width: 100%;
+    padding: 12px 20px;
+  }
+  
+  .diario-foto img {
+    max-width: 100%;
+  }
+  
+  .galeria-reuniao {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .galeria-reuniao {
+    grid-template-columns: 1fr;
+  }
+  
+  .destaque-final {
+    padding: 15px;
+    font-size: 0.95rem;
+  }
+}
