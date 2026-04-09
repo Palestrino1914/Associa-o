@@ -2913,3 +2913,93 @@ html {
     padding: 12px 25px;
   }
 }
+/* ========================================
+   BOTÃO INSTAGRAM - PÁGINA PROJETOS
+   ======================================== */
+.instagram-destaque {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  padding: 25px;
+  border-radius: 12px;
+  border: 2px solid #004d26;
+  margin: 30px 0;
+  text-align: center;
+}
+
+.instagram-destaque p {
+  margin-bottom: 15px;
+  color: #004d26;
+  font-weight: 600;
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+.btn-instagram-projetos {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: white;
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(220, 39, 67, 0.4);
+}
+
+.btn-instagram-projetos:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(220, 39, 67, 0.6);
+}
+
+.btn-instagram-projetos svg {
+  fill: white;
+}
+
+/* Lista de projetos */
+.lista-projetos {
+  list-style: none;
+  padding-left: 0;
+  margin: 20px 0;
+}
+
+.lista-projetos li {
+  padding: 10px 0 10px 30px;
+  position: relative;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.lista-projetos li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #004d26;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.lista-projetos li:last-child {
+  border-bottom: none;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .instagram-destaque {
+    padding: 20px;
+  }
+  
+  .btn-instagram-projetos {
+    width: 100%;
+    justify-content: center;
+    font-size: 1.1rem;
+    padding: 12px 25px;
+  }
+  
+  .lista-projetos li {
+    font-size: 1rem;
+    padding-left: 25px;
+  }
+}
