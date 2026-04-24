@@ -14,28 +14,39 @@
   <!-- Estilos do site -->
   <link rel="stylesheet" href="css/style.css">
   
-  <!-- CSS inline para correção dos botões no Swiper (prioridade máxima) -->
   <style>
-    .swiper, .swiper-wrapper, .swiper-slide { pointer-events: auto !important; }
-    .swiper-slide a, .swiper-slide button, .swiper-slide [onclick],
-    .swiper-slide [data-swiper-ignore], .swiper-slide .btn-slide-pix,
-    .swiper-slide .btn-evento {
-      pointer-events: auto !important;
-      cursor: pointer !important;
-      touch-action: manipulation !important;
-      -webkit-tap-highlight-color: transparent;
-      position: relative;
-      z-index: 9999 !important;
-      user-select: none;
-    }
-    .swiper-slide a *, .swiper-slide button *, .swiper-slide a svg,
-    .swiper-slide button svg, .swiper-slide .btn-icon-qr,
-    .swiper-slide .btn-icon-qr * { pointer-events: none !important; }
-    html { scroll-behavior: smooth !important; scroll-padding-top: 120px !important; }
-    #pix-section, #sucesso-corrida, section[id], div[id] {
-      scroll-margin-top: 120px !important;
-    }
-  </style>
+  .swiper, .swiper-wrapper, .swiper-slide { 
+    pointer-events: auto !important; 
+  }
+  
+  .swiper-slide a, .swiper-slide button, .swiper-slide [onclick],
+  .swiper-slide [data-swiper-ignore], .swiper-slide .btn-slide-pix,
+  .swiper-slide .btn-evento {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+    z-index: 9999 !important;
+    user-select: none;
+  }
+  
+  /* CORREÇÃO: Mudei de 'none' para 'auto' */
+  .swiper-slide a *, .swiper-slide button *, .swiper-slide a svg,
+  .swiper-slide button svg, .swiper-slide .btn-icon-qr,
+  .swiper-slide .btn-icon-qr * { 
+    pointer-events: auto !important; /* Era 'none' - isso bloqueava os cliques! */
+  }
+  
+  html { 
+    scroll-behavior: smooth !important; 
+    scroll-padding-top: 120px !important; 
+  }
+  
+  #pix-section, #sucesso-corrida, section[id], div[id] {
+    scroll-margin-top: 120px !important;
+  }
+</style>
 </head>
 <body>
 
