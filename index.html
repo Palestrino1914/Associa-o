@@ -639,6 +639,32 @@
 
   <!-- Script PIX -->
   <script src="js/pix.js"></script>
-
+    <!-- SCRIPT DE EMERGÊNCIA PARA TESTAR O SWIPER -->
+  <script>
+    window.addEventListener('load', function() {
+      if (typeof Swiper !== 'undefined' && document.querySelector('.swiper')) {
+        console.log('🚀 Forçando inicialização do Swiper...');
+        new Swiper('.swiper', {
+          loop: true,
+          speed: 800,
+          autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+        console.log('✅ Swiper forçado com sucesso!');
+      } else {
+        console.error('❌ Falha ao carregar o Swiper. Verifique sua conexão.');
+      }
+    });
+  </script>
 </body>
 </html>
