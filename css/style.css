@@ -3003,3 +3003,200 @@ html {
     padding-left: 25px;
   }
 }
+
+
+/* ========================================
+   FORMULÁRIO DE INSCRIÇÃO - OUTUBRO ROSA
+   ======================================== */
+.inscricao-outubro-rosa {
+  background: linear-gradient(135deg, #ffe6f2 0%, #fff0f7 100%);
+  padding: 60px 20px;
+  margin: 40px auto;
+  border-radius: 12px;
+  border-top: 5px solid #d63384;
+  border-bottom: 5px solid #d63384;
+  box-shadow: 0 5px 20px rgba(214, 51, 132, 0.2);
+  max-width: 700px;
+}
+
+.inscricao-outubro-rosa h2 {
+  color: #d63384;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.inscricao-outubro-rosa > p {
+  text-align: center;
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+.inscricao-outubro-rosa form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inscricao-outubro-rosa label {
+  font-weight: 600;
+  color: #004d26;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.inscricao-outubro-rosa input[type="text"],
+.inscricao-outubro-rosa input[type="date"],
+.inscricao-outubro-rosa input[type="tel"],
+.inscricao-outubro-rosa input[type="email"],
+.inscricao-outubro-rosa select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #004d26;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Open Sans', 'Segoe UI', sans-serif;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.inscricao-outubro-rosa input:focus,
+.inscricao-outubro-rosa select:focus {
+  outline: none;
+  border-color: #d63384;
+  box-shadow: 0 0 0 3px rgba(214, 51, 132, 0.2);
+}
+
+.inscricao-outubro-rosa .radio-group,
+.inscricao-outubro-rosa .checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.inscricao-outubro-rosa .radio-group input[type="radio"],
+.inscricao-outubro-rosa .checkbox-group input[type="checkbox"] {
+  margin-top: 4px;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  accent-color: #004d26;
+}
+
+.inscricao-outubro-rosa .radio-group label,
+.inscricao-outubro-rosa .checkbox-group label {
+  font-weight: 400;
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.inscricao-outubro-rosa small {
+  display: block;
+  color: #666;
+  font-size: 0.85rem;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+.btn-inscricao-whatsapp {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-inscricao-whatsapp:hover {
+  background: linear-gradient(135deg, #128C7E 0%, #075E54 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+}
+
+.btn-inscricao-whatsapp:active {
+  transform: translateY(-1px);
+}
+
+.feedback {
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  display: none;
+  margin-top: 15px;
+}
+
+.feedback.success {
+  background: #d4edda;
+  color: #155724;
+  display: block;
+  border: 1px solid #c3e6cb;
+}
+
+.feedback.error {
+  background: #f8d7da;
+  color: #721c24;
+  display: block;
+  border: 1px solid #f5c6cb;
+}
+
+/* Responsividade do Formulário */
+@media (max-width: 768px) {
+  .inscricao-outubro-rosa {
+    padding: 40px 15px;
+    margin: 30px 0;
+  }
+
+  .inscricao-outubro-rosa h2 {
+    font-size: 1.6rem;
+  }
+
+  .inscricao-outubro-rosa > p {
+    font-size: 1rem;
+  }
+
+  .btn-inscricao-whatsapp {
+    font-size: 1.1rem;
+    padding: 12px 25px;
+  }
+
+  .inscricao-outubro-rosa .radio-group,
+  .inscricao-outubro-rosa .checkbox-group {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .inscricao-outubro-rosa {
+    padding: 30px 12px;
+    margin: 25px 0;
+  }
+
+  .inscricao-outubro-rosa h2 {
+    font-size: 1.4rem;
+  }
+
+  .btn-inscricao-whatsapp {
+    font-size: 1rem;
+    padding: 12px 20px;
+    width: 100%;
+  }
+}
