@@ -345,3 +345,111 @@ document.addEventListener('DOMContentLoaded', () => {
   
   console.log('✅ Todos os componentes inicializados!');
 });
+
+
+  <!-- Script do Formulário de Inscrição via WhatsApp -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('form-inscricao-whatsapp');
+      const feedback = document.getElementById('feedback-mensagem');
+      const WHATSAPP_NUMBER = '5514998089788'; // Número da AEESP
+
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault(); // Impede o recarregamento da página
+          
+          // Limpa mensagens anteriores
+          feedback.className = 'feedback';
+          feedback.textContent = '';
+          
+          // Coleta os dados
+          const nome = document.getElementById('nome').value.trim();
+          const nascimento = document.getElementById('nascimento').value;
+          const genero = document.querySelector('input[name="genero"]:checked')?.value;
+          const telefone = document.getElementById('telefone').value.trim();
+          const email = document.getElementById('email').value.trim();
+          const modalidade = document.getElementById('modalidade').value;
+          const declaracaoSaude = document.getElementById('declaracao-saude').checked;
+          const autorizacaoImagem = document.getElementById('autorizacao-imagem').checked;
+          const lgpd = document.getElementById('lgpd').checked;
+          
+          // 1. Validação de campos obrigatórios
+          if (!nome || !nascimento || !genero || !telefone || !modalidade) {
+            feedback.textContent = '⚠️ Por favor, preencha todos os campos obrigatórios.';
+            feedback.classList.add('error');
+            return;
+          }
+          
+          // 2. Validação dos checkboxes (LGPD, Imagem, Saúde)
+          if (!declaracaoSaude || !autorizacaoImagem || !lgpd) {
+            feedback.textContent = '❌ É necessário marcar todas as declarações de aceite.';
+            feedback.classList.add('error');
+            return;
+          }
+          
+          // 3. Cálculo da idade
+          const dataNascimento = new Date(nascimento);
+          const hoje = new Date();
+          let idade = hoje.getFullYear() - dataNascimento.getFullYear();
+          const mes = hoje.getMonth() - dataNascimento.getMonth();
+          if (mes < 0 || (mes === 0 && hoje.getDate() < dataNascimento.getDate())) {
+            idade--;
+          }
+          
+          // 4. Validação de idade por modalidade
+          if (modalidade === 'Corrida Kids' && (idade < 4 || idade > 12)) {
+            feedback.textContent = '❌ Corrida Kids é apenas para crianças de 4 a 12 anos.';
+            feedback.classList.add('error');
+            return;
+          }
+          
+          if (modalidade === 'Corrida Super 5km' && idade < 14) {
+            feedback.textContent = '❌ Corrida Super 5km exige mínimo de 14 anos.';
+            feedback.classList.add('error');
+            return;
+          }
+          
+          // 5. Validação básica do telefone (apenas números)
+          const telefoneLimpo = telefone.replace(/\D/g, '');
+          if (telefoneLimpo.length < 10 || telefoneLimpo.length > 11) {
+            feedback.textContent = '⚠️ Por favor, digite um número de WhatsApp válido.';
+            feedback.classList.add('error');
+            return;
+          }
+          
+          // 6. Montagem da mensagem para o WhatsApp
+          const mensagem = `🎀 INSCRIÇÃO - OUTUBRO ROSA SUPER 5K
+
+👤 Nome: ${nome}
+📅 Data de Nascimento: ${nascimento.split('-').reverse().join('/')} (${idade} anos)
+👤 Gênero: ${genero}
+📱 WhatsApp: ${telefone}
+📧 E-mail: ${email || 'Não informado'}
+🏃 Modalidade: ${modalidade}
+
+✅ Declaração de Saúde: AUTORIZADO
+✅ Autorização de Imagem: AUTORIZADO
+✅ LGPD: ACEITO
+
+📅 Evento: 25 de Outubro de 2026
+⏰ Horário: 7:30h
+📍 Local: Recinto Mário Zaparolli - Pompéia/SP
+
+Aguardo confirmação! 💚`;
+          
+          // 7. Codificação e redirecionamento
+          const mensagemCodificada = encodeURIComponent(mensagem);
+          const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${mensagemCodificada}`;
+          
+          // Feedback visual de sucesso
+          feedback.textContent = '✅ Redirecionando para o WhatsApp...';
+          feedback.classList.add('success');
+          
+          // Abre o WhatsApp em nova aba após 1.5 segundos
+          setTimeout(() => {
+            window.open(whatsappLink, '_blank');
+          }, 1500);
+        });
+      }
+    });
+  </script>
