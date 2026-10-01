@@ -308,6 +308,38 @@
   </form>
 </section>
 
+          <!-- ========================================
+         SEÇÃO DO PIX
+         ======================================== -->
+    <div class="qr-section" id="pix-section">
+      <h2 class="qr-title">💚 Sua contribuição transforma vidas. Seja parte desta história!</h2>
+      <div class="qr-divider"></div>
+      <div class="qr-container">
+        <img src="img/pix_aeesp_.png" alt="QR Code para Pix da AEESP" class="qr-code">
+        <p class="qr-description">Escaneie para contribuir com o Pix</p>
+      </div>
+      
+      <!-- Formulário de Doação PIX -->
+      <div class="pix-form">
+        <label for="pix-valor">Valor da doação:</label>
+        <div class="valor-input">
+          <input type="text" id="pix-valor" placeholder="Ex: 10, 25.50" autocomplete="off">
+          <div class="sugestoes">
+            <button type="button" onclick="preencherValor('10')">R$ 10</button>
+            <button type="button" onclick="preencherValor('25')">R$ 25</button>
+            <button type="button" onclick="preencherValor('50')">R$ 50</button>
+            <button type="button" onclick="preencherValor('100')">R$ 100</button>
+          </div>
+        </div>
+        <div class="pix-actions">
+          <button class="btn-copy-pix" onclick="copiarPix()">📋 Copiar PIX</button>
+        </div>
+        <div id="pix-message" class="pix-message"></div>
+      </div>
+    </div>
+
+    
+
     
     <!-- ========================================
          SEÇÃO DE PARCERIAS
@@ -589,35 +621,7 @@
       </div>
     </div>
 
-    <!-- ========================================
-         SEÇÃO DO PIX
-         ======================================== -->
-    <div class="qr-section" id="pix-section">
-      <h2 class="qr-title">💚 Sua contribuição transforma vidas. Seja parte desta história!</h2>
-      <div class="qr-divider"></div>
-      <div class="qr-container">
-        <img src="img/pix_aeesp_.png" alt="QR Code para Pix da AEESP" class="qr-code">
-        <p class="qr-description">Escaneie para contribuir com o Pix</p>
-      </div>
-      
-      <!-- Formulário de Doação PIX -->
-      <div class="pix-form">
-        <label for="pix-valor">Valor da doação:</label>
-        <div class="valor-input">
-          <input type="text" id="pix-valor" placeholder="Ex: 10, 25.50" autocomplete="off">
-          <div class="sugestoes">
-            <button type="button" onclick="preencherValor('10')">R$ 10</button>
-            <button type="button" onclick="preencherValor('25')">R$ 25</button>
-            <button type="button" onclick="preencherValor('50')">R$ 50</button>
-            <button type="button" onclick="preencherValor('100')">R$ 100</button>
-          </div>
-        </div>
-        <div class="pix-actions">
-          <button class="btn-copy-pix" onclick="copiarPix()">📋 Copiar PIX</button>
-        </div>
-        <div id="pix-message" class="pix-message"></div>
-      </div>
-    </div>
+  
 
   </main>
 
