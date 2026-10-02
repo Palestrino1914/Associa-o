@@ -1084,5 +1084,115 @@
       }
     });
   </script>
-</body>
+  <!-- SCRIPT DO FORMULÁRIO WHATSAPP (VERSÃO À PROVA DE FALHAS) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('🔍 Script do formulário carregado.');
+      
+      const form = document.getElementById('form-inscricao-whatsapp');
+      
+      if (!form) {
+        console.error('❌ ERRO: O formulário com id "form-inscricao-whatsapp" não foi encontrado no HTML!');
+        return;
+      }
+
+      console.log('✅ Formulário encontrado. Ativando...');
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault(); // Impede a página de recarregar
+        console.log('📩 Formulário enviado! Iniciando validações...');
+        
+        const feedback = document.getElementById('feedback-mensagem');
+        feedback.className = 'feedback';
+        feedback.textContent = '';
+        
+        // Coleta de dados
+        const nome = document.getElementById('nome').value.trim();
+        const nascimento = document.getElementById('nascimento').value;
+        const genero = document.querySelector('input[name="genero"]:checked')?.value;
+        const telefone = document.getElementById('telefone').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const modalidade = document.getElementById('modalidade').value;
+        
+        const checkSaude = document.getElementById('declaracao-saude').checked;
+        const checkImagem = document.getElementById('autorizacao-imagem').checked;
+        const checkLgpd = document.getElementById('lgpd').checked;
+
+        // 1. Validação de campos vazios
+        if (!nome || !nascimento || !genero || !telefone || !modalidade) {
+          feedback.textContent = '⚠️ Por favor, preencha todos os campos obrigatórios.';
+          feedback.classList.add('error');
+          console.warn('❌ Validação falhou: Campos obrigatórios vazios.');
+          return;
+        }
+        
+        // 2. Validação dos checkboxes
+        if (!checkSaude || !checkImagem || !checkLgpd) {
+          feedback.textContent = '❌ É necessário marcar todas as declarações de aceite.';
+          feedback.classList.add('error');
+          console.warn('❌ Validação falhou: Checkboxes não marcados.');
+          return;
+        }
+        
+        // 3. Cálculo da idade
+        const dataNasc = new Date(nascimento);
+        const hoje = new Date();
+        let idade = hoje.getFullYear() - dataNasc.getFullYear();
+        const mes = hoje.getMonth() - dataNasc.getMonth();
+        if (mes < 0 || (mes === 0 && hoje.getDate() < dataNasc.getDate())) {
+          idade--;
+        }
+        console.log(`🎂 Idade calculada: ${idade} anos`);
+        
+        // 4. Validação de idade por modalidade
+        if (modalidade === 'Corrida Kids' && (idade < 4 || idade > 12)) {
+          feedback.textContent = '❌ Corrida Kids é apenas para crianças de 4 a 12 anos.';
+          feedback.classList.add('error');
+          return;
+        }
+        if (modalidade === 'Corrida Super 5km' && idade < 14) {
+          feedback.textContent = '❌ Corrida Super 5km exige mínimo de 14 anos.';
+          feedback.classList.add('error');
+          return;
+        }
+        
+        // 5. Validação do telefone
+        const telLimpo = telefone.replace(/\D/g, '');
+        if (telLimpo.length < 10 || telLimpo.length > 11) {
+          feedback.textContent = '⚠️ Por favor, digite um número de WhatsApp válido.';
+          feedback.classList.add('error');
+          return;
+        }
+        
+        // 6. Montagem da mensagem
+        const mensagem = `🎀 INSCRIÇÃO - OUTUBRO ROSA SUPER 5K
+
+👤 Nome: ${nome}
+📅 Nascimento: ${nascimento.split('-').reverse().join('/')} (${idade} anos)
+👤 Gênero: ${genero}
+📱 WhatsApp: ${telefone}
+📧 E-mail: ${email || 'Não informado'}
+🏃 Modalidade: ${modalidade}
+
+✅ Saúde, Imagem e LGPD: AUTORIZADO
+
+Aguardo confirmação! 💚`;
+        
+        console.log('✅ Validações passaram! Redirecionando para o WhatsApp...');
+        
+        // 7. Feedback e Redirecionamento
+        feedback.textContent = '✅ Redirecionando para o WhatsApp...';
+        feedback.classList.add('success');
+        
+        const urlWhatsApp = `https://wa.me/5514998089788?text=${encodeURIComponent(mensagem)}`;
+        
+        setTimeout(() => {
+          window.open(urlWhatsApp, '_blank');
+        }, 1000);
+      });
+    });
+  </script>
+    
+
+    </body>
 </html>
