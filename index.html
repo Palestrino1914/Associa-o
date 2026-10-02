@@ -14,52 +14,37 @@
   <!-- Estilos do site -->
   <link rel="stylesheet" href="css/style.css">
   
+  <!-- CSS inline para correção dos botões no Swiper e scroll suave -->
   <style>
-  .swiper, .swiper-wrapper, .swiper-slide { 
-    pointer-events: auto !important; 
-  }
-  
-  .swiper-slide a, .swiper-slide button, .swiper-slide [onclick],
-  .swiper-slide [data-swiper-ignore], .swiper-slide .btn-slide-pix,
-  .swiper-slide .btn-evento {
-    pointer-events: auto !important;
-    cursor: pointer !important;
-    touch-action: manipulation !important;
-    -webkit-tap-highlight-color: transparent;
-    position: relative;
-    z-index: 9999 !important;
-    user-select: none;
-  }
-  
-  /* CORREÇÃO: Mudei de 'none' para 'auto' */
-  .swiper-slide a *, .swiper-slide button *, .swiper-slide a svg,
-  .swiper-slide button svg, .swiper-slide .btn-icon-qr,
-  .swiper-slide .btn-icon-qr * { 
-    pointer-events: auto !important; /* Era 'none' - isso bloqueava os cliques! */
-  }
-  
-  html { 
-    scroll-behavior: smooth !important; 
-    scroll-padding-top: 120px !important; 
-  }
-  
-  #pix-section, #sucesso-corrida, section[id], div[id] {
-    scroll-margin-top: 120px !important;
-  }
-</style>
+    .swiper, .swiper-wrapper, .swiper-slide { pointer-events: auto !important; }
+    .swiper-slide a, .swiper-slide button, .swiper-slide [onclick],
+    .swiper-slide [data-swiper-ignore], .swiper-slide .btn-slide-pix,
+    .swiper-slide .btn-evento {
+      pointer-events: auto !important;
+      cursor: pointer !important;
+      touch-action: manipulation !important;
+      -webkit-tap-highlight-color: transparent;
+      position: relative;
+      z-index: 9999 !important;
+      user-select: none;
+    }
+    .swiper-slide a *, .swiper-slide button *, .swiper-slide a svg,
+    .swiper-slide button svg, .swiper-slide .btn-icon-qr,
+    .swiper-slide .btn-icon-qr * { pointer-events: auto !important; }
+    
+    html { scroll-behavior: smooth !important; scroll-padding-top: 120px !important; }
+    #pix-section, #sucesso-corrida, #inscricao-outubro-rosa, section[id], div[id] {
+      scroll-margin-top: 120px !important;
+    }
+  </style>
 </head>
 <body>
 
   <header>
     <div class="header-container">
-      <!-- Logo -->
       <div class="logo-wrapper">
-        <img src="img/aeesp-logo.png" 
-             alt="AEESP - Associação Esportiva Educação e Saúde de Pompéia" 
-             class="site-logo">
+        <img src="img/aeesp-logo.png" alt="AEESP - Associação Esportiva Educação e Saúde de Pompéia" class="site-logo">
       </div>
-      
-      <!-- Navegação -->
       <nav class="header-nav">
         <ul>
           <li><a href="index.html">HOME</a></li>
@@ -87,45 +72,31 @@
       <div class="swiper">
         <div class="swiper-wrapper">
           
-          <!-- Slide 1: Corrida Comemorativa - SUCESSO -->
+          <!-- Slide 1 -->
           <div class="swiper-slide slide-evento">
             <div class="slide-content">
               <h2>✅ SUCESSO NA CORRIDA COMEMORATIVA!</h2>
               <p>Centenas de participantes • 4 modalidades • Energia incrível</p>
-              
-              <a href="#sucesso-corrida" 
-                 class="btn-evento"
-                 data-swiper-ignore="true"
+              <a href="#sucesso-corrida" class="btn-evento" data-swiper-ignore="true"
                  onclick="event.stopPropagation(); document.getElementById('sucesso-corrida')?.scrollIntoView({behavior:'smooth', block:'start'}); return false;">
                 Ver Galeria e Vídeo
               </a>
             </div>
           </div>
           
-          <!-- Slide 2: Vídeo Logo AEESP -->
+          <!-- Slide 2 -->
           <div class="swiper-slide slide-logo-video">
             <div class="slide-content logo-video-slide">
               <div class="video-wrapper">
-                <video 
-                  id="bannerVideo"
-                  class="slide-logo-video" 
-                  autoplay 
-                  muted 
-                  playsinline 
-                  preload="auto"
-                  poster="img/aeesp-logo.png">
+                <video id="bannerVideo" class="slide-logo-video" autoplay muted playsinline preload="auto" poster="img/aeesp-logo.png">
                   <source src="videos/Logo-em-Movimento1.mp4" type="video/mp4">
                   Seu navegador não suporta o elemento de vídeo.
                 </video>
-                
-                <!-- Botão de Ativar Som -->
                 <button id="toggleSoundBtn" class="sound-toggle-btn" aria-label="Ativar som">
                   <span class="sound-icon muted">🔇</span>
                   <span class="sound-icon unmuted" style="display: none;">🔊</span>
                   <span class="sound-text">Clique para ativar o som</span>
                 </button>
-                
-                <!-- Botão de Replay -->
                 <button id="replayBtn" class="replay-btn" aria-label="Reproduzir novamente">
                   <span class="replay-icon">▶</span>
                   <span class="replay-text">Reproduzir</span>
@@ -134,29 +105,17 @@
             </div>
           </div>
           
-          <!-- Slide 3: Envolva-se - BOTÃO PIX -->
+          <!-- Slide 3 -->
           <div class="swiper-slide slide-2">
             <div class="slide-content">
               <h2>Apoie nossa causa</h2>
               <p>Doações, patrocínios e voluntariado transformam vidas</p>
-              
-              <a href="#pix-section" 
-                 class="btn-slide-pix" 
-                 aria-label="Apoie via PIX: role até a seção de doações"
-                 role="button"
-                 tabindex="0"
-                 data-swiper-ignore="true"
+              <a href="#pix-section" class="btn-slide-pix" aria-label="Apoie via PIX" role="button" tabindex="0" data-swiper-ignore="true"
                  onclick="event.stopPropagation(); document.getElementById('pix-section')?.scrollIntoView({behavior:'smooth', block:'start'}); return false;">
                 <span class="btn-icon-qr" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="3" y="3" width="7" height="7" rx="1"/>
-                    <rect x="14" y="3" width="7" height="7" rx="1"/>
-                    <rect x="3" y="14" width="7" height="7" rx="1"/>
-                    <path d="M14 14h3v3h-3z"/>
-                    <path d="M17 14v-3"/>
-                    <path d="M14 17h3"/>
-                    <path d="M21 21v-2a2 2 0 0 0-2-2h-2"/>
-                    <path d="M3 21v-2a2 2 0 0 1 2-2h2"/>
+                    <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/>
+                    <path d="M14 14h3v3h-3z"/><path d="M17 14v-3"/><path d="M14 17h3"/><path d="M21 21v-2a2 2 0 0 0-2-2h-2"/><path d="M3 21v-2a2 2 0 0 1 2-2h2"/>
                   </svg>
                 </span>
                 <span class="btn-text">Apoie via PIX</span>
@@ -164,23 +123,18 @@
             </div>
           </div>
           
-         <!-- Slide 4: Eventos e Atividades - COM BOTÃO -->
-<div class="swiper-slide slide-1">
-  <div class="slide-content">
-    <h2>Eventos e Atividades</h2>
-    <p>História viva da AEESP: treinos, conquistas, desafios e parcerias</p>
-    
-    <!-- Botão com data-swiper-ignore + onclick para funcionar 100% -->
-    <a href="eventos.html" 
-       class="btn-evento"
-       data-swiper-ignore="true"
-       onclick="event.stopPropagation(); return true;">
-      Ver Diário Institucional
-    </a>
-  </div>
-</div>
+          <!-- Slide 4 -->
+          <div class="swiper-slide slide-1">
+            <div class="slide-content">
+              <h2>Eventos e Atividades</h2>
+              <p>História viva da AEESP: treinos, conquistas, desafios e parcerias</p>
+              <a href="eventos.html" class="btn-evento" data-swiper-ignore="true" onclick="event.stopPropagation(); return true;">
+                Ver Diário Institucional
+              </a>
+            </div>
+          </div>
           
-          <!-- Slide 5: Contato -->
+          <!-- Slide 5 -->
           <div class="swiper-slide slide-3">
             <div class="slide-content">
               <h2>Entre em contato</h2>
@@ -188,7 +142,7 @@
             </div>
           </div>
           
-          <!-- Slide 6: LOGO -->
+          <!-- Slide 6 -->
           <div class="swiper-slide slide-logo">
             <div class="slide-content logo-slide">
               <img src="img/aeesp-logo.png" alt="AEESP - Logo" class="slide-logo-img">
@@ -196,423 +150,8 @@
           </div>
           
         </div>
-        
-        <!-- Navegação -->
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
-        
-        <!-- Paginação -->
-        <div class="swiper-pagination"></div>
-      </div>
-    </div>
-
-    <!-- ========================================
-         SEÇÃO DE VÍDEO INSTITUCIONAL
-         ======================================== -->
-    <div class="video-section">
-      <div class="video-container">
-        <h2 class="video-title">Conheça Nossa Jornada em Movimento</h2>
-        <p class="video-description">Assista ao vídeo que conta a trajetória da AEESP e conheça nosso impacto na comunidade de Pompéia</p>
-        <video controls preload="metadata" poster="img/favicon1.jpg" class="featured-video">
-          <source src="videos/video-aeesp.mp4" type="video/mp4">
-          Seu navegador não suporta o elemento de vídeo.
-        </video>
-      </div>
-    </div>
-  
-    <!-- ========================================
-     FORMULÁRIO DE INSCRIÇÃO - OUTUBRO ROSA
-     ======================================== -->
-<section class="inscricao-outubro-rosa" id="inscricao-outubro-rosa">
-  <h2>🎀 Inscrição - Outubro Rosa Super 5K</h2>
-  <p>25 de Outubro de 2026 • 7:30h • Recinto Mário Zaparolli - Pompéia/SP</p>
-  
-  <form id="form-inscricao-whatsapp">
-    
-    <!-- Campo 1: Nome Completo -->
-    <label for="nome">Nome Completo *</label>
-    <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo">
-    
-    <!-- Campo 2: Data de Nascimento -->
-    <label for="nascimento">Data de Nascimento *</label>
-    <input type="date" id="nascimento" name="nascimento" required>
-    <small id="idade-info">Idade será calculada automaticamente para validar a modalidade</small>
-    
-    <!-- Campo 3: Gênero (Radio Buttons) -->
-    <label>Gênero *</label>
-    <div class="radio-group">
-      <input type="radio" id="feminino" name="genero" value="Feminino" required>
-      <label for="feminino">Feminino</label>
-      
-      <input type="radio" id="masculino" name="genero" value="Masculino" required>
-      <label for="masculino">Masculino</label>
-    </div>
-    
-    <!-- Campo 4: Telefone -->
-    <label for="telefone">WhatsApp *</label>
-    <input type="tel" id="telefone" name="telefone" required placeholder="(14) 99808-9788">
-    
-    <!-- Campo 5: E-mail (Opcional) -->
-    <label for="email">E-mail</label>
-    <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com">
-    <small>Opcional - para envio de regulamento e informações</small>
-    
-    <!-- Campo 6: Modalidade (Select) -->
-    <label for="modalidade">Modalidade *</label>
-    <select id="modalidade" name="modalidade" required>
-      <option value="">Selecione sua modalidade...</option>
-      <option value="Corrida Super 5km">Corrida Super 5km (14+ anos)</option>
-      <option value="Caminhada 3km">Caminhada 3km (todas as idades)</option>
-      <option value="Corrida Kids">Corrida Kids (4-12 anos)</option>
-    </select>
-    
-    <!-- Campo 7: Declaração de Saúde (Checkbox) -->
-    <div class="checkbox-group">
-      <input type="checkbox" id="declaracao-saude" name="declaracao_saude" required>
-      <label for="declaracao-saude">
-        Declaro, sob minha total responsabilidade, que estou apto(a) a praticar a 
-        modalidade escolhida e não possuo impedimento médico para a atividade física. *
-      </label>
-    </div>
-    
-    <!-- Campo 8: Autorização de Imagem (Checkbox) -->
-    <div class="checkbox-group">
-      <input type="checkbox" id="autorizacao-imagem" name="autorizacao_imagem" required>
-      <label for="autorizacao-imagem">
-        Autorizo o uso da minha imagem e voz em fotos, vídeos, redes sociais e website 
-        da AEESP, sem fins comerciais, para divulgação deste evento e das atividades 
-        da associação. *
-      </label>
-    </div>
-    
-    <!-- Campo 9: LGPD (Checkbox) -->
-    <div class="checkbox-group">
-      <input type="checkbox" id="lgpd" name="lgpd" required>
-      <label for="lgpd">
-   
-          <!-- Slide 1: Corrida Comemorativa - SUCESSO -->
-          <div class="swiper-slide slide-evento">
-            <div class="slide-content">
-              <h2>✅ SUCESSO NA CORRIDA COMEMORATIVA!</h2>
-              <p>Centenas de participantes • 4 modalidades • Energia incrível</p>
-              
-              <a href="#sucesso-corrida" 
-                 class="btn-evento"
-                 data-swiper-ignore="true"
-                 onclick="event.stopPropagation(); document.getElementById('sucesso-corrida')?.scrollIntoView({behavior:'smooth', block:'start'}); return false;">
-                Ver Galeria e Vídeo
-              </a>
-            </div>
-          </div>
-          
-          <!-- Slide 2: Vídeo Logo AEESP -->
-          <div class="swiper-slide slide-logo-video">
-            <div class="slide-content logo-video-slide">
-              <div class="video-wrapper">
-                <video 
-                  id="bannerVideo"
-                  class="slide-logo-video" 
-                  autoplay 
-                  muted 
-                  playsinline 
-                  preload="auto"
-                  poster="img/aeesp-logo.png">
-                  <source src="videos/Logo-em-Movimento1.mp4" type="video/mp4">
-                  Seu navegador não suporta o elemento de vídeo.
-                </video>
-                
-                <!-- Botão de Ativar Som -->
-                <button id="toggleSoundBtn" class="sound-toggle-btn" aria-label="Ativar som">
-                  <span class="sound-icon muted">🔇</span>
-                  <span class="sound-icon unmuted" style="display: none;">🔊</span>
-                  <span class="sound-text">Clique para ativar o som</span>
-                </button>
-                
-                <!-- Botão de Replay -->
-                <button id="replayBtn" class="replay-btn" aria-label="Reproduzir novamente">
-                  <span class="replay-icon">▶</span>
-                  <span class="replay-text">Reproduzir</span>
-                </button>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Slide 3: Envolva-se - BOTÃO PIX -->
-          <div class="swiper-slide slide-2">
-            <div class="slide-content">
-              <h2>Apoie nossa causa</h2>
-              <p>Doações, patrocínios e voluntariado transformam vidas</p>
-              
-              <a href="#pix-section" 
-                 class="btn-slide-pix" 
-                 aria-label="Apoie via PIX: role até a seção de doações"
-                 role="button"
-                 tabindex="0"
-                 data-swiper-ignore="true"
-                 onclick="event.stopPropagation(); document.getElementById('pix-section')?.scrollIntoView({behavior:'smooth', block:'start'}); return false;">
-                <span class="btn-icon-qr" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="3" y="3" width="7" height="7" rx="1"/>
-                    <rect x="14" y="3" width="7" height="7" rx="1"/>
-                    <rect x="3" y="14" width="7" height="7" rx="1"/>
-                    <path d="M14 14h3v3h-3z"/>
-                    <path d="M17 14v-3"/>
-                    <path d="M14 17h3"/>
-                    <path d="M21 21v-2a2 2 0 0 0-2-2h-2"/>
-                    <path d="M3 21v-2a2 2 0 0 1 2-2h2"/>
-                  </svg>
-                </span>
-                <span class="btn-text">Apoie via PIX</span>
-              </a>
-            </div>
-          </div>
-          
-         <!-- Slide 4: Eventos e Atividades - COM BOTÃO -->
-<div class="swiper-slide slide-1">
-  <div class="slide-content">
-    <h2>Eventos e Atividades</h2>
-    <p>História viva da AEESP: treinos, conquistas, desafios e parcerias</p>
-    
-    <!-- Botão com data-swiper-ignore + onclick para funcionar 100% -->
-    <a href="eventos.html" 
-       class="btn-evento"
-       data-swiper-ignore="true"
-       onclick="event.stopPropagation(); return true;">
-      Ver Diário Institucional
-    </a>
-  </div>
-</div>
-          
-          <!-- Slide 5: Contato -->
-          <div class="swiper-slide slide-3">
-            <div class="slide-content">
-              <h2>Entre em contato</h2>
-              <p>Fale conosco, tire dúvidas via contato@aeesp.org.br</p>
-            </div>
-          </div>
-          
-          <!-- Slide 6: LOGO -->
-          <div class="swiper-slide slide-logo">
-            <div class="slide-content logo-slide">
-              <img src="img/aeesp-logo.png" alt="AEESP - Logo" class="slide-logo-img">
-            </div>
-          </div>
-          
-        </div>
-        
-        <!-- Navegação -->
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        
-        <!-- Paginação -->
-        <div class="swiper-pagination"></div>
-      </div>
-    </div>
-
-    <!-- ========================================
-         SEÇÃO DE VÍDEO INSTITUCIONAL
-         ======================================== -->
-    <div class="video-section">
-      <div class="video-container">
-        <h2 class="video-title">Conheça Nossa Jornada em Movimento</h2>
-        <p class="video-description">Assista ao vídeo que conta a trajetória da AEESP e conheça nosso impacto na comunidade de Pompéia</p>
-        <video controls preload="metadata" poster="img/favicon1.jpg" class="featured-video">
-          <source src="videos/video-aeesp.mp4" type="video/mp4">
-          Seu navegador não suporta o elemento de vídeo.
-        </video>
-      </div>
-    </div>
-  <!-- ========================================
-     FORMULÁRIO DE INSCRIÇÃO - OUTUBRO ROSA
-     ======================================== -->
-<section class="inscricao-outubro-rosa" id="inscricao-outubro-rosa">
-  <h2>🎀 Inscrição - Outubro Rosa Super 5K</h2>
-  <p>25 de Outubro de 2026 • 7:30h • Recinto Mário Zaparolli - Pompéia/SP</p>
-  
-  <form id="form-inscricao-whatsapp">
-    
-    <!-- Campo 1: Nome Completo -->
-    <label for="nome">Nome Completo *</label>
-    <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo">
-    
-    <!-- Campo 2: Data de Nascimento -->
-    <label for="nascimento">Data de Nascimento *</label>
-    <input type="date" id="nascimento" name="nascimento" required>
-    <small id="idade-info">Idade será calculada automaticamente para validar a modalidade</small>
-    
-    <!-- Campo 3: Gênero (Radio Buttons) -->
-    <label>Gênero *</label>
-    <div class="radio-group">
-      <input type="radio" id="feminino" name="genero" value="Feminino" required>
-      <label for="feminino">Feminino</label>
-      
-      <input type="radio" id="masculino" name="genero" value="Masculino" required>
-      <label for="masculino">Masculino</label>
-    </div>
-    
-    <!-- Campo 4: Telefone -->
-    <label for="telefone">WhatsApp *</label>
-    <input type="tel" id="telefone" name="telefone" required placeholder="(14) 99808-9788">
-    
-    <!-- Campo 5: E-mail (Opcional) -->
-    <label for="email">E-mail</label>
-    <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com">
-    <small>Opcional - para envio de regulamento e informações</small>
-    
-    <!-- Campo 6: Modalidade (Select) -->
-    <label for="modalidade">Modalidade *</label>
-    <select id="modalidade" name="modalidade" required>
-      <option value="">Selecione sua modalidade...</option>
-      <option value="Corrida Super 5km">Corrida Super 5km (14+ anos)</option>
-      <option value="Caminhada 3km">Caminhada 3km (todas as idades)</option>
-      <option value="Corrida Kids">Corrida Kids (4-12 anos)</option>
-    </select>
-    
-    <!-- Campo 7: Declaração de Saúde (Checkbox) -->
-    <div class="checkbox-group">
-      <input type="checkbox" id="declaracao-saude" name="declaracao_saude" required>
-      <label for="declaracao-saude">
-        Declaro, sob minha total responsabilidade, que estou apto(a) a praticar a 
-        modalidade escolhida e não possuo impedimento médico para a atividade física. *
-      </label>
-    </div>
-    
-    <!-- Campo 8: Autorização de Imagem (Checkbox) -->
-    <div class="checkbox-group">
-      <input type="checkbox" id="autorizacao-imagem" name="autorizacao_imagem" required>
-      <label for="autorizacao-imagem">
-        Autorizo o uso da minha imagem e voz em fotos, vídeos, redes sociais e website 
-        da AEESP, sem fins comerciais, para divulgação deste evento e das atividades 
-        da associação. *
-      </label>
-    </div>
-    
-    <!-- Campo 9: LGPD (Checkbox) -->
-    <div class="checkbox-group">
-      <input type="checkbox" id="lgpd" name="lgpd" required>
-      <label for="lgpd">
-        Concordo que meus dados pessoais sejam armazenados pela AEESP apenas para fins 
-        de inscrição e comunicação sobre este evento, podendo solicitar exclusão a 
-        qualquer momento. *
-      </label>
-    </div>
-    
-   
-          <!-- Slide 1: Corrida Comemorativa - SUCESSO -->
-          <div class="swiper-slide slide-evento">
-            <div class="slide-content">
-              <h2>✅ SUCESSO NA CORRIDA COMEMORATIVA!</h2>
-              <p>Centenas de participantes • 4 modalidades • Energia incrível</p>
-              
-              <a href="#sucesso-corrida" 
-                 class="btn-evento"
-                 data-swiper-ignore="true"
-                 onclick="event.stopPropagation(); document.getElementById('sucesso-corrida')?.scrollIntoView({behavior:'smooth', block:'start'}); return false;">
-                Ver Galeria e Vídeo
-              </a>
-            </div>
-          </div>
-          
-          <!-- Slide 2: Vídeo Logo AEESP -->
-          <div class="swiper-slide slide-logo-video">
-            <div class="slide-content logo-video-slide">
-              <div class="video-wrapper">
-                <video 
-                  id="bannerVideo"
-                  class="slide-logo-video" 
-                  autoplay 
-                  muted 
-                  playsinline 
-                  preload="auto"
-                  poster="img/aeesp-logo.png">
-                  <source src="videos/Logo-em-Movimento1.mp4" type="video/mp4">
-                  Seu navegador não suporta o elemento de vídeo.
-                </video>
-                
-                <!-- Botão de Ativar Som -->
-                <button id="toggleSoundBtn" class="sound-toggle-btn" aria-label="Ativar som">
-                  <span class="sound-icon muted">🔇</span>
-                  <span class="sound-icon unmuted" style="display: none;">🔊</span>
-                  <span class="sound-text">Clique para ativar o som</span>
-                </button>
-                
-                <!-- Botão de Replay -->
-                <button id="replayBtn" class="replay-btn" aria-label="Reproduzir novamente">
-                  <span class="replay-icon">▶</span>
-                  <span class="replay-text">Reproduzir</span>
-                </button>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Slide 3: Envolva-se - BOTÃO PIX -->
-          <div class="swiper-slide slide-2">
-            <div class="slide-content">
-              <h2>Apoie nossa causa</h2>
-              <p>Doações, patrocínios e voluntariado transformam vidas</p>
-              
-              <a href="#pix-section" 
-                 class="btn-slide-pix" 
-                 aria-label="Apoie via PIX: role até a seção de doações"
-                 role="button"
-                 tabindex="0"
-                 data-swiper-ignore="true"
-                 onclick="event.stopPropagation(); document.getElementById('pix-section')?.scrollIntoView({behavior:'smooth', block:'start'}); return false;">
-                <span class="btn-icon-qr" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="3" y="3" width="7" height="7" rx="1"/>
-                    <rect x="14" y="3" width="7" height="7" rx="1"/>
-                    <rect x="3" y="14" width="7" height="7" rx="1"/>
-                    <path d="M14 14h3v3h-3z"/>
-                    <path d="M17 14v-3"/>
-                    <path d="M14 17h3"/>
-                    <path d="M21 21v-2a2 2 0 0 0-2-2h-2"/>
-                    <path d="M3 21v-2a2 2 0 0 1 2-2h2"/>
-                  </svg>
-                </span>
-                <span class="btn-text">Apoie via PIX</span>
-              </a>
-            </div>
-          </div>
-          
-         <!-- Slide 4: Eventos e Atividades - COM BOTÃO -->
-<div class="swiper-slide slide-1">
-  <div class="slide-content">
-    <h2>Eventos e Atividades</h2>
-    <p>História viva da AEESP: treinos, conquistas, desafios e parcerias</p>
-    
-    <!-- Botão com data-swiper-ignore + onclick para funcionar 100% -->
-    <a href="eventos.html" 
-       class="btn-evento"
-       data-swiper-ignore="true"
-       onclick="event.stopPropagation(); return true;">
-      Ver Diário Institucional
-    </a>
-  </div>
-</div>
-          
-          <!-- Slide 5: Contato -->
-          <div class="swiper-slide slide-3">
-            <div class="slide-content">
-              <h2>Entre em contato</h2>
-              <p>Fale conosco, tire dúvidas via contato@aeesp.org.br</p>
-            </div>
-          </div>
-          
-          <!-- Slide 6: LOGO -->
-          <div class="swiper-slide slide-logo">
-            <div class="slide-content logo-slide">
-              <img src="img/aeesp-logo.png" alt="AEESP - Logo" class="slide-logo-img">
-            </div>
-          </div>
-          
-        </div>
-        
-        <!-- Navegação -->
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        
-        <!-- Paginação -->
         <div class="swiper-pagination"></div>
       </div>
     </div>
@@ -631,104 +170,78 @@
       </div>
     </div>
 
-    <  <!-- ========================================
-     FORMULÁRIO DE INSCRIÇÃO - OUTUBRO ROSA
-     ======================================== -->
-<section class="inscricao-outubro-rosa" id="inscricao-outubro-rosa">
-  <h2>🎀 Inscrição - Outubro Rosa Super 5K</h2>
-  <p>25 de Outubro de 2026 • 7:30h • Recinto Mário Zaparolli - Pompéia/SP</p>
-  
-  <form id="form-inscricao-whatsapp">
-    
-    <!-- Campo 1: Nome Completo -->
-    <label for="nome">Nome Completo *</label>
-    <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo">
-    
-    <!-- Campo 2: Data de Nascimento -->
-    <label for="nascimento">Data de Nascimento *</label>
-    <input type="date" id="nascimento" name="nascimento" required>
-    <small id="idade-info">Idade será calculada automaticamente para validar a modalidade</small>
-    
-    <!-- Campo 3: Gênero (Radio Buttons) -->
-    <label>Gênero *</label>
-    <div class="radio-group">
-      <input type="radio" id="feminino" name="genero" value="Feminino" required>
-      <label for="feminino">Feminino</label>
+    <!-- ========================================
+         FORMULÁRIO DE INSCRIÇÃO - OUTUBRO ROSA
+         ======================================== -->
+    <section class="inscricao-outubro-rosa" id="inscricao-outubro-rosa">
+      <h2>🎀 Inscrição - Outubro Rosa Super 5K</h2>
+      <p>25 de Outubro de 2026 • 7:30h • Recinto Mário Zaparolli - Pompéia/SP</p>
       
-      <input type="radio" id="masculino" name="genero" value="Masculino" required>
-      <label for="masculino">Masculino</label>
-    </div>
-    
-    <!-- Campo 4: Telefone -->
-    <label for="telefone">WhatsApp *</label>
-    <input type="tel" id="telefone" name="telefone" required placeholder="(14) 99808-9788">
-    
-    <!-- Campo 5: E-mail (Opcional) -->
-    <label for="email">E-mail</label>
-    <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com">
-    <small>Opcional - para envio de regulamento e informações</small>
-    
-    <!-- Campo 6: Modalidade (Select) -->
-    <label for="modalidade">Modalidade *</label>
-    <select id="modalidade" name="modalidade" required>
-      <option value="">Selecione sua modalidade...</option>
-      <option value="Corrida Super 5km">Corrida Super 5km (14+ anos)</option>
-      <option value="Caminhada 3km">Caminhada 3km (todas as idades)</option>
-      <option value="Corrida Kids">Corrida Kids (4-12 anos)</option>
-    </select>
+      <form id="form-inscricao-whatsapp">
+        <label for="nome">Nome Completo *</label>
+        <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo">
+        
+        <label for="nascimento">Data de Nascimento *</label>
+        <input type="date" id="nascimento" name="nascimento" required>
+        <small>Idade será calculada automaticamente para validar a modalidade</small>
+        
+        <label>Gênero *</label>
+        <div class="radio-group">
+          <input type="radio" id="feminino" name="genero" value="Feminino" required>
+          <label for="feminino">Feminino</label>
+          <input type="radio" id="masculino" name="genero" value="Masculino" required>
+          <label for="masculino">Masculino</label>
+        </div>
+        
+        <label for="telefone">WhatsApp *</label>
+        <input type="tel" id="telefone" name="telefone" required placeholder="(14) 99808-9788">
+        
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com">
+        <small>Opcional - para envio de regulamento e informações</small>
+        
+        <label for="modalidade">Modalidade *</label>
+        <select id="modalidade" name="modalidade" required>
+          <option value="">Selecione sua modalidade...</option>
+          <option value="Corrida Super 5km">Corrida Super 5km (14+ anos)</option>
+          <option value="Caminhada 3km">Caminhada 3km (todas as idades)</option>
+          <option value="Corrida Kids">Corrida Kids (4-12 anos)</option>
+        </select>
 
-    <!-- Campo 7: Equipe (Opcional) -->
-    <label for="equipe">Equipe</label>
-    <input type="text" id="equipe" name="equipe" placeholder="Nome da sua equipe (opcional)">
-    <small>Deixe em branco se estiver participando individualmente</small>
-    
-    <!-- Campo 8: Declaração de Saúde (Checkbox) -->
-    <div class="checkbox-group">
-      <input type="checkbox" id="declaracao-saude" name="declaracao_saude" required>
-      <label for="declaracao-saude">
-        Declaro, sob minha total responsabilidade, que estou apto(a) a praticar a 
-        modalidade escolhida e não possuo impedimento médico para a atividade física. *
-      </label>
-    </div>
-    
-    <!-- Campo 9: Autorização de Imagem (Checkbox) -->
-    <div class="checkbox-group">
-      <input type="checkbox" id="autorizacao-imagem" name="autorizacao_imagem" required>
-      <label for="autorizacao-imagem">
-        Autorizo o uso da minha imagem e voz em fotos, vídeos, redes sociais e website 
-        da AEESP, sem fins comerciais, para divulgação deste evento e das atividades 
-        da associação. *
-      </label>
-    </div>
-    
-    <!-- Campo 10: LGPD (Checkbox) -->
-    <div class="checkbox-group">
-      <input type="checkbox" id="lgpd" name="lgpd" required>
-      <label for="lgpd">
-        Concordo que meus dados pessoais sejam armazenados pela AEESP apenas para fins 
-        de inscrição e comunicação sobre este evento, podendo solicitar exclusão a 
-        qualquer momento. *
-      </label>
-    </div>
-    
-    <!-- Botão de Envio -->
-    <button type="submit" class="btn-inscricao-whatsapp">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/>
-      </svg>
-      Inscrever via WhatsApp
-    </button>
-    
-    <!-- Mensagem de Feedback -->
-    <div id="feedback-mensagem" class="feedback"></div>
-    
-  </form>
-</section>
+        <!-- NOVO CAMPO: Equipe (Opcional) -->
+        <label for="equipe">Equipe</label>
+        <input type="text" id="equipe" name="equipe" placeholder="Nome da sua equipe (opcional)">
+        <small>Deixe em branco se estiver participando individualmente</small>
+        
+        <div class="checkbox-group">
+          <input type="checkbox" id="declaracao-saude" name="declaracao_saude" required>
+          <label for="declaracao-saude">Declaro, sob minha total responsabilidade, que estou apto(a) a praticar a modalidade escolhida e não possuo impedimento médico para a atividade física. *</label>
+        </div>
+        
+        <div class="checkbox-group">
+          <input type="checkbox" id="autorizacao-imagem" name="autorizacao_imagem" required>
+          <label for="autorizacao-imagem">Autorizo o uso da minha imagem e voz em fotos, vídeos, redes sociais e website da AEESP, sem fins comerciais, para divulgação deste evento e das atividades da associação. *</label>
+        </div>
+        
+        <div class="checkbox-group">
+          <input type="checkbox" id="lgpd" name="lgpd" required>
+          <label for="lgpd">Concordo que meus dados pessoais sejam armazenados pela AEESP apenas para fins de inscrição e comunicação sobre este evento, podendo solicitar exclusão a qualquer momento. *</label>
+        </div>
+        
+        <button type="submit" class="btn-inscricao-whatsapp">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/>
+          </svg>
+          Inscrever via WhatsApp
+        </button>
+        
+        <div id="feedback-mensagem" class="feedback"></div>
+      </form>
+    </section>
 
-         <!-- ========================================
+    <!-- ========================================
          SEÇÃO DO PIX
          ======================================== -->
-      
     <div class="qr-section" id="pix-section">
       <h2 class="qr-title">💚 Sua contribuição transforma vidas. Seja parte desta história!</h2>
       <div class="qr-divider"></div>
@@ -736,8 +249,6 @@
         <img src="img/pix_aeesp_.png" alt="QR Code para Pix da AEESP" class="qr-code">
         <p class="qr-description">Escaneie para contribuir com o Pix</p>
       </div>
-      
-      <!-- Formulário de Doação PIX -->
       <div class="pix-form">
         <label for="pix-valor">Valor da doação:</label>
         <div class="valor-input">
@@ -756,42 +267,25 @@
       </div>
     </div>
 
-    
-
-    
     <!-- ========================================
          SEÇÃO DE PARCERIAS
          ======================================== -->
     <section class="parceiros-section">
       <div class="container">
-        <h2 class="parceiros-title">🤝 PARCERIAS QUE TRANSFORMADORAS</h2>
-        
+        <h2 class="parceiros-title">🤝 PARCERIAS QUE TRANSFORMAM VIDAS</h2>
         <div class="parceiro-destaque">
           <div class="parceiro-logo">
             <img src="img/ca-comunicacao-visual.png" alt="C&A Comunicação Visual - Parceiro AEESP">
           </div>
-          
           <div class="parceiro-conteudo">
             <h3>C&A Comunicação Visual</h3>
             <p class="parceiro-subtitulo">Primeiro apoio institucional - 2026</p>
-            
             <div class="parceiro-texto">
-              <p>
-                É com grande alegria e orgulho que anunciamos nossa primeira parceria 
-                institucional! A C&A Comunicação Visual acaba de se juntar à AEESP 
-                nessa missão de transformar vidas através da atividade física em Pompéia.
-              </p>
-              
-              <p>
-                Acreditamos que somando forças, podemos transformar ainda mais histórias.
-                À C&A Comunicação Visual, nosso muito obrigado pela confiança e apoio!
-              </p>
+              <p>É com grande alegria e orgulho que anunciamos nossa primeira parceria institucional! A C&A Comunicação Visual acaba de se juntar à AEESP nessa missão de transformar vidas através da atividade física em Pompéia.</p>
+              <p>Acreditamos que somando forças, podemos transformar ainda mais histórias. À C&A Comunicação Visual, nosso muito obrigado pela confiança e apoio!</p>
             </div>
-            
             <div class="parceiro-cta">
-              <a href="projetos.html" class="btn-parceiros">
-                Conheça Nossos Projetos
-              </a>
+              <a href="projetos.html" class="btn-parceiros">Conheça Nossos Projetos</a>
               <p class="parceiro-frase">Juntos somos mais fortes!</p>
             </div>
           </div>
@@ -805,87 +299,32 @@
     <section class="corrida-sucesso-section" id="sucesso-corrida">
       <div class="container">
         <h2 class="corrida-sucesso-title">🏆 CORRIDA COMEMORATIVA 3º ANO DO TREINÃO - SUCESSO TOTAL!</h2>
-        
-        <!-- Colagem em Destaque -->
         <div class="corrida-colagem-container">
           <div class="lightbox-trigger" data-src="img/colagem-aeesp.png">
-            <img src="img/colagem-aeesp.png" alt="Colagem da Corrida Comemorativa AEESP - 3º Ano do Treinão" class="corrida-colagem">
+            <img src="img/colagem-aeesp.png" alt="Colagem da Corrida Comemorativa AEESP" class="corrida-colagem">
             <span class="zoom-indicator">🔍 Clique para ampliar</span>
           </div>
         </div>
-        
-        <!-- Texto Sobre o Evento -->
         <div class="corrida-texto">
           <h3>Um Evento para Celebrar Conquistas</h3>
-          
-          <p>
-            No último domingo, realizamos a <strong>Corrida Comemorativa do 3º Ano do Treinão AEESP</strong>, 
-            e o resultado foi além das nossas expectativas! O evento reuniu centenas de participantes de 
-            Pompéia e região em uma manhã de muita energia, superação e integração comunitária.
-          </p>
-          
+          <p>No último domingo, realizamos a <strong>Corrida Comemorativa do 3º Ano do Treinão AEESP</strong>, e o resultado foi além das nossas expectativas! O evento reuniu centenas de participantes de Pompéia e região em uma manhã de muita energia, superação e integração comunitária.</p>
           <div class="corrida-destaques">
-            <div class="destaque-item">
-              <span class="destaque-numero">4</span>
-              <span class="destaque-texto">Modalidades</span>
-            </div>
-            <div class="destaque-item">
-              <span class="destaque-numero">Centenas</span>
-              <span class="destaque-texto">Participantes</span>
-            </div>
-            <div class="destaque-item">
-              <span class="destaque-numero">100%</span>
-              <span class="destaque-texto">Gratuito</span>
-            </div>
-            <div class="destaque-item">
-              <span class="destaque-numero">3</span>
-              <span class="destaque-texto">Anos de História</span>
-            </div>
+            <div class="destaque-item"><span class="destaque-numero">4</span><span class="destaque-texto">Modalidades</span></div>
+            <div class="destaque-item"><span class="destaque-numero">Centenas</span><span class="destaque-texto">Participantes</span></div>
+            <div class="destaque-item"><span class="destaque-numero">100%</span><span class="destaque-texto">Gratuito</span></div>
+            <div class="destaque-item"><span class="destaque-numero">3</span><span class="destaque-texto">Anos de História</span></div>
           </div>
-          
           <h4>As 4 Modalidades que Movimentaram Pompéia</h4>
-          
           <ul class="corrida-modalidades">
-            <li>
-              <strong>🏃 Corrida 5km:</strong> A modalidade mais popular, reunindo corredores de todas 
-              as idades em um percurso desafiador mas acessível.
-            </li>
-            <li>
-              <strong>🏃 Corrida 10km:</strong> Para os mais experientes, um teste de resistência e 
-              determinação que mostrou o alto nível dos atletas da região.
-            </li>
-            <li>
-              <strong>👟 Caminhada:</strong> Aberta a todos, sem restrições de idade, promovendo saúde 
-              e bem-estar de forma inclusiva e acolhedora.
-            </li>
-            <li>
-              <strong>👶 Corrida Kids:</strong> O futuro do esporte! Crianças de todas as idades 
-              participaram com entusiasmo, acompanhadas de suas famílias.
-            </li>
+            <li><strong>🏃 Corrida 5km:</strong> A modalidade mais popular, reunindo corredores de todas as idades em um percurso desafiador mas acessível.</li>
+            <li><strong>🏃 Corrida 10km:</strong> Para os mais experientes, um teste de resistência e determinação que mostrou o alto nível dos atletas da região.</li>
+            <li><strong>👟 Caminhada:</strong> Aberta a todos, sem restrições de idade, promovendo saúde e bem-estar de forma inclusiva e acolhedora.</li>
+            <li><strong>👶 Corrida Kids:</strong> O futuro do esporte! Crianças de todas as idades participaram com entusiasmo, acompanhadas de suas famílias.</li>
           </ul>
-          
-          <p>
-            O evento contou com estrutura completa: <strong>hidratação</strong> com água e frutas, 
-            <strong>medalhas personalizadas</strong> para todos os participantes, <strong>apoio médico</strong>, 
-            <strong>segurança</strong> com apoio da Polícia, e <strong>parcerias locais</strong> 
-            como a Vittapro Suplementos.
-          </p>
-          
-          <p>
-            Recebemos participantes de <strong>Pompéia, Oriente, Marília</strong> e outras cidades da 
-            região, mostrando que o Treinão AEESP se consolidou como um evento de referência no esporte 
-            regional. Famílias inteiras vieram participar, fortalecendo os laços comunitários e 
-            promovendo saúde através do esporte.
-          </p>
-          
-          <p class="corrida-agradecimento">
-            <strong>🙏 Nosso agradecimento</strong> a todos os participantes, voluntários, parceiros 
-            e apoiadores que tornaram este evento possível. Vocês são a razão de continuarmos 
-            conectando pessoas, movimentando vidas e transformando histórias!
-          </p>
+          <p>O evento contou com estrutura completa: <strong>hidratação</strong> com água e frutas, <strong>medalhas personalizadas</strong> para todos os participantes, <strong>apoio médico</strong>, <strong>segurança</strong> com apoio da Polícia, e <strong>parcerias locais</strong> como a Vittapro Suplementos.</p>
+          <p>Recebemos participantes de <strong>Pompéia, Oriente, Marília</strong> e outras cidades da região, mostrando que o Treinão AEESP se consolidou como um evento de referência no esporte regional.</p>
+          <p class="corrida-agradecimento"><strong>🙏 Nosso agradecimento</strong> a todos os participantes, voluntários, parceiros e apoiadores que tornaram este evento possível. Vocês são a razão de continuarmos conectando pessoas, movimentando vidas e transformando histórias!</p>
         </div>
-        
-        <!-- Vídeo do Evento -->
         <div class="corrida-video-container">
           <h3>🎥 Reviva os Melhores Momentos</h3>
           <div class="video-wrapper">
@@ -894,143 +333,89 @@
               Seu navegador não suporta o elemento de vídeo.
             </video>
           </div>
-          <p class="video-legenda">
-            Imagens oficiais da Corrida Comemorativa 3º Ano do Treinão AEESP
-          </p>
+          <p class="video-legenda">Imagens oficiais da Corrida Comemorativa 3º Ano do Treinão AEESP</p>
         </div>
-        
       </div>
     </section>
 
-
     <!-- ========================================
-     NOVO PROJETO: TREINÃO DE QUINTA
-     ======================================== -->
-<section class="treinao-quinta-section">
-  <div class="container">
-    <h2 class="treinao-quinta-title">🏃‍♂️ TREINÃO - QUINTA DO BÁSICO BEM FEITO</h2>
-    <p class="treinao-quinta-subtitle">Do zero ao seu sonho: aprenda a correr com técnica e saúde</p>
-    
-    <div class="treinao-quinta-content">
-      <!-- Coluna do Poster -->
-      <div class="treinao-quinta-poster">
-        <img src="img/treinao-quinta-poster.png" alt="Poster Treinão de Quinta - AEESP">
-      </div>
-      
-      <!-- Coluna de Informações -->
-      <div class="treinao-quinta-info">
-        <div class="info-destaque">
-          <div class="info-item">
-            <span class="info-icon">📅</span>
-            <div>
-              <strong>9 de Abril</strong>
-              <span>Início das atividades</span>
+         NOVO PROJETO: TREINÃO DE QUINTA
+         ======================================== -->
+    <section class="treinao-quinta-section">
+      <div class="container">
+        <h2 class="treinao-quinta-title">🏃‍♂️ TREINÃO - QUINTA DO BÁSICO BEM FEITO</h2>
+        <p class="treinao-quinta-subtitle">Do zero ao seu sonho: aprenda a correr com técnica e saúde</p>
+        <div class="treinao-quinta-content">
+          <div class="treinao-quinta-poster">
+            <img src="img/treinao-quinta-poster.png" alt="Poster Treinão de Quinta - AEESP">
+          </div>
+          <div class="treinao-quinta-info">
+            <div class="info-destaque">
+              <div class="info-item"><span class="info-icon">📅</span><div><strong>9 de Abril</strong><span>Início das atividades</span></div></div>
+              <div class="info-item"><span class="info-icon">⏰</span><div><strong>18:20</strong><span>Horário do treino</span></div></div>
+              <div class="info-item"><span class="info-icon">📍</span><div><strong>Fundo do Recinto Mário Zaparolli</strong><span>Mesmo local do Treinão de Domingo</span></div></div>
             </div>
-          </div>
-          <div class="info-item">
-            <span class="info-icon">⏰</span>
-            <div>
-              <strong>18:20</strong>
-              <span>Horário do treino</span>
+            <div class="treinao-descricao">
+              <p>O momento é agora! Saia da sua zona de conforto e venha aprender passo a passo a simplicidade da corrida de rua. Vamos te ajudar a sair do <strong>0 km</strong> e alcançar a distância que você sonha.</p>
+              <ul class="treinao-caracteristicas">
+                <li>✅ Para todos: adultos, adolescentes, crianças e idosos</li>
+                <li>✅ Níveis: iniciante • intermediário • avançado</li>
+                <li>✅ Treinos organizados por blocos específicos</li>
+                <li>✅ Foco na técnica e prevenção de lesões</li>
+                <li>✅ Sua única disputa é contra você mesmo</li>
+                <li>✅ <strong>TODA QUINTA às 18h20</strong></li>
+              </ul>
+              <div class="badge-gratuito"><span>🎁 100% Gratuito</span></div>
             </div>
-          </div>
-          <div class="info-item">
-            <span class="info-icon">📍</span>
-            <div>
-              <strong>Fundo do Recinto Mário Zaparolli</strong>
-              <span>Mesmo local do Treinão de Domingo</span>
+            <div class="treinao-actions">
+              <a href="projetos.html" class="btn-evento btn-grande">Conheça o Projeto Completo</a>
+              <div class="social-link">
+                <p>Siga-nos e fique por dentro:</p>
+                <a href="https://instagram.com/aeesp_22" target="_blank" class="btn-instagram">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                  @aeesp_22
+                </a>
+              </div>
             </div>
-          </div>
-        </div>
-        
-        <div class="treinao-descricao">
-          <p>
-            O momento é agora! Saia da sua zona de conforto e venha aprender 
-            passo a passo a simplicidade da corrida de rua. Vamos te ajudar a 
-            sair do <strong>0 km</strong> e alcançar a distância que você sonha.
-          </p>
-          
-          <ul class="treinao-caracteristicas">
-            <li>✅ Para todos: adultos, adolescentes, crianças e idosos</li>
-            <li>✅ Níveis: iniciante • intermediário • avançado</li>
-            <li>✅ Treinos organizados por blocos específicos</li>
-            <li>✅ Foco na técnica e prevenção de lesões</li>
-            <li>✅ Sua única disputa é contra você mesmo</li>
-            <li>✅ <strong> TODA QUINTA às 18h20 </strong></li>
-          </ul>
-          
-          <div class="badge-gratuito">
-            <span>🎁 100% Gratuito</span>
-          </div>
-        </div>
-        
-        <div class="treinao-actions">
-          <!-- Botão para Página de Projetos (Mesma cor dos outros botões) -->
-          <a href="projetos.html" class="btn-evento btn-grande">
-            Conheça o Projeto Completo
-          </a>
-          
-          <div class="social-link">
-            <p>Siga-nos e fique por dentro:</p>
-            <a href="https://instagram.com/aeesp_22" target="_blank" class="btn-instagram">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-              </svg>
-              @aeesp_22
-            </a>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
+    </section>
     
     <!-- ========================================
          GRID DE SEÇÕES
          ======================================== -->
     <div class="sections-grid">
-      <!-- Quem Somos -->
       <div class="section-card">
         <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
         <h3>Quem Somos</h3>
         <p>Conheça nossa missão, visão e valores como entidade sem fins lucrativos.</p>
         <a href="quem-somos.html">Saiba mais</a>
       </div>
-
-      <!-- História -->
       <div class="section-card">
         <svg viewBox="0 0 24 24"><path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9z"/></svg>
         <h3>Nossa História</h3>
         <p>Mais de 15 anos transformando vidas em Pompéia por meio do esporte.</p>
         <a href="historia.html">Conheça</a>
       </div>
-
-      <!-- Projetos -->
       <div class="section-card">
         <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
         <h3>Projetos</h3>
         <p>Futebol Educativo, Corrida de Rua e muito mais para toda a comunidade.</p>
         <a href="projetos.html">Veja todos</a>
       </div>
-
-      <!-- Eventos -->
       <div class="section-card">
         <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
         <h3>Eventos</h3>
         <p>História viva da AEESP: treinos, conquistas, desafios e parcerias.</p>
         <a href="eventos.html">Confira</a>
       </div>
-
-      <!-- Envolva-se -->
       <div class="section-card">
         <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
         <h3>Envolva-se</h3>
         <p>Apoie com doações, patrocínios ou voluntariado. Todo apoio conta!</p>
         <a href="envolva-se.html">Participe</a>
       </div>
-
-      <!-- Contato -->
       <div class="section-card">
         <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
         <h3>Contato</h3>
@@ -1038,8 +423,6 @@
         <a href="contato.html">Entre em contato</a>
       </div>
     </div>
-
-  
 
   </main>
 
@@ -1049,102 +432,69 @@
     <p>© 2026 – Todos os direitos reservados</p>
   </footer>
 
-  <!-- Swiper.js JS -->
+  <!-- ========================================
+       SCRIPTS
+       ======================================== -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-  <!-- Script do site -->
   <script src="js/main.js"></script>
-
-  <!-- Script PIX -->
   <script src="js/pix.js"></script>
-    <!-- SCRIPT DE EMERGÊNCIA PARA TESTAR O SWIPER -->
+
+  <!-- SCRIPT DE EMERGÊNCIA: Garante que o Swiper funcione mesmo se o main.js falhar -->
   <script>
     window.addEventListener('load', function() {
       if (typeof Swiper !== 'undefined' && document.querySelector('.swiper')) {
-        console.log('🚀 Forçando inicialização do Swiper...');
         new Swiper('.swiper', {
           loop: true,
           speed: 800,
-          autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-          },
-          pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-          },
-          navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          },
+          autoplay: { delay: 5000, disableOnInteraction: false },
+          pagination: { el: '.swiper-pagination', clickable: true },
+          navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
         });
-        console.log('✅ Swiper forçado com sucesso!');
-      } else {
-        console.error('❌ Falha ao carregar o Swiper. Verifique sua conexão.');
       }
     });
   </script>
-  <!-- SCRIPT DO FORMULÁRIO WHATSAPP (VERSÃO À PROVA DE FALHAS) -->
+
+  <!-- SCRIPT DO FORMULÁRIO WHATSAPP (Com campo Equipe incluído) -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      console.log('🔍 Script do formulário carregado.');
-      
       const form = document.getElementById('form-inscricao-whatsapp');
-      
-      if (!form) {
-        console.error('❌ ERRO: O formulário com id "form-inscricao-whatsapp" não foi encontrado no HTML!');
-        return;
-      }
-
-      console.log('✅ Formulário encontrado. Ativando...');
+      if (!form) return;
 
       form.addEventListener('submit', function(e) {
-        e.preventDefault(); // Impede a página de recarregar
-        console.log('📩 Formulário enviado! Iniciando validações...');
-        
+        e.preventDefault();
         const feedback = document.getElementById('feedback-mensagem');
         feedback.className = 'feedback';
         feedback.textContent = '';
         
-        // Coleta de dados
         const nome = document.getElementById('nome').value.trim();
         const nascimento = document.getElementById('nascimento').value;
         const genero = document.querySelector('input[name="genero"]:checked')?.value;
         const telefone = document.getElementById('telefone').value.trim();
         const email = document.getElementById('email').value.trim();
         const modalidade = document.getElementById('modalidade').value;
+        const equipe = document.getElementById('equipe').value.trim(); // NOVO CAMPO
         
         const checkSaude = document.getElementById('declaracao-saude').checked;
         const checkImagem = document.getElementById('autorizacao-imagem').checked;
         const checkLgpd = document.getElementById('lgpd').checked;
 
-        // 1. Validação de campos vazios
         if (!nome || !nascimento || !genero || !telefone || !modalidade) {
           feedback.textContent = '⚠️ Por favor, preencha todos os campos obrigatórios.';
           feedback.classList.add('error');
-          console.warn('❌ Validação falhou: Campos obrigatórios vazios.');
           return;
         }
-        
-        // 2. Validação dos checkboxes
         if (!checkSaude || !checkImagem || !checkLgpd) {
           feedback.textContent = '❌ É necessário marcar todas as declarações de aceite.';
           feedback.classList.add('error');
-          console.warn('❌ Validação falhou: Checkboxes não marcados.');
           return;
         }
         
-        // 3. Cálculo da idade
         const dataNasc = new Date(nascimento);
         const hoje = new Date();
         let idade = hoje.getFullYear() - dataNasc.getFullYear();
         const mes = hoje.getMonth() - dataNasc.getMonth();
-        if (mes < 0 || (mes === 0 && hoje.getDate() < dataNasc.getDate())) {
-          idade--;
-        }
-        console.log(`🎂 Idade calculada: ${idade} anos`);
+        if (mes < 0 || (mes === 0 && hoje.getDate() < dataNasc.getDate())) idade--;
         
-        // 4. Validação de idade por modalidade
         if (modalidade === 'Corrida Kids' && (idade < 4 || idade > 12)) {
           feedback.textContent = '❌ Corrida Kids é apenas para crianças de 4 a 12 anos.';
           feedback.classList.add('error');
@@ -1156,7 +506,6 @@
           return;
         }
         
-        // 5. Validação do telefone
         const telLimpo = telefone.replace(/\D/g, '');
         if (telLimpo.length < 10 || telLimpo.length > 11) {
           feedback.textContent = '⚠️ Por favor, digite um número de WhatsApp válido.';
@@ -1164,7 +513,6 @@
           return;
         }
         
-        // 6. Montagem da mensagem
         const mensagem = `🎀 INSCRIÇÃO - OUTUBRO ROSA SUPER 5K
 
 👤 Nome: ${nome}
@@ -1173,26 +521,21 @@
 📱 WhatsApp: ${telefone}
 📧 E-mail: ${email || 'Não informado'}
 🏃 Modalidade: ${modalidade}
+👥 Equipe: ${equipe || 'Individual'}
 
 ✅ Saúde, Imagem e LGPD: AUTORIZADO
 
 Aguardo confirmação! 💚`;
         
-        console.log('✅ Validações passaram! Redirecionando para o WhatsApp...');
-        
-        // 7. Feedback e Redirecionamento
         feedback.textContent = '✅ Redirecionando para o WhatsApp...';
         feedback.classList.add('success');
         
-        const urlWhatsApp = `https://wa.me/5514998089788?text=${encodeURIComponent(mensagem)}`;
-        
         setTimeout(() => {
-          window.open(urlWhatsApp, '_blank');
+          window.open(`https://wa.me/5514998089788?text=${encodeURIComponent(mensagem)}`, '_blank');
         }, 1000);
       });
     });
   </script>
-    
 
-    </body>
+</body>
 </html>
